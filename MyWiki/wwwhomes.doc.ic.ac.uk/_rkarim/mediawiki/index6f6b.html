@@ -1,0 +1,1476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Pre_computation_for_Graph_cuts&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:18:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Pre computation for Graph cuts" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Pre computation for Graph cuts - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Pre_computation_for_Graph_cuts";
+		var wgTitle = "Pre computation for Graph cuts";
+		var wgAction = "view";
+		var wgArticleId = "116";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1214;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Pre_computation_for_Graph_cuts skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Pre computation for Graph cuts</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Pre-compute_images_for_graph-cuts_segmentation_of_atrial_scar" id="Pre-compute_images_for_graph-cuts_segmentation_of_atrial_scar"></a><h1> <span class="mw-headline"> Pre-compute images for graph-cuts segmentation of atrial scar </span></h1>
+<a name="Healthy_tissue:_Everything_inside_dilated_whole-heart.2Fgad_segmentation" id="Healthy_tissue:_Everything_inside_dilated_whole-heart.2Fgad_segmentation"></a><h2> <span class="mw-headline"> Healthy tissue: Everything inside dilated whole-heart/gad segmentation </span></h2>
+<p>Note: This program generate the dilated segmentation output. The current version of the scar segmentation module requires this if _WHAT_IS_HEALTHY_TISSUE is set to 1 in graphcutclassifier.h code. _WHAT_IS_HEALTHY_TISSUE flag is set to 1 indicating that healthy tissue is everything inside the dilated gad/whole-heart segmentation. If set to 0 it means healthy tissue is only the blood pool. 
+</p>
+<a name="Post_computation_after_graph-cuts" id="Post_computation_after_graph-cuts"></a><h1> <span class="mw-headline"> Post computation after graph-cuts </span></h1>
+<p>Choose the _gc_seg_out_xx based on convergence test. See paper for optimal selection of _gc_seg_out. Run the connected-components filter by stating nn where nn is the largest nn&nbsp;% connected components. For example, the top 10 percent connected components when sorted according to size. 
+</p>
+<pre>
+Usage: postScar3d.bat xx nn 
+
+Batch file 
+threshold _gc_seg_out_%1.gipl temp.gipl 0.5
+rk_magic -i1 temp.gipl -o temp_2.gipl --concomp x 
+rk_magic -i1 temp_2.gipl -o temp_3.gipl -t1&nbsp;%2 --concompfilter x
+closing temp_3.gipl _gc_seg_out_final.gipl 
+del temp.gipl 
+del temp_2.gipl 
+del temp_3.gipl 
+</pre>
+<p><br />
+</p>
+<a name="Code_appendix" id="Code_appendix"></a><h2> <span class="mw-headline"> Code appendix </span></h2>
+<a name="Usage" id="Usage"></a><h3> <span class="mw-headline"> Usage </span></h3>
+<p>This program outputs all the files necessary for graphcuts to work. This is used an automatic input to graphcuts. After running this program, start Scar3d, no need to load any images, run 'construct graph for cuts (automatic file load)' and scar3d will go and load all necessary files output by this program
+</p>
+<pre>
+#include &quot;irtkImage.h&quot;
+#include &quot;vtkPolyData.h&quot;
+#include &quot;vtkSmartPointer.h&quot;
+#include &quot;vtkIdList.h&quot;
+#include &lt;irtkImageFunction.h&gt;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkCellData.h&quot;
+#include &quot;vtkBoxWidget.h&quot;
+#include &quot;vtkPlanes.h&quot;
+#include &quot;irtkDilation.h&quot;
+#include &quot;irtkErosion.h&quot;
+#include &quot;irtkGaussian.h&quot;
+#include &quot;irtkEMClassification.h&quot;
+#include &lt;irtkEuclideanDistanceTransform.h&gt;
+
+#include &lt;vector&gt;
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+#include &quot;vtkPolyDataMapper.h&quot;
+#include &quot;vtkRenderer.h&quot;
+#include &lt;vtkRendererCollection.h&gt;
+#include &quot;vtkMarchingCubes.h&quot;
+#include &quot;vtkRenderWindow.h&quot;
+#include &quot;vtkPolyDataNormals.h&quot;
+#include &quot;vtkImageCast.h&quot;
+#include &quot;vtkStructuredPoints.h&quot;
+#include &quot;vtkSmoothPolyDataFilter.h&quot;
+#include &quot;vtkDecimatePro.h&quot;
+#include &quot;vtkProperty.h&quot;
+#include &lt;fstream&gt;
+#include &lt;vtkLookupTable.h&gt;
+
+#define _IS_DEBUG 1
+ 
+void getAtrialWall_usingEDTTransforms(irtkRealImage *scar_image, irtkGreyImage* mra_image, irtkRealImage* dilate_im, int width_wall, char* filename)
+{
+	irtkGreyPixel *m_p; 
+	irtkRealPixel *t_p; 
+	irtkRealImage temp, temp2; 
+	irtkRealImage edtInsideGadSeg_im, edtOutsideGadSeg_im, atrial_wall_im; 
+
+	temp =* mra_image; 
+	temp2 =* mra_image; 
+	edtInsideGadSeg_im =* mra_image; 
+	edtOutsideGadSeg_im =* mra_image; 
+	atrial_wall_im =* scar_image; 
+
+	m_p = mra_image-&gt;GetPointerToVoxels(); 
+	t_p = temp.GetPointerToVoxels(); 
+
+	// invert the gad segmentation 
+	for (int i=0;i&lt;mra_image-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*t_p &gt; 0)
+			*t_p = 0;
+		else 
+			*t_p = 1;
+		t_p++; 
+	}
+	
+	irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt; *edt_func = 
+		new irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;(irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;::irtkDistanceTransform3D);
+	edt_func-&gt;SetInput(&amp;temp);
+	edt_func-&gt;SetOutput(&amp;edtInsideGadSeg_im);
+	edt_func-&gt;Run();
+	
+	edt_func-&gt;SetInput(&amp;temp2); 
+	edt_func-&gt;SetOutput(&amp;edtOutsideGadSeg_im); 
+	edt_func-&gt;Run(); 
+
+	irtkRealPixel *i_p, *o_p, *a_p, *dil_p; 
+	i_p = edtInsideGadSeg_im.GetPointerToVoxels(); 
+	o_p = edtOutsideGadSeg_im.GetPointerToVoxels(); 
+	a_p = atrial_wall_im.GetPointerToVoxels(); 
+	dil_p = dilate_im-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;edtInsideGadSeg_im.GetNumberOfVoxels();i++) 
+	{
+		if (*i_p &gt; width_wall) { 
+			*a_p = 0; 
+		} 
+		if (*o_p &gt; width_wall) { 
+			*a_p = 0;		// for atrial wall 
+			*dil_p = 0;		// for dilated seg
+		} 
+		i_p++; o_p++; a_p++; dil_p++;
+	}
+	atrial_wall_im.Write(filename); 
+	
+
+}
+
+void getAtrialWall(irtkRealImage *scar_image, irtkGreyImage* mra_image, irtkGreyImage* dilate_im, irtkGreyImage* erosion_im, irtkRealImage* dilated_seg_im, 
+				   int i_dilation, int i_erosion, char* filename)
+{
+	// simply mra image minus scar image 
+	// this makes an important assumption that mra image is smaller than scar image 
+	// interms of the size of the atrial chamber
+	// this assumption may change depending on the circumstances of the patient's breating and scan times
+	irtkRealImage atrial_wall; 
+	irtkGreyImage dilate, erode, bin_image, temp;
+
+	double late_gad_inty;
+	int dilate_iterations = i_dilation;
+	int erode_iterations = i_erosion;
+
+	cout &lt;&lt; &quot;.... Finding memory to store the image .. &quot;; 
+	atrial_wall =* scar_image; 
+	bin_image =* mra_image; 
+
+	cout &lt;&lt; &quot;binarizing .. &quot; &lt;&lt; endl; 
+	// binarize the atrial geometry segmentation 
+	for (int i=0;i&lt;bin_image.GetX();i++) {
+		for (int j=0;j&lt;bin_image.GetY();j++) {
+			for (int k=0;k&lt;bin_image.GetZ();k++) {
+				if (bin_image.Get(i,j,k) &gt; 0)
+					bin_image.Put(i,j,k, 1); 
+				else 
+					bin_image.Put(i,j,k, 0); 
+
+ 			}
+		}
+	}
+	cout &lt;&lt; &quot;complete .. &quot; &lt;&lt; endl; 
+
+
+	temp = bin_image; 
+	dilate = bin_image; 
+	erode = bin_image; 
+
+	
+	irtkDilation&lt;irtkGreyPixel&gt; dilation; 
+	irtkErosion&lt;irtkGreyPixel&gt; erosion; 
+	erosion.SetInput(&amp;erode); 
+	erosion.SetOutput(&amp;erode);
+	
+	cout &lt;&lt; &quot;\n\nwill now compute erosions and dilations of the la segmentation to estimate atrial wall ... &quot; &lt;&lt; endl;
+	for (int i=0;i&lt;erode_iterations;i++)
+	{
+		cout &lt;&lt; &quot;eroding .. &quot; &lt;&lt; i &lt;&lt; endl;
+		erosion.Run();						// we do erosion followed by dilation, however, we dont use the same number of iterations for
+	}										// each. 
+//erode.Write(&quot;erosion.nii&quot;); 
+	dilation.SetInput(&amp;dilate);
+	dilation.SetOutput(&amp;dilate);
+	
+	for (int i=0;i&lt;dilate_iterations;i++)
+	{
+		cout &lt;&lt; &quot;dilating .. &quot; &lt;&lt; i &lt;&lt; endl;
+		dilation.Run();
+	}
+//dilate.Write(&quot;dilation.nii&quot;);
+	
+
+	for (int i=0;i&lt;temp.GetX();i++) {
+			for (int j=0;j&lt;temp.GetY();j++) {
+				for (int k=0;k&lt;temp.GetZ();k++) { 
+					if (i &lt; bin_image.GetX() &amp;&amp; j &lt; bin_image.GetY() &amp;&amp; k &lt; bin_image.GetZ() &amp;&amp; 
+						i &lt; dilate.GetX() &amp;&amp; j &lt; dilate.GetY() &amp;&amp; k &lt; dilate.GetZ())
+					{
+						if (bin_image.Get(i,j,k) &gt; 0 &amp;&amp; erode.Get(i,j,k) &lt;= 0)
+							temp.Put(i,j,k, 1); 
+						else if (dilate.Get(i,j,k) &gt; 0 &amp;&amp; bin_image.Get(i,j,k) &lt;= 0)
+							temp.Put(i,j,k, 1); 
+						else 
+							temp.Put(i,j,k, 0); 
+					}
+					
+				}
+			}
+	}
+	cout &lt;&lt; &quot;complete, now some housekeeping ... &quot; &lt;&lt; endl; 
+	
+//temp.Write(&quot;wall_before_masking.gipl&quot;); 
+	for (int i=0;i&lt;scar_image-&gt;GetX();i++) {
+		for (int j=0;j&lt;scar_image-&gt;GetY();j++) {
+			for (int k=0;k&lt;scar_image-&gt;GetZ();k++) {
+				// the places where scar image has intensity and mra doesn't is classified as wall
+				if (i &lt; temp.GetX() &amp;&amp; j &lt; temp.GetY() &amp;&amp; k &lt; temp.GetZ() &amp;&amp; 
+					i &lt; atrial_wall.GetX() &amp;&amp; j &lt; atrial_wall.GetY() &amp;&amp; k &lt; atrial_wall.GetZ()) 
+				{
+						if (scar_image-&gt;Get(i,j,k) &gt; 0 &amp;&amp; temp.Get(i,j,k) == 1)
+						{
+							late_gad_inty = scar_image-&gt;Get(i,j,k);
+							atrial_wall.Put(i,j,k, late_gad_inty); 
+						}
+						else
+							atrial_wall.Put(i,j,k, 0); 
+				}
+			}
+		}
+	}
+
+	// also have to generate the dilated seg image 
+	irtkRealPixel *dilatedSeg_p, *scar_p; 
+	irtkGreyPixel *dilate_p; 
+	scar_p = scar_image-&gt;GetPointerToVoxels(); 
+	dilatedSeg_p = dilated_seg_im-&gt;GetPointerToVoxels(); 
+	dilate_p = dilate.GetPointerToVoxels(); 
+	
+	
+	for (int i=0;i&lt;dilated_seg_im-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*dilate_p &gt; 0) { 
+			*dilatedSeg_p = *scar_p; 
+		}
+		else
+		{
+			*dilatedSeg_p = 0;
+		}
+		dilatedSeg_p++; scar_p++; dilate_p++;
+	}	
+	
+		
+
+	atrial_wall.Write(filename);
+	*dilate_im = dilate; 
+	*erosion_im = erode; 
+	//dilate_im-&gt;Write(&quot;_dilate_in_get_atrial_wall.gipl&quot;);
+	//erosion_im-&gt;Write(&quot;_erode_in_get_atrial_wall.gipl&quot;);
+	
+}
+
+// must be called after a call to getAtrialWall 
+void constructSpatialPriorImage(irtkGreyImage* dilate, irtkGreyImage* eroded, char* filename)
+{
+	double max_edt=-1,v; 
+	irtkRealPixel *ptr; 
+	irtkGreyPixel *er_ptr; 
+	irtkRealImage temp; 
+	irtkRealImage spatial_prior; 
+	irtkGreyImage erode; 
+	
+	temp =* dilate; 
+	spatial_prior =* dilate;
+	erode =* eroded; 
+	cout &lt;&lt; &quot;\n\nstarting to construct spatial prior image .. &quot;; 
+	ptr = temp.GetPointerToVoxels();
+//temp.Write(&quot;_temp.gipl&quot;); 
+	for (int i=0;i&lt;temp.GetNumberOfVoxels();i++)
+	{
+		if (*ptr &gt; 0)
+			*ptr = 0;
+		else 
+			*ptr = 1;
+		ptr++; 
+	}
+
+	irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt; *edt_func = new irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;(irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;::irtkDistanceTransform3D);
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\n\nNow constructing spatial prior image -&gt; probability map of where scars can lie within the atrial wall... computing euclidean distance transform ... &quot;; 
+	edt_func-&gt;SetInput(&amp;temp);
+	edt_func-&gt;SetOutput(&amp;spatial_prior);
+	edt_func-&gt;Run(); 
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished .. now normalizing and computing probability map values ... &quot;; 
+	spatial_prior.PutMinMax(0,100); 
+//spatial_prior.Write(&quot;_spatial_prior_1.gipl&quot;); 
+//erode.Write(&quot;_erode_in_spatial_prior.gipl&quot;); 
+ptr = spatial_prior.GetPointerToVoxels();
+	er_ptr = erode.GetPointerToVoxels(); 
+/*
+	// find max for normalization and mask with eroded atrium segmentation (lower bound for atrial wall) 
+	for (int i=0;i&lt;spatial_prior.GetNumberOfVoxels() &amp;&amp; i&lt;erode.GetNumberOfVoxels();i++)
+    {
+		if (*er_ptr &lt;= 0)
+		{
+			if (max_edt &lt; *ptr) 
+				max_edt = *ptr; 
+		}
+		else
+			*ptr = 0; 
+
+		ptr++; 
+		er_ptr++;
+	}
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished .. max edt =  &quot; &lt;&lt; max_edt; 
+	// now normalize edt values and inverse square the normalized edt 
+spatial_prior.Write(&quot;_spatial_prior_2.gipl&quot;); */
+	ptr = spatial_prior.GetPointerToVoxels();
+	for (int i=0;i&lt;spatial_prior.GetNumberOfVoxels();i++)
+    {
+		if (*ptr &gt; 0){
+			v = *ptr/100; 
+			*ptr = 1-v; 
+		}
+		//cout &lt;&lt; &quot;v = &quot; &lt;&lt; v &lt;&lt; &quot;, norm = &quot; &lt;&lt; *ptr &lt;&lt; &quot;,\t&quot;;
+		ptr++; 
+	}
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished!\n&quot;; 
+	spatial_prior.Write(filename); 
+
+}
+
+void getInnerBloodpool(irtkGreyImage* erode, irtkRealImage* bp_im, char* filename)
+{
+	irtkGreyPixel* er_ptr; 
+	irtkRealPixel* bp_ptr; 
+
+	//le_ptr = le_im-&gt;GetPointerToVoxels(); 
+	er_ptr = erode-&gt;GetPointerToVoxels(); 
+	bp_ptr = bp_im-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;erode-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*er_ptr == 0)
+		{
+			*bp_ptr = 0; 
+		}
+
+		er_ptr++; bp_ptr++; 
+	}
+	bp_im-&gt;Write(filename); 
+}
+
+int main(int argc, char *argv[])
+{
+	char* filename1, *filename2, *filename3, *filename4, *filename5, *filename6;
+	irtkRealPixel *lge_p; 
+	irtkRealImage lge_im,  bp_im, dil_seg_im; 
+	irtkGreyImage seg_im, dilation, erosion; 
+	int filetype; 
+	bool automatic_file_output=false; 
+
+
+	if(argc &lt; 6)
+    {
+		if (argc == 3) 
+		{
+			cout &lt;&lt; &quot;will be using default file names .. \n1) GIPL or\n 2) NIFTI\n &gt;&quot;;
+			cin &gt;&gt; filetype; 
+
+			if (filetype == 1) { filename3 = &quot;_atrial_wall.gipl&quot;; filename4 = &quot;_spatial_prior.gipl&quot;; filename5 = &quot;_blood_pool.gipl&quot;; filename6 = &quot;_dilated_seg.gipl&quot;;}
+			else { filename3 = &quot;_atrial_wall.nii&quot;; filename4 = &quot;_spatial_prior.nii&quot;; filename5 = &quot;_blood_pool.nii&quot;; filename6 = &quot;_dilated_seg.nii&quot;;} 
+			automatic_file_output = true; 
+		}
+		else { 
+			std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0]
+				  &lt;&lt; &quot; prepareforgraphcuts &lt;late_enhancement_scan&gt; &lt;la_Segmentation&gt; &lt;output_atrial_wall_file&gt; &lt;output_spatial_prior&gt; &lt;inner_blood_pool&gt; &lt;output_dilated_seg&gt;&quot; &lt;&lt; std::endl;
+			return EXIT_FAILURE;
+		}
+    }
+	
+	
+	filename1  = argv[1];
+	argc--;
+	argv++;
+	filename2 = argv[1];
+	argc--;
+	argv++;
+
+	if (!automatic_file_output) {
+		filename3 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename4 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename5 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename6 = argv[1]; 
+		argc--; 
+		argv++; 
+	}
+	lge_im.Read(filename1); 
+	seg_im.Read(filename2); 
+
+	lge_p = lge_im.GetPointerToVoxels(); 
+	dilation = seg_im; 
+	erosion = seg_im; 
+	bp_im = lge_im; 
+	dil_seg_im = lge_im; 
+	cout &lt;&lt; &quot;processing started .. &quot;;
+	
+	//getAtrialWall(&amp;lge_im, &amp;seg_im, &amp;dilation, &amp;erosion, &amp;dil_seg_im, 5, 5, filename3);  
+	getAtrialWall_usingEDTTransforms(&amp;lge_im, &amp;seg_im, &amp;dil_seg_im, 30, filename3);
+	cout &lt;&lt; &quot;atrial wall computation finished .. &quot;; 
+	constructSpatialPriorImage(&amp;dilation, &amp;erosion, filename4); 
+	cout &lt;&lt; &quot;.. and finally the blood pool .. &quot;;
+	getInnerBloodpool(&amp;erosion, &amp;bp_im, filename5);
+
+	if (filetype == 1) { lge_im.Write(&quot;_le.gipl&quot;);  seg_im.Write(&quot;_gad_seg.gipl&quot;); dil_seg_im.Write(&quot;_dilated_seg.gipl&quot;); }
+	else { lge_im.Write(&quot;_le.nii&quot;);  seg_im.Write(&quot;_gad_seg.nii&quot;); dil_seg_im.Write(&quot;_dilated_seg.gipl&quot;); } 
+}
+
+</pre>
+<a name="Healthy_tissue_is_only_blood_pool" id="Healthy_tissue_is_only_blood_pool"></a><h2> <span class="mw-headline"> Healthy tissue is only blood pool </span></h2>
+<p>This code regards only tissues intensities inside the blood pool as healthy tissue, i.e. it does not generate the dilated whole heart segmentation as output, which is necessary with the graphcutclassifier class, if _WHAT_IS_HEALTHY_TISSUE flag is set to 1 
+</p>
+<pre>
+#include &quot;irtkImage.h&quot;
+#include &quot;vtkPolyData.h&quot;
+#include &quot;vtkSmartPointer.h&quot;
+#include &quot;vtkIdList.h&quot;
+#include &lt;irtkImageFunction.h&gt;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkCellData.h&quot;
+#include &quot;vtkBoxWidget.h&quot;
+#include &quot;vtkPlanes.h&quot;
+#include &quot;irtkDilation.h&quot;
+#include &quot;irtkErosion.h&quot;
+#include &quot;irtkGaussian.h&quot;
+#include &quot;irtkEMClassification.h&quot;
+#include &lt;irtkEuclideanDistanceTransform.h&gt;
+
+#include &lt;vector&gt;
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+#include &quot;vtkPolyDataMapper.h&quot;
+#include &quot;vtkRenderer.h&quot;
+#include &lt;vtkRendererCollection.h&gt;
+#include &quot;vtkMarchingCubes.h&quot;
+#include &quot;vtkRenderWindow.h&quot;
+#include &quot;vtkPolyDataNormals.h&quot;
+#include &quot;vtkImageCast.h&quot;
+#include &quot;vtkStructuredPoints.h&quot;
+#include &quot;vtkSmoothPolyDataFilter.h&quot;
+#include &quot;vtkDecimatePro.h&quot;
+#include &quot;vtkProperty.h&quot;
+#include &lt;fstream&gt;
+#include &lt;vtkLookupTable.h&gt;
+
+#define _IS_DEBUG 1
+#define PI 3.14159
+
+/*
+*	April 2011: For each pixel in le image, get the probability of being scar from the scar:BP ratio gaussian model
+*	m_bp - blood pool mean
+*/
+void getScarProbabilityMap(irtkRealImage *scar_image, irtkRealImage* prob_map, double m_bp, double mean, double sigma, char* filename)
+{
+	irtkRealPixel* s_p; 
+	irtkRealPixel* m_p; 
+	irtkGaussian* scarRatioModel =new irtkGaussian();
+	scarRatioModel-&gt;Initialise(mean*m_bp, sigma*sigma*m_bp*m_bp); 
+
+	s_p = scar_image-&gt;GetPointerToVoxels(); 
+	m_p = prob_map-&gt;GetPointerToVoxels(); 
+
+	// get max to normalize 
+	for (int i=0;i&lt;scar_image-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*s_p &gt; 0) 
+		{
+			*m_p = scarRatioModel-&gt;Evaluate(*s_p) * sigma * sqrt(2*PI); 
+			*m_p = *m_p * 1e5;
+			//cout &lt;&lt; *s_p/m_bp &lt;&lt; &quot;=&quot; &lt;&lt; *m_p &lt;&lt; &quot;\t&quot;;
+		}
+		else 
+			*m_p = 0;
+
+		s_p++; m_p++; 
+	}
+
+	prob_map-&gt;Write(filename); 
+
+}
+ 
+void getAtrialWall_usingEDTTransforms(irtkRealImage *scar_image, irtkGreyImage* mra_image, irtkRealImage* dilate_im, int width_wall, char* filename)
+{
+	irtkGreyPixel *m_p; 
+	irtkRealPixel *t_p; 
+	irtkRealImage temp, temp2; 
+	irtkRealImage edtInsideGadSeg_im, edtOutsideGadSeg_im, atrial_wall_im; 
+
+	temp =* mra_image; 
+	temp2 =* mra_image; 
+	edtInsideGadSeg_im =* mra_image; 
+	edtOutsideGadSeg_im =* mra_image; 
+	atrial_wall_im =* scar_image; 
+
+	m_p = mra_image-&gt;GetPointerToVoxels(); 
+	t_p = temp.GetPointerToVoxels(); 
+
+	// invert the gad segmentation 
+	for (int i=0;i&lt;mra_image-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*t_p &gt; 0)
+			*t_p = 0;
+		else 
+			*t_p = 1;
+		t_p++; 
+	}
+	
+	irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt; *edt_func = 
+		new irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;(irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;::irtkDistanceTransform3D);
+	edt_func-&gt;SetInput(&amp;temp);
+	edt_func-&gt;SetOutput(&amp;edtInsideGadSeg_im);
+	edt_func-&gt;Run();
+	
+	edt_func-&gt;SetInput(&amp;temp2); 
+	edt_func-&gt;SetOutput(&amp;edtOutsideGadSeg_im); 
+	edt_func-&gt;Run(); 
+
+	irtkRealPixel *i_p, *o_p, *a_p, *dil_p; 
+	i_p = edtInsideGadSeg_im.GetPointerToVoxels(); 
+	o_p = edtOutsideGadSeg_im.GetPointerToVoxels(); 
+	a_p = atrial_wall_im.GetPointerToVoxels(); 
+	dil_p = dilate_im-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;edtInsideGadSeg_im.GetNumberOfVoxels();i++) 
+	{
+		if (*i_p &gt; width_wall) { 
+			*a_p = 0; 
+		} 
+		if (*o_p &gt; width_wall) { 
+			*a_p = 0;		// for atrial wall 
+			*dil_p = 0;		// for dilated seg
+		} 
+		i_p++; o_p++; a_p++; dil_p++;
+	}
+	atrial_wall_im.Write(filename); 
+	
+
+}
+
+
+void getAtrialWall(irtkRealImage *scar_image, irtkGreyImage* mra_image, irtkGreyImage* dilate_im, irtkGreyImage* erosion_im, irtkRealImage* dilated_seg_im, 
+				   int i_dilation, int i_erosion)
+{
+	// simply mra image minus scar image 
+	// this makes an important assumption that mra image is smaller than scar image 
+	// interms of the size of the atrial chamber
+	// this assumption may change depending on the circumstances of the patient's breating and scan times
+	irtkRealImage atrial_wall; 
+	irtkGreyImage dilate, erode, bin_image, temp;
+
+	double late_gad_inty;
+	int dilate_iterations = i_dilation;
+	int erode_iterations = i_erosion;
+
+	cout &lt;&lt; &quot;.... Finding memory to store the image .. &quot;; 
+	atrial_wall =* scar_image; 
+	bin_image =* mra_image; 
+
+	cout &lt;&lt; &quot;binarizing .. &quot; &lt;&lt; endl; 
+	// binarize the atrial geometry segmentation 
+	for (int i=0;i&lt;bin_image.GetX();i++) {
+		for (int j=0;j&lt;bin_image.GetY();j++) {
+			for (int k=0;k&lt;bin_image.GetZ();k++) {
+				if (bin_image.Get(i,j,k) &gt; 0)
+					bin_image.Put(i,j,k, 1); 
+				else 
+					bin_image.Put(i,j,k, 0); 
+
+ 			}
+		}
+	}
+	cout &lt;&lt; &quot;complete .. &quot; &lt;&lt; endl; 
+
+
+	temp = bin_image; 
+	dilate = bin_image; 
+	erode = bin_image; 
+
+	
+	irtkDilation&lt;irtkGreyPixel&gt; dilation; 
+	irtkErosion&lt;irtkGreyPixel&gt; erosion; 
+	erosion.SetInput(&amp;erode); 
+	erosion.SetOutput(&amp;erode);
+	
+	cout &lt;&lt; &quot;\n\nwill now compute erosions and dilations of the la segmentation to estimate atrial wall ... &quot; &lt;&lt; endl;
+	for (int i=0;i&lt;erode_iterations;i++)
+	{
+		cout &lt;&lt; &quot;eroding .. &quot; &lt;&lt; i &lt;&lt; endl;
+		erosion.Run();						// we do erosion followed by dilation, however, we dont use the same number of iterations for
+	}										// each. 
+//erode.Write(&quot;erosion.nii&quot;); 
+	dilation.SetInput(&amp;dilate);
+	dilation.SetOutput(&amp;dilate);
+	
+	for (int i=0;i&lt;dilate_iterations;i++)
+	{
+		cout &lt;&lt; &quot;dilating .. &quot; &lt;&lt; i &lt;&lt; endl;
+		dilation.Run();
+	}
+//dilate.Write(&quot;dilation.nii&quot;);
+	
+
+	for (int i=0;i&lt;temp.GetX();i++) {
+			for (int j=0;j&lt;temp.GetY();j++) {
+				for (int k=0;k&lt;temp.GetZ();k++) { 
+					if (i &lt; bin_image.GetX() &amp;&amp; j &lt; bin_image.GetY() &amp;&amp; k &lt; bin_image.GetZ() &amp;&amp; 
+						i &lt; dilate.GetX() &amp;&amp; j &lt; dilate.GetY() &amp;&amp; k &lt; dilate.GetZ())
+					{
+						if (bin_image.Get(i,j,k) &gt; 0 &amp;&amp; erode.Get(i,j,k) &lt;= 0)
+							temp.Put(i,j,k, 1); 
+						else if (dilate.Get(i,j,k) &gt; 0 &amp;&amp; bin_image.Get(i,j,k) &lt;= 0)
+							temp.Put(i,j,k, 1); 
+						else 
+							temp.Put(i,j,k, 0); 
+					}
+					
+				}
+			}
+	}
+	cout &lt;&lt; &quot;complete, now some housekeeping ... &quot; &lt;&lt; endl; 
+	
+//temp.Write(&quot;wall_before_masking.gipl&quot;); 
+	for (int i=0;i&lt;scar_image-&gt;GetX();i++) {
+		for (int j=0;j&lt;scar_image-&gt;GetY();j++) {
+			for (int k=0;k&lt;scar_image-&gt;GetZ();k++) {
+				// the places where scar image has intensity and mra doesn't is classified as wall
+				if (i &lt; temp.GetX() &amp;&amp; j &lt; temp.GetY() &amp;&amp; k &lt; temp.GetZ() &amp;&amp; 
+					i &lt; atrial_wall.GetX() &amp;&amp; j &lt; atrial_wall.GetY() &amp;&amp; k &lt; atrial_wall.GetZ()) 
+				{
+						if (scar_image-&gt;Get(i,j,k) &gt; 0 &amp;&amp; temp.Get(i,j,k) == 1)
+						{
+							late_gad_inty = scar_image-&gt;Get(i,j,k);
+							atrial_wall.Put(i,j,k, late_gad_inty); 
+						}
+						else
+							atrial_wall.Put(i,j,k, 0); 
+				}
+			}
+		}
+	}
+
+	// also have to generate the dilated seg image 
+	irtkRealPixel *dilatedSeg_p, *scar_p; 
+	irtkGreyPixel *dilate_p; 
+	scar_p = scar_image-&gt;GetPointerToVoxels(); 
+	dilatedSeg_p = dilated_seg_im-&gt;GetPointerToVoxels(); 
+	dilate_p = dilate.GetPointerToVoxels(); 
+	
+	
+	for (int i=0;i&lt;dilated_seg_im-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*dilate_p &gt; 0) { 
+			*dilatedSeg_p = *scar_p; 
+		}
+		else
+		{
+			*dilatedSeg_p = 0;
+		}
+		dilatedSeg_p++; scar_p++; dilate_p++;
+	}	
+	
+		
+
+	//atrial_wall.Write(filename);
+	*dilate_im = dilate; 
+	*erosion_im = erode; 
+	//dilate_im-&gt;Write(&quot;_dilate_in_get_atrial_wall.gipl&quot;);
+	//erosion_im-&gt;Write(&quot;_erode_in_get_atrial_wall.gipl&quot;);
+	
+}
+
+// must be called after a call to getAtrialWall 
+void constructSpatialPriorImage(irtkGreyImage* dilate, irtkGreyImage* eroded, char* filename)
+{
+	double max_edt=-1,v; 
+	irtkRealPixel *ptr; 
+	irtkGreyPixel *er_ptr; 
+	irtkRealImage temp; 
+	irtkRealImage spatial_prior; 
+	irtkGreyImage erode; 
+	
+	temp =* dilate; 
+	spatial_prior =* dilate;
+	erode =* eroded; 
+	cout &lt;&lt; &quot;\n\nstarting to construct spatial prior image .. &quot;; 
+	ptr = temp.GetPointerToVoxels();
+//temp.Write(&quot;_temp.gipl&quot;); 
+	for (int i=0;i&lt;temp.GetNumberOfVoxels();i++)
+	{
+		if (*ptr &gt; 0)
+			*ptr = 0;
+		else 
+			*ptr = 1;
+		ptr++; 
+	}
+
+	irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt; *edt_func = new irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;(irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;::irtkDistanceTransform3D);
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\n\nNow constructing spatial prior image -&gt; probability map of where scars can lie within the atrial wall... computing euclidean distance transform ... &quot;; 
+	edt_func-&gt;SetInput(&amp;temp);
+	edt_func-&gt;SetOutput(&amp;spatial_prior);
+	edt_func-&gt;Run(); 
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished .. now normalizing and computing probability map values ... &quot;; 
+	spatial_prior.PutMinMax(0,100); 
+//spatial_prior.Write(&quot;_spatial_prior_1.gipl&quot;); 
+//erode.Write(&quot;_erode_in_spatial_prior.gipl&quot;); 
+ptr = spatial_prior.GetPointerToVoxels();
+	er_ptr = erode.GetPointerToVoxels(); 
+/*
+	// find max for normalization and mask with eroded atrium segmentation (lower bound for atrial wall) 
+	for (int i=0;i&lt;spatial_prior.GetNumberOfVoxels() &amp;&amp; i&lt;erode.GetNumberOfVoxels();i++)
+    {
+		if (*er_ptr &lt;= 0)
+		{
+			if (max_edt &lt; *ptr) 
+				max_edt = *ptr; 
+		}
+		else
+			*ptr = 0; 
+
+		ptr++; 
+		er_ptr++;
+	}
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished .. max edt =  &quot; &lt;&lt; max_edt; 
+	// now normalize edt values and inverse square the normalized edt 
+spatial_prior.Write(&quot;_spatial_prior_2.gipl&quot;); */
+	ptr = spatial_prior.GetPointerToVoxels();
+	for (int i=0;i&lt;spatial_prior.GetNumberOfVoxels();i++)
+    {
+		if (*ptr &gt; 0){
+			v = *ptr/100; 
+			*ptr = 1-v; 
+		}
+		//cout &lt;&lt; &quot;v = &quot; &lt;&lt; v &lt;&lt; &quot;, norm = &quot; &lt;&lt; *ptr &lt;&lt; &quot;,\t&quot;;
+		ptr++; 
+	}
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished!\n&quot;; 
+	spatial_prior.Write(filename); 
+
+}
+
+void getInnerBloodpool(irtkGreyImage* erode, irtkRealImage* bp_im, char* filename, double&amp; bp_mean)
+{
+	double n=0;
+	bp_mean=0; 
+	irtkGreyPixel* er_ptr; 
+	irtkRealPixel* bp_ptr; 
+
+	//le_ptr = le_im-&gt;GetPointerToVoxels(); 
+	er_ptr = erode-&gt;GetPointerToVoxels(); 
+	bp_ptr = bp_im-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;erode-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*er_ptr == 0)
+		{
+			*bp_ptr = 0; 
+		}
+		else{
+			bp_mean += *bp_ptr;
+			n++;
+		}
+
+		er_ptr++; bp_ptr++; 
+	}
+
+	bp_mean = bp_mean/n;
+	bp_im-&gt;Write(filename); 
+}
+
+int main(int argc, char *argv[])
+{
+	char* filename1, *filename2, *filename3, *filename4, *filename5, *filename6, *filename7, *filename8;
+	irtkRealPixel *lge_p; 
+	irtkRealImage lge_im,  bp_im, dil_seg_im, prob_map; 
+	irtkGreyImage seg_im, dilation, erosion; 
+	int filetype; 
+	bool automatic_file_output=false; 
+	double bp_mean, scar_model_mean, scar_model_var;
+
+
+	if(argc &lt; 6)
+    {
+		if (argc == 5) 
+		{
+			cout &lt;&lt; &quot;will be using default file names .. \n1) GIPL or\n 2) NIFTI\n &gt;&quot;;
+			cin &gt;&gt; filetype; 
+
+			if (filetype == 1) { filename3 = &quot;_atrial_wall.gipl&quot;; filename4 = &quot;_spatial_prior.gipl&quot;; filename5 = &quot;_blood_pool.gipl&quot;; filename6 = &quot;_dilated_seg.gipl&quot;; filename7 = &quot;_marrouche_aw.gipl&quot;;  filename8 = &quot;_prob_map.gipl&quot;;}
+			else { filename3 = &quot;_atrial_wall.nii&quot;; filename4 = &quot;_spatial_prior.nii&quot;; filename5 = &quot;_blood_pool.nii&quot;; filename6 = &quot;_dilated_seg.nii&quot;; filename7 = &quot;_marrouche_aw.nii&quot;; filename8 = &quot;_prob_map.nii&quot;;} 
+			automatic_file_output = true; 
+		}
+		else { 
+			std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0]
+			&lt;&lt; &quot; \n\t Params:\n\t&lt;late_enhancement_scan&gt;\n\t&lt;la_Segmentation&gt;\n\t&lt;output_atrial_wall_file&gt;\n\t&lt;output_spatial_prior&gt;\n\t&lt;inner_blood_pool&gt;\n\t&lt;output_dilated_seg&gt;\n\t&lt;marrouche_wall&gt;\n\t&lt;prob_scar_map&gt;\n&quot; 
+				&quot;\nOR alternative, letting the program name the files for you, just specify:\n\t&lt;late_enhancement_scan&gt;\n\t&lt;la_Segmentation&gt;\n\t&lt;mean of scar model&gt;\n\t&lt;var of scar model&gt;&quot; &lt;&lt; std::endl;
+			return EXIT_FAILURE;
+		}
+    }
+	
+	
+	filename1  = argv[1];
+	argc--;
+	argv++;
+	filename2 = argv[1];
+	argc--;
+	argv++;
+	scar_model_mean = atof(argv[1]); 
+	argc--; 
+	argv++; 
+	scar_model_var = atof(argv[1]);
+	argc--; 
+	argv++;
+
+	if (!automatic_file_output) {
+		filename3 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename4 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename5 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename6 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename7 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename8 = argv[1]; 
+		argc--; 
+		argv++; 
+	}
+	lge_im.Read(filename1); 
+	seg_im.Read(filename2); 
+
+	lge_p = lge_im.GetPointerToVoxels(); 
+	dilation = seg_im; 
+	erosion = seg_im; 
+	bp_im = lge_im; 
+	prob_map = lge_im;
+	dil_seg_im = lge_im; 
+	cout &lt;&lt; &quot;processing started .. &quot;;
+	
+	getAtrialWall(&amp;lge_im, &amp;seg_im, &amp;dilation, &amp;erosion, &amp;dil_seg_im, 5, 5);				// MUST NOT COMMENT OUT AS THIS GENERATES THE DILATION AND EROSION IMAGES 
+	getAtrialWall_usingEDTTransforms(&amp;lge_im, &amp;seg_im, &amp;dil_seg_im, 30, filename3);
+
+	// This is the Nasir Marrouche wall (only 2 pixels thick) 
+	getAtrialWall_usingEDTTransforms(&amp;lge_im, &amp;seg_im, &amp;dil_seg_im, 2, filename7);
+
+	cout &lt;&lt; &quot;atrial wall computation finished .. &quot;; 
+	constructSpatialPriorImage(&amp;dilation, &amp;erosion, filename4); 
+	cout &lt;&lt; &quot;.. and finally the blood pool .. &quot;;
+	getInnerBloodpool(&amp;erosion, &amp;bp_im, filename5, bp_mean); cout &lt;&lt; &quot;\nblood pool mean = &quot; &lt;&lt; bp_mean &lt;&lt; endl;
+	getScarProbabilityMap(&amp;lge_im, &amp;prob_map, bp_mean, scar_model_mean, sqrt(scar_model_var), filename8);
+
+	if (filetype == 1) { lge_im.Write(&quot;_le.gipl&quot;);  seg_im.Write(&quot;_gad_seg.gipl&quot;); dil_seg_im.Write(&quot;_dilated_seg.gipl&quot;); }
+	else { lge_im.Write(&quot;_le.nii&quot;);  seg_im.Write(&quot;_gad_seg.nii&quot;); dil_seg_im.Write(&quot;_dilated_seg.gipl&quot;); } 
+}
+
+</pre>
+<a name="Automatic_atrial_wall_generator_as_in_Marrouche" id="Automatic_atrial_wall_generator_as_in_Marrouche"></a><h2> <span class="mw-headline"> Automatic atrial wall generator as in Marrouche </span></h2>
+<pre>
+#include &quot;irtkImage.h&quot;
+#include &quot;vtkPolyData.h&quot;
+#include &quot;vtkSmartPointer.h&quot;
+#include &quot;vtkIdList.h&quot;
+#include &lt;irtkImageFunction.h&gt;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkCellData.h&quot;
+#include &quot;vtkBoxWidget.h&quot;
+#include &quot;vtkPlanes.h&quot;
+#include &quot;irtkDilation.h&quot;
+#include &quot;irtkErosion.h&quot;
+#include &quot;irtkGaussian.h&quot;
+#include &quot;irtkEMClassification.h&quot;
+#include &lt;irtkEuclideanDistanceTransform.h&gt;
+
+#include &lt;vector&gt;
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+#include &quot;vtkPolyDataMapper.h&quot;
+#include &quot;vtkRenderer.h&quot;
+#include &lt;vtkRendererCollection.h&gt;
+#include &quot;vtkMarchingCubes.h&quot;
+#include &quot;vtkRenderWindow.h&quot;
+#include &quot;vtkPolyDataNormals.h&quot;
+#include &quot;vtkImageCast.h&quot;
+#include &quot;vtkStructuredPoints.h&quot;
+#include &quot;vtkSmoothPolyDataFilter.h&quot;
+#include &quot;vtkDecimatePro.h&quot;
+#include &quot;vtkProperty.h&quot;
+#include &lt;fstream&gt;
+#include &lt;vtkLookupTable.h&gt;
+
+#define _IS_DEBUG 1
+#define PI 3.14159
+
+/*
+*	April 2011: For each pixel in le image, get the probability of being scar from the scar:BP ratio gaussian model
+*	m_bp - blood pool mean
+*/
+void getScarProbabilityMap(irtkRealImage *scar_image, irtkRealImage* prob_map, double m_bp, double mean, double sigma, char* filename)
+{
+	irtkRealPixel* s_p; 
+	irtkRealPixel* m_p; 
+	irtkGaussian* scarRatioModel =new irtkGaussian();
+	scarRatioModel-&gt;Initialise(mean*m_bp, sigma*sigma*m_bp*m_bp); 
+
+	s_p = scar_image-&gt;GetPointerToVoxels(); 
+	m_p = prob_map-&gt;GetPointerToVoxels(); 
+
+	// get max to normalize 
+	for (int i=0;i&lt;scar_image-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*s_p &gt; 0) 
+		{
+			*m_p = scarRatioModel-&gt;Evaluate(*s_p) * sigma * sqrt(2*PI); 
+			*m_p = *m_p * 1e5;
+			//cout &lt;&lt; *s_p/m_bp &lt;&lt; &quot;=&quot; &lt;&lt; *m_p &lt;&lt; &quot;\t&quot;;
+		}
+		else 
+			*m_p = 0;
+
+		s_p++; m_p++; 
+	}
+
+	prob_map-&gt;Write(filename); 
+
+}
+ 
+void getAtrialWall_usingEDTTransforms(irtkRealImage *scar_image, irtkGreyImage* mra_image, irtkRealImage* dilate_im, int width_wall, char* filename)
+{
+	irtkGreyPixel *m_p; 
+	irtkRealPixel *t_p; 
+	irtkRealImage temp, temp2; 
+	irtkRealImage edtInsideGadSeg_im, edtOutsideGadSeg_im, atrial_wall_im; 
+
+	temp =* mra_image; 
+	temp2 =* mra_image; 
+	edtInsideGadSeg_im =* mra_image; 
+	edtOutsideGadSeg_im =* mra_image; 
+	atrial_wall_im =* scar_image; 
+
+	m_p = mra_image-&gt;GetPointerToVoxels(); 
+	t_p = temp.GetPointerToVoxels(); 
+
+	// invert the gad segmentation 
+	for (int i=0;i&lt;mra_image-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*t_p &gt; 0)
+			*t_p = 0;
+		else 
+			*t_p = 1;
+		t_p++; 
+	}
+	
+	irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt; *edt_func = 
+		new irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;(irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;::irtkDistanceTransform3D);
+	edt_func-&gt;SetInput(&amp;temp);
+	edt_func-&gt;SetOutput(&amp;edtInsideGadSeg_im);
+	edt_func-&gt;Run();
+	
+	edt_func-&gt;SetInput(&amp;temp2); 
+	edt_func-&gt;SetOutput(&amp;edtOutsideGadSeg_im); 
+	edt_func-&gt;Run(); 
+
+	irtkRealPixel *i_p, *o_p, *a_p, *dil_p; 
+	i_p = edtInsideGadSeg_im.GetPointerToVoxels(); 
+	o_p = edtOutsideGadSeg_im.GetPointerToVoxels(); 
+	a_p = atrial_wall_im.GetPointerToVoxels(); 
+	dil_p = dilate_im-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;edtInsideGadSeg_im.GetNumberOfVoxels();i++) 
+	{
+		if (*i_p &gt; width_wall) { 
+			*a_p = 0; 
+		} 
+		if (*o_p &gt; width_wall) { 
+			*a_p = 0;		// for atrial wall 
+			*dil_p = 0;		// for dilated seg
+		} 
+		i_p++; o_p++; a_p++; dil_p++;
+	}
+	atrial_wall_im.Write(filename); 
+	
+
+}
+
+
+void getAtrialWall(irtkRealImage *scar_image, irtkGreyImage* mra_image, irtkGreyImage* dilate_im, irtkGreyImage* erosion_im, irtkRealImage* dilated_seg_im, 
+				   int i_dilation, int i_erosion)
+{
+	// simply mra image minus scar image 
+	// this makes an important assumption that mra image is smaller than scar image 
+	// interms of the size of the atrial chamber
+	// this assumption may change depending on the circumstances of the patient's breating and scan times
+	irtkRealImage atrial_wall; 
+	irtkGreyImage dilate, erode, bin_image, temp;
+
+	double late_gad_inty;
+	int dilate_iterations = i_dilation;
+	int erode_iterations = i_erosion;
+
+	cout &lt;&lt; &quot;.... Finding memory to store the image .. &quot;; 
+	atrial_wall =* scar_image; 
+	bin_image =* mra_image; 
+
+	cout &lt;&lt; &quot;binarizing .. &quot; &lt;&lt; endl; 
+	// binarize the atrial geometry segmentation 
+	for (int i=0;i&lt;bin_image.GetX();i++) {
+		for (int j=0;j&lt;bin_image.GetY();j++) {
+			for (int k=0;k&lt;bin_image.GetZ();k++) {
+				if (bin_image.Get(i,j,k) &gt; 0)
+					bin_image.Put(i,j,k, 1); 
+				else 
+					bin_image.Put(i,j,k, 0); 
+
+ 			}
+		}
+	}
+	cout &lt;&lt; &quot;complete .. &quot; &lt;&lt; endl; 
+
+
+	temp = bin_image; 
+	dilate = bin_image; 
+	erode = bin_image; 
+
+	
+	irtkDilation&lt;irtkGreyPixel&gt; dilation; 
+	irtkErosion&lt;irtkGreyPixel&gt; erosion; 
+	erosion.SetInput(&amp;erode); 
+	erosion.SetOutput(&amp;erode);
+	
+	cout &lt;&lt; &quot;\n\nwill now compute erosions and dilations of the la segmentation to estimate atrial wall ... &quot; &lt;&lt; endl;
+	for (int i=0;i&lt;erode_iterations;i++)
+	{
+		cout &lt;&lt; &quot;eroding .. &quot; &lt;&lt; i &lt;&lt; endl;
+		erosion.Run();						// we do erosion followed by dilation, however, we dont use the same number of iterations for
+	}										// each. 
+//erode.Write(&quot;erosion.nii&quot;); 
+	dilation.SetInput(&amp;dilate);
+	dilation.SetOutput(&amp;dilate);
+	
+	for (int i=0;i&lt;dilate_iterations;i++)
+	{
+		cout &lt;&lt; &quot;dilating .. &quot; &lt;&lt; i &lt;&lt; endl;
+		dilation.Run();
+	}
+//dilate.Write(&quot;dilation.nii&quot;);
+	
+
+	for (int i=0;i&lt;temp.GetX();i++) {
+			for (int j=0;j&lt;temp.GetY();j++) {
+				for (int k=0;k&lt;temp.GetZ();k++) { 
+					if (i &lt; bin_image.GetX() &amp;&amp; j &lt; bin_image.GetY() &amp;&amp; k &lt; bin_image.GetZ() &amp;&amp; 
+						i &lt; dilate.GetX() &amp;&amp; j &lt; dilate.GetY() &amp;&amp; k &lt; dilate.GetZ())
+					{
+						if (bin_image.Get(i,j,k) &gt; 0 &amp;&amp; erode.Get(i,j,k) &lt;= 0)
+							temp.Put(i,j,k, 1); 
+						else if (dilate.Get(i,j,k) &gt; 0 &amp;&amp; bin_image.Get(i,j,k) &lt;= 0)
+							temp.Put(i,j,k, 1); 
+						else 
+							temp.Put(i,j,k, 0); 
+					}
+					
+				}
+			}
+	}
+	cout &lt;&lt; &quot;complete, now some housekeeping ... &quot; &lt;&lt; endl; 
+	
+//temp.Write(&quot;wall_before_masking.gipl&quot;); 
+	for (int i=0;i&lt;scar_image-&gt;GetX();i++) {
+		for (int j=0;j&lt;scar_image-&gt;GetY();j++) {
+			for (int k=0;k&lt;scar_image-&gt;GetZ();k++) {
+				// the places where scar image has intensity and mra doesn't is classified as wall
+				if (i &lt; temp.GetX() &amp;&amp; j &lt; temp.GetY() &amp;&amp; k &lt; temp.GetZ() &amp;&amp; 
+					i &lt; atrial_wall.GetX() &amp;&amp; j &lt; atrial_wall.GetY() &amp;&amp; k &lt; atrial_wall.GetZ()) 
+				{
+						if (scar_image-&gt;Get(i,j,k) &gt; 0 &amp;&amp; temp.Get(i,j,k) == 1)
+						{
+							late_gad_inty = scar_image-&gt;Get(i,j,k);
+							atrial_wall.Put(i,j,k, late_gad_inty); 
+						}
+						else
+							atrial_wall.Put(i,j,k, 0); 
+				}
+			}
+		}
+	}
+
+	// also have to generate the dilated seg image 
+	irtkRealPixel *dilatedSeg_p, *scar_p; 
+	irtkGreyPixel *dilate_p; 
+	scar_p = scar_image-&gt;GetPointerToVoxels(); 
+	dilatedSeg_p = dilated_seg_im-&gt;GetPointerToVoxels(); 
+	dilate_p = dilate.GetPointerToVoxels(); 
+	
+	
+	for (int i=0;i&lt;dilated_seg_im-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*dilate_p &gt; 0) { 
+			*dilatedSeg_p = *scar_p; 
+		}
+		else
+		{
+			*dilatedSeg_p = 0;
+		}
+		dilatedSeg_p++; scar_p++; dilate_p++;
+	}	
+	
+		
+
+	//atrial_wall.Write(filename);
+	*dilate_im = dilate; 
+	*erosion_im = erode; 
+	//dilate_im-&gt;Write(&quot;_dilate_in_get_atrial_wall.gipl&quot;);
+	//erosion_im-&gt;Write(&quot;_erode_in_get_atrial_wall.gipl&quot;);
+	
+}
+
+// must be called after a call to getAtrialWall 
+void constructSpatialPriorImage(irtkGreyImage* dilate, irtkGreyImage* eroded, char* filename)
+{
+	double max_edt=-1,v; 
+	irtkRealPixel *ptr; 
+	irtkGreyPixel *er_ptr; 
+	irtkRealImage temp; 
+	irtkRealImage spatial_prior; 
+	irtkGreyImage erode; 
+	
+	temp =* dilate; 
+	spatial_prior =* dilate;
+	erode =* eroded; 
+	cout &lt;&lt; &quot;\n\nstarting to construct spatial prior image .. &quot;; 
+	ptr = temp.GetPointerToVoxels();
+//temp.Write(&quot;_temp.gipl&quot;); 
+	for (int i=0;i&lt;temp.GetNumberOfVoxels();i++)
+	{
+		if (*ptr &gt; 0)
+			*ptr = 0;
+		else 
+			*ptr = 1;
+		ptr++; 
+	}
+
+	irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt; *edt_func = new irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;(irtkEuclideanDistanceTransform&lt;irtkRealPixel&gt;::irtkDistanceTransform3D);
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\n\nNow constructing spatial prior image -&gt; probability map of where scars can lie within the atrial wall... computing euclidean distance transform ... &quot;; 
+	edt_func-&gt;SetInput(&amp;temp);
+	edt_func-&gt;SetOutput(&amp;spatial_prior);
+	edt_func-&gt;Run(); 
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished .. now normalizing and computing probability map values ... &quot;; 
+	spatial_prior.PutMinMax(0,100); 
+//spatial_prior.Write(&quot;_spatial_prior_1.gipl&quot;); 
+//erode.Write(&quot;_erode_in_spatial_prior.gipl&quot;); 
+ptr = spatial_prior.GetPointerToVoxels();
+	er_ptr = erode.GetPointerToVoxels(); 
+/*
+	// find max for normalization and mask with eroded atrium segmentation (lower bound for atrial wall) 
+	for (int i=0;i&lt;spatial_prior.GetNumberOfVoxels() &amp;&amp; i&lt;erode.GetNumberOfVoxels();i++)
+    {
+		if (*er_ptr &lt;= 0)
+		{
+			if (max_edt &lt; *ptr) 
+				max_edt = *ptr; 
+		}
+		else
+			*ptr = 0; 
+
+		ptr++; 
+		er_ptr++;
+	}
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished .. max edt =  &quot; &lt;&lt; max_edt; 
+	// now normalize edt values and inverse square the normalized edt 
+spatial_prior.Write(&quot;_spatial_prior_2.gipl&quot;); */
+	ptr = spatial_prior.GetPointerToVoxels();
+	for (int i=0;i&lt;spatial_prior.GetNumberOfVoxels();i++)
+    {
+		if (*ptr &gt; 0){
+			v = *ptr/100; 
+			*ptr = 1-v; 
+		}
+		//cout &lt;&lt; &quot;v = &quot; &lt;&lt; v &lt;&lt; &quot;, norm = &quot; &lt;&lt; *ptr &lt;&lt; &quot;,\t&quot;;
+		ptr++; 
+	}
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;finished!\n&quot;; 
+	spatial_prior.Write(filename); 
+
+}
+
+void getInnerBloodpool(irtkGreyImage* erode, irtkRealImage* bp_im, char* filename, double&amp; bp_mean)
+{
+	double n=0;
+	bp_mean=0; 
+	irtkGreyPixel* er_ptr; 
+	irtkRealPixel* bp_ptr; 
+
+	//le_ptr = le_im-&gt;GetPointerToVoxels(); 
+	er_ptr = erode-&gt;GetPointerToVoxels(); 
+	bp_ptr = bp_im-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;erode-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*er_ptr == 0)
+		{
+			*bp_ptr = 0; 
+		}
+		else{
+			bp_mean += *bp_ptr;
+			n++;
+		}
+
+		er_ptr++; bp_ptr++; 
+	}
+
+	bp_mean = bp_mean/n;
+	bp_im-&gt;Write(filename); 
+}
+
+int main(int argc, char *argv[])
+{
+	char* filename1, *filename2, *filename3, *filename4, *filename5, *filename6, *filename7, *filename8;
+	irtkRealPixel *lge_p; 
+	irtkRealImage lge_im,  bp_im, dil_seg_im, prob_map; 
+	irtkGreyImage seg_im, dilation, erosion; 
+	int filetype; 
+	bool automatic_file_output=false; 
+	double bp_mean, scar_model_mean, scar_model_var;
+
+
+	if(argc &lt; 6)
+    {
+		if (argc == 5) 
+		{
+			cout &lt;&lt; &quot;will be using default file names .. \n1) GIPL or\n 2) NIFTI\n &gt;&quot;;
+			cin &gt;&gt; filetype; 
+
+			if (filetype == 1) { filename3 = &quot;_atrial_wall.gipl&quot;; filename4 = &quot;_spatial_prior.gipl&quot;; filename5 = &quot;_blood_pool.gipl&quot;; filename6 = &quot;_dilated_seg.gipl&quot;; filename7 = &quot;_marrouche_aw.gipl&quot;;  filename8 = &quot;_prob_map.gipl&quot;;}
+			else { filename3 = &quot;_atrial_wall.nii&quot;; filename4 = &quot;_spatial_prior.nii&quot;; filename5 = &quot;_blood_pool.nii&quot;; filename6 = &quot;_dilated_seg.nii&quot;; filename7 = &quot;_marrouche_aw.nii&quot;; filename8 = &quot;_prob_map.nii&quot;;} 
+			automatic_file_output = true; 
+		}
+		else { 
+			std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0]
+			&lt;&lt; &quot; \n\t Params:\n\t&lt;late_enhancement_scan&gt;\n\t&lt;la_Segmentation&gt;\n\t&lt;output_atrial_wall_file&gt;\n\t&lt;output_spatial_prior&gt;\n\t&lt;inner_blood_pool&gt;\n\t&lt;output_dilated_seg&gt;\n\t&lt;marrouche_wall&gt;\n\t&lt;prob_scar_map&gt;\n&quot; 
+				&quot;\nOR alternative, letting the program name the files for you, just specify:\n\t&lt;late_enhancement_scan&gt;\n\t&lt;la_Segmentation&gt;\n\t&lt;mean of scar model&gt;\n\t&lt;var of scar model&gt;&quot; &lt;&lt; std::endl;
+			return EXIT_FAILURE;
+		}
+    }
+	
+	
+	filename1  = argv[1];
+	argc--;
+	argv++;
+	filename2 = argv[1];
+	argc--;
+	argv++;
+	scar_model_mean = atof(argv[1]); 
+	argc--; 
+	argv++; 
+	scar_model_var = atof(argv[1]);
+	argc--; 
+	argv++;
+
+	if (!automatic_file_output) {
+		filename3 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename4 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename5 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename6 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename7 = argv[1]; 
+		argc--; 
+		argv++; 
+		filename8 = argv[1]; 
+		argc--; 
+		argv++; 
+	}
+	lge_im.Read(filename1); 
+	seg_im.Read(filename2); 
+
+	lge_p = lge_im.GetPointerToVoxels(); 
+	dilation = seg_im; 
+	erosion = seg_im; 
+	bp_im = lge_im; 
+	prob_map = lge_im;
+	dil_seg_im = lge_im; 
+	cout &lt;&lt; &quot;processing started .. &quot;;
+	
+	getAtrialWall(&amp;lge_im, &amp;seg_im, &amp;dilation, &amp;erosion, &amp;dil_seg_im, 5, 5);				// MUST NOT COMMENT OUT AS THIS GENERATES THE DILATION AND EROSION IMAGES 
+	getAtrialWall_usingEDTTransforms(&amp;lge_im, &amp;seg_im, &amp;dil_seg_im, 30, filename3);
+
+	// This is the Nasir Marrouche wall (only 2 pixels thick) 
+	getAtrialWall_usingEDTTransforms(&amp;lge_im, &amp;seg_im, &amp;dil_seg_im, 2, filename7);
+
+	cout &lt;&lt; &quot;atrial wall computation finished .. &quot;; 
+	constructSpatialPriorImage(&amp;dilation, &amp;erosion, filename4); 
+	cout &lt;&lt; &quot;.. and finally the blood pool .. &quot;;
+	getInnerBloodpool(&amp;erosion, &amp;bp_im, filename5, bp_mean); cout &lt;&lt; &quot;\nblood pool mean = &quot; &lt;&lt; bp_mean &lt;&lt; endl;
+	getScarProbabilityMap(&amp;lge_im, &amp;prob_map, bp_mean, scar_model_mean, sqrt(scar_model_var), filename8);
+
+	if (filetype == 1) { lge_im.Write(&quot;_le.gipl&quot;);  seg_im.Write(&quot;_gad_seg.gipl&quot;); dil_seg_im.Write(&quot;_dilated_seg.gipl&quot;); }
+	else { lge_im.Write(&quot;_le.nii&quot;);  seg_im.Write(&quot;_gad_seg.nii&quot;); dil_seg_im.Write(&quot;_dilated_seg.gipl&quot;); } 
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 20/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:116-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124347 -->
+<div class="printfooter">
+Retrieved from "<a href="indexdbbc.html?title=Pre_computation_for_Graph_cuts">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Pre_computation_for_Graph_cuts</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexdbbc.html?title=Pre_computation_for_Graph_cuts" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexdb68.html?title=Talk:Pre_computation_for_Graph_cuts&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index85f5.html?title=Pre_computation_for_Graph_cuts&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexe997.html?title=Pre_computation_for_Graph_cuts&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index691a.html?title=Special:UserLogin&amp;returnto=Pre_computation_for_Graph_cuts" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexbea4.html?title=Special:WhatLinksHere/Pre_computation_for_Graph_cuts" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index0d0a.html?title=Special:RecentChangesLinked/Pre_computation_for_Graph_cuts" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexb090.html?title=Pre_computation_for_Graph_cuts&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index61a2.html?title=Pre_computation_for_Graph_cuts&amp;oldid=1214" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 13 February 2012, at 18:33.</li>
+					<li id="viewcount">This page has been accessed 1,892 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.530 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Pre_computation_for_Graph_cuts&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:18:43 GMT -->
+</html>

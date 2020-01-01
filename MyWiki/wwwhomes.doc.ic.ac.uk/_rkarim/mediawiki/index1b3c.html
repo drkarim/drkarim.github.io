@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=VTK_surface_rendering&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="VTK surface rendering" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>VTK surface rendering - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "VTK_surface_rendering";
+		var wgTitle = "VTK surface rendering";
+		var wgAction = "view";
+		var wgArticleId = "352";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2154;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-VTK_surface_rendering skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">VTK surface rendering</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<ul><li> Usage:
+</li></ul>
+<pre>
+DiaplayVTK.exe &lt;vtkshell&gt;
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline">Code</span></h2>
+<pre>
+
+#include &quot;vtkSmartPointer.h&quot;
+#include &quot;vtkSphereSource.h&quot;
+#include &quot;vtkPolyDataMapper.h&quot;
+#include &quot;vtkActor.h&quot;
+#include &quot;vtkRenderer.h&quot;
+#include &quot;vtkRenderWindow.h&quot;
+#include &quot;vtkRenderWindowInteractor.h&quot;
+#include &quot;vtkProperty.h&quot;
+#include &quot;vtkCamera.h&quot;
+#include &quot;vtkLight.h&quot;
+#include &quot;vtkLookupTable.h&quot;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkPolyDataReader.h&quot;
+#include &quot;vtkPointData.h&quot;
+#include &quot;vtkInteractorStyleTrackballCamera.h&quot;
+#include &quot;vtkScalarBarActor.h&quot;
+
+int main(int argc, char **argv)
+{
+	double max_scalar=-1,min_scalar = 1e10,v; 
+	vtkSmartPointer&lt;vtkFloatArray&gt; scalars;
+	if (argc &lt; 2)
+	{
+		cout &lt;&lt; &quot;displayVTK.exe &lt;shellvtk&gt;&quot;&lt;&lt; endl; 
+		exit(1);
+	}
+
+	vtkSmartPointer&lt;vtkPolyData&gt; polyData = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New(); 
+	reader-&gt;SetFileName(argv[1]); 
+	 reader-&gt;Update(); 
+	 polyData = reader-&gt;GetOutput();
+	vtkSmartPointer&lt;vtkPolyDataMapper&gt; shellMapper = vtkSmartPointer&lt;vtkPolyDataMapper&gt;::New();
+	shellMapper-&gt;SetInput(reader-&gt;GetOutput());
+	shellMapper-&gt;SetScalarModeToUsePointData();
+	
+//	shellMapper-&gt;SetColorModeToMapScalars();
+  
+    vtkSmartPointer&lt;vtkActor&gt; shellActor = vtkSmartPointer&lt;vtkActor&gt;::New();
+	shellActor-&gt;SetMapper(shellMapper); 
+
+	scalars =  vtkFloatArray::SafeDownCast(polyData-&gt;GetPointData()-&gt;GetScalars()); 
+	for (int i=0;i&lt;polyData-&gt;GetNumberOfPoints();i++)			// running through each polygon point 
+	{
+		v = scalars-&gt;GetTuple1(i);
+		
+		if (max_scalar&lt;v) 
+			max_scalar = v; 
+		else if (min_scalar &gt; v &amp;&amp; v &gt; 0) 
+			min_scalar = v;
+	}
+
+	cout &lt;&lt; &quot;Min scalar = &quot; &lt;&lt; min_scalar &lt;&lt; &quot;\nMax scalar = &quot; &lt;&lt; max_scalar &lt;&lt;endl;
+	
+	shellActor-&gt;GetProperty()-&gt;SetAmbient(0.2); 
+	shellActor-&gt;GetProperty()-&gt;SetDiffuse(0.5); 
+	shellActor-&gt;GetProperty()-&gt;SetSpecular(1.0); 
+	shellActor-&gt;GetProperty()-&gt;SetSpecularPower(90.0); 
+	shellActor-&gt;GetProperty()-&gt;SetInterpolationToPhong();
+	shellActor-&gt;GetProperty()-&gt;SetSpecularColor(1,1,1);
+	//shellActor-&gt;GetProperty()-&gt;EdgeVisibilityOn();
+	
+	//this line is very important and specifies the range of scalars that will be mapped 
+	shellMapper-&gt;SetScalarRange(min_scalar,max_scalar);
+
+
+	vtkSmartPointer&lt;vtkLookupTable&gt; lut =vtkSmartPointer&lt;vtkLookupTable&gt;::New();
+	lut-&gt;SetNumberOfColors(256);
+	//lut-&gt;SetTableRange(min_scalar, max_scalar);
+	lut-&gt;SetHueRange (0.16, 0.0);
+	lut-&gt;SetSaturationRange (1.0, 1.0);
+	lut-&gt;SetValueRange (1.0, 1.0);
+	lut-&gt;Build();
+	shellMapper-&gt;SetLookupTable(lut);
+
+	vtkSmartPointer&lt;vtkScalarBarActor&gt; scalarBar = vtkSmartPointer&lt;vtkScalarBarActor&gt;::New();
+	scalarBar-&gt;SetLookupTable(lut);
+	scalarBar-&gt;SetTitle(&quot;scalars&quot;);
+	scalarBar-&gt;SetWidth(0.08); 
+	scalarBar-&gt;SetHeight(1.0); 
+	scalarBar-&gt;SetDisplayPosition(8,8); 
+	
+
+
+	
+  vtkSmartPointer&lt;vtkRenderer&gt; ren1 = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+  vtkSmartPointer&lt;vtkRenderWindow&gt; renWin = vtkSmartPointer&lt;vtkRenderWindow&gt;::New();
+  renWin-&gt;AddRenderer(ren1);
+  vtkSmartPointer&lt;vtkRenderWindowInteractor&gt; iren = vtkSmartPointer&lt;vtkRenderWindowInteractor&gt;::New();
+  iren-&gt;SetRenderWindow(renWin);
+  ren1-&gt;AddActor2D(scalarBar);
+
+  // Add the actors to the renderer, set the background and size.
+  //
+  ren1-&gt;AddActor(shellActor);
+ 
+  ren1-&gt;SetBackground(0,0,0);
+  renWin-&gt;SetSize(400, 200);
+
+  vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt; interactorStyle1 = vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt;::New();
+
+  // We want to eliminate perspective effects on the apparent lighting.
+  // Parallel camera projection will be used. To zoom in parallel projection
+  // mode, the ParallelScale is set.
+  //
+  ren1-&gt;GetActiveCamera()-&gt;SetFocalPoint(0,0,0);
+  ren1-&gt;GetActiveCamera()-&gt;SetPosition(0,0,1);
+  ren1-&gt;GetActiveCamera()-&gt;SetViewUp(0,1,0);
+  ren1-&gt;GetActiveCamera()-&gt;ParallelProjectionOn();
+  ren1-&gt;ResetCamera();
+  ren1-&gt;GetActiveCamera()-&gt;SetParallelScale(1.5);
+  
+  
+  // This starts the event loop and invokes an initial render.
+  //
+  iren-&gt;SetInteractorStyle(interactorStyle1);
+  iren-&gt;Initialize();
+  iren-&gt;Start();
+
+  return EXIT_SUCCESS;
+}
+
+
+
+
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:352-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180311181027 -->
+<div class="printfooter">
+Retrieved from "<a href="indexfda6.html?title=VTK_surface_rendering">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=VTK_surface_rendering</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexfda6.html?title=VTK_surface_rendering" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexdd22.html?title=Talk:VTK_surface_rendering&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index73af.html?title=VTK_surface_rendering&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index52e3.html?title=VTK_surface_rendering&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index2339.html?title=Special:UserLogin&amp;returnto=VTK_surface_rendering" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index0681.html?title=Special:WhatLinksHere/VTK_surface_rendering" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index245a-2.html?title=Special:RecentChangesLinked/VTK_surface_rendering" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index1b3c.html?title=VTK_surface_rendering&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexc27b.html?title=VTK_surface_rendering&amp;oldid=2154" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 21 June 2013, at 11:17.</li>
+					<li id="viewcount">This page has been accessed 127 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.337 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=VTK_surface_rendering&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:00 GMT -->
+</html>

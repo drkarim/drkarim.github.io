@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Region_rejection&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:19:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Region rejection" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Region rejection - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Region_rejection";
+		var wgTitle = "Region rejection";
+		var wgAction = "view";
+		var wgArticleId = "270";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1859;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Region_rejection skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Region rejection</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><i>Keywords: scar3d, region-rejection</i>
+</p>
+<a name="Instructions" id="Instructions"></a><h2> <span class="mw-headline"> Instructions </span></h2>
+<p>A batch script for post-processing would look like this: 
+</p>
+<pre>
+for&nbsp;%%f in (_gc*.gipl) do (
+ threshold&nbsp;%%f temp_1.gipl 0.5 
+ magic2 -i1 temp_1.gipl -o temp_2.gipl --concomp x
+ 
+ REM this is the region refinement step 
+ region_refine -i1 _atrial_wall.gipl -i2 temp_2.gipl -o temp_3.gipl --loc x -t 2
+ 
+ closing temp_3.gipl _gc_seg_out_final.gipl 
+ del temp_1.gipl
+ del temp_2.gipl
+ del temp_3.gipl 
+ REM del temp_4.gipl
+)
+</pre>
+<p>The script runs through the selected _gc_seg_out_XX file in the folder. There must only be one such file. Also _atrial_wall image should be present. 
+Note the region_refine.exe that gets invoked to refine the region. The code is below and the binaries are available under my_binaries by the name region_refine.exe 
+</p>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline">Code</span></h2>
+<pre>
+#include &quot;rk_test2.h&quot;
+
+// some global vars
+int* pixelsVisited;
+int* thresholded_index;
+vector&lt;double&gt; i_ctr; 
+
+int getIndex(int x, int y, int z, irtkGreyImage* i) { return (z*i-&gt;GetX()*i-&gt;GetY())+x+(i-&gt;GetX()*y); }
+int getZOrd(int index, irtkGreyImage* i) { return index/(i-&gt;GetX()*i-&gt;GetY()); }
+int getYOrd(int index, int z, irtkGreyImage* i) { return (index-z*i-&gt;GetX()*i-&gt;GetY())/(i-&gt;GetX()); }
+int getXOrd(int index, int z, int y, irtkGreyImage* i) { return (index-z*(i-&gt;GetX())*(i-&gt;GetY()))-(y*(i-&gt;GetX())); }
+
+
+/*
+*	measure = 1 , will return the mean 
+*	measure = 2 , will return the std. deviation (but must provide the mean) 
+*/
+static double getStats(int measure, double mean)
+{
+	double sum=0, max=-1, t; 
+	double size = i_ctr.size(); 
+
+	if (measure == 1)			// reutnr mean 
+	{
+		for (int i=0;i&lt;size;i++)
+		{
+			sum+=i_ctr[i]; 
+		}
+		return sum/size;			
+	}
+	if (measure == 2)			// return stdev
+	{
+		for (int i=0;i&lt;size;i++)
+		{
+			t = i_ctr[i]; 
+			sum += ((t-mean)*(t-mean));
+		}
+		return sqrt(sum / size);
+	}
+}
+
+
+// (a,b,c) - neighbor
+// (x,y,z) - current voxel (or seed)
+
+
+bool regionGrowingCriteria(int a, int b, int c, int x, int y, int z, double T1, double lowT, double highT, irtkGreyImage* image)
+{
+	if (T1 &gt;= 0)
+		return ((abs(image-&gt;Get(a,b,c) - image-&gt;Get(x,y,z))) &lt; T1);
+	else 
+		return (image-&gt;Get(a,b,c) &gt;= lowT &amp;&amp; image-&gt;Get(a,b,c) &lt; highT);
+}
+
+int* regionGrow(int seedX, int seedY, int seedZ, 
+				double T1, double lowT, double highT, irtkGreyImage* image)
+{
+	// region growing using a non-recursive approach
+	// http://www.csd.uwo.ca/courses/CS037a/Assignment3/RegionGrow.gif
+	int index=0; 
+	int x=0, y=0, z=0, maxX=0, maxY=0, maxZ=0, minX=0, minY=0, minZ=0;
+	bool boxIsOn = false;
+	stack&lt;int&gt; point_stack; 
+	index = getIndex(seedX, seedY, seedZ, image);
+	point_stack.push(index);
+	pixelsVisited[index] = 1; 
+	maxX = image-&gt;GetX();
+	maxY = image-&gt;GetY();
+	maxZ = image-&gt;GetZ();
+
+	
+	// initialize pixelsVistedArray
+	
+	for (int i=0;i&lt;((maxX)*(maxY)*(maxZ));i++) { 
+		pixelsVisited[i] = 0;
+	}
+
+	while (!point_stack.empty())
+	{
+		index = point_stack.top();
+		point_stack.pop();
+		z = getZOrd(index, image);
+		y = getYOrd(index, z, image);
+		x = getXOrd(index, z, y, image); 
+
+		// get neighbors of point popped
+		if (x-1 &gt; minX)
+		{			
+			index = getIndex(x-1, y, z, image); 
+			if ( regionGrowingCriteria(x-1,y,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (x+1 &lt; maxX)
+		{
+			index = getIndex(x+1, y, z, image); 
+			if (regionGrowingCriteria(x+1,y,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (y-1 &gt; minY)
+		{
+			
+			index = getIndex(x, y-1, z, image); 
+			if ( regionGrowingCriteria(x,y-1,z,x,y,z,T1,lowT,highT, image) &amp;&amp;  pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (y+1 &lt; maxY)
+		{
+			index = getIndex(x, y+1, z, image); 
+			if (regionGrowingCriteria(x,y+1,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (z-1 &gt; minZ)
+		{
+			index = getIndex(x, y, z-1, image); 
+			if (regionGrowingCriteria(x,y,z-1,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (z+1 &lt; maxZ)
+		{
+			index = getIndex(x, y, z+1, image); 
+			if (regionGrowingCriteria(x,y,z+1,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		} 
+		// copied till here
+	}	
+	
+
+	return pixelsVisited;
+}
+
+
+void setVisitedPixelsOn(int* pixelVisitedArray, irtkGreyImage* img)
+{
+	int x,y,z ,maxX, maxY, maxZ; 
+	maxX = img-&gt;GetX(); 
+	maxY = img-&gt;GetY();
+	maxZ = img-&gt;GetZ(); 
+
+	for (int i=0;i&lt;((maxX)*(maxY)*(maxZ));i++)
+	{
+		// get x,y and z coordinates of volume
+		z = getZOrd(i, img);
+		y = getYOrd(i, z, img);
+		x = getXOrd(i, z, y, img);
+		
+		// different scalar for detected regions
+		if (pixelVisitedArray[i] == 2) 
+            img-&gt;Put(x,y,z,1);
+	}
+	//write_image.Write(&quot;segmented_brain.gipl&quot;);
+}
+
+static void truncateAtrialWallToPrepareForRegionGrow(irtkGreyImage* cnxComp_img, irtkGreyImage* aw_img)
+{
+	irtkGreyPixel* aw, *cnx;
+
+	aw = aw_img-&gt;GetPointerToVoxels(); 
+	cnx = cnxComp_img-&gt;GetPointerToVoxels();
+	//new_aw_img = new_aw_img-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;cnxComp_img-&gt;GetNumberOfVoxels();i++)
+	{
+		if (thresholded_index[*cnx]==1)
+			*aw = 0;
+		cnx++; 
+		aw++;
+	}
+}
+
+static void LocateCandidateSeedsRegionGrowFromCnxComponent(irtkGreyImage* cnxComp_img, int cnxCompIndex, vector&lt;double*&gt;&amp; seeds)
+{
+	// this is a constant, please change to suit needs. a higher yields more seeds and thus slows 
+	// down region growing 
+	double proportionOfTotalSeedsQualify = 20;	// percent		
+			
+	double* xyz;
+	vector&lt;double*&gt; all_seeds; 
+	// first locate edge pixels that will be seeds
+	int maxX, maxY, maxZ; 
+	maxX = cnxComp_img-&gt;GetX(); maxY = cnxComp_img-&gt;GetY(); maxZ = cnxComp_img-&gt;GetZ(); 
+	seeds.clear();
+
+	for (int i=0;i&lt;maxX; i++)
+	{
+		for (int j=0;j&lt;maxY; j++)
+		{
+			for (int k=0;k&lt;maxZ; k++)
+			{
+				if (i-1 &gt; 0 &amp;&amp; i+1 &lt;maxX &amp;&amp; j-1 &gt; 0 &amp;&amp; j+1 &lt; maxY &amp;&amp; k-1 &gt; 0 &amp;&amp; k+1 &lt; maxZ)
+				{
+					if (cnxComp_img-&gt;Get(i,j,k) == cnxCompIndex)			// first find labelled voxel in mask 
+					{
+						if (cnxComp_img-&gt;Get(i+1,j,k) == 0 ||		// now look around its neighbours to find if its a boundary voxel 
+							cnxComp_img-&gt;Get(i-1,j,k) == 0 || 
+							cnxComp_img-&gt;Get(i,j+1,k) == 0 || 
+							cnxComp_img-&gt;Get(i,j-1,k) == 0|| 
+							cnxComp_img-&gt;Get(i,j,k-1) == 0 ||
+							cnxComp_img-&gt;Get(i,j,k+1) == 0) 
+						{
+							xyz = new double[3]; 
+							xyz[0] = i; xyz[1] = j; xyz[2] = k; 
+							all_seeds.push_back(xyz); 
+						}
+					}
+				}
+			}
+	
+		}
+	}
+
+	int tot_seeds = all_seeds.size(); 
+	cout &lt;&lt; &quot;Total seeds in this component = &quot; &lt;&lt; tot_seeds; 
+	int interval = ceil(100/proportionOfTotalSeedsQualify);
+
+	for (int i=0;i&lt;tot_seeds;i+=interval)
+	{
+		xyz = new double[3]; 
+		xyz[0] = all_seeds[i][0]; 
+		xyz[1] = all_seeds[i][1]; 
+		xyz[2] = all_seeds[i][2]; 
+		seeds.push_back(xyz);
+	}
+	cout &lt;&lt; &quot;, and total selected = &quot; &lt;&lt; seeds.size() &lt;&lt; endl; 
+}
+
+static void bubble_sort_helper(double* vals, int* indexes, int arrayLength){
+	int i, j, flag = 1;    // set flag to 1 to begin initial pass
+	double temp;             // holding variable
+	
+
+     for(i = 1; (i &lt;= arrayLength) &amp;&amp; flag; i++)
+     {
+         flag = 0;
+         for (j=0; j &lt; (arrayLength -1); j++)
+         {
+              if (vals[j+1] &gt; vals[j])      // ascending order simply changes to &lt;
+              { 
+                    temp = vals[j];             // swap elements
+                    vals[j] = vals[j+1];
+                    vals[j+1] = temp;
+					
+					// now the indexes of the array 
+					temp = indexes[j]; 
+					indexes[j] = indexes[j+1]; 
+					indexes[j+1] = temp; 
+                    flag = 1;               // indicates that a swap occurred.
+               }
+          }
+     }
+     return;   //arrays are passed to functions by address; nothing is returned
+}
+
+static void GetConnectComponentIntensityStats(irtkGreyImage* aw_img, irtkGreyImage* cnxComp_img, vector&lt;double*&gt;&amp; stats)
+{
+	int N; 
+	irtkGreyPixel* min, *max; 
+	min = new irtkGreyPixel(); 
+	max = new irtkGreyPixel();
+	cnxComp_img-&gt;GetMinMax(min, max); 
+	vector&lt;vector&lt; double&gt;&gt; component_pixels;
+	N = *max;
+	double* mean_stdev;
+
+	for (int i=0;i&lt;N+1;i++)
+	{
+		vector&lt;double&gt; vec; 
+		component_pixels.push_back(vec); 
+		mean_stdev = new double[2];		// stores mean and std. dev. 
+		stats.push_back(mean_stdev);
+
+	}
+
+	irtkGreyPixel* awp = aw_img-&gt;GetPointerToVoxels(); 
+	irtkGreyPixel* cnxp = cnxComp_img-&gt;GetPointerToVoxels(); 
+	
+	for (int i=0;i&lt;cnxComp_img-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*cnxp &gt; 0 &amp;&amp; *cnxp &lt;= N)
+		{
+			component_pixels[*cnxp].push_back(*awp);		// insert each pixel into the appropriate &quot;bin&quot; 
+		}
+		awp++; 
+		cnxp++;
+	}
+
+	// now do the stats
+	for (int i=0;i&lt;component_pixels.size();i++)
+	{
+		i_ctr.clear();
+		for (int j=0;j&lt;component_pixels[i].size();j++)
+		{
+			i_ctr.push_back(component_pixels[i][j]);
+		}
+		stats[i][0] = getStats(1, -1);
+		stats[i][1] = getStats(2, stats[i][0]);
+	}
+}
+
+static int GetTopNConnectedComponents(irtkGreyImage* in_img, irtkGreyImage* out_img, double t) 
+{
+	double N, N_t; 
+	double* bins;
+	double* bins_copy;
+	int *bins_index;
+	irtkGreyPixel* min, *max; 
+	min = new irtkGreyPixel(); 
+	max = new irtkGreyPixel();
+	in_img-&gt;GetMinMax(min, max); 
+	cout &lt;&lt; &quot;Running top connected component filter ... min = &quot; &lt;&lt; *min &lt;&lt; &quot;, max = &quot; &lt;&lt; *max &lt;&lt; endl;
+	N = *max; 
+	bins = new double[N+1]; 
+	bins_index = new int[N+1]; 
+	bins_copy = new double[N+1]; 
+	thresholded_index = new int[N+1];
+	
+	for (int i=0;i&lt;N+1;i++)
+	{
+		bins[i] = 0;		// resetting the connected component indexes , this array will store the size of the connected components 
+		bins_copy[i] = 0; 
+		bins_index[i] = i; 
+		thresholded_index[i] = 0;			// this array will specify which connected components have passed the user specified threshold 
+	}
+
+	irtkGreyPixel* p; 
+	p = in_img-&gt;GetPointerToVoxels(); 
+	for (int i=0;i&lt;in_img-&gt;GetNumberOfVoxels();i++) 
+	{
+		if (*p &gt; 0 &amp;&amp; *p &lt;= *max) {
+			bins[*p]++; 
+			bins_copy[*p]++; 
+		}
+		p++;
+	}
+
+	// now bubble sort 
+	bubble_sort_helper(bins_copy, bins_index, N+1);	// bins index contains the re-arranged array indices after sorting 
+
+	N_t = round((t/100.0)*N);		// but the user only wants the top t percent 
+cout &lt;&lt; &quot;Only &quot; &lt;&lt; N_t &lt;&lt; &quot; connected components will thus be selected &quot; &lt;&lt; endl;
+
+	for (int i=0;i&lt;N_t;i++)
+	{
+		cout &lt;&lt; &quot;top N = &quot; &lt;&lt; bins_index[i] &lt;&lt; endl;
+		thresholded_index[bins_index[i]] = 1;			// specifying after sorting, which connected components have passed and indexing them 
+	}
+
+	// now only filtering connected components in image (based on their entries in thresholded index)
+	irtkGreyPixel* q; 
+	p = in_img-&gt;GetPointerToVoxels();
+	q = out_img-&gt;GetPointerToVoxels(); 
+	for (int i=0;i&lt;in_img-&gt;GetNumberOfVoxels();i++) 
+	{
+		if (*p &gt; 0) 
+			if (thresholded_index[*p] == 1)
+				*q = 1; 
+			else 
+				*q = 0; 
+		else 
+			*q = 0;
+		p++;
+		q++;
+	}
+
+
+	//in_img-&gt;Write(output_f); 
+	return N;
+
+}
+
+
+
+static double FWMH_getPeak(irtkGreyImage* img, int top_n) 
+{
+	double* i_arr, *topN;
+	int *i_index;  
+
+	// sort image intensities to get peak infarct 
+	irtkGreyPixel* i_p; 
+	i_p = img-&gt;GetPointerToVoxels(); 
+	
+	int count = 0; 
+	topN = new double[top_n]; 
+
+	for (int i=0;i&lt;top_n;i++)
+	{
+		topN[i] = -1; 
+	}
+	
+	for (int i=0;i&lt;img-&gt;GetNumberOfVoxels();i++) { 
+		if (*i_p &gt; 0) count++; 	
+		i_p++;
+	}
+
+	i_arr = new double[count]; 
+	i_index = new int[count];
+
+	for (int i=0;i&lt;count;i++)
+		i_index[i]=i;
+
+	i_p = img-&gt;GetPointerToVoxels(); 
+	
+	int k=0;
+	for (int i=0;i&lt;img-&gt;GetNumberOfVoxels();i++) {
+		if (*i_p &gt; 0) 
+			i_arr[k++] = *i_p; 
+	
+		i_p++; 
+	}
+
+	bubble_sort_helper(i_arr, i_index, count); 
+
+	// gets the top unique n elements 
+	// for peak infarct this is the N maximal intensity values 
+	int found_n = 0; 
+	bool f = false; 
+	for (int i=0;i&lt;count &amp;&amp; found_n &lt; top_n&nbsp;;i++)
+	{
+		f = false; 
+		if (found_n &gt; 0) { 
+			for (int j=0;j&lt;found_n &amp;&amp;&nbsp;!f&nbsp;;j++) 
+			{
+				if (topN[j]&nbsp;!= i_arr[i] &amp;&amp; j==found_n-1)		// we have reached end of topN list and yet haven't 
+																// come across this intensity value, must be unique then 
+				{
+					// element is unique insert
+					topN[found_n] = i_arr[i]; 
+					found_n++; 
+				}
+			}
+		}
+		else { 
+			// only for the first top element - this is unique to begin with 
+			topN[found_n] = i_arr[i]; 
+			found_n++; 
+
+		}
+	}
+
+	// get mean of topN elements
+	i_ctr.clear();	// global container for getting mean and stdev
+	int kn=0;
+	for (int i=0;i&lt;top_n;i++)
+	{
+		if (topN[i] &gt; 0) {
+			i_ctr.push_back(topN[i]); 
+			kn++;
+		}
+	}
+	cout &lt;&lt; &quot;\nDEBUG: only &quot; &lt;&lt; kn &lt;&lt; &quot; maximally high intensity pixels found&quot; &lt;&lt; endl; 
+	return getStats(1, -1);		// gets the mean 
+
+}
+
+
+
+
+int main(int argc, char **argv)
+{
+	int option;
+	bool foundArgs=false, foundArgs1=false, foundArgs2=false, foundArgs3=false, foundArgs4=false, foundArgs5=false, foundArgs6  = false; 
+	irtkGreyImage img1, img2, img3, img4; 
+	char* input_f1=&quot;&quot;, *output_f=&quot;&quot;, *input_f2=&quot;&quot;, *observer_abb=&quot;&quot;, *working_dir=&quot;&quot;, *prefix=&quot;&quot;, *ext=&quot;&quot;;
+	int t1, t2, t3, max_components; 
+	double fwhm_t=-1, user_t=-1, low_t, user_tp=10;
+	vector&lt;double*&gt; seeds;
+	vector&lt;double*&gt; connectedCompIntensityStats;
+
+	if (argc &gt;= 1)
+	{
+		for (int i = 1; i &lt; argc; i++) {
+			if (i + 1&nbsp;!= argc) {
+				if (string(argv[i]) == &quot;-i1&quot;) {				// atrial wall 
+					input_f1 = argv[i+1]; 
+					foundArgs1 = true;	
+				} else if (string(argv[i]) == &quot;-i2&quot;) {		// connected component output from ITk filter
+					input_f2 = argv[i+1]; 
+					foundArgs2 = true; 
+				} else if (string(argv[i]) == &quot;-o&quot;) {
+					output_f = argv[i+1];
+					foundArgs3 = true;  
+				} else if (string(argv[i]) == &quot;-t&quot;) {
+					user_t = atof(argv[i+1]);
+					foundArgs4 = true;  
+				} else if (string(argv[i]) == &quot;-tp&quot;) {
+					user_tp = atof(argv[i+1]);
+					foundArgs6 = true;  
+				} else if (string(argv[i]) == &quot;--loc&quot;) {
+					foundArgs5 = true;  
+				}
+			}
+		}
+	}
+	
+	if (foundArgs1 &amp;&amp; foundArgs2 &amp;&amp; foundArgs3) foundArgs = true; 
+	if (foundArgs == false)
+	{
+		cout &lt;&lt; &quot;\n\nUsage: postprocess \n\n\tArguments:&quot;
+			&quot;\n\n\t-i1: atrial wall\n&quot;
+			&quot;\n\n\t-i2: Output from graphcuts thresholded and through Cnx Comp. filter&quot; 
+			&quot;\n\n\t-o: Post-processed output file name&quot; 
+			&quot;\n\n\nNon-default modes:\n\n\t--loc x: Use local regional intensity stats for region growing&quot; 
+			&quot;\n\n\t-t:\n\t\tif using FWHM, then threshold for FWHM&quot;
+			&quot;\n\t\tif using local intensity, then SD from mean&quot;
+			&quot;\n\n\t-tp: Top N percent of largest connect components are accepted. This option sets the N.&quot;
+			&lt;&lt; endl; 
+		exit(0); 
+	}
+
+	stringstream ss,ss1; 
+	ss &lt;&lt; input_f1; 
+
+	string file_ext = ss.str().substr(ss.str().find_last_of(&quot;.&quot;) + 1); 
+	ss1 &lt;&lt; &quot;_connectedComponents&quot; &lt;&lt;&quot;.&quot; &lt;&lt; file_ext; 
+	img1.Read(input_f1); 
+	img2.Read(input_f2); 
+	img3 = img1; 
+	img4 = img2;
+	
+	pixelsVisited = new int[(img1.GetX())*(img1.GetY())*(img1.GetZ())];
+	max_components = GetTopNConnectedComponents(&amp;img2, &amp;img4, user_tp);
+	truncateAtrialWallToPrepareForRegionGrow(&amp;img2, &amp;img3);
+//	ComputeRegionGrowThreshold(&amp;img1, fwhm_t);
+
+	if (!foundArgs5) 
+	{
+		fwhm_t = FWMH_getPeak(&amp;img1, 10);
+		//fwhm_t = 180;
+		if (user_t == -1) user_t = 0.5;			// default setting
+		cout &lt;&lt; &quot;FWHM threshold is set at &quot; &lt;&lt; user_t*fwhm_t &lt;&lt; &quot;\n\n&quot;;
+	}
+	else
+	{
+		if (user_t == -1) user_t = 1;			// default setting
+		GetConnectComponentIntensityStats(&amp;img1, &amp;img2, connectedCompIntensityStats);
+	}
+
+	// for each connected component, do region growing 
+	for (int idx=1;idx&lt;=max_components;idx++)
+	{
+		if (thresholded_index[idx] == 1)		// this cnx component was chosen as top N 
+		{	
+			// get seeds for this connected component 
+			LocateCandidateSeedsRegionGrowFromCnxComponent(&amp;img2, idx, seeds);
+			//if (seeds.size() &lt; 500) { 
+				for (int i=0;i&lt;seeds.size();i++)
+				{
+					if (fwhm_t &gt; 0) {
+						low_t = user_t*fwhm_t;
+						regionGrow(seeds[i][0], seeds[i][1], seeds[i][2], -1, low_t, 1e9, &amp;img1);
+					}
+					else {
+						low_t = connectedCompIntensityStats[idx][0]-(user_t*connectedCompIntensityStats[idx][1]);
+						regionGrow(seeds[i][0], seeds[i][1], seeds[i][2], -1, low_t, 1e9, &amp;img1);
+					}
+					
+					//cout &lt;&lt; &quot;Seeds to go = &quot; &lt;&lt; seeds.size()-i&lt;&lt; endl;
+				}
+			
+				cout &lt;&lt; &quot;Component to go = &quot; &lt;&lt;  max_components - idx &lt;&lt; endl; 
+			//}
+			
+		}
+		
+		
+	}
+
+	setVisitedPixelsOn( pixelsVisited, &amp;img4);
+	img4.Write(output_f);
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:270-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124443 -->
+<div class="printfooter">
+Retrieved from "<a href="index2d2c.html?title=Region_rejection">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Region_rejection</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index2d2c.html?title=Region_rejection" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexee89.html?title=Talk:Region_rejection&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexff7a.html?title=Region_rejection&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexa97f.html?title=Region_rejection&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexf1ea.html?title=Special:UserLogin&amp;returnto=Region_rejection" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index3613.html?title=Special:WhatLinksHere/Region_rejection" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index3e37.html?title=Special:RecentChangesLinked/Region_rejection" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index3853.html?title=Region_rejection&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index5f88.html?title=Region_rejection&amp;oldid=1859" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 12 February 2013, at 15:43.</li>
+					<li id="viewcount">This page has been accessed 330 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.395 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Region_rejection&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:19:10 GMT -->
+</html>

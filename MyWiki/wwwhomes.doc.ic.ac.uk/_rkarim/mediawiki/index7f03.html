@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:27:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Shortest Path In Mesh" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Shortest Path In Mesh - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Shortest_Path_In_Mesh";
+		var wgTitle = "Shortest Path In Mesh";
+		var wgAction = "view";
+		var wgArticleId = "36";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 249;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Shortest_Path_In_Mesh skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Shortest Path In Mesh</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="The_Problem" id="The_Problem"></a><h2> <span class="mw-headline"> The Problem </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="indexa877.html?title=File:Mesh_vertices.png" class="image" title="The surface mesh that can be easily represented as a undirected graph."><img alt="" src="images/thumb/a/a5/Mesh_vertices.png/250px-Mesh_vertices.png" width="250" height="157" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="indexa877.html?title=File:Mesh_vertices.png" class="internal" title="Enlarge"><img src="skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>The surface mesh that can be easily represented as a undirected graph.</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="indexd660.html?title=File:Mesh_color_distance_map.png" class="image" title="Geodesic distances computed on the map from the marked point (marked in blue). Color changes from green to yellow to red with increasing distance."><img alt="" src="images/thumb/f/fd/Mesh_color_distance_map.png/250px-Mesh_color_distance_map.png" width="250" height="156" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="indexd660.html?title=File:Mesh_color_distance_map.png" class="internal" title="Enlarge"><img src="skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Geodesic distances computed on the map from the marked point (marked in blue). Color changes from green to yellow to red with increasing distance.</div></div></div>
+<p>The voltage values are not defined at every point on a left atrium surface mesh. It is only defined at some of the mesh vertices. The problem is to interpolate the unknown scalar values (i.e. voltage). One intuitive way to interpolate is to compute the weighted average of the known scalars. This amounts to finding geodesic distances between vertices of a mesh. VTK unfortunately comes with no magic function that can interpolate scalars in this manner. Although it does now (version &gt;5.5) come with a class that can compute <a href="http://www.vtk.org/doc/release/5.4/html/a00416.html" class="external text" title="http://www.vtk.org/doc/release/5.4/html/a00416.html" rel="nofollow">geodesics</a>. Also I posted a question regarding <a href="http://old.nabble.com/scalars-not-defined-at-every-point-td28190256.html" class="external text" title="http://old.nabble.com/scalars-not-defined-at-every-point-td28190256.html" rel="nofollow">this</a> on the VTK forum.
+</p>
+<a name="Shortest_path_algorithms" id="Shortest_path_algorithms"></a><h2> <span class="mw-headline"> Shortest path algorithms </span></h2>
+<p>I needed the Single-source shortest path algorithms where the best-path from one specified vertex to every other vertex in the graph is computed. The two options: 
+</p>
+<ul><li> Bellman-ford (takes care of negative edge weights, but a little expensive)
+</li><li> Dijkstra's algorithm (cannot handle negative edge weights, but runs in <i>O</i>(<i>V</i>log<i>V</i>) time <b>ONLY</b> if it uses a priority Queue 
+</li></ul>
+<a name="Priority_Queue" id="Priority_Queue"></a><h2> <span class="mw-headline"> Priority Queue </span></h2>
+<p>At each iteration of the algorithm, the queue must return the vertex with minimum distance. If the queue is implemented as a simple array, this will mean going through each element at least once and thus O(n) time. However, implementations using binomial or fibonacci heaps can do better: O(log n)
+</p><p>An excellent lecture on the Dijkstra's algorithm can be found <a href="http://videolectures.net/mit6046jf05_demaine_lec17/" class="external text" title="http://videolectures.net/mit6046jf05_demaine_lec17/" rel="nofollow">here</a>. 
+</p>
+<a name="Implementations" id="Implementations"></a><h2> <span class="mw-headline"> Implementations </span></h2>
+<p>I found a good working implementation of Dijkstra's algorithm that implements a priority queue <a href="http://www.cosc.canterbury.ac.nz/tad.takaoka/alg/spalgs/spalgs.html" class="external text" title="http://www.cosc.canterbury.ac.nz/tad.takaoka/alg/spalgs/spalgs.html" rel="nofollow">here</a>. However, it didn't compile straight out-of-the-box. I had to make minor modifications: 
+</p>
+<ul><li> fheap.cpp:  trees = new FHeapNode*[maxTrees]; instead of trees = new ( FHeapNode* )[maxTrees]; by removing the brackets
+</li><li> fheap.cpp: the use of log in maxTrees = 1 + (int)(1.44 * log((double)n)/log(2.0)); where n should be casted to double
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:36-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312051255 -->
+<div class="printfooter">
+Retrieved from "<a href="index02ad.html?title=Shortest_Path_In_Mesh">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index02ad.html?title=Shortest_Path_In_Mesh" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index87a4.html?title=Talk:Shortest_Path_In_Mesh&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index9b50.html?title=Shortest_Path_In_Mesh&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexb019.html?title=Shortest_Path_In_Mesh&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexb31c.html?title=Special:UserLogin&amp;returnto=Shortest_Path_In_Mesh" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexe301.html?title=Special:WhatLinksHere/Shortest_Path_In_Mesh" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index9d5a.html?title=Special:RecentChangesLinked/Shortest_Path_In_Mesh" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexfc3a.html?title=Shortest_Path_In_Mesh&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index88d1.html?title=Shortest_Path_In_Mesh&amp;oldid=249" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 13 April 2010, at 11:33.</li>
+					<li id="viewcount">This page has been accessed 991 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.364 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:27:46 GMT -->
+</html>

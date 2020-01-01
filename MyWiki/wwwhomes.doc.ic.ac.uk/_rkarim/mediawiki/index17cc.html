@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=RMSE&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:47:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="RMSE" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>RMSE - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "RMSE";
+		var wgTitle = "RMSE";
+		var wgAction = "view";
+		var wgArticleId = "325";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2021;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-RMSE skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">RMSE</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><i><a href="index545e.html?title=Dice_coefficient" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Dice_coefficient" rel="nofollow">Back to Dice-coefficient page</a></i> 
+</p>
+<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<p>Computing the root-mean-square (rmse) of two binary segmentation on VTK surfaces 
+</p>
+<pre>
+rmse &lt;vtkfile1&gt; &lt;vtkfile2&gt; &lt;label1&gt; &lt;label2&gt; optional: &lt;output text file&gt; 
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+#include &quot;vtkSmartPointer.h&quot;
+#include &lt;vtkRenderWindow.h&gt;
+#include &lt;vtkRenderer.h&gt;
+#include &lt;vtkRendererCollection.h&gt;
+#include &lt;vtkPolyDataMapper.h&gt;
+#include &lt;vtkProperty.h&gt;
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+#include &lt;vtkLookupTable.h&gt;
+#include &lt;vtkDelaunay2D.h&gt;
+#include &lt;vtkCellLocator.h&gt;
+#include &lt;vtkCellArray.h&gt;
+#include &quot;vtkGenericCell.h&quot;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkDoubleArray.h&quot;
+#include &quot;vtkFieldData.h&quot;
+#include &quot;vtkXYPlotActor.h&quot;
+#include &lt;vtkScalarBarActor.h&gt;
+#include &lt;vtkCellData.h&gt;
+#include &lt;vtkContourFilter.h&gt;
+#include &lt;vtkBandedPolyDataContourFilter.h&gt;
+#include &lt;vtkLabeledDataMapper.h&gt;
+#include &lt;vtkVectorText.h&gt;
+#include &lt;vtkFollower.h&gt;
+#include &lt;vtkPointLocator.h&gt;
+#include &lt;vtkStripper.h&gt;
+#include &lt;vtkMath.h&gt;
+#include &lt;vtkTextProperty.h&gt;
+#include &lt;vtkClipPolyData.h&gt;
+#include &lt;vtkBoxWidget.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkPlaneSource.h&gt;
+#include &lt;vtkSphereSource.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkPointLocator.h&gt;
+#include &quot;vtkPointData.h&quot;
+
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+
+
+#include &lt;ctime&gt;
+#include &lt;math.h&gt;
+
+#define _IS_EXTREME_DEBUG 0 
+
+using namespace std;
+
+
+
+void getMeanVariance(vector&lt;double&gt; val, double&amp; mean, double&amp; variance)
+{
+	double sum=0.0, N, sum_var=0.0; 
+
+	N = val.size(); 
+
+	for (int i=0;i&lt;N;i++)
+	{
+		sum += val[i]; 
+	}
+
+	mean = sum/N;
+
+	for (int i=0;i&lt;N;i++)
+	{
+		sum_var += ((val[i] - mean)*(val[i] - mean));
+	}
+
+	variance = sum_var/(N-1);
+}
+
+double getEuclideanDistanceIn3D(double* p1, double* p2) 
+{
+	double s;
+	s = ((p1[0] - p2[0])*(p1[0] - p2[0])) + ((p1[1] - p2[1])*(p1[1] - p2[1])) + ((p1[2] - p2[2])*(p1[2] - p2[2])); 
+	return sqrt(s);
+}
+
+
+
+bool CollectRMSE(vtkIdList* pList, int N, vtkPolyData* poly, vtkFloatArray* scalar_array, double* xyz, 
+				 double label, double&amp; rmse, double&amp; haussdroff, double&amp; total, vector&lt;double&gt;&amp; errors)
+{
+	double closest_to_xyz[3];
+	double label_in_test, d;
+	bool found = false;
+	vtkIdType id_in_test; 
+	for (int id_in_ground=0;id_in_ground&lt;N &amp;&amp;&nbsp;!found;id_in_ground++)
+	{
+	   id_in_test = pList-&gt;GetId(id_in_ground);
+	   label_in_test = scalar_array-&gt;GetTuple1(id_in_test);
+	   if (label_in_test &gt; label)
+	   {
+		   
+			poly-&gt;GetPoint(id_in_test, closest_to_xyz);	
+			d = getEuclideanDistanceIn3D(xyz, closest_to_xyz); 
+			rmse += (d*d);
+			errors.push_back(d); 
+			total++;
+			//cout &lt;&lt; &quot;d = &quot; &lt;&lt; d &lt;&lt; endl;
+			if (haussdroff &lt; d) 
+				haussdroff = d; 
+			found = true; 
+	   }
+	}
+
+	return found;
+}
+
+
+
+int main(int argc, char *argv[])
+{
+	vtkPolyData* _surf1, *_surf2; 
+	char *filename1, *filename2, *output_f; 
+	int _surf1_scal, n=0,nf=0, user_args, tst=0, _surf2_scal;
+	double c_x=0, c_y=0, c_z=0;
+	vector&lt;double&gt; errors;
+
+	double xyz[3];
+	float _label1, _label2; 
+	int closestN=100;
+	double total_N=0;
+	bool isPointExists;
+	
+	// for the dice 
+	double x=0,y=0,x_and_y=0, x_or_y=0; 
+	
+	double haussdroff=-1, rmse=0, mean=-1, variance=-1;
+
+	// variables for sensitivity and specificty 
+	double false_pos=0, false_neg=0, true_pos=0, true_neg=0,spec=0, sens=0;
+	
+	vtkSmartPointer&lt;vtkIdList&gt; pointIdList;
+	
+	_surf1 = vtkPolyData::New(); 
+	_surf2 = vtkPolyData::New(); 
+	
+	if (argc &lt; 5) { 
+		cerr &lt;&lt; &quot;\n(c) RashedSoft 2011\n\nusage: \nrmse \n&lt;ground_vtk&gt; \n&lt;test_vtk&gt; \n&lt;ground_label&gt; \n&lt;test_label&gt; \nOptional: &lt;output text file&gt;\n\n&quot;  &lt;&lt; endl; exit(1); 
+	}
+	else
+	{
+		user_args = argc; 
+	}
+
+	filename1 = argv[1];
+	argv++;
+	argc--;
+	filename2 = argv[1];
+	argv++;
+	argc--;
+	_label1 = atof(argv[1]); 
+	argv++;
+	argc--;
+	_label2 = atof(argv[1]);
+
+	if (user_args == 6)
+	{
+		argv++; 
+		argc--; 
+		output_f = argv[1]; 
+	}
+
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader1 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	reader1-&gt;SetFileName(filename1); 
+	reader1-&gt;Update();
+	_surf1 = reader1-&gt;GetOutput();
+	
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader2 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	reader2-&gt;SetFileName(filename2); 
+	reader2-&gt;Update();
+	_surf2 = reader2-&gt;GetOutput();
+
+	// build the cell locators, this will help us find the cells more quickly 
+	vtkSmartPointer&lt;vtkPointLocator &gt; point_locator1 = vtkSmartPointer&lt;vtkPointLocator &gt;::New();
+	//vtkSmartPointer&lt;vtkIdList&gt; cell_points1 = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+	point_locator1-&gt;SetDataSet(_surf1); 
+	point_locator1-&gt;AutomaticOn(); 
+	point_locator1-&gt;BuildLocator();
+
+	vtkSmartPointer&lt;vtkPointLocator &gt; point_locator2 = vtkSmartPointer&lt;vtkPointLocator &gt;::New();
+	//vtkSmartPointer&lt;vtkIdList&gt; cell_points2 = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+	point_locator2-&gt;SetDataSet(_surf2); 
+	point_locator2-&gt;AutomaticOn(); 
+	point_locator2-&gt;BuildLocator();
+
+	// now get the scalar arrays for the two surfaces  
+	vtkSmartPointer&lt;vtkFloatArray&gt; _surf1_scal_arr;
+	_surf1_scal_arr =  vtkFloatArray::SafeDownCast(_surf1-&gt;GetPointData()-&gt;GetScalars());
+
+	vtkSmartPointer&lt;vtkFloatArray&gt; _surf2_scal_arr;
+	_surf2_scal_arr =  vtkFloatArray::SafeDownCast(_surf2-&gt;GetPointData()-&gt;GetScalars());
+
+	for (vtkIdType i=0;i&lt;_surf1-&gt;GetNumberOfPoints();i++)			// running through each cell in surface 1 
+	{
+		_surf1-&gt;GetPoint(i, xyz);
+		pointIdList = vtkSmartPointer&lt;vtkIdList&gt;::New();
+		_surf1_scal = _surf1_scal_arr-&gt;GetTuple1(i); 
+		
+		//if (_IS_EXTREME_DEBUG == 1) cout &lt;&lt; &quot;got here 2 &quot; &lt;&lt; endl;
+		if (_surf1_scal &gt; _label1)			
+		{
+			point_locator2-&gt;FindClosestNPoints(closestN, xyz, pointIdList);
+			isPointExists = CollectRMSE(pointIdList, closestN, _surf2, _surf2_scal_arr, xyz, _label2,  rmse, haussdroff, total_N, errors);
+
+			if (!isPointExists) 
+				nf++;
+			n++;
+		}
+		
+	}
+	
+	// count number of vertices with label in test 
+	for (vtkIdType i=0;i&lt;_surf2-&gt;GetNumberOfPoints();i++)			// running through each cell in surface 1 
+	{
+		_surf2-&gt;GetPoint(i, xyz);
+		_surf2_scal = _surf2_scal_arr-&gt;GetTuple1(i); 
+		if (_surf2_scal &gt; _label2)			
+		{
+			tst++;
+		}
+	}
+	rmse = sqrt(rmse/total_N);
+	
+	getMeanVariance(errors, mean, variance); 
+	cout &lt;&lt; &quot;RMSE = &quot; &lt;&lt; rmse &lt;&lt; &quot;\nSD = &quot; &lt;&lt; sqrt(variance) &lt;&lt; &quot;\nHaussdroff = &quot; &lt;&lt; haussdroff &lt;&lt; &quot;\nTotal vertex in test with label = &quot; &lt;&lt; total_N &lt;&lt; &quot;\n&quot;
+		&quot;Total vertices in ground with label = &quot; &lt;&lt; n &lt;&lt; &quot;\nOf these vertices not found any labels  = &quot; &lt;&lt; nf;
+
+	if (((double)nf/(double)n)*100 &gt; 10)
+		cout &lt;&lt; &quot;\n\nWARNING: for more than 10% of foreground points in ground, nearby foreground point in test wasnt found, so rmse may not be representative of the error involved&quot; &lt;&lt; endl;
+
+	
+	if (user_args == 6) { 
+		ofstream out; 
+		out.open(output_f, std::ios_base::app); 
+		//out &lt;&lt; &quot;RMSE\tSD\tHaussdroff&quot; &lt;&lt; endl;
+		out &lt;&lt; rmse &lt;&lt; &quot;\t&quot; &lt;&lt; total_N &lt;&lt; &quot;\t&quot; &lt;&lt; sqrt(variance) &lt;&lt; &quot;\t&quot; &lt;&lt; haussdroff &lt;&lt; &quot;\t&quot; &lt;&lt; n &lt;&lt; &quot;\t&quot; &lt;&lt; tst &lt;&lt; endl; 
+		out.close();
+	}
+
+}</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:325-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124516 -->
+<div class="printfooter">
+Retrieved from "<a href="indexcabb.html?title=RMSE">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=RMSE</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexcabb.html?title=RMSE" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexa949.html?title=Talk:RMSE&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexb91c.html?title=RMSE&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index4382.html?title=RMSE&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index1649.html?title=Special:UserLogin&amp;returnto=RMSE" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index20b1.html?title=Special:WhatLinksHere/RMSE" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="indexd72a.html?title=Special:RecentChangesLinked/RMSE" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index17cc.html?title=RMSE&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexc2ff-2.html?title=RMSE&amp;oldid=2021" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 9 May 2013, at 14:34.</li>
+					<li id="viewcount">This page has been accessed 480 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.453 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=RMSE&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:47:53 GMT -->
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Circular_trajectories&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:22:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Circular trajectories" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Circular trajectories - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Circular_trajectories";
+		var wgTitle = "Circular trajectories";
+		var wgAction = "view";
+		var wgArticleId = "590";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3544;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Circular_trajectories skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Circular trajectories</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="ReadMe" id="ReadMe"></a><h2> <span class="mw-headline"> ReadMe </span></h2>
+<p>MATLAB code that reads a data stream from a catheter robot and computes a number of things, but two important outputs: 
+</p>
+<ul><li> Error of each point on the robotic trajectory to the perfect circle between the target points, the radius of the circle is specified by the user
+</li><li> The velocity between each point sampled on its trajectory. It is in cm per second 
+</li></ul>
+<p>Above, a target point are points that the robot will visit in order to complete a circular path. 
+</p>
+<a name="Sample_input_file" id="Sample_input_file"></a><h2> <span class="mw-headline"> Sample input file </span></h2>
+<p>Each line of the input file contains: 
+</p>
+<pre>
+Time (secs since Epoch), target number, distance error, XYZ, Target XYZ 
+</pre>
+<pre>
+1460753319.319640060     0     72.990761     4.705000 0.696000 13.889000     3.701000 -0.070000 6.700000 
+1460753319.344636185     0     72.990761     4.705000 0.696000 13.889000     3.701000 -0.070000 6.700000 
+1460753319.369633541     0     72.941292     4.757000 0.682000 13.878000     3.701000 -0.070000 6.700000 
+1460753319.394635279     0     72.941292     4.757000 0.682000 13.878000     3.701000 -0.070000 6.700000 
+1460753319.419636917     0     72.731094     4.816000 0.679000 13.848000     3.701000 -0.070000 6.700000 
+1460753319.444637352     0     72.835220     4.881000 0.671000 13.849000     3.701000 -0.070000 6.700000 
+1460753319.469636569     0     72.673882     4.897000 0.670000 13.830000     3.701000 -0.070000 6.700000 
+1460753319.494639141     0     72.673882     4.897000 0.670000 13.830000     3.701000 -0.070000 6.700000 
+1460753319.519604516     0     72.785866     4.916000 0.672000 13.838000     3.701000 -0.070000 6.700000 
+1460753319.544632593     0     72.785866     4.916000 0.672000 13.838000     3.701000 -0.070000 6.700000 
+1460753319.569632391     0     72.772186     4.909000 0.670000 13.838000     3.701000 -0.070000 6.700000 
+1460753319.594641648     0     72.850342     4.924000 0.674000 13.843000     3.701000 -0.070000 6.700000 
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<p><i>The code below is courtesy of Dr. James Housden, King's College London.</i>
+</p><p>Function returns circleErrors and speed. These are Nx1 arrays containing the distance error to the perfect circle, and the speed between each sampled point. 
+</p>
+<pre>
+function [circleErrors, speed] = circleStats(filename, radius)
+
+%radius = 0.75;&nbsp;% cm
+%radius = 1.5;
+%radius = 2.5;
+%filename = './manual/manu_large.txt';
+
+% Tracked catheter data (Aurora coordinates)
+%data = zeros(13000, 9);
+%fid = fopen(filename, 'r');
+%nPoints = 0;
+%while true
+%    tline = fgetl(fid);
+%    if tline == -1, break; end
+%    nPoints = nPoints + 1;
+%    data(nPoints,:) = sscanf(tline, '%f tar&nbsp;%d edis&nbsp;%f top&nbsp;%f&nbsp;%f&nbsp;%f target&nbsp;%f&nbsp;%f&nbsp;%f');
+%end
+%data = data(1:nPoints,:);
+%fclose(fid);
+data = load(filename);
+
+%J=load(filename);       &nbsp;% turn on for special case 
+%data = J.medium;      &nbsp;% turn on for special case 
+%data = J.small2mm;      &nbsp;% turn on for special case
+
+% Remove points with missed tracking
+I = data(:,4)==0 &amp; data(:,5)==0 &amp; data(:,6)==0;
+data = data(~I,:);
+nPoints = size(data,1);
+
+% Data contains [time, targetIdx, distance, catheter position (3), target position (3)];
+timestamp = data(:,1);
+targetNum = data(:,2);
+errorDist = data(:,3);
+cathPos = data(:,4:6);
+targetPos = data(:,7:9);
+clear data
+
+% Define a circle from the target data
+centre = 0.5 * range(targetPos) + min(targetPos);
+a = (0:2*pi/100:2*pi)';
+circle = [radius*cos(a)+centre(1), radius*sin(a)+centre(2), zeros(size(a))+centre(3)];
+
+% Discard everything up to the first target point
+I = find(targetNum==min(targetNum), 1, 'last');
+timestamp = timestamp(I+1:end);
+targetNum = targetNum(I+1:end);
+errorDist = errorDist(I+1:end);
+cathPos = cathPos(I+1:end,:);
+targetPos = targetPos(I+1:end,:);
+nPoints = length(timestamp);
+
+% Circular path following
+offsets = zeros(nPoints,3);
+for i=1:3
+    offsets(:,i) = cathPos(:,i) - centre(i);
+end
+nearestCirclePoints = zeros(nPoints,3);
+nearestCirclePoints(:,1) = centre(1) + radius * offsets(:,1) ./ sqrt(offsets(:,1).^2 + offsets(:,2).^2);
+nearestCirclePoints(:,2) = centre(2) + radius * offsets(:,2) ./ sqrt(offsets(:,1).^2 + offsets(:,2).^2);
+nearestCirclePoints(:,3) = centre(3) * ones(nPoints,1);
+
+circleErrors = cathPos - nearestCirclePoints;
+circleErrors = sqrt(circleErrors(:,1).^2 + circleErrors(:,2).^2 + circleErrors(:,3).^2);
+
+meanErrorToCircle = mean(circleErrors)
+varErrorToCircle = var(circleErrors)
+
+fs = 20;
+figure
+plot3(cathPos(:,1), cathPos(:,2), cathPos(:,3), '.')
+hold on
+plot3(circle(:,1), circle(:,2), circle(:,3), 'r', 'LineWidth', 2)
+axis equal
+xlabel('x', 'FontSize', fs)
+ylabel('y', 'FontSize', fs)
+zlabel('z', 'FontSize', fs)
+set(gca, 'FontSize', fs)
+
+% Range of each segment
+[~,startIdx] = unique(targetNum);
+endIdx = [startIdx(2:end)-1; length(targetNum)];
+
+uniqueTargetPos = targetPos(startIdx,:);
+startPoints = uniqueTargetPos(1:end-1,:);
+endPoints = uniqueTargetPos(2:end,:);
+
+timeDiff = timestamp(startIdx(2:end)) - timestamp(startIdx(1:end-1));
+dist = cathPos(2:end,:) - cathPos(1:end-1,:);
+dist = sqrt(dist(:,1).^2 + dist(:,2).^2 + dist(:,3).^2);
+pathLength = zeros(size(timeDiff));
+for i=2:length(startIdx);
+    pl = sum(dist(startIdx(i-1):startIdx(i)));
+    pathLength(i-1) = norm(pl);
+end
+speed = pathLength ./ timeDiff;
+%dist = endPoints - startPoints;
+%dist = sqrt(dist(:,1).^2 + dist(:,2).^2 + dist(:,3).^2);
+%speed = dist ./ timeDiff
+
+plotX = repmat((0:length(speed))', [1 2])';
+plotX = plotX(:);
+plotX = plotX(2:end-1);
+plotSpeed = repmat(speed, [1,2])';
+plotSpeed = plotSpeed(:);
+
+figure
+plot(plotX, plotSpeed, 'b', 'LineWidth', 2)
+grid on
+xlabel('Target number', 'FontSize', fs)
+ylabel('Speed (cm/s)', 'FontSize', fs)
+set(gca, 'FontSize', fs)
+set(gca, 'XLim', [0, length(speed)])
+
+figure
+plot(speed, 'b', 'LineWidth', 2)
+grid on
+xlabel('Target number', 'FontSize', fs)
+ylabel('Speed (cm/s)', 'FontSize', fs)
+set(gca, 'FontSize', fs)
+set(gca, 'XLim', [0, length(speed)])
+end 
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:590-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124933 -->
+<div class="printfooter">
+Retrieved from "<a href="indexe365.html?title=Circular_trajectories">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Circular_trajectories</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexe365.html?title=Circular_trajectories" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexeed7.html?title=Talk:Circular_trajectories&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexf0dc.html?title=Circular_trajectories&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index3e17.html?title=Circular_trajectories&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index8119.html?title=Special:UserLogin&amp;returnto=Circular_trajectories" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexbfcd.html?title=Special:WhatLinksHere/Circular_trajectories" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="indexbcc4.html?title=Special:RecentChangesLinked/Circular_trajectories" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index72b6-2.html?title=Circular_trajectories&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index159f.html?title=Circular_trajectories&amp;oldid=3544" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 20 April 2016, at 15:02.</li>
+					<li id="viewcount">This page has been accessed 333 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.413 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Circular_trajectories&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:22:44 GMT -->
+</html>

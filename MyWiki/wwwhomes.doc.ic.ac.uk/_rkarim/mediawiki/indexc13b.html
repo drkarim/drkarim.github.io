@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=FTI_Analysis&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="FTI Analysis" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>FTI Analysis - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "FTI_Analysis";
+		var wgTitle = "FTI Analysis";
+		var wgAction = "view";
+		var wgArticleId = "118";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 831;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-FTI_Analysis skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">FTI Analysis</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Background" id="Background"></a><h2> <span class="mw-headline"> Background </span></h2>
+<p>Code takes in polygonal mesh with scar information, and Gang's geodesic distance-force maps to compare the force and scar at each ablation location. There is more information on how to use scar3d to view force ablation tags <a href="indexb158.html?title=Endosense_FTI_analysis" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Endosense_FTI_analysis" rel="nofollow">here</a>
+</p>
+<pre>
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string.h&gt;
+#include &lt;irtkImage.h&gt;
+#include &lt;vector&gt;
+
+
+#include &quot;vtkSmartPointer.h&quot;
+#include &lt;vtkRenderWindow.h&gt;
+#include &lt;vtkRenderer.h&gt;
+#include &lt;vtkRendererCollection.h&gt;
+#include &lt;vtkPolyDataMapper.h&gt;
+#include &lt;vtkProperty.h&gt;
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+#include &lt;vtkLookupTable.h&gt;
+#include &lt;vtkDelaunay2D.h&gt;
+#include &lt;vtkCellLocator.h&gt;
+#include &lt;vtkCellArray.h&gt;
+#include &quot;vtkGenericCell.h&quot;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkDoubleArray.h&quot;
+#include &quot;vtkFieldData.h&quot;
+#include &quot;vtkXYPlotActor.h&quot;
+#include &lt;vtkScalarBarActor.h&gt;
+#include &lt;vtkCellData.h&gt;
+#include &lt;vtkContourFilter.h&gt;
+#include &lt;vtkBandedPolyDataContourFilter.h&gt;
+#include &lt;vtkLabeledDataMapper.h&gt;
+#include &lt;vtkVectorText.h&gt;
+#include &lt;vtkFollower.h&gt;
+#include &lt;vtkPointLocator.h&gt;
+#include &lt;vtkStripper.h&gt;
+#include &lt;vtkMath.h&gt;
+#include &lt;vtkTextProperty.h&gt;
+#include &lt;vtkClipPolyData.h&gt;
+#include &lt;vtkBoxWidget.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkPlaneSource.h&gt;
+#include &lt;vtkSphereSource.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkPointData.h&gt;
+
+#define _IS_DEBUG 1 
+
+using namespace std; 
+
+void initFTIMeanScarArray(vector&lt; vector&lt; double &gt; &gt;&amp; _v, int items)
+{
+	for (int i=0;i&lt;items+1;i++)
+	{
+		vector&lt;double&gt; v;
+		v.push_back(0);
+		_v.push_back(v); 
+	}
+}
+
+
+void initUniqueFTIArray(vector&lt;double&gt;&amp; _v, double _fti)
+{
+	bool found = false; 
+	for (int i=0;i&lt;_v.size() &amp;&amp;&nbsp;!found;i++) { 
+		if (_v[i] == _fti)
+			found = true; 
+	}
+
+	if (found == false) { 
+		_v.push_back(_fti);
+
+	}
+}
+
+
+bool populateFTIMeanScarArray(vector&lt;double&gt;&amp; _fti_v, vector&lt; vector&lt; double &gt; &gt;&amp; _scarMean, double _fti, double meanScar)
+{
+	int i; 
+	bool found = false; 
+	// search for the index of the fti 
+	for (i=0;i&lt;_fti_v.size() &amp;&amp;&nbsp;!found; i++)
+	{
+		if (_fti_v[i] == _fti) found = true; 
+	}
+
+	if (found == true)
+	{
+		if (i &lt; _scarMean.size()) { 
+			_scarMean[i].push_back(meanScar); 
+			
+			return true; 
+		}
+		else { 
+			cout &lt;&lt; &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot;, and fti = &quot; &lt;&lt; _fti &lt;&lt; endl;
+			return false; 
+		}
+	}
+	else
+		return false; 
+}
+
+void writeScarFTIForUniformDistanceForceMapsToFile(ofstream&amp; out, vector&lt;double&gt; _fti, vector&lt; vector&lt; double &gt; &gt; _scarMean)
+{
+	double _tot, n=0; 
+	for (int i=0;i&lt;_fti.size();i++)
+	{
+		_tot = 0, n=0; 
+		if (i &lt; _scarMean.size()) {
+			for (int j=0;j&lt;_scarMean[i].size();j++)
+			{
+				if ( _scarMean[i][j] &gt; 0)	{			// we can have negative std. devs in scar - ignoring these. 
+					_tot += _scarMean[i][j]; 
+					++n;
+				}
+			}
+		}
+		
+		if (_tot &gt; 0) { 
+			out &lt;&lt; _fti[i] &lt;&lt; &quot;\t\t&quot; &lt;&lt; _tot/n &lt;&lt; endl; 
+		}
+	}
+}
+
+int main(int argc, char **argv)
+{
+
+	// common 
+	int forceMapType=1;
+	char* _sc_fn, *_gm_fn, *_txt_fn; 
+	double _gm_pt[3], closestPoint[3], dist, _tot, mean, _forceAtPt; 
+	vector&lt;vtkIdType&gt; edgeNeighbours; 
+
+	// the following two arrays run correspondingly
+	// according to FTI (unique)
+	vector&lt;double&gt; _uniqueFTIs; 
+	vector&lt; vector&lt; double &gt; &gt; _MeanScarAtEachUniqueFTIInUniformGangMaps; 
+
+	// vtk 
+	vtkPolyData* _sc_poly, *_gm_poly; 
+	vtkDoubleArray* gangmapScalars;
+	vtkFloatArray *scarScalars; 
+	vtkIdType cellId, subId, neighbor_point, cell_point_id, closestPointID=-1; 
+	vtkCell* closest_cell;
+	vtkIdList* pointIdList;
+	vtkGenericCell *temp_cell;
+
+
+	// begin program
+	temp_cell = vtkGenericCell::New(); 
+	
+	ofstream out; 
+
+	if (argc &lt; 3)
+	{
+		std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0]
+				&lt;&lt; &quot; scarFTI &lt;scar_shell_in_vtk&gt; &lt;gang_map_vtk&gt; &lt;output_txt_file&gt;&quot; &lt;&lt; std::endl;
+		return EXIT_FAILURE;
+	}
+
+	_sc_fn  = argv[1];
+	argc--;
+	argv++;
+	_gm_fn = argv[1];
+	argc--;
+	argv++;
+	_txt_fn = argv[1]; 
+	argc--; 
+	argv++; 
+
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader1 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader2 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+
+
+	cout &lt;&lt; &quot;Is the distance-force map distributedn\n1) linearly or,\n2) uniformly&nbsp;?\n&gt;&quot; &lt;&lt; endl;
+	cin &gt;&gt; forceMapType; 
+
+	reader1-&gt;SetFileName(_sc_fn); 
+	reader2-&gt;SetFileName(_gm_fn); 
+	out.open(_txt_fn); 
+	out &lt;&lt; &quot;Pressure&quot; &lt;&lt; &quot;\t\t&quot; &lt;&lt; &quot;Mean scar load&quot; &lt;&lt; &quot;\t\t&quot; &lt;&lt; &quot;# of triangles&quot; &lt;&lt; &quot;\n&quot;;
+	out &lt;&lt; &quot;==========&quot; &lt;&lt; &quot;\t\t&quot; &lt;&lt; &quot;==============&quot; &lt;&lt; &quot;\t\t&quot; &lt;&lt; &quot;==============&quot; &lt;&lt; &quot;\n&quot;;
+
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\n\nReading vtk files into memory .. &quot;; 
+	reader1-&gt;Update(); reader2-&gt;Update(); 
+	_sc_poly = reader1-&gt;GetOutput(); 
+	_gm_poly = reader2-&gt;GetOutput(); 
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot; finished reading .. &quot;; 
+	_sc_poly-&gt;BuildLinks(); 
+	_gm_poly-&gt;BuildLinks();
+
+	gangmapScalars = vtkDoubleArray::New(); 
+	scarScalars = vtkFloatArray::New(); 
+
+	gangmapScalars =  vtkDoubleArray::SafeDownCast(_gm_poly-&gt;GetPointData()-&gt;GetScalars()); 
+	scarScalars = vtkFloatArray::SafeDownCast(_sc_poly-&gt;GetCellData()-&gt;GetScalars()); 
+	
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\n\nfinished reading scar and force data from the vtk files .. &quot;; 
+	vtkSmartPointer&lt;vtkCellLocator&gt; cell_locator = vtkSmartPointer&lt;vtkCellLocator&gt;::New();
+	vtkSmartPointer&lt;vtkIdList&gt; cell_points = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+	cell_locator-&gt;SetDataSet(_sc_poly);  
+	cell_locator-&gt;AutomaticOn(); 
+	cell_locator-&gt;BuildLocator();
+	if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\n\nfinished building cell locator to search on scar map .. &quot; &lt;&lt; endl; 
+
+	vtkSmartPointer&lt;vtkPoints&gt; _gm_points = vtkSmartPointer&lt;vtkPoints&gt;::New();
+	_gm_points-&gt;ShallowCopy(_gm_poly-&gt;GetPoints());
+/*
+if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\nNumber of points on gangmap = &quot; &lt;&lt; _gm_poly-&gt;GetNumberOfPoints() &lt;&lt; endl;
+if (_IS_DEBUG == 1) cout &lt;&lt; &quot;and the number of scalars in this map = &quot; &lt;&lt; gangmapScalars-&gt;GetNumberOfTuples() &lt;&lt; endl;
+
+if (_IS_DEBUG == 1) cout &lt;&lt; &quot;\nand cells on scarMap = &quot; &lt;&lt; _sc_poly-&gt;GetNumberOfCells() &lt;&lt; endl;
+if (_IS_DEBUG == 1) cout &lt;&lt; &quot;and the number of scalars in this map = &quot; &lt;&lt; scarScalars-&gt;GetNumberOfTuples() &lt;&lt; endl;
+*/
+
+	// if we have a gang map which is uniform (rather than lineraly distributed) 
+	// we will run one pass of gang maps to init necessary vectors
+	if (forceMapType == 2) { 
+		for (vtkIdType _gm_poly_ptId = 0; _gm_poly_ptId&lt;_gm_poly-&gt;GetNumberOfPoints(); _gm_poly_ptId++)
+		{
+			_forceAtPt = gangmapScalars-&gt;GetTuple1(_gm_poly_ptId); 
+			if (_forceAtPt &gt; 0)
+			{
+				initUniqueFTIArray(_uniqueFTIs, _forceAtPt); 
+			}
+		}
+		cout &lt;&lt; &quot;finished initialization part 1&quot; &lt;&lt; endl;
+
+		initFTIMeanScarArray(_MeanScarAtEachUniqueFTIInUniformGangMaps, _uniqueFTIs.size());
+		cout &lt;&lt; &quot;finished initialization some necessary arrays for storing scar and ftis&quot; &lt;&lt; endl;
+		//cout &lt;&lt; &quot;the size of these arrays should be equal, lets check = &quot; &lt;&lt; _MeanScarAtEachUniqueFTIInUniformGangMaps.size() &lt;&lt; &quot; and &quot; &lt;&lt; _uniqueFTIs.size() &lt;&lt; endl;
+	}
+	for (vtkIdType _gm_poly_ptId = 0; _gm_poly_ptId&lt;_gm_poly-&gt;GetNumberOfPoints(); _gm_poly_ptId++)
+	{
+		_tot = 0; 
+		_forceAtPt = gangmapScalars-&gt;GetTuple1(_gm_poly_ptId); 
+		//if (_IS_DEBUG == 1) cout &lt;&lt; &quot; pt. id = &quot; &lt;&lt; _gm_poly_ptId &lt;&lt; &quot;, force = &quot; &lt;&lt; _forceAtPt;
+
+		if (_forceAtPt &gt; 0)
+		{
+			_gm_points-&gt;GetPoint(_gm_poly_ptId, _gm_pt);
+			cell_locator-&gt;FindClosestPoint(_gm_pt, closestPoint, temp_cell, cellId, subId, dist); 
+			//if (_IS_DEBUG == 1) cout &lt;&lt; &quot;closestPoint is success &quot;;
+			// find neighbours of this cell (cellId) 
+			
+			// from http://vtk.1045678.n5.nabble.com/getcellneighbours-of-polydata-td1245707.html#a1245713
+			// getting first vertices of this cell 
+			// and then get the 'EDGE' neighbours of this cells. 
+			
+			vtkSmartPointer&lt;vtkIdList&gt; vertexIds = vtkSmartPointer&lt;vtkIdList&gt;::New();
+			if (cellId &gt; 0) _sc_poly-&gt;GetCellPoints(cellId, vertexIds); 
+			
+			if (vertexIds-&gt;GetNumberOfIds() == 3 &amp;&amp; cellId &lt; _sc_poly-&gt;GetNumberOfCells()) { 
+				vtkSmartPointer&lt;vtkIdList&gt; neighbourCellIds1 =vtkSmartPointer&lt;vtkIdList&gt;::New();
+				_sc_poly-&gt;GetCellEdgeNeighbors(cellId, vertexIds-&gt;GetId(0), vertexIds-&gt;GetId(1), neighbourCellIds1); 
+				if (neighbourCellIds1-&gt;GetNumberOfIds() &gt; 0) edgeNeighbours.push_back(neighbourCellIds1-&gt;GetId(0)); 
+
+				vtkSmartPointer&lt;vtkIdList&gt; neighbourCellIds2 =vtkSmartPointer&lt;vtkIdList&gt;::New();
+				_sc_poly-&gt;GetCellEdgeNeighbors(cellId, vertexIds-&gt;GetId(1), vertexIds-&gt;GetId(2), neighbourCellIds2); 
+				if (neighbourCellIds2-&gt;GetNumberOfIds() &gt; 0)  edgeNeighbours.push_back(neighbourCellIds2-&gt;GetId(0)); 
+
+				
+				vtkSmartPointer&lt;vtkIdList&gt; neighbourCellIds3 =vtkSmartPointer&lt;vtkIdList&gt;::New();
+				_sc_poly-&gt;GetCellEdgeNeighbors(cellId, vertexIds-&gt;GetId(2), vertexIds-&gt;GetId(0), neighbourCellIds3); 
+				if (neighbourCellIds3-&gt;GetNumberOfIds() &gt; 0) edgeNeighbours.push_back(neighbourCellIds3-&gt;GetId(0)); 
+
+				for (int i=0;i&lt;edgeNeighbours.size();i++)
+				{
+					_tot += scarScalars-&gt;GetTuple1(edgeNeighbours[i]); 
+				}
+				mean = _tot/edgeNeighbours.size(); 
+				
+				if (forceMapType == 1) { 
+					out &lt;&lt; _forceAtPt &lt;&lt; &quot;\t\t&quot; &lt;&lt; mean &lt;&lt; &quot;\t\t&quot; &lt;&lt; edgeNeighbours.size() &lt;&lt; &quot;\n&quot;;
+				} 
+				else
+				{
+					// force ditsance map is not linear, it is uniform
+					if (!populateFTIMeanScarArray(_uniqueFTIs, _MeanScarAtEachUniqueFTIInUniformGangMaps, _forceAtPt, mean))
+						cout &lt;&lt; &quot;To my surprise, I have come across an FTI I wasn't expecting .. let me run now, inspect later ... &quot;;
+					
+				}
+				if (edgeNeighbours.size() &gt; 0) edgeNeighbours.clear(); 
+			}
+		}
+	}
+
+	if (forceMapType == 2)
+	{
+		writeScarFTIForUniformDistanceForceMapsToFile(out, _uniqueFTIs, _MeanScarAtEachUniqueFTIInUniformGangMaps); 
+	}
+	out.close();
+
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:118-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124946 -->
+<div class="printfooter">
+Retrieved from "<a href="index1adb.html?title=FTI_Analysis">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=FTI_Analysis</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index1adb.html?title=FTI_Analysis" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexb889.html?title=Talk:FTI_Analysis&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index70af.html?title=FTI_Analysis&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexcc45.html?title=FTI_Analysis&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexe201.html?title=Special:UserLogin&amp;returnto=FTI_Analysis" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index7504.html?title=Special:WhatLinksHere/FTI_Analysis" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="indexc7e4.html?title=Special:RecentChangesLinked/FTI_Analysis" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexc13b.html?title=FTI_Analysis&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index9a1d.html?title=FTI_Analysis&amp;oldid=831" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 24 March 2011, at 12:14.</li>
+					<li id="viewcount">This page has been accessed 439 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.408 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=FTI_Analysis&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:00 GMT -->
+</html>

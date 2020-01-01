@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:27:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="keywords" content="Shortest Path In Mesh,Users" />
+		<link rel="next" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/opensearch_desc.php" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>View source - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Shortest_Path_In_Mesh";
+		var wgTitle = "Shortest Path In Mesh";
+		var wgAction = "edit";
+		var wgArticleId = "36";
+		var wgIsArticle = false;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 249;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/edit.js?207"></script>
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Shortest_Path_In_Mesh skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">View source</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub">for <a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh" title="Shortest Path In Mesh">Shortest Path In Mesh</a></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">The action you have requested is limited to users in the group: <a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Rashed Karim Wiki:Users (page does not exist)">Users</a>.</div>
+<p>You can view and copy the source of this page:
+</p><textarea id="wpTextbox1" name="wpTextbox1" cols="80" rows="25" readonly="readonly">== The Problem == 
+[[File:Mesh vertices.png|right|thumb|250px|The surface mesh that can be easily represented as a undirected graph.]]
+[[File:Mesh color distance map.png|right|thumb|250px|Geodesic distances computed on the map from the marked point (marked in blue). Color changes from green to yellow to red with increasing distance.]]
+The voltage values are not defined at every point on a left atrium surface mesh. It is only defined at some of the mesh vertices. The problem is to interpolate the unknown scalar values (i.e. voltage). One intuitive way to interpolate is to compute the weighted average of the known scalars. This amounts to finding geodesic distances between vertices of a mesh. VTK unfortunately comes with no magic function that can interpolate scalars in this manner. Although it does now (version &gt;5.5) come with a class that can compute [http://www.vtk.org/doc/release/5.4/html/a00416.html geodesics]. Also I posted a question regarding [http://old.nabble.com/scalars-not-defined-at-every-point-td28190256.html this] on the VTK forum.
+
+== Shortest path algorithms == 
+I needed the Single-source shortest path algorithms where the best-path from one specified vertex to every other vertex in the graph is computed. The two options: 
+* Bellman-ford (takes care of negative edge weights, but a little expensive)
+* Dijkstra's algorithm (cannot handle negative edge weights, but runs in ''O''(''V''log''V'') time '''ONLY''' if it uses a priority Queue 
+
+== Priority Queue == 
+At each iteration of the algorithm, the queue must return the vertex with minimum distance. If the queue is implemented as a simple array, this will mean going through each element at least once and thus O(n) time. However, implementations using binomial or fibonacci heaps can do better: O(log n)
+
+An excellent lecture on the Dijkstra's algorithm can be found [http://videolectures.net/mit6046jf05_demaine_lec17/ here]. 
+
+== Implementations ==
+I found a good working implementation of Dijkstra's algorithm that implements a priority queue [http://www.cosc.canterbury.ac.nz/tad.takaoka/alg/spalgs/spalgs.html here]. However, it didn't compile straight out-of-the-box. I had to make minor modifications: 
+* fheap.cpp:  trees = new FHeapNode*[maxTrees]; instead of trees = new ( FHeapNode* )[maxTrees]; by removing the brackets
+* fheap.cpp: the use of log in maxTrees = 1 + (int)(1.44 * log((double)n)/log(2.0)); where n should be casted to double</textarea><div class='templatesUsed'>
+
+</div>
+<p>Return to <a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh" title="Shortest Path In Mesh">Shortest Path In Mesh</a>.</p>
+<div class="printfooter">
+Retrieved from "<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Talk:Shortest_Path_In_Mesh&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource" class="selected"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Shortest_Path_In_Mesh" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/images/myWikiLogo.gif);" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:WhatLinksHere/Shortest_Path_In_Mesh" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChangesLinked/Shortest_Path_In_Mesh" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="privacy"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.479 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Shortest_Path_In_Mesh&action=edit by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:27:45 GMT -->
+</html>

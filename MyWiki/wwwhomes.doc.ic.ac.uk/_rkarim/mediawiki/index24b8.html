@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Bland_altman_plots2&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:58:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Bland altman plots2" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Bland altman plots2 - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Bland_altman_plots2";
+		var wgTitle = "Bland altman plots2";
+		var wgAction = "view";
+		var wgArticleId = "273";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1604;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Bland_altman_plots2 skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Bland altman plots2</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><i>Back to <a href="index95ce.html?title=Bland_altman_plots" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Bland_altman_plots" rel="nofollow">Bland altman main page</a></i>
+</p>
+<a name="Acknowledgement" id="Acknowledgement"></a><h2> <span class="mw-headline"> Acknowledgement </span></h2>
+<p>The code here is adapted and modified from the code given <a href="http://www.mathworks.co.uk/matlabcentral/fileexchange/24645-bland-altman-plot" class="external text" title="http://www.mathworks.co.uk/matlabcentral/fileexchange/24645-bland-altman-plot" rel="nofollow">here</a>
+</p>
+<a name="Usage" id="Usage"></a><h2> <span class="mw-headline"> Usage </span></h2>
+<p>Only requires as input var1, var2 and a flag. Use flag = 2 as the plot on this option is modified and suited for technical publications. 
+</p>
+<pre>
+ BlandAltman('file1.txt', 'file2.txt, 2);
+</pre>
+<p>file1 and file2.txt contain data points on each new-line, example: 
+</p>
+<pre>
+1.267
+0.442
+--- and so on
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<p>I have modified the code to suit to my needs, for example increasing the font size and drawing lines representing the +/- 2SDs. 
+</p>
+<pre>
+function [means,diffs,meanDiff,CR,linFit] = BlandAltman(file1, file2, flag)
+ 
+   &nbsp;%%%Plots a Bland-Altman Plot
+   &nbsp;%%%INPUTS:
+   &nbsp;%%% var1 and var2 - vectors of the measurements
+   &nbsp;%%%flag - how much you want to plot
+       &nbsp;%%% 0 = no plot
+       &nbsp;%%% 1 = just the data
+       &nbsp;%%% 2 = data and the difference and CR lines
+       &nbsp;%%% 3 = above and a linear fit
+   &nbsp;%%%
+   &nbsp;%%%OUTPUTS:
+   &nbsp;%%% means = the means of the data
+   &nbsp;%%% diffs = the raw differences
+   &nbsp;%%% meanDiff = the mean difference
+   &nbsp;%%% CR = the 2SD confidence limits
+   &nbsp;%%% linfit = the paramters for the linear fit
+    
+    var1 = load(file1); 
+    var2 = load(file2); 
+    var2 = var2'; 
+    var1 = var1';
+    
+  &nbsp;% Create figure
+    figure1 = figure('Color',[1 1 1]);
+
+   &nbsp;% Create axes
+    axes1 = axes('Parent',figure1,'LineWidth',2);
+     xlabel('Average Scar (%)','FontSize',22);
+    ylabel('Difference Scar (%)','FontSize',22);
+    box(axes1,'on');
+    hold(axes1,'all');
+    
+    if (nargin&lt;1)
+      &nbsp;%%%Use test data
+       var1=[512,430,520,428,500,600,364,380,658,445,432,626,260,477,259,350,451];%,...
+       var2=[525,415,508,444,500,625,460,390,642,432,420,605,227,467,268,370,443];
+       flag = 3;
+    end
+    
+    if nargin==2
+        flag = 0;
+    end
+    
+    means = mean([var1;var2]);
+    diffs = var1-var2;
+    mean_diffs = mean(diffs);
+    
+    meanDiff = mean(diffs);
+    sdDiff = std(diffs);
+    CR = [meanDiff + 1.96 * sdDiff, meanDiff - 1.96 * sdDiff];&nbsp;%%95% confidence range
+    
+    linFit = polyfit(means,diffs,1);&nbsp;%%%work out the linear fit coefficients
+    
+   &nbsp;%%%plot results unless flag is 0
+    if flag ~= 0
+       
+        plot1 = plot(means,diffs,'o');
+        set (plot1, 'MarkerSize',10,'Marker','o','LineStyle','none',...
+    'Color',[0.08 0.17 0.55],'LineWidth',2);
+      
+        hold on
+        if flag &gt; 1
+            xrange = get(gca, 'XLim');
+           &nbsp;%plot(means, ones(1,length(means)).*CR(1),'k-','LineStyle',':','Color',[0.08 0.17 0.55],'LineWidth',2);&nbsp;%%%plot the upper CR
+           &nbsp;%plot(means, ones(1,length(means)).*CR(2),'k-','LineStyle',':','Color',[0.08 0.17 0.55],'LineWidth',2);&nbsp;%%%plot the lower CR
+            line(xrange, [CR(1), CR(1)], 'LineStyle','--','Color',[0.08 0.17 0.55],'LineWidth',2);
+            line(xrange, [CR(2), CR(2)], 'LineStyle','--','Color',[0.08 0.17 0.55],'LineWidth',2);
+           &nbsp;%plot(xrange,'k','Color',[1 0 0],'LineWidth',2);&nbsp;%%%plot zero
+            line(xrange,[mean_diffs,mean_diffs], 'Color',[1 0 0],'LineWidth',2);      &nbsp;%% plot means 
+            set(gca,'YLim',[-15 5]);      &nbsp;% if you want to set the range
+            set(gca, 'YTick', -15:3:5);
+           &nbsp;%of y-axis, sometimes this is necessary if you want to compare
+           &nbsp;%several bland-altman plots side-to-side the y-range needs to
+           &nbsp;%be the same
+            
+        end
+        if flag &gt; 2
+            plot(means, means.*linFit(1)+linFit(2),'k--');&nbsp;%%%plot the linear fit
+        end
+       
+        
+    end
+    
+end
+
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:273-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312135042 -->
+<div class="printfooter">
+Retrieved from "<a href="indexe824.html?title=Bland_altman_plots2">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Bland_altman_plots2</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexe824.html?title=Bland_altman_plots2" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexeee9.html?title=Talk:Bland_altman_plots2&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index41bb.html?title=Bland_altman_plots2&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexd945.html?title=Bland_altman_plots2&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexe6b1.html?title=Special:UserLogin&amp;returnto=Bland_altman_plots2" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexe2ed.html?title=Special:WhatLinksHere/Bland_altman_plots2" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index33e6.html?title=Special:RecentChangesLinked/Bland_altman_plots2" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index3d55.html?title=Bland_altman_plots2&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexed9b.html?title=Bland_altman_plots2&amp;oldid=1604" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 23 August 2012, at 15:27.</li>
+					<li id="viewcount">This page has been accessed 528 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.490 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Bland_altman_plots2&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:58:25 GMT -->
+</html>

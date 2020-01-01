@@ -1,0 +1,1421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Magic3&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:19:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Magic3" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Magic3 - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Magic3";
+		var wgTitle = "Magic3";
+		var wgAction = "view";
+		var wgArticleId = "287";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2364;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Magic3 skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Magic3</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Magic3" id="Magic3"></a><h2> <span class="mw-headline"> Magic3 </span></h2>
+<p>Developed first to be used for <a href="indexff74.html?title=Area_and_distance_distortions" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Area_and_distance_distortions" rel="nofollow">unfold LA experiments</a>. These are the available switches: 
+</p>
+<ul><li> --area
+</li><li> --dummyscalar
+</li><li> --countpix
+</li><li> --areacomb - from a list of points selected on vtk surface, computes all possible triangular segment areas
+</li><li> --checkerboard - to put a texture of a checkerboard or stripes on a vtk solid. 
+</li><li> --transferscalar - to transfer scalar from one polydata to another using direct copy or euclidean distance
+</li></ul>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+#include &quot;rk_test3.h&quot;
+
+void ReadMesh(char* fn1, vtkPolyData* poly) 
+{
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New(); 
+	reader-&gt;SetFileName(fn1); 
+	reader-&gt;Update();
+	vtkSmartPointer&lt;vtkTriangleFilter&gt; triangleFilter = vtkSmartPointer&lt;vtkTriangleFilter&gt;::New();
+	triangleFilter-&gt;SetInput(reader-&gt;GetOutput());
+	triangleFilter-&gt;Update();
+
+	poly-&gt;DeepCopy(triangleFilter-&gt;GetOutput());
+
+}
+
+void InsertDummyPointData(char* fn1, char* fn2)
+{
+	vtkSmartPointer&lt;vtkFileOutputWindow&gt; fileOutputWindow = vtkSmartPointer&lt;vtkFileOutputWindow&gt;::New();
+	fileOutputWindow-&gt;SetFileName( &quot;vtkLog.txt&quot; );
+
+	vtkOutputWindow* outputWindow = vtkOutputWindow::GetInstance();
+	if ( outputWindow )
+	{
+		outputWindow-&gt;SetInstance( fileOutputWindow );
+	}
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New(); 
+	reader-&gt;SetFileName(fn1); 
+	reader-&gt;Update();
+	vtkSmartPointer&lt;vtkTriangleFilter&gt; triangleFilter = vtkSmartPointer&lt;vtkTriangleFilter&gt;::New();
+	triangleFilter-&gt;SetInput(reader-&gt;GetOutput());
+	triangleFilter-&gt;Update();
+	vtkSmartPointer&lt;vtkFloatArray&gt; scalars = vtkSmartPointer&lt;vtkFloatArray&gt;::New();
+	vtkSmartPointer&lt;vtkPolyData&gt; poly = vtkSmartPointer&lt;vtkPolyData&gt;::New(); 
+	poly = triangleFilter-&gt;GetOutput();
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++){
+		scalars-&gt;InsertNextTuple1(1); 
+
+	}
+
+	poly-&gt;GetPointData()-&gt;SetScalars(scalars); 
+	vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+	writer-&gt;SetFileName(fn2); 
+	writer-&gt;SetInput(poly); 
+	writer-&gt;Update();
+
+}
+
+void ReadPointIDTextFile(char* fn1, vtkPolyData* poly, vector&lt;vtkPoints*&gt;&amp; ptss, vector&lt;vector&lt;vtkIdType&gt; &gt;&amp; pIDss)
+{
+	double xyz[3];
+	int idx=0;
+	int pointID;
+	ifstream fin(fn1);	
+	string lif;
+	//vtkPoints* pts = vtkPoints::New(); 
+	ptss.push_back(vtkPoints::New()); 
+	vector&lt;vtkIdType&gt; pIDs; 
+
+	while(getline(fin, lif)) 
+	{
+		std::stringstream ss(lif);
+		if (strspn(lif.substr(0,1).c_str(), &quot;0123456789&quot;) == 1)			// check if the first character of line is a number
+		{
+			while (ss &gt;&gt; pointID)
+			{
+				if (pointID &gt;= 0 &amp;&amp; pointID&lt;poly-&gt;GetNumberOfPoints())
+				{
+					poly-&gt;GetPoint(pointID, xyz); 
+					ptss[idx]-&gt;InsertNextPoint(xyz); 
+					pIDs.push_back(pointID);
+				}
+				
+			}
+		}
+		else if (ss.str() == &quot;X&quot;)
+		{
+			ptss.push_back(vtkPoints::New());
+			idx++;
+			pIDss.push_back(pIDs);
+			pIDs.clear();
+		}
+		
+	}
+}
+
+
+void ExtractSegment(vtkPoints* pts, vtkPolyData* poly, vtkPolyData* oPoly, vtkPolyData* cPoly) 
+{
+	
+	vtkSmartPointer&lt;vtkFileOutputWindow&gt; fileOutputWindow = vtkSmartPointer&lt;vtkFileOutputWindow&gt;::New();
+	fileOutputWindow-&gt;SetFileName( &quot;vtkLog.txt&quot; );
+
+	vtkOutputWindow* outputWindow = vtkOutputWindow::GetInstance();
+	if ( outputWindow )
+	{
+		outputWindow-&gt;SetInstance( fileOutputWindow );
+	}
+
+	vtkSmartPointer&lt;vtkSelectPolyData&gt; loop = vtkSmartPointer&lt;vtkSelectPolyData&gt;::New();
+	loop-&gt;SetInput(poly);
+	loop-&gt;SetLoop(pts);
+	//loop-&gt;GenerateSelectionScalarsOn();
+	loop-&gt;SetSelectionModeToSmallestRegion();
+	loop-&gt;Update();
+	//cout &lt;&lt; &quot;Extract selection error = &quot; &lt;&lt; loop-&gt;GetErrorCode() &lt;&lt; endl; 
+	oPoly-&gt;DeepCopy(loop-&gt;GetOutput());
+	
+	//VizBoxCore::VBC_WritePolyToFile(loop-&gt;GetOutput());
+	vtkSmartPointer&lt;vtkClipPolyData&gt; clip = vtkSmartPointer&lt;vtkClipPolyData&gt;::New();
+	clip-&gt;SetInput(oPoly);
+	//cout &lt;&lt; &quot;Polygons in clipped mesh = &quot; &lt;&lt;loop-&gt;GetOutput()-&gt;GetNumberOfCells();
+	clip-&gt;Update();	
+	cPoly-&gt;DeepCopy(clip-&gt;GetOutput());
+}
+
+void ReadPointsRead(vector&lt;vtkPoints*&gt; ptss)
+{
+	double xyz[3];
+	for (int i=0;i&lt;ptss.size();i++)
+	{
+		
+		if (ptss[i]-&gt;GetNumberOfPoints() &gt; 0) { 
+
+			cout &lt;&lt; &quot;\nPoint set &quot; &lt;&lt; i &lt;&lt; &quot;: \n=========\n&quot;;
+			for (int j=0;j&lt;ptss[i]-&gt;GetNumberOfPoints();j++)
+			{
+				ptss[i]-&gt;GetPoint(j, xyz); 
+				cout &lt;&lt; xyz[0] &lt;&lt;  &quot;, &quot; &lt;&lt; xyz[1] &lt;&lt; &quot;, &quot; &lt;&lt; xyz[2] &lt;&lt; endl;
+			}
+		}
+	}
+}
+
+void CountPixelsAndwriteToFile(char* i_fn, char* o_fn2)
+{
+	irtkGreyImage img; 
+	img.Read(i_fn); 
+	irtkGreyPixel *img_p; 
+	int count = 0;
+
+	img_p = img.GetPointerToVoxels(); 
+	for (int i=0;i&lt;img.GetNumberOfVoxels();i++)
+	{
+		if (*img_p &gt; 0)
+			count++; 
+		img_p++; 
+	}
+	
+	// now write to file 
+	fstream out_f; 
+	out_f.open(o_fn2, fstream::in | fstream::out | fstream::app); 
+	out_f &lt;&lt; count &lt;&lt; endl;
+	out_f.close();
+
+}
+
+void PixelsToFile(char* i_fn, char* o_fn)
+{
+	ofstream out; 
+	irtkGreyImage img; 
+	out.open(o_fn);
+	img.Read(i_fn); 
+	irtkGreyPixel *img_p; 
+	img_p = img.GetPointerToVoxels(); 
+	
+	for (int i=0;i&lt;img.GetNumberOfVoxels();i++)
+	{
+		if (*img_p &gt; 0)
+			out &lt;&lt; *img_p &lt;&lt; endl; 
+		img_p++;
+	}
+	out.close(); 
+}
+
+void CombineBinaryImages(char* i_fn1, char* i_fn2, char* o_fn)
+{
+	irtkGreyImage img1, img2;
+	img1.Read(i_fn1); 
+	img2.Read(i_fn2);
+	irtkGreyPixel *img_p1, *img_p2; 
+
+	img_p1 = img1.GetPointerToVoxels(); 
+	img_p2 = img2.GetPointerToVoxels(); 
+	
+	if (img1.GetNumberOfVoxels()&nbsp;!= img2.GetNumberOfVoxels())
+	{
+		cout &lt;&lt; &quot;Image sizes dont match!&quot; &lt;&lt; endl;
+		exit(0);
+	}
+
+	for (int i=0;i&lt;img1.GetNumberOfVoxels();i++)
+	{
+
+		if (*img_p2 &gt; 0) 
+			*img_p1 = 1+*img_p2;
+		img_p1++; 
+		img_p2++; 
+	}
+
+	img1.Write(o_fn);
+}
+
+void GetPolyDataArea(vtkPolyData* poly, double&amp; area)
+{
+	int idx; 
+	double** xyz; 
+	vtkIdType num_cell_points; 
+	vtkSmartPointer&lt;vtkIdList&gt; cell_points = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+	double total_area = 0; 
+	double cell_area = 0; 
+	xyz = new double*[3]; 
+	for (int i=0;i&lt;3;i++)
+		xyz[i] = new double[3]; 
+
+	for (int i=0;i&lt;poly-&gt;GetNumberOfCells();i++)			// running through each polygon 
+	{
+		vtkIdType neighbor_point; 
+		poly-&gt;GetCellPoints(i, cell_points); 
+		num_cell_points = cell_points-&gt;GetNumberOfIds(); 
+		idx = 0;
+        for ( neighbor_point = 0; neighbor_point &lt; num_cell_points; ++neighbor_point ) 
+        {
+			vtkIdType neighbor_point_id = cell_points-&gt;GetId(neighbor_point);
+			poly-&gt;GetPoint(neighbor_point_id, xyz[idx++]);
+		}
+		/*cout &lt;&lt; &quot;(&quot; &lt;&lt; xyz[0][0] &lt;&lt; &quot;,&quot; &lt;&lt; xyz[0][1] &lt;&lt; &quot;,&quot; &lt;&lt; xyz[0][2] &lt;&lt; &quot;)&quot; &lt;&lt; &quot;--&quot;;
+		cout &lt;&lt; &quot;(&quot; &lt;&lt; xyz[1][0] &lt;&lt; &quot;,&quot; &lt;&lt; xyz[1][1] &lt;&lt; &quot;,&quot; &lt;&lt; xyz[1][2] &lt;&lt; &quot;)&quot; &lt;&lt; &quot;--&quot;;
+		cout &lt;&lt; &quot;(&quot; &lt;&lt; xyz[2][0] &lt;&lt; &quot;,&quot; &lt;&lt; xyz[2][1] &lt;&lt; &quot;,&quot; &lt;&lt; xyz[2][2] &lt;&lt; &quot;)&quot; &lt;&lt; endl;*/
+		cell_area = vtkTriangle::TriangleArea(xyz[0], xyz[1], xyz[2]);
+		//cout &lt;&lt; &quot;Cell area = &quot; &lt;&lt; cell_area &lt;&lt; endl;
+		total_area += cell_area;
+	}
+	
+	area = total_area;
+}
+
+double GeoDesicHelper(vtkPolyData* poly, vtkIdList* list)
+{
+	vtkIdType prev_id, curr_id; 
+	double len=0; 
+	for(vtkIdType e = 0; e &lt; list-&gt;GetNumberOfIds(); e++) 
+	{
+		curr_id = list-&gt;GetId(e);
+		if (e&gt;0) len += VizBoxCore::VBC_getEuclideanDistanceIn3D(poly, prev_id, curr_id); 
+		prev_id = list-&gt;GetId(e); 
+		
+	}
+
+	return len; 
+}
+
+// type = 1 - distance ONLY between points 
+// type = 2	- distance between points and all permuatation of points  
+void GetPolyDataDistances(vtkPolyData* poly, vector&lt;vtkIdType&gt; pIDs, bool isGeodesic, int type, vector&lt;double&gt;&amp; dist)
+{
+	double xyz_0[3], xyz_1[3];
+	double d;
+	Encircler *enc = new Encircler();
+	enc-&gt;_dijkstra-&gt;SetInput(poly); 
+	vtkSmartPointer&lt;vtkFileOutputWindow&gt; fileOutputWindow =	 vtkSmartPointer&lt;vtkFileOutputWindow&gt;::New();
+	fileOutputWindow-&gt;SetFileName( &quot;vtkLog.txt&quot; );
+
+	vtkOutputWindow* outputWindow = vtkOutputWindow::GetInstance();
+	if ( outputWindow )
+	{
+		outputWindow-&gt;SetInstance( fileOutputWindow );
+	}
+
+	for (int i=0;i&lt;pIDs.size() &amp;&amp; (type == 2);i++)
+	{
+		for (int j=i+1;j&lt;pIDs.size() &amp;&amp; (type == 2);j++)
+		{
+			cout &lt;&lt; &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot;j = &quot; &lt;&lt; j &lt;&lt; endl;
+			poly-&gt;GetPoint(pIDs[i], xyz_0); 
+			poly-&gt;GetPoint(pIDs[j], xyz_1); 
+			if (!isGeodesic)
+				d = MathBox::getEuclideanDistanceIn3D(xyz_0, xyz_1);
+			else { 
+				enc-&gt;FindShortestPathBetweenTwoPoints(pIDs[i],pIDs[j]); 
+				cout &lt;&lt; &quot;Path computed .. &quot; &lt;&lt; endl;
+				d=GeoDesicHelper(poly, enc-&gt;_dijkstra-&gt;GetIdList()); 
+				cout &lt;&lt; d &lt;&lt; endl;
+			}
+			dist.push_back(d);
+		}
+	}
+
+	for (int i=0;i&lt;pIDs.size() &amp;&amp; (type == 1);i++)
+	{
+		if (i+1 &lt; pIDs.size()) { 
+			poly-&gt;GetPoint(pIDs[i], xyz_0); 
+			poly-&gt;GetPoint(pIDs[i+1], xyz_1); 	
+		}
+		else
+		{
+			// the last one point with the first point - cyclic 
+			poly-&gt;GetPoint(pIDs[0],xyz_0);
+			poly-&gt;GetPoint(pIDs[i],xyz_1);
+		
+		}
+		d = MathBox::getEuclideanDistanceIn3D(xyz_0, xyz_1);
+		dist.push_back(d); 
+	}
+}
+
+void RegularizePolygonForConnectedVertices(vtkPolyData* poly, vtkPolyData* poly_onlyEdges)
+{
+	vtkSmartPointer&lt;vtkTriangleFilter&gt; triangleFilter = vtkSmartPointer&lt;vtkTriangleFilter&gt;::New();
+	triangleFilter-&gt;SetInput(poly);
+	triangleFilter-&gt;Update();
+	
+	vtkSmartPointer&lt;vtkExtractEdges&gt; extractEdges = vtkSmartPointer&lt;vtkExtractEdges&gt;::New();
+	extractEdges-&gt;SetInputConnection(triangleFilter-&gt;GetOutputPort());
+	extractEdges-&gt;Update();
+	
+	poly_onlyEdges = extractEdges-&gt;GetOutput();
+}
+
+void GetConnectedVertices(vtkPolyData* poly_onlyEdges, int id, vtkIdList* connectedVertices )
+{
+	vtkSmartPointer&lt;vtkIdList&gt; cellIdList = vtkSmartPointer&lt;vtkIdList&gt;::New();
+	poly_onlyEdges-&gt;GetPointCells(id, cellIdList);
+	
+	for(vtkIdType i = 0; i &lt; cellIdList-&gt;GetNumberOfIds(); i++)
+    {
+		//cout &lt;&lt; &quot;id &quot; &lt;&lt; i &lt;&lt; &quot;&nbsp;: &quot; &lt;&lt; cellIdList-&gt;GetId(i) &lt;&lt; endl;
+	 
+		vtkSmartPointer&lt;vtkIdList&gt; pointIdList = vtkSmartPointer&lt;vtkIdList&gt;::New();
+		poly_onlyEdges-&gt;GetCellPoints(cellIdList-&gt;GetId(i), pointIdList);
+	 
+		//cout &lt;&lt; &quot;End points are &quot; &lt;&lt; pointIdList-&gt;GetId(0) &lt;&lt; &quot; and &quot; &lt;&lt; pointIdList-&gt;GetId(1) &lt;&lt; endl;
+	 
+		if(pointIdList-&gt;GetId(0)&nbsp;!= id)
+		  {
+		  //cout &lt;&lt; &quot;Connected to &quot; &lt;&lt; pointIdList-&gt;GetId(0) &lt;&lt; endl;
+		  connectedVertices-&gt;InsertNextId(pointIdList-&gt;GetId(0));
+		  }
+		else
+		  {
+		  //cout &lt;&lt; &quot;Connected to &quot; &lt;&lt; pointIdList-&gt;GetId(1) &lt;&lt; endl;
+		  connectedVertices-&gt;InsertNextId(pointIdList-&gt;GetId(1));
+		  }
+    }
+}
+
+void GetConnectedVertices_2(vtkSmartPointer&lt;vtkPolyData&gt; mesh, int seed, vtkSmartPointer&lt;vtkIdList&gt; connectedVertices) 
+{ 
+	
+  //get all cells that vertex 'seed' is a part of 
+  vtkSmartPointer&lt;vtkIdList&gt; cellIdList = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+  mesh-&gt;GetPointCells(seed, cellIdList); 
+
+
+  //loop through all the cells that use the seed point 
+  for(vtkIdType i = 0; i &lt; cellIdList-&gt;GetNumberOfIds(); i++) 
+    { 
+
+    vtkCell* cell = mesh-&gt;GetCell(cellIdList-&gt;GetId(i)); 
+    //cout &lt;&lt; &quot;The cell has &quot; &lt;&lt; cell-&gt;GetNumberOfEdges() &lt;&lt; &quot; edges.&quot; &lt;&lt; endl; 
+
+    //if the cell doesn't have any edges, it is a line 
+    if(cell-&gt;GetNumberOfEdges() &lt;= 0) 
+      { 
+      continue; 
+      } 
+
+    for(vtkIdType e = 0; e &lt; cell-&gt;GetNumberOfEdges(); e++) 
+      { 
+      vtkCell* edge = cell-&gt;GetEdge(e); 
+
+      vtkIdList* pointIdList = edge-&gt;GetPointIds(); 
+    
+      if(pointIdList-&gt;GetId(0) == seed || pointIdList-&gt;GetId(1) == seed) 
+        { 
+        if(pointIdList-&gt;GetId(0) == seed) 
+          { 
+          connectedVertices-&gt;InsertNextId(pointIdList-&gt;GetId(1)); 
+          } 
+        else 
+          { 
+          connectedVertices-&gt;InsertNextId(pointIdList-&gt;GetId(0)); 
+          } 
+        } 
+      } 
+    } 
+} 
+
+/*
+*	stripes direction = 1,2,3  (1 - x, 2- y and 3-z)
+*/
+void PutStripedTexture(vtkPolyData* poly, double resolution, int direction)
+{
+	double xyz[3]; 
+	double steps; 
+	//double maxX=-1, maxY=-1, maxZ=-1, minY=1e9, minZ=1e9, minX=1e9; 
+	int pointID; 
+	vtkSmartPointer&lt;vtkFloatArray&gt; scalars = vtkSmartPointer&lt;vtkFloatArray&gt;::New(); 
+	scalars-&gt;SetNumberOfValues(poly-&gt;GetNumberOfPoints()); 
+
+	double* maxXYZ = new double[3]; 
+	double* minXYZ = new double[3]; 
+
+	for (int i=0;i&lt;3;i++)
+	{
+		maxXYZ[i] = -1; 
+		minXYZ[i] = 1e9;
+	}
+	
+	// get maximum in x, y and z directions 
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++)
+	{
+		poly-&gt;GetPoint(i, xyz); 
+		if (xyz[0] &gt; maxXYZ[0])	maxXYZ[0] = xyz[0]; 
+		if (xyz[1] &gt; maxXYZ[1])	maxXYZ[1] = xyz[1]; 
+		if (xyz[2] &gt; maxXYZ[2])	maxXYZ[2] = xyz[2]; 
+		if (xyz[0] &lt; minXYZ[0])	minXYZ[0] = xyz[0]; 
+		if (xyz[1] &lt; minXYZ[1])	minXYZ[1] = xyz[1]; 
+		if (xyz[2] &lt; minXYZ[2])	minXYZ[2] = xyz[2]; 
+	}
+	cout &lt;&lt; &quot;XRange = (&quot; &lt;&lt; minXYZ[0] &lt;&lt; &quot;, &quot; &lt;&lt; maxXYZ[0] &lt;&lt; &quot;)\nYRange = (&quot; &lt;&lt; minXYZ[1] &lt;&lt; &quot;,&quot; &lt;&lt; maxXYZ[1] &lt;&lt; &quot;)\nZRange = (&quot; &lt;&lt; minXYZ[2] &lt;&lt; &quot;,&quot; &lt;&lt; maxXYZ[2] &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+	
+	steps = (maxXYZ[direction] - minXYZ[direction])/resolution; 
+	
+
+	double currMin, currMax;
+	currMin = minXYZ[direction]; 
+	int j;
+	cout &lt;&lt; &quot;Step size = &quot; &lt;&lt; steps &lt;&lt; &quot;\nNumber of steps = &quot; &lt;&lt; resolution &lt;&lt; endl; 
+	
+	// z  - direction 
+	for (int k=1;k&lt;resolution;k++){
+		
+		currMax = minXYZ[direction]+(k*steps);
+		for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++)
+		{
+			poly-&gt;GetPoint(i, xyz); 
+			if (xyz[direction] &gt; currMin &amp;&amp; xyz[direction] &lt;= currMax){
+				
+				if (k%2 == 0) 
+					j = -1;
+				else 
+					j = 1; 
+				scalars-&gt;SetValue(i, 100+(100*j));
+			}
+
+		}
+		cout &lt;&lt; &quot;currMin = &quot; &lt;&lt; currMin &lt;&lt; &quot;, currMax = &quot; &lt;&lt; currMax &lt;&lt; endl;
+		currMin = currMax; 
+	}
+	
+	poly-&gt;GetPointData()-&gt;SetScalars(scalars);
+}
+
+// Basically colours 1-neighbourhoods, i.e. immediate neighbours of a point 
+void PutCheckerBoard(vtkPolyData* poly, float val)
+{
+	int NeighboursNotFee=0;
+	vtkIdList* connectedVertices = vtkIdList::New();
+	vtkSmartPointer&lt;vtkPolyData&gt; poly_onlyEdges = vtkSmartPointer&lt;vtkPolyData&gt;::New(); 
+	RegularizePolygonForConnectedVertices(poly, poly_onlyEdges);
+	poly-&gt;BuildLinks();
+/*
+	if (poly-&gt;GetNumberOfPoints()&nbsp;!= poly_onlyEdges-&gt;GetNumberOfPoints()) {
+		cout &lt;&lt; &quot;WARNING: after running the polydata through a filter, the number of points have not remained the same&quot; 
+			&quot;\nCannot proceed further&quot; &lt;&lt; endl;
+		cout &lt;&lt; &quot;Original poly data n = &quot; &lt;&lt; poly-&gt;GetNumberOfPoints()  &lt;&lt; endl; 
+		cout &lt;&lt; &quot;After extract data n = &quot; &lt;&lt; poly_onlyEdges-&gt;GetNumberOfPoints()  &lt;&lt; endl; 
+		return;
+	}
+	
+*/	
+	// initialize the scalar data first 
+	vtkSmartPointer&lt;vtkFloatArray&gt; scalars = vtkSmartPointer&lt;vtkFloatArray&gt;::New(); 
+	scalars-&gt;SetNumberOfValues(poly-&gt;GetNumberOfPoints()); 
+	
+	cout &lt;&lt; &quot;got here&quot; &lt;&lt; endl;
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++)
+	{
+		scalars-&gt;SetValue(i, 0);
+	}
+
+	cout &lt;&lt; &quot;got here&quot; &lt;&lt; endl;
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++)
+	{
+		connectedVertices-&gt;Reset();
+		GetConnectedVertices_2(poly, i, connectedVertices); 
+		NeighboursNotFee = 0;
+		//cout &lt;&lt; connectedVertices-&gt;GetNumberOfIds() &lt;&lt; endl;
+		
+		for (int j=0;j&lt;connectedVertices-&gt;GetNumberOfIds();j++)
+		{
+			if (connectedVertices-&gt;GetId(j) &lt; poly-&gt;GetNumberOfPoints())
+			{
+				if (scalars-&gt;GetValue(connectedVertices-&gt;GetId(j)) &gt; 0)
+				{
+					NeighboursNotFee++; 
+				}
+			}
+			else
+				{
+					cout &lt;&lt; &quot;How on earth = &quot; &lt;&lt; connectedVertices-&gt;GetId(j) &lt;&lt; endl;
+				}
+		}
+
+		if (NeighboursNotFee == 0)		// if neighbour with at least one or none coloured, color this neighbourhood 
+		{
+			// Colour neighbours including itself 
+			/*
+			for (int j=0;j&lt;connectedVertices-&gt;GetNumberOfIds();j++)
+			{
+				if (connectedVertices-&gt;GetId(j) &lt; poly-&gt;GetNumberOfPoints())
+				{
+					scalars-&gt;SetValue(connectedVertices-&gt;GetId(j), val); 
+				}
+				else
+				{
+					cout &lt;&lt; &quot;How on earth = &quot; &lt;&lt; connectedVertices-&gt;GetId(j) &lt;&lt; endl;
+				}
+			}*/
+			scalars-&gt;SetValue(i, val);
+		}
+	}
+	cout &lt;&lt; &quot;got here&quot; &lt;&lt; endl;
+	poly-&gt;GetPointData()-&gt;SetScalars(scalars);
+}
+
+
+/* Prints out a combination like {1, 2} */
+void printc(int comb[], int k) {
+	printf(&quot;{&quot;);
+	int i;
+	for (i = 0; i &lt; k; ++i)
+		cout &lt;&lt; comb[i] + 1 &lt;&lt; &quot;,&quot;; 
+	cout &lt;&lt; &quot;}&quot; &lt;&lt; endl;
+}
+
+/*
+	next_comb(int comb[], int k, int n)
+		Generates the next combination of n elements as k after comb
+
+	comb =&gt; the previous combination ( use (0, 1, 2, ..., k) for first)
+	k =&gt; the size of the subsets to generate
+	n =&gt; the size of the original set
+
+	Returns: 1 if a valid combination was found
+		0, otherwise
+*/
+int next_comb(int comb[], int k, int n) {
+	int i = k - 1;
+	++comb[i];
+	while ((i &gt;= 0) &amp;&amp; (comb[i] &gt;= n - k + 1 + i)) {
+		--i;
+		++comb[i];
+	}
+
+	if (comb[0] &gt; n - k) /* Combination (n-k, n-k+1, ..., n) reached */
+		return 0; /* No more combinations can be generated */
+
+	/* comb now looks like (..., x, n, n, n, ..., n).
+	Turn it into (..., x, x + 1, x + 2, ...) */
+	for (i = i + 1; i &lt; k; ++i)
+		comb[i] = comb[i - 1] + 1;
+
+	return 1;
+}
+
+void ReadUVMappingFile(int *_3d_2_2d_mapping, int* _2d_2_3d_mapping, int&amp; _3d_2_2d_map_size, int&amp; _2d_2_3d_map_size, char* uvMapFileName, char* uvPointIDmaxFileName) 
+{
+
+	// find maximum id by reading file 
+	int max2DPointID=-1, max3DPointID=-1; 
+	int line_num=0, index3D, index2D;
+	ifstream in1, in2; 
+	string l, test_l1, test_l2; 
+	char* lineChar, *ch; 
+	
+
+	in1.open(uvMapFileName); 
+	in2.open(uvPointIDmaxFileName); 
+
+	if (in2.is_open())
+	{
+		getline(in2, l); 
+		max3DPointID = atoi(l.c_str()); 
+		l = &quot;&quot;; 
+		getline(in2, l); 
+		max2DPointID = atoi(l.c_str()); 
+		cout &lt;&lt; &quot;\nMaximum 2D point ID = &quot; &lt;&lt; max2DPointID &lt;&lt; &quot;\nMaximum 3d point ID = &quot; &lt;&lt; max3DPointID &lt;&lt; endl;
+	}
+
+	// init arrays 
+	if (max3DPointID&nbsp;!= -1) 
+	{
+		_3d_2_2d_map_size = max3DPointID+1;
+		_2d_2_3d_map_size = max2DPointID+1;
+		
+		_3d_2_2d_mapping = new int[max3DPointID+1]; 
+		_2d_2_3d_mapping = new int[max2DPointID+1]; 
+		
+
+		for (int i=0;i&lt;max3DPointID+1;i++) 
+			_3d_2_2d_mapping[i] = -1;			// initialize
+
+		for (int i=0;i&lt;max2DPointID+1;i++) 
+			_2d_2_3d_mapping[i] = -1;			// initialize
+		
+		if (in1.is_open())
+		{
+			while (getline(in1, l)) {
+				lineChar = new char[l.size()+1]; 
+				strcpy(lineChar, l.c_str()); 
+
+				ch = strtok(lineChar, &quot;\t&quot;); 
+				//cout &lt;&lt; l &lt;&lt; endl;
+				test_l1 = ch; 
+				//index3D = atoi(ch); 
+				ch = strtok(NULL, &quot;\t&quot;); 
+				test_l2 = ch; 
+				//index2D = atoi(ch); 
+			//	cout &lt;&lt; test_l1 &lt;&lt; &quot;:&quot; &lt;&lt; test_l2 &lt;&lt; endl;
+				if (sscanf(test_l1.c_str(), &quot;%d%&quot;, &amp;index2D) == 1 &amp;&amp; sscanf(test_l2.c_str(), &quot;%d%&quot;, &amp;index3D) == 1) 
+				{
+					//cout &lt;&lt; index3D &lt;&lt; &quot;:&quot; &lt;&lt; index2D &lt;&lt; endl;
+					if (index3D &lt;  max3DPointID+1) {
+						_3d_2_2d_mapping[index3D] = index2D; 
+					}
+
+					if (index2D &lt; max2DPointID + 1) { 
+						_2d_2_3d_mapping[index2D] = index3D; 
+					}
+				}
+
+				delete lineChar; 
+				line_num++; 
+
+			}
+		}
+	}
+	else 
+	{
+		cerr &lt;&lt; &quot;Could not read the size of point id array from file &quot; &lt;&lt; uvPointIDmaxFileName &lt;&lt; endl;
+		return;
+	}
+
+	in1.close(); 
+	in2.close();
+}
+
+void CopyTextureUnfoldTo3D(vtkPolyData* poly_unfold, vtkPolyData* poly_3d, char* input_f3, char* input_f4, char* output_f) 
+{
+	int default_3dscalar = -100;		// you might want to set this. For positions that dont have a mapping from 2d to 3d, this is the scalar value they will take
+	int* _3d_2_2d_mapping; 
+	int* _2d_2_3d_mapping; 
+	
+	int _3d_2_2d_map_size; 
+	int _2d_2_3d_map_size;
+	int j;
+	double val; 
+
+	ReadUVMappingFile(_3d_2_2d_mapping, _2d_2_3d_mapping, _3d_2_2d_map_size, _2d_2_3d_map_size, input_f3, input_f4); 
+
+	// loaded the mappings from 2d to 3d and 3d to 2d, now ready to copy texture
+	vtkSmartPointer&lt;vtkFloatArray&gt; scalars_2d = vtkSmartPointer&lt;vtkFloatArray&gt;::New(); 
+	scalars_2d = vtkFloatArray::SafeDownCast(poly_unfold-&gt;GetPointData()-&gt;GetScalars()); 
+
+	vtkSmartPointer&lt;vtkFloatArray&gt; scalars_3d = vtkSmartPointer&lt;vtkFloatArray&gt;::New(); 
+	
+	// first fill 3d model with default data 
+	for (int i=0;i&lt;poly_3d-&gt;GetNumberOfPoints();i++){
+		scalars_3d-&gt;InsertNextTuple1(default_3dscalar); 
+	}
+
+	for (int i=0;i&lt;poly_unfold-&gt;GetNumberOfPoints();i++)
+	{
+		j=-1;
+		if (i&lt;_2d_2_3d_map_size)
+		{
+			val = scalars_2d-&gt;GetTuple1(i);
+			// get mapped position in 3d 
+			j = _2d_2_3d_mapping[i];
+			if (j!=-1 &amp;&amp; j&lt;poly_3d-&gt;GetNumberOfPoints())
+				scalars_3d-&gt;SetTuple1(i, val);
+		}
+	}
+	poly_3d-&gt;GetPointData()-&gt;SetScalars(scalars_3d);
+}
+
+void ShiftMeshScalars(vtkPolyData* poly, double input_f1, double input_f2)
+{
+	double val, new_val; 
+	vtkFloatArray* scalars = vtkFloatArray::New();
+	vtkFloatArray* new_scalars = vtkFloatArray::New();
+
+	scalars = vtkFloatArray::SafeDownCast(poly-&gt;GetPointData()-&gt;GetScalars()); 
+
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++){
+		new_scalars-&gt;InsertNextTuple1(-1); 
+	}
+	
+cout &lt;&lt; &quot;shifting scalars by mean = &quot; &lt;&lt; input_f1 &lt;&lt; &quot; and std.dev = &quot; &lt;&lt; input_f2 &lt;&lt; endl;
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++)
+	{
+		 val = scalars-&gt;GetTuple1(i); 
+		 new_val = (val-input_f1)/input_f2;
+		 if (new_val &lt; 0) new_val = 0;
+		 new_scalars-&gt;SetTuple1(i,new_val); 
+		// cout &lt;&lt; val &lt;&lt; &quot;-&quot; &lt;&lt; new_val &lt;&lt; endl;
+	}
+	
+	poly-&gt;GetPointData()-&gt;SetScalars(new_scalars);
+}
+
+void BinaryMeshScalars(vtkPolyData* poly, double t1, double t2, double t3)
+{
+	double val, new_val; 
+	vtkFloatArray* scalars = vtkFloatArray::New();
+	vtkFloatArray* new_scalars = vtkFloatArray::New();
+
+	scalars = vtkFloatArray::SafeDownCast(poly-&gt;GetPointData()-&gt;GetScalars()); 
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++){
+		new_scalars-&gt;InsertNextTuple1(t3); 
+	}
+	cout &lt;&lt; &quot;Threshold = &quot; &lt;&lt; t1 &lt;&lt; &quot;\nInside value = &quot; &lt;&lt; t2 &lt;&lt; &quot;\nOutside value = &quot; &lt;&lt; t3 &lt;&lt; endl;
+	for (int i=0;i&lt;poly-&gt;GetNumberOfPoints();i++)
+	{
+		 val = scalars-&gt;GetTuple1(i); 
+		 if (val &gt; t1) 
+			 new_val = t2; 
+		 else 
+			 new_val = t3; 
+	
+		 new_scalars-&gt;SetTuple1(i,new_val); 
+		//cout &lt;&lt; val &lt;&lt; &quot;-&quot; &lt;&lt; new_val &lt;&lt; endl;
+	}
+	
+	poly-&gt;GetPointData()-&gt;SetScalars(new_scalars);
+}
+
+/*
+*	poly_s - polydata with scalars
+*	poly_ns - polydata with no scalars
+*	poly_o - polydata output
+*/
+void TransferScalars(vtkPolyData* poly_s, vtkPolyData* poly_ns, bool isDirectCopy) {
+	
+	double scalar; 
+	double xyz[3];
+	int closestPointID=-1;
+	vtkSmartPointer&lt;vtkPointLocator&gt; point_locator = vtkSmartPointer&lt;vtkPointLocator&gt;::New();
+	point_locator-&gt;SetDataSet(poly_ns); 
+	point_locator-&gt;AutomaticOn(); 
+	point_locator-&gt;BuildLocator();
+	poly_ns-&gt;BuildLinks();
+	
+	//vtkSmartPointer&lt;vtkFloatArray&gt; poly_s_scalars = vtkFloatArray::SafeDownCast(poly_s-&gt;GetPointData()-&gt;GetScalars());
+	vtkSmartPointer&lt;vtkFloatArray&gt; poly_ns_scalars = vtkSmartPointer&lt;vtkFloatArray&gt;::New(); 
+
+	for (int i=0;i&lt;poly_s-&gt;GetNumberOfPoints();i++){
+		poly_ns_scalars-&gt;InsertNextTuple1(-1); 
+	}
+	//cout &lt;&lt; &quot;Finished reading scalars, now transferring .. &quot; &lt;&lt; endl;
+	for (int i=0;i&lt;poly_s-&gt;GetNumberOfPoints();i++) 
+	{	
+		poly_s-&gt;GetPoint(i, xyz);
+		scalar = poly_s-&gt;GetPointData()-&gt;GetScalars()-&gt;GetTuple1(i); 
+
+		if (!isDirectCopy) {
+			closestPointID = point_locator-&gt;FindClosestPoint(xyz); 
+		}
+		
+		
+		if (closestPointID&nbsp;!= -1) { 
+			poly_ns_scalars-&gt;SetTuple1(closestPointID,scalar);
+		}
+
+		if (isDirectCopy) {
+			poly_ns_scalars-&gt;SetTuple1(i, scalar); 
+		}
+	}
+
+	poly_ns-&gt;GetPointData()-&gt;SetScalars(poly_ns_scalars);
+	
+}
+
+int main(int argc, char **argv)
+{
+	ofstream out; 
+	int option=-1;
+	bool foundArgs1=false,foundArgs2=false,foundArgs3=false, foundArgs4=false, foundMethod=false, foundArgs5=false, foundArgs6=false, foundArgs7 =false; 
+	irtkRealImage img1, img2; 
+	irtkGreyImage img3; 
+	char* input_f1=&quot;&quot;, *output_f=&quot;&quot;, *input_f2=&quot;&quot;, *input_f3=&quot;&quot;, *input_f4=&quot;&quot;;
+	int input_t=-1, input_t1=-1, input_t2=-1, input_t3=-1; 
+	double input_d1=-1, input_d2=-1;
+	int t1, t2, t3; 
+	int nd, n_c, k_c;
+	double area;
+	vector&lt;vtkPoints*&gt; ptss;
+	vector&lt;vector&lt;vtkIdType&gt; &gt; pIDss;
+	vector&lt;double&gt; dist;
+	vtkSmartPointer&lt;vtkPolyData&gt; poly = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	vtkSmartPointer&lt;vtkPolyData&gt; poly2 = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	vtkSmartPointer&lt;vtkPolyData&gt; oPoly = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	vtkSmartPointer&lt;vtkPolyData&gt; cPoly = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+
+	if (argc &gt;= 1)
+	{
+			for (int i = 1; i &lt; argc; i++) {
+				if (i + 1&nbsp;!= argc) {
+					if (string(argv[i]) == &quot;-i1&quot;) {
+						input_f1 = argv[i+1]; 
+						foundArgs1 = true;
+					} else if (string(argv[i]) == &quot;-i2&quot;) {
+						input_f2 = argv[i+1]; 
+						foundArgs2 = true;
+					} else if (string(argv[i]) == &quot;-o&quot;) {
+						output_f = argv[i+1]; 
+						foundArgs3 = true;
+					} else if (string(argv[i]) == &quot;-nd&quot;) {
+						nd = atoi(argv[i+1]);
+						foundArgs4 = true;
+					}  else if (string(argv[i]) == &quot;-i3&quot;) {
+						input_f3 = argv[i+1]; 
+						foundArgs5 = true;
+					}  else if (string(argv[i]) == &quot;-i4&quot;) {
+						input_f4 = argv[i+1]; 
+						foundArgs5 = true;
+					}else if (string(argv[i]) == &quot;-t&quot;) {
+						input_t = atoi(argv[i+1]); 
+						foundArgs5 = true;
+					}
+					else if (string(argv[i]) == &quot;-t1&quot;) {
+						input_t1 = atoi(argv[i+1]); 
+						foundArgs5 = true;
+					}
+					else if (string(argv[i]) == &quot;-t2&quot;) {
+						input_t2 = atoi(argv[i+1]); 
+						foundArgs5 = true;
+					}
+					else if (string(argv[i]) == &quot;-t3&quot;) {
+						input_t3 = atoi(argv[i+1]); 
+						foundArgs5 = true;
+					}
+					else if (string(argv[i]) == &quot;-d1&quot;) {
+						input_d1 = atof(argv[i+1]); 
+						foundArgs6 = true;
+					}
+					else if (string(argv[i]) == &quot;-d2&quot;) {
+						input_d2 = atof(argv[i+1]); 
+						foundArgs6 = true;
+					}
+
+
+					 // all method switches here 
+					else if (string(argv[i]) == &quot;--area&quot;) {
+						option = 1; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--dummyscalar&quot;) {
+						option = 2; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--countpix&quot;) {
+						option = 3; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--dist&quot;) {
+						option = 4; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--pixels&quot;) {
+						option = 5; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--combin&quot;) {
+						option = 6; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--areacomb&quot;) {
+						option = 7; 
+						foundMethod = true;
+					}
+					else if (string(argv[i]) == &quot;--checkerboard&quot;) { 
+						option = 8; 
+						foundMethod = true; 
+					}
+					else if (string(argv[i]) == &quot;--unfold23d&quot;) { 
+						option = 9; 
+						foundMethod = true; 
+					}
+					else if (string(argv[i]) == &quot;--distpair&quot;) { 
+						option = 10; 
+						foundMethod = true; 
+					}
+					else if (string(argv[i]) == &quot;--shiftscalar&quot;) { 
+						option = 11; 
+						foundMethod = true; 
+					}
+					else if (string(argv[i]) == &quot;--binaryscalar&quot;) { 
+						option = 12; 
+						foundMethod = true; 
+					}
+					else if (string(argv[i]) == &quot;--transferscalar&quot;) {
+						option = 13; 
+						foundMethod = true; 
+					}
+				}
+			}
+	}
+
+	if (!(foundArgs1 &amp;&amp; foundArgs3) || option==-1)
+	{
+		cout &lt;&lt; &quot;ERROR: One or more inputs missing or switch not specified\n\nUsage: app \n\nSwitch: --area x\n\tArguments:&quot;
+			&quot;\n\t -i1 \t - vtk surface&quot;
+			&quot;\n\t -i2 \t - Points selected on shell or unfold&quot; 
+			&quot;\n\t -o \t - output text file with area of each selected shell segment&quot;
+			&quot;\n\nSwitch: --dist x (measure distances between selected points)\n\tArguments:&quot;
+			&quot;\n\t -i1 \t - vtk surface&quot;
+			&quot;\n\t -i2 \t - Points selected on shell or unfold&quot; 
+			&quot;\n\t -nd \t - In 3d (Geodesic) or 2d (Euclidean), specify 2 or 3&quot; 
+			&quot;\n\t -o \t - output text file with distance between each selected point and all permutations of them&quot;
+			&quot;\n\nSwitch: --dummyscalar x (to insert point scalars all = 1)\n\tArguments:&quot;
+			&quot;\n\t -i1 \t - vtk surface&quot;
+			&quot;\n\t -o \t - output vtk surface&quot;
+			&quot;\n\nSwitch: --countpix x (to count pixels in segmentation, mask &gt; 0)\n\tArguments:&quot;
+			&quot;\n\t -i1 \t - gipl/nii/hdr image&quot;
+			&quot;\n\t -o \t - text file to output number of pixels&quot;
+			&quot;\n\nSwitch: --pixels x \n\tArguments:&quot;
+			&quot;\n\t -i1 \t -gipl/nii/hdr image&quot;
+			&quot;\n\t -o \t output text file&quot;
+			&quot;\n\nSwitch: --combin x \n\tArguments:&quot;
+			&quot;\n\t -i1 \t binary image to copy pixels to&quot;
+			&quot;\n\t -i2 \t binary image to copy pixels over from&quot;
+			&quot;\n\t -i2 \t output image name&quot;
+			&quot;\n\nSwitch: --areacomb \n\t\tTriangular combinations of all points in list\n\tArguments:&quot;
+			&quot;\n\t -i1 \t vtk surface&quot;
+			&quot;\n\t -i2 \t Points selected on shell or unfold&quot;
+			&quot;\n\t -i2 \t output text file with area of each selected possible triangular segment&quot;
+			&quot;\n\nSwitch: --checkerboard \n\t\tColour a mesh with a checkboard like pattern\n\tArguments:&quot;
+			&quot;\n\t -i1 \t vtk surface&quot;
+			&quot;\n\t -o \t output vtk surface&quot;
+			&quot;\n\t -t \t [optional] number of stripes throughout the surface, default = 10&quot;
+			&quot;\n\t -t2 \t [optional] direction of stripes, default = 2 (for z), other values: x=1, y=2&quot;
+			&quot;\n\nSwitch: --unfold23d \n\t\tCopy pattern from unfold to 3D\n\tArguments:&quot;
+			&quot;\n\t -i1 \t unfold surface&quot;
+			&quot;\n\t -i2 \t vtk 3d surface&quot;
+			&quot;\n\t -i3 \t uv_xyz_mapping.txt&quot;
+			&quot;\n\t -i4 \t uv_xyz_pointID.txt&quot;
+			&quot;\n\t -t \t [optional] number of stripes throughout the surface, default = 10&quot;
+			&quot;\n\t -t2 \t [optional] direction of stripes, default = 2 (for z), other values: x=1, y=2&quot;
+			&quot;\n\t -o \t output 3D vtk file with new texture&quot;
+			&quot;\n\nSwitch: --distpair \n\t\tFile containing paired point IDs, writes distances to output file\n\tArguments:&quot;
+			&quot;\n\t -i1 \t vtlk file on which point IDs are defined&quot;
+			&quot;\n\t -i2 \t Text file with pointIDs in each new line. Even number only!&quot;
+			&quot;\n\t -o \t output text file for Euclidean distance&quot;
+			&quot;\n\nSwitch: --shiftscalar \n\t\tShifts polygonal point scalars by a mean and std. dev\n\tArguments:&quot;
+			&quot;\n\t -i1 \t vtk file for input&quot; 
+			&quot;\n\t -t1 \t shift mean&quot;
+			&quot;\n\t -t2 \t shift std. dev&quot;
+			&quot;\n\t -o \t output vtk file&quot;
+			&quot;\n\nSwitch: --binaryscalar \n\t\tbinary segmentation on point scalars\n\tArguments:&quot;
+			&quot;\n\t -i1 \t vtk file for input&quot; 
+			&quot;\n\t -t1 \t threshold&quot;
+			&quot;\n\t -t2 \t in scalar&quot;
+			&quot;\n\t -t3 \t out scalar&quot;
+			&quot;\n\t -o \t output vtk file&quot;
+			&quot;\n\nSwitch: --transferscalar \n\t\tTransfers scalar from one polydata to other. \n&quot;
+			&quot;There are two options either to direct copy scalars or based on point distance\n\n\tArguments:&quot;
+			&quot;\n\t -i1 \t vtk with scalar&quot; 
+			&quot;\n\t -i2 \t vtk without scalar&quot;
+			&quot;\n\t -t \t (=1) if direct copy or (=2) if copy using point distance&quot;
+			&quot;\n\t -o \t output vtk file&quot;;
+			
+		exit(0);
+	}
+
+	stringstream ss; 
+
+	if (option == 1) 
+	{
+		out.open(output_f);
+		ReadMesh(input_f1, poly);
+		ReadPointIDTextFile(input_f2, poly, ptss, pIDss); 
+		//ReadPointsRead(ptss);
+
+		for (int i=0;i&lt;ptss.size();i++)
+		{
+			ss.str(&quot;&quot;); 
+			ss &lt;&lt; &quot;Segment_&quot;&lt;&lt; i &lt;&lt; &quot;.vtk&quot;; 
+			ExtractSegment(ptss[i], poly, oPoly, cPoly); 
+			
+			/*
+			vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+			writer-&gt;SetFileName(ss.str().c_str()); 
+			writer-&gt;SetInput(oPoly); 
+			writer-&gt;Update();*/
+
+			GetPolyDataArea(oPoly, area);
+			out &lt;&lt; area  &lt;&lt; endl;
+		}
+		out.close();
+	}
+	else if (option == 2)
+	{
+		InsertDummyPointData(input_f1, output_f);
+	}
+	else if (option == 3)
+	{
+		CountPixelsAndwriteToFile(input_f1, output_f);
+	}
+	else if (option == 4)
+	{
+		out.open(output_f);
+		ReadMesh(input_f1, poly);
+		ReadPointIDTextFile(input_f2, poly, ptss, pIDss);
+
+		if (foundArgs4 == false) 
+		{
+			cerr &lt;&lt; &quot;-nd switch not specified&quot; &lt;&lt; endl;
+			exit(0);
+		}
+
+		for (int i=0;i&lt;pIDss.size();i++)
+		{
+			if (nd &gt; 0) 
+				GetPolyDataDistances(poly, pIDss[i], (nd==3), 2, dist);		// type = 2 - permutation of distances 
+			else 
+				GetPolyDataDistances(poly, pIDss[i], (nd==3), 1, dist);		// type = 1 - only distance between points 
+			for (int j=0;j&lt;dist.size();j++)
+			{
+				out &lt;&lt; dist[j] &lt;&lt; endl;
+			}
+			dist.clear(); 
+		}
+		out.close();
+	}
+	else if (option == 5)
+	{
+		PixelsToFile(input_f1, output_f);
+	}
+	else if (option == 6)
+	{
+		CombineBinaryImages(input_f1, input_f2, output_f);
+	}
+	else if (option == 7) 
+	{
+		ReadMesh(input_f1, poly);
+		out.open(output_f);
+		ReadPointIDTextFile(input_f2, poly, ptss, pIDss); 
+
+		int n = ptss[0]-&gt;GetNumberOfPoints(); /* The size of the set; for {1, 2, 3, 4} it's 4 */
+		int k = 3; /* The size of the subsets; for {1, 2}, {1, 3}, ... it's 2 */
+		int size = k+1;
+		int *comb=  new int[size]; /* comb[i] is the index of the i-th element in the
+								
+				combination */
+		double xyz[3];
+
+		/* Setup comb for the initial combination */
+		int i;
+		for (i = 0; i &lt; k; ++i)
+			comb[i] = i;
+
+		/* Generate and print all the other combinations */
+		vtkPoints* pts;
+
+		while (next_comb(comb, k, n)) {
+			pts  = vtkPoints::New();
+			ptss[0]-&gt;GetPoint(comb[0], xyz);
+			pts-&gt;InsertNextPoint(xyz);
+			ptss[0]-&gt;GetPoint(comb[1], xyz);
+			pts-&gt;InsertNextPoint(xyz);
+			ptss[0]-&gt;GetPoint(comb[2], xyz);
+			pts-&gt;InsertNextPoint(xyz);
+			//printc(comb, k);
+			
+			ExtractSegment(pts, poly, oPoly, cPoly); 
+			GetPolyDataArea(oPoly, area);
+			out &lt;&lt; area  &lt;&lt; endl;
+		}
+		out.close();
+	}
+	else if (option == 8)
+	{
+		ReadMesh(input_f1, poly);
+		
+		if (input_t==-1) input_t = 10;
+		if (input_t2==-1) input_t2 = 2; 
+		//PutStripedTexture(poly, input_t ,input_t2);
+		PutCheckerBoard(poly, 100); 
+		vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+		writer-&gt;SetFileName(output_f); 
+		writer-&gt;SetInput(poly);
+		writer-&gt;Update();
+	}
+	else if (option == 9)
+	{
+		ReadMesh(input_f1, poly);
+		ReadMesh(input_f2, poly2);
+		out.open(output_f);
+		CopyTextureUnfoldTo3D(poly, poly2, input_f3, input_f4, output_f);
+		vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+		writer-&gt;SetFileName(output_f); 
+		writer-&gt;SetInput(poly2);
+		writer-&gt;Update();
+	}
+	else if (option == 10)
+	{
+		double xyz1[3], xyz2[3], Euclid_dist;
+		int line_num=0; 
+		int pos; 
+		int* index = new int[2]; 
+		string l, test_l1, test_l2; 
+		char* lineChar, *ch; 
+		ReadMesh(input_f1, poly);
+		ifstream pointIDFile; 
+		pointIDFile.open(input_f2); 
+		out.open(output_f);
+		
+		if (pointIDFile.is_open())
+		{
+			while (getline(pointIDFile, l)) {
+				lineChar = new char[l.size()+1];
+				strcpy(lineChar, l.c_str()); 
+
+				//index2D = atoi(ch); 
+			//	cout &lt;&lt; test_l1 &lt;&lt; &quot;:&quot; &lt;&lt; test_l2 &lt;&lt; endl;
+				pos = line_num%2; 
+				if (sscanf(lineChar, &quot;%d%&quot;, &amp;index[pos]) == 1)
+				{
+					//cout &lt;&lt; index3D &lt;&lt; &quot;:&quot; &lt;&lt; index2D &lt;&lt; endl;
+					
+				}
+				delete lineChar; 
+				line_num++; 
+
+				if (line_num%2 == 0 &amp;&amp; line_num &gt; 0)
+				{
+					if (index[0] &lt; poly-&gt;GetNumberOfPoints() &amp;&amp; index[1] &lt; poly-&gt;GetNumberOfPoints()) {
+						poly-&gt;GetPoint(index[0], xyz1);
+						poly-&gt;GetPoint(index[1], xyz2);
+					}
+					Euclid_dist = sqrt(((xyz1[0]-xyz2[0])*(xyz1[0]-xyz2[0]))+((xyz1[1]-xyz2[1])*(xyz1[1]-xyz2[1]))+((xyz1[2]-xyz2[2])*(xyz1[2]-xyz2[2]))); 
+					cout &lt;&lt; Euclid_dist &lt;&lt; endl;
+					out &lt;&lt; Euclid_dist &lt;&lt; endl;
+
+				}
+			}
+		}
+
+		pointIDFile.close();
+		out.close();
+	}
+	else if (option == 11)
+	{
+		ReadMesh(input_f1, poly);
+		ShiftMeshScalars(poly, input_d1, input_d2);
+		vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+		writer-&gt;SetFileName(output_f); 
+		writer-&gt;SetInput(poly);
+		writer-&gt;Update();
+	}
+	else if (option == 12)
+	{
+		ReadMesh(input_f1, poly);
+		BinaryMeshScalars(poly, input_t1, input_t2, input_t3);
+		vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+		writer-&gt;SetFileName(output_f); 
+		writer-&gt;SetInput(poly);
+		writer-&gt;Update();
+	}
+	else if (option == 13)
+	{
+		ReadMesh(input_f1, poly);
+		ReadMesh(input_f2, poly2);
+		if (input_t1 == 1) {
+			// direct copy 
+			TransferScalars(poly, poly2, true); 
+		}
+		else { 
+			TransferScalars(poly, poly2, false); 
+		}
+		vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+		writer-&gt;SetFileName(output_f); 
+		writer-&gt;SetInput(poly2);
+		writer-&gt;Update();
+	}
+	
+}</pre>
+<a name="Header" id="Header"></a><h2> <span class="mw-headline"> Header </span></h2>
+<pre>
+#define HAS_VTK 1
+#define _IS_DEBUG 1
+
+#include &quot;vtkPointData.h&quot;
+#include &lt;vtkPointPicker.h&gt;
+#include &lt;vtkCommand.h&gt;
+#include &lt;vtkMarchingCubes.h&gt;
+#include &lt;vtkContourFilter.h&gt;
+#include &lt;vtkPolyDataNormals.h&gt;
+#include &lt;vtkPolyDataMapper.h&gt;
+#include &lt;vtkCamera.h&gt;
+#include &lt;vtkMarchingCubes.h&gt;
+#include &lt;vtkVectorNorm.h&gt;
+#include &lt;vtkDataSetMapper.h&gt;
+#include &lt;vtkImageToPolyDataFilter.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkLookupTable.h&gt;
+#include &lt;vtkSphereSource.h&gt;
+#include &lt;vtkCallbackCommand.h&gt;
+#include &lt;vtkProperty.h&gt;
+#include &lt;vtkImagePlaneWidget.h&gt;
+#include &lt;vtkImageActor.h&gt;
+#include &lt;vtkSmartPointer.h&gt;
+#include &lt;vtkCellArray.h&gt;
+#include &lt;vtkPolyDataWriter.h&gt;
+#include &lt;vtkCellData.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkIterativeClosestPointTransform.h&gt;
+#include &lt;vtkLandmarkTransform.h&gt;
+#include &lt;vtkMath.h&gt;
+#include &lt;vtkMatrix4x4.h&gt;
+#include &lt;vtkTransformPolyDataFilter.h&gt;
+#include &lt;vtkMaskPoints.h&gt;
+#include &lt;vtkSelectPolyData.h&gt;
+#include &lt;vtkClipPolyData.h&gt;
+#include &lt;vtkTriangleFilter.h&gt;
+#include &lt;vtkFileOutputWindow.h&gt;
+#include &lt;vtkTriangle.h&gt;
+#include &lt;vtkFloatArray.h&gt;
+#include &lt;vtkDijkstraGraphGeodesicPath.h&gt;
+
+#include &lt;irtkImage.h&gt;
+
+
+#include &lt;stdio.h&gt;    // to get &quot;printf&quot; function
+#include &lt;stdlib.h&gt;   // to get &quot;free&quot; function
+
+#include &quot;mathBoxCore.h&quot;
+#include &quot;Encircler.h&quot;
+
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:287-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124430 -->
+<div class="printfooter">
+Retrieved from "<a href="index8d7e.html?title=Magic3">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Magic3</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index8d7e.html?title=Magic3" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index33dc.html?title=Talk:Magic3&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index69d0.html?title=Magic3&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index42a4.html?title=Magic3&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexeb32.html?title=Special:UserLogin&amp;returnto=Magic3" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index7ae1.html?title=Special:WhatLinksHere/Magic3" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index6570.html?title=Special:RecentChangesLinked/Magic3" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexa1bb.html?title=Magic3&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index4b5d.html?title=Magic3&amp;oldid=2364" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 23 October 2013, at 14:31.</li>
+					<li id="viewcount">This page has been accessed 1,919 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.536 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Magic3&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:19:09 GMT -->
+</html>

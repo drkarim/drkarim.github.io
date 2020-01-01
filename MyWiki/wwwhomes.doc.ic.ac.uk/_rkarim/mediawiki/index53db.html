@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Compilation_on_laptop&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:51:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Compilation on laptop" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Compilation on laptop - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Compilation_on_laptop";
+		var wgTitle = "Compilation on laptop";
+		var wgAction = "view";
+		var wgArticleId = "95";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 981;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Compilation_on_laptop skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Compilation on laptop</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="VTK_and_FLTK" id="VTK_and_FLTK"></a><h2> <span class="mw-headline"> VTK and FLTK </span></h2>
+<ul><li>VTK installed without any problems on Windows 7 running Visual studio 2005. 
+</li></ul>
+<ul><li>FLTK required some tweaking, especially if you want to compile with ZLIB and PNG libraries. If you have downloaded the source code of the libraries and compiled them, then you must set the USE_SYSTEM_ZLIB flag to off, telling CMake not to use system zlib libraries, and rather the libraries from your downloaded source. <b>Correction: Better not to use system zlib,png and jpeg as FLTK source tree includes this libraries, also works well with IRTK compilation if done this way. However, in IRTK compilation I still used system PNG, ZLIB</b>
+</li></ul>
+<ul><li> It is important to use ZLIB and PNG libraries for compiling IRTK. 
+</li></ul>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="index6ac8.html?title=File:Cmake_settings_on_mac_pc.png" class="image" title="Cmake settings taken on May 1, 2011."><img alt="" src="images/thumb/6/6a/Cmake_settings_on_mac_pc.png/250px-Cmake_settings_on_mac_pc.png" width="250" height="254" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index6ac8.html?title=File:Cmake_settings_on_mac_pc.png" class="internal" title="Enlarge"><img src="skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Cmake settings taken on May 1, 2011.</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="index9d93.html?title=File:MyCMakesettings.png" class="image" title="Cmake settings (includes OpenCV) taken on July 14, 2011."><img alt="" src="images/thumb/8/85/MyCMakesettings.png/250px-MyCMakesettings.png" width="250" height="105" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index9d93.html?title=File:MyCMakesettings.png" class="internal" title="Enlarge"><img src="skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Cmake settings (includes OpenCV) taken on July 14, 2011.</div></div></div> 
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="indexaf87.html?title=File:CmakeSettingssOfIRTK.png" class="image" title="Cmake settings of installing IRTK taken on July 14, 2011."><img alt="" src="images/thumb/2/21/CmakeSettingssOfIRTK.png/250px-CmakeSettingssOfIRTK.png" width="250" height="179" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="indexaf87.html?title=File:CmakeSettingssOfIRTK.png" class="internal" title="Enlarge"><img src="skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Cmake settings of installing IRTK taken on July 14, 2011.</div></div></div> 
+<a name="WildMagic" id="WildMagic"></a><h2> <span class="mw-headline"> WildMagic </span></h2>
+<p>Just used the Win32 binaries from old windows vista laptop. Code dependent on Wldmagic compiles, but haven't yet tested Wildmagic library code.
+</p>
+<a name="IRTK_-_Daniel_Rueckert.27s_ITK" id="IRTK_-_Daniel_Rueckert.27s_ITK"></a><h2> <span class="mw-headline"> IRTK - Daniel Rueckert's ITK </span></h2>
+<p>Compiled without much problems after installing FLTK properly (using zlib and png libraries). Also important that CMake finds Glut libraries. One part of the code called sysmnreg did not compile, but the rest had no problems. All applications seem to run well such as rview, transformation, areg, rreg, nreg, etc. 
+</p><p>The main libraries that have to be pre-installed before compiling IRTK are: 
+</p>
+<ul><li> VTK - compiles easily (does not require dependency libraries) 
+</li><li> FLTK - compiles relatively easily (again does not require dependencies) 
+</li><li> GLUT (Best if the binaries are pre-compiled and copied from a machine, i.e. the .h and .lib) 
+</li><li> libpng (can be downloaded and compiled using cmake from <a href="http://www.libpng.org/pub/png/libpng.html" class="external text" title="http://www.libpng.org/pub/png/libpng.html" rel="nofollow">here</a>
+</li><li> zlib (can be downloaded and compiled using cmake from <a href="http://zlib.net/" class="external text" title="http://zlib.net/" rel="nofollow">here</a>
+</li><li> OpenCV (not necessary, but if you do choose to use openCV libraries, can be compiled easily from downloadable source from this <a href="http://opencv.willowgarage.com/wiki/" class="external text" title="http://opencv.willowgarage.com/wiki/" rel="nofollow">link</a>
+</li></ul>
+<p>And then finally, it is matter of pointing to the correct include (where the .h files are) and the compiled libraries (the .lib files assuming Win34/64 OS) in the CMake settings. See CMake settings on the screen-shot. 
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><a href="index997e.html?title=File:Cmake_Settings_on_phani_pc.png" class="image" title="CMake settings necessary for IRTK compilation."><img alt="" src="images/thumb/b/b0/Cmake_Settings_on_phani_pc.png/250px-Cmake_Settings_on_phani_pc.png" width="250" height="200" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="index997e.html?title=File:Cmake_Settings_on_phani_pc.png" class="internal" title="Enlarge"><img src="skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>CMake settings necessary for IRTK compilation.</div></div></div>
+<a name="Insight_ITK" id="Insight_ITK"></a><h2> <span class="mw-headline"> Insight ITK </span></h2>
+<p>Still using Win32 binaries from old vista laptop, code dependent on ITK compiles fine, but haven't tested 
+</p>
+<a name="My_code" id="My_code"></a><h2> <span class="mw-headline"> My code </span></h2>
+<p>Code required some changes, notably: 
+</p>
+<ul><li> Cannot declare functions without return types, must be declared as void. VC 2003 only threw a warning, but VC 2005 throws compilation errors. 
+</li><li> in fegien.cpp, code <pre> Register i </pre> must be changed to <pre> Register int i </pre>
+</li><li> the pow function in cmath.h was used previously as <pre> pow(i,j) </pre> but now must be changed to cast params to double: <pre> pow ((double)i, (double)j) </pre>
+</li></ul>
+<a name="Cmake_settings_on_Mac_Win_PC" id="Cmake_settings_on_Mac_Win_PC"></a><h2> <span class="mw-headline"> Cmake settings on Mac Win PC </span></h2>
+<p>Cmake file with open cv, Daniel ITK, VTK and FLTK
+</p>
+<pre>
+PROJECT(IRTK_ATRIUM)
+FIND_PACKAGE(FLTK)
+  IF(FLTK_FOUND)
+    INCLUDE_DIRECTORIES(${FLTK_INCLUDE_DIR})
+  ENDIF(FLTK_FOUND)
+
+  FIND_PACKAGE(VTK)
+  IF (VTK_FOUND)
+      INCLUDE (${VTK_USE_FILE})
+  ENDIF (VTK_FOUND)  
+  
+  FIND_PACKAGE(ITK)
+  IF (ITK_FOUND)
+      INCLUDE (${ITK_USE_FILE})
+  ENDIF (ITK_FOUND)  
+  
+FIND_PACKAGE( OpenCV REQUIRED)
+IF (OpenCV_FOUND)
+	INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIR_CV})
+ENDIF (OpenCV_FOUND)
+
+SUBDIRS(myLibrary++/src vtkFLTK/src graphCuts/src dijkstraShortestPath/src)
+
+ INCLUDE_DIRECTORIES(
+ &quot;C:\\PhD\\software\\IRTK_source_0109\\image++\\include&quot; 
+ &quot;C:\\PhD\\software\\IRTK_source_0109\\contrib++\\include&quot; 
+ &quot;C:\\PhD\\software\\IRTK_source_0109\\common++\\include&quot; 
+ &quot;C:\\PhD\\software\\IRTK_source_0109\\geometry++\\include&quot; 
+ &quot;C:\\PhD\\software\\IRTK_source_0109\\packages\\segmentation\\include&quot;
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\vtkFLTK\\include&quot; 
+ &quot;C:\\PhD\\software\\myTesters_with_new_irtk&quot; 
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\myLibrary++\\include&quot;
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\graphCuts\\include&quot;
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\dijkstraShortestPath\\include&quot;
+ )
+
+ LINK_DIRECTORIES(
+ &quot;C:\\PhD\\software\\IRTK_binary_0109\\lib\\release&quot; 
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\bin\\vtkFLTK\\src\\release&quot;
+ &quot;C:\\PhD\\software\\WildMagic3_binary\\Library\\Release&quot;
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\bin\\graphCuts\\src\\Release&quot;
+ &quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\bin\\myLibrary++\\src\\release&quot;
+&quot;C:\\PhD\\software\\myLibrary_with_new_irtk2\\bin\\dijkstraShortestPath\\src\\release&quot;
+ )
+
+ 
+ADD_EXECUTABLE(atrium3d atrium3d.cxx atrium3d.h)
+ADD_EXECUTABLE(scar3d scar3d.cxx scar3d.h)
+ADD_EXECUTABLE(test1 test1.cxx test1.h)
+ADD_EXECUTABLE(test2 test2.cxx test2.h)
+ADD_EXECUTABLE(test3 test3.cxx test3.h)
+ADD_EXECUTABLE(test4 test4.cxx test4.h)
+ADD_EXECUTABLE(test5 test5.cxx test5.h)
+
+
+TARGET_LINK_LIBRARIES(atrium3d vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib segmentation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS} )
+
+TARGET_LINK_LIBRARIES(scar3d vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib segmentation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS})
+
+TARGET_LINK_LIBRARIES(test1 vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib segmentation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS})
+
+TARGET_LINK_LIBRARIES(test2 vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib segmentation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS} )
+
+TARGET_LINK_LIBRARIES(test3 vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS})
+
+TARGET_LINK_LIBRARIES(test4 vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS} )
+
+TARGET_LINK_LIBRARIES(test5 vtkRendering vtkGraphics vtkHybrid vtkImaging vtkIO vtkFiltering vtkCommon vtkVolumeRendering vtk_fltk fltk fltk_gl fltk_forms fltk_images fltk_zlib myLibrary++ vtk_fltk vtkWidgets.lib image++.lib geometry++.lib contrib++.lib common++.lib registration++.lib transformation++.lib recipes.lib niftiio.lib znz.lib graphCuts.lib vtkVolumeRendering.lib Wm3Foundation71.lib Wm3WglApplication71.lib Wm3WglRenderer71.lib ITKBasicFilters ITKCommon ITKIO shortestPaths.lib ${OpenCV_LIBS})
+</pre>
+<a name="Deploying_a_fresh_project" id="Deploying_a_fresh_project"></a><h2> <span class="mw-headline"> Deploying a fresh project </span></h2>
+<p>Steps: 
+</p>
+<ul><li> Search in GMAIL for <b>fresh virgin rk image library app project</b>
+</li><li> Run CMake and point the dependency library files to the correct folders (VTK+ITK+IRTK+OPENCV)
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 23/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:95-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312125808 -->
+<div class="printfooter">
+Retrieved from "<a href="indexe031.html?title=Compilation_on_laptop">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Compilation_on_laptop</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexe031.html?title=Compilation_on_laptop" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexca50.html?title=Talk:Compilation_on_laptop&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexe3d4.html?title=Compilation_on_laptop&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexa2b3.html?title=Compilation_on_laptop&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexa979.html?title=Special:UserLogin&amp;returnto=Compilation_on_laptop" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index460f.html?title=Special:WhatLinksHere/Compilation_on_laptop" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index18b0.html?title=Special:RecentChangesLinked/Compilation_on_laptop" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index53db.html?title=Compilation_on_laptop&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index9b8b.html?title=Compilation_on_laptop&amp;oldid=981" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 29 July 2011, at 12:29.</li>
+					<li id="viewcount">This page has been accessed 1,302 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.510 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Compilation_on_laptop&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:51:37 GMT -->
+</html>

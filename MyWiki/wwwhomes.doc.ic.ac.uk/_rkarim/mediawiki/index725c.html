@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&oldid=1809 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:28:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="keywords" content="CARTO to VTK" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/opensearch_desc.php" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>CARTO to VTK - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "CARTO_to_VTK";
+		var wgTitle = "CARTO to VTK";
+		var wgAction = "view";
+		var wgArticleId = 301;
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1809;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-CARTO_to_VTK skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">CARTO to VTK</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 11:44, 23 January 2013 by <a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User:Admin&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Admin (page does not exist)">Admin</a>  <span class="mw-usertoollinks">(<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User_talk:Admin&amp;action=edit&amp;redlink=1" class="new" title="User talk:Admin (page does not exist)">Talk</a>&#32;|&#32;<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:Contributions/Admin" title="Special:Contributions/Admin">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&amp;diff=prev&amp;oldid=1809" title="CARTO to VTK">diff</a>) <a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&amp;direction=prev&amp;oldid=1809" title="CARTO to VTK">← Older revision</a>&#32;|&#32;Current revision (diff)&#32;|&#32;Newer revision → (diff)</div>
+			</div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Voltage_and_scar" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Voltage_and_scar" rel="nofollow">If you are looking for how to register CARTO data to MRI and vice versa see here</a>
+</p>
+<a name="Usage" id="Usage"></a><h2> <span class="mw-headline"> Usage </span></h2>
+<p>Within matlab this is the command:
+</p>
+<pre>
+TriRepToVTK(&lt;matlab trirep file&gt;, &lt;output vtk file&gt;) 
+</pre>
+<p><b>Note:</b>This will only on surface meshes with polygons that are strictly triangles. It is unclear what the cell_list_size parameter expects in VTK file formats. Here is <a href="http://vtk.1045678.n5.nabble.com/What-is-cell-list-size-in-vtk-file-td5715245.html" class="external text" title="http://vtk.1045678.n5.nabble.com/What-is-cell-list-size-in-vtk-file-td5715245.html" rel="nofollow">an answer to this question on the VTK users forum</a>. In this code, the cell_list_size is simply (4*num_of_polygons). From the forum it also becomes clear that this should be num_cells * ( num_points_in_each_cell + 1 )
+</p>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+function TriRepToVTK(i_f, o_file)
+    load(i_f)
+    V = userdata.surface.triRep.X
+    P = userdata.surface.triRep.Triangulation 
+    D = userdata.surface.act_bip
+    Vs = size(V)
+    Ps = size(P)
+    Ds = size(D)
+    fid = fopen(o_file, 'w'); 
+    WriteHeader(fid, Vs(1,1));
+    
+   &nbsp;% writing vertex information 
+    for i=1:Vs(1,1)
+        for j=1:Vs(1,2)
+            fprintf(fid, '%f ', V(i,j));
+        end
+        if mod(i, 3) == 0 &amp;&amp; i &gt; 0  
+            fprintf(fid, '\n'); 
+        end
+    end
+    
+   &nbsp;% writing triangulation information 
+    fprintf(fid, '\n\nPOLYGONS&nbsp;%d&nbsp;%d\n', Ps(1,1), Ps(1,1)*4);
+    for i=1:Ps(1,1)
+        fprintf(fid, '3 '); 
+        for j=1:Ps(1,2)
+           fprintf(fid, '%d ', P(i,j)-1);          &nbsp;%polygon indices in matlab from 0
+        end
+        fprintf(fid, '\n');
+    end
+
+   &nbsp;%write point data information 
+    fprintf(fid, '\n\nPOINT_DATA&nbsp;%d\n', Ds(1,1));
+    fprintf(fid, 'SCALARS scalars float\n'); 
+    fprintf(fid, 'LOOKUP_TABLE default\n'); 
+    
+    for i=1:Ds(1,1)
+        if isnan(D(i,1)) == 1
+            D(i,1) = 0;
+        end
+        fprintf(fid, '%3.3f ', D(i,1));
+
+        
+        if mod(i, 9) == 0 &amp; i &gt; 0
+            fprintf(fid, '\n'); 
+        end
+    end
+    
+end
+
+function WriteHeader(fid, num_points)
+    vtk_header = ['# vtk DataFile Version 3.0\nvtk output\nASCII\nDATASET POLYDATA\nPOINTS ', num2str(num_points), ' float\n']; 
+    fprintf(fid, vtk_header);
+end
+
+
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:301-0!1!0!!en!2!edit=0 and timestamp 20180312122939 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Talk:CARTO_to_VTK&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:UserLogin&amp;returnto=CARTO_to_VTK" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/images/myWikiLogo.gif);" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:WhatLinksHere/CARTO_to_VTK" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChangesLinked/CARTO_to_VTK" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&amp;oldid=1809&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&amp;oldid=1809" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="privacy"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.499 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=CARTO_to_VTK&oldid=1809 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:28:50 GMT -->
+</html>

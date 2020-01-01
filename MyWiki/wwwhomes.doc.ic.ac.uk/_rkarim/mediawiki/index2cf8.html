@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=GIT_production_and_Development_servers&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 14:00:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="GIT production and Development servers" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>GIT production and Development servers - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "GIT_production_and_Development_servers";
+		var wgTitle = "GIT production and Development servers";
+		var wgAction = "view";
+		var wgArticleId = "558";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3466;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-GIT_production_and_Development_servers skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">GIT production and Development servers</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Git_workflow_production_and_development" id="Git_workflow_production_and_development"></a><h2> <span class="mw-headline"> Git workflow production and development </span></h2>
+<p><a href="indexb662.html?title=File:Git_dev_prod-2.png" class="image" title="Git dev prod-2.png"><img alt="" src="images/thumb/4/43/Git_dev_prod-2.png/400px-Git_dev_prod-2.png" width="400" height="234" border="0" /></a>
+</p>
+<a name="Experience_with_setup" id="Experience_with_setup"></a><h2> <span class="mw-headline"> Experience with setup </span></h2>
+<ol><li> Deleted the previous .git folder in wwwdev and then <i>git init</i>
+</li><li> Empty repo, included folders with <i>git add</i>. Folders: api, images, login, pages_iresus, pages_thinkglucose, pages 
+</li><li> Go to local and perform a git clone: <i>git clone ssh://user@development:/path/to/git/repo</i> (this is path to wwwdev), all folders are fetched 
+</li><li> Change permission on remote to allow push: <a href="http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab" class="external text" title="http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab" rel="nofollow">using this stackoverflow query-answer</a>
+</li></ol>
+<pre>
+cd /path/to/repo.git
+chgrp -R groupname .
+chmod -R g+rwX .
+find . -type d -exec chmod g+s '{}' +
+</pre>
+<ol><li> Now any changes on local are pushed to remote using: 
+</li></ol>
+<pre>
+git pull; git push 
+</pre>
+<ol><li> But there is a problem with the above, where git complains that the remote master branch is checked-out. So simply checkout into the phantom branch using: 
+</li></ol>
+<pre>
+git checkout phantom 
+</pre>
+<p>And then push the changes. This was <a href="http://stackoverflow.com/questions/8985782/git-push-fails-refusing-to-update-checked-out-branch-refs-heads-master" class="external text" title="http://stackoverflow.com/questions/8985782/git-push-fails-refusing-to-update-checked-out-branch-refs-heads-master" rel="nofollow">recommended in this stack post</a>
+</p>
+<ul><li> The reason to do the above is due to the git error that is explained <a href="http://stackoverflow.com/questions/2816369/git-push-error-remote-rejected-master-master-branch-is-currently-checked" class="external text" title="http://stackoverflow.com/questions/2816369/git-push-error-remote-rejected-master-master-branch-is-currently-checked" rel="nofollow">in this stack overflow query-answer</a>. Note that the answer which worked was from the combination of two solutions: 
+<ul><li> Answered by ken orb <a href="http://stackoverflow.com/questions/2816369/git-push-error-remote-rejected-master-master-branch-is-currently-checked" class="external text" title="http://stackoverflow.com/questions/2816369/git-push-error-remote-rejected-master-master-branch-is-currently-checked" rel="nofollow">to this post</a>, and the
+</li><li> <a href="http://stackoverflow.com/questions/8985782/git-push-fails-refusing-to-update-checked-out-branch-refs-heads-master" class="external text" title="http://stackoverflow.com/questions/8985782/git-push-fails-refusing-to-update-checked-out-branch-refs-heads-master" rel="nofollow">Another stack question to the same problem, but the best answer recommended to checkout to another branch if remote access was available.</a>
+</li></ul>
+</li></ul>
+<a name="Development_and_Release" id="Development_and_Release"></a><h2> <span class="mw-headline"> Development and Release </span></h2>
+<ul><li> On local computer after code change, do the following: 
+</li></ul>
+<pre>
+git add &lt;unstaged files&gt; 
+git commit 
+On remote: git checkout phantom 
+git pull; git push 
+</pre> 
+<ul><li> Once happy with the changes and ready for release, <b>remember to switch to MASTER branch</b> on Development by: 
+</li></ul>
+<pre>
+git checkout master
+</pre>
+<ul><li> And then to release to Production, do: 
+</li></ul>
+<pre>
+cd www 
+git pull 
+</pre>
+<a name="Issues_with_GIT" id="Issues_with_GIT"></a><h2> <span class="mw-headline"> Issues with GIT </span></h2>
+<p>The gitignore on the production folder is not really working. 
+<a href="http://stackoverflow.com/questions/2452226/master-branch-and-origin-master-have-diverged-how-to-undiverge-branches" class="external text" title="http://stackoverflow.com/questions/2452226/master-branch-and-origin-master-have-diverged-how-to-undiverge-branches" rel="nofollow">See this post that helped somewhat with diverging branches</a>. This command helped to merge the Prod and Dev repo: 
+</p>
+<pre>
+git merge origin/master
+</pre>
+<a name="To_do" id="To_do"></a><h2> <span class="mw-headline"> To do </span></h2>
+<ul><li> Development and local machine repo still points to the Production space on Contentful. These need to individually point to IRIS_Bespoke Dev spaces through the utility.php function getContentfulSpaceForBespokeIRIS()
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 27/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:558-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312133927 -->
+<div class="printfooter">
+Retrieved from "<a href="indexaf6b.html?title=GIT_production_and_Development_servers">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=GIT_production_and_Development_servers</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="indexaf6b.html?title=GIT_production_and_Development_servers" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index9a38.html?title=Talk:GIT_production_and_Development_servers&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexf511.html?title=GIT_production_and_Development_servers&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index455d.html?title=GIT_production_and_Development_servers&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index159a.html?title=Special:UserLogin&amp;returnto=GIT_production_and_Development_servers" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index9d95.html?title=Special:WhatLinksHere/GIT_production_and_Development_servers" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index2bc3.html?title=Special:RecentChangesLinked/GIT_production_and_Development_servers" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index2cf8.html?title=GIT_production_and_Development_servers&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index1965.html?title=GIT_production_and_Development_servers&amp;oldid=3466" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 9 February 2016, at 02:51.</li>
+					<li id="viewcount">This page has been accessed 644 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.385 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=GIT_production_and_Development_servers&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 14:00:19 GMT -->
+</html>

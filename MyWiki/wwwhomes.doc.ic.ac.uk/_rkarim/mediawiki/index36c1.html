@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Batch_dice&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:18:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Batch dice" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Batch dice - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Batch_dice";
+		var wgTitle = "Batch dice";
+		var wgAction = "view";
+		var wgArticleId = "134";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 800;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Batch_dice skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Batch dice</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<pre>
+#include &lt;irtkImage.h&gt;
+
+
+int main(int argc, char **argv)
+{
+	int _f_image1=1;
+		double x=0, m1=0, m2=0, m1e=0, m2e=0, xm1=0, xm2=0, xm1e=0, xm2e=0, xORm1=0, xORm2=0, xORm1e=0, xORm2e=0, m1m2=0, m1ORm2=0; 
+		double _m, _s; 
+       char *filename1, *filename2, *output, *filename3, *filename4, *filename5, *filename6;
+       irtkGreyPixel *ptr1, *ptr2,  *ptr3, *ptr4, *ptr5;
+	   bool isWriteToFile = false;
+	   if (argc &lt; 3) { cerr &lt;&lt; &quot;\nUsage dice &lt;mean&gt; &lt;sigma&gt; &lt;autoseg&gt; &lt;man1&gt; &lt;man2&gt; &lt;man1-erode&gt; &lt;man2-erode&gt; &lt;output-file-to-write-dice&gt;\n\nOutputs dice-efficient. \n\nNote: This is different from the other dice program as you have to specify what intensity value denotes foreground in your images.\n\nAlso, you can specify (optional) an output file to write the dice values to&quot;  &lt;&lt; endl; exit(1); }
+       // get files to subtract
+	  
+	   _m = atof(argv[1]); 
+	   argv++;
+       argc--;
+	   _s = atof(argv[1]); 
+	   argv++;
+       argc--;
+       filename1 = argv[1];
+       argv++;
+       argc--;
+       filename2 = argv[1];
+       argv++;
+       argc--;
+	   filename3 = argv[1];
+       argv++;
+       argc--;
+	   filename4 = argv[1];
+       argv++;
+       argc--;
+	   filename5 = argv[1];
+       argv++;
+       argc--;
+	   filename6 = argv[1];
+       argv++;
+       argc--;   
+       //output = argv[1];
+
+       // read imaged
+       irtkGreyImage input1, input2, input3, input4, input5; 
+
+
+       double d;
+	   double d_c, o_p1, o_p2; 
+
+       input1.Read(filename1);
+       input2.Read(filename2);
+	   input3.Read(filename3); 
+	   input4.Read(filename4); 
+	   input5.Read(filename5); 
+
+       ptr1 = input1.GetPointerToVoxels();
+       ptr2 = input2.GetPointerToVoxels();
+	   ptr3 = input3.GetPointerToVoxels();
+	   ptr4 = input4.GetPointerToVoxels();
+	   ptr5 = input5.GetPointerToVoxels();
+
+
+       cout &lt;&lt; &quot;number of voxels &quot; &lt;&lt; input1.GetNumberOfVoxels() &lt;&lt; endl;
+       cout &lt;&lt; &quot;number of voxels &quot; &lt;&lt; input2.GetNumberOfVoxels() &lt;&lt; endl;
+
+	   if (input1.GetNumberOfVoxels()-input2.GetNumberOfVoxels() == 0)
+
+	   {
+			for (int i=0;i&lt;input1.GetNumberOfVoxels();i++)
+		   {
+
+			   // intersections 
+			   if (*ptr1 == _f_image1 &amp;&amp; *ptr2 == _f_image1)
+				   xm1++; 
+				if (*ptr1 == _f_image1 &amp;&amp; *ptr3 == _f_image1)
+					xm2++; 
+				if (*ptr1 == _f_image1 &amp;&amp; *ptr4 == _f_image1)
+					xm1e++; 
+				if (*ptr1 == _f_image1 &amp;&amp; *ptr5 == _f_image1)
+					xm2e++; 
+				if (*ptr2 == _f_image1 &amp;&amp; *ptr3 == _f_image1)
+					m1m2++; 
+
+
+				// just individual images
+				if (*ptr1 == _f_image1) {
+					x++; }
+				if (*ptr2 == _f_image1) {
+					m1++; }
+				if (*ptr3 == _f_image1) {
+					m2++; }
+				if (*ptr4 == _f_image1) {
+					m1e++; }
+				if (*ptr5 == _f_image1){
+					m2e++; }
+				
+			   // and now the conjunctions 
+			   if (*ptr1 ==  _f_image1 || *ptr2 == _f_image1)
+				   xORm1++; 
+			   if (*ptr1 ==  _f_image1 || *ptr3 == _f_image1)
+				   xORm2++; 
+			   if (*ptr1 ==  _f_image1 || *ptr4 == _f_image1)
+				   xORm1e++; 
+			   if (*ptr1 ==  _f_image1 || *ptr5 == _f_image1)
+				   xORm2e++; 
+			   if (*ptr3 ==  _f_image1 || *ptr4 == _f_image1)
+				   m1ORm2++; 
+			   
+
+			   ptr1++; ptr2++; ptr3++; ptr4++; ptr5++; 
+		   }
+			
+			double dxm1, dxm2, dxm1e, dxm2e, dm1m2; 
+
+			dxm1 = ((double)2*xm1)/xORm1; 
+			dxm2 = ((double)2*xm2)/xORm2; 
+			dxm1e = ((double)2*xm1e)/xORm1e; 
+			dxm2e = ((double)2*xm2e)/xORm2e; 
+			dm1m2 = ((double)2*m1m2)/m1ORm2; 
+		
+			ofstream fileIO; 
+			fileIO.open(filename6, ios::app); 
+			fileIO &lt;&lt; _m &lt;&lt; &quot;\t\t&quot; &lt;&lt; _s &lt;&lt; &quot;\t\t&quot; &lt;&lt; dxm1 &lt;&lt; &quot;\t\t&quot; &lt;&lt;  dxm2 &lt;&lt; &quot;\t\t&quot; &lt;&lt; dxm1e &lt;&lt; &quot;\t\t&quot; &lt;&lt; dxm2e &lt;&lt; &quot;\t\t&quot; &lt;&lt; dm1m2 &lt;&lt; endl; 
+			fileIO.close(); 
+
+
+	   }
+	   else
+	   {
+		   cout &lt;&lt; &quot;images with unequal dimensions, cannot compute the dice, must be equal dimensions&quot; &lt;&lt; endl;
+	   }
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:134-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124405 -->
+<div class="printfooter">
+Retrieved from "<a href="index9a91.html?title=Batch_dice">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Batch_dice</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index9a91.html?title=Batch_dice" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexe0c1.html?title=Talk:Batch_dice&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexce56.html?title=Batch_dice&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index05bd.html?title=Batch_dice&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index0287.html?title=Special:UserLogin&amp;returnto=Batch_dice" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index3176.html?title=Special:WhatLinksHere/Batch_dice" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index7602.html?title=Special:RecentChangesLinked/Batch_dice" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index9cab.html?title=Batch_dice&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexc633.html?title=Batch_dice&amp;oldid=800" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 26 February 2011, at 02:13.</li>
+					<li id="viewcount">This page has been accessed 228 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.463 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Batch_dice&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:18:52 GMT -->
+</html>

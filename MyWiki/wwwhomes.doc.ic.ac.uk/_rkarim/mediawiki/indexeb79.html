@@ -1,0 +1,933 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Surface_parameterization_driver_2_source&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:55:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Surface parameterization driver 2 source" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Surface parameterization driver 2 source - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Surface_parameterization_driver_2_source";
+		var wgTitle = "Surface parameterization driver 2 source";
+		var wgAction = "view";
+		var wgArticleId = "217";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1349;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Surface_parameterization_driver_2_source skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Surface parameterization driver 2 source</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<pre>
+#include &quot;rk_test5.h&quot;
+//IMPLEMENT_APP(MyApp)
+
+QuickFlatener::QuickFlatener()
+{
+	sourcePointList_lm = vtkSmartPointer&lt;vtkPoints&gt;::New(); 
+	targetPointList_lm = vtkSmartPointer&lt;vtkPoints&gt;::New(); 
+	vein_total_num = 0;
+	curr_vein = 0;
+
+	// initailize the _pv_picked_points_on_2dMap conatiner for the first set of PV picked points 
+	vector&lt;irtkPoint*&gt; new_point_list; 
+	_pv_picked_points_on_2dMap.push_back(new_point_list); 
+	
+}
+
+void QuickFlatener::InsertIntoSourceLandMrk(double* p)
+{
+	sourcePointList_lm-&gt;InsertNextPoint(p);
+}
+
+void QuickFlatener::InsertIntoTargetLandMrk(double* p)
+{
+	targetPointList_lm-&gt;InsertNextPoint(p);
+}
+
+void QuickFlatener::LandmarkRegistration(vtkPolyData* map2D_source, vtkPolyData* template_target)
+{
+	vtkSmartPointer&lt;vtkLandmarkTransform&gt; landmarkTransform = vtkSmartPointer&lt;vtkLandmarkTransform&gt;::New();
+	landmarkTransform-&gt;SetSourceLandmarks(sourcePointList_lm);
+	landmarkTransform-&gt;SetTargetLandmarks(targetPointList_lm);
+	landmarkTransform-&gt;SetModeToRigidBody();
+	landmarkTransform-&gt;Update(); 
+
+	vtkSmartPointer&lt;vtkMatrix4x4&gt; m = landmarkTransform-&gt;GetMatrix();
+	std::cout &lt;&lt; &quot;The resulting matrix after landmark transform is: &quot; &lt;&lt; *m &lt;&lt; std::endl;
+
+	// Transform the source points by the ICP solution
+	vtkSmartPointer&lt;vtkPolyData&gt; poly_after_lm = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt; lmtFilter = vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt;::New();
+	lmtFilter-&gt;SetInput(map2D_source);
+	lmtFilter-&gt;SetTransform(landmarkTransform);
+	lmtFilter-&gt;Update();
+	poly_after_lm-&gt;DeepCopy(lmtFilter-&gt;GetOutput());
+
+	// icp 
+	
+	cout &lt;&lt; &quot;Starting icp .. &quot; &lt;&lt; endl;
+	vtkSmartPointer&lt;vtkIterativeClosestPointTransform&gt; icp = vtkSmartPointer&lt;vtkIterativeClosestPointTransform&gt;::New();
+	icp-&gt;SetSource(poly_after_lm);
+	icp-&gt;SetTarget(template_target);
+	icp-&gt;GetLandmarkTransform()-&gt;SetModeToRigidBody();
+	icp-&gt;SetMaximumNumberOfIterations(10);
+	icp-&gt;Modified();
+	icp-&gt;Update();
+	cout &lt;&lt; &quot;icp completed .. &quot; &lt;&lt; endl;
+	vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt; icpFilter = vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt;::New();
+	icpFilter-&gt;SetInput(poly_after_lm);
+	icpFilter-&gt;SetTransform(icp);
+	icpFilter-&gt;Update();
+	
+	//VizBoxCore::VBC_TransferPointDataToTargetPoly(poly_after_lm, template_target);
+	template_target-&gt;DeepCopy(icpFilter-&gt;GetOutput());
+	VizBoxCore::VBC_WritePolyToFile(template_target);
+}
+
+
+void QuickFlatener::DisplayPoly(vtkRenderWindowInteractor *flrwi, vtkPolyData* poly, bool isCellData, vtkActor* polyActor, bool isScalarData)
+{
+	double min_scalar, max_scalar; 
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer;
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWin;
+	renderWin = flrwi-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; rendererCollection = renderWin-&gt;GetRenderers();
+	vtkSmartPointer&lt;vtkLookupTable&gt; lut = vtkSmartPointer&lt;vtkLookupTable&gt;::New();
+	vtkSmartPointer&lt;vtkScalarBarActor&gt; scalarBar = vtkSmartPointer&lt;vtkScalarBarActor&gt;::New();
+	renderer = rendererCollection-&gt;GetFirstRenderer();
+
+	vtkSmartPointer&lt;vtkPolyDataMapper&gt; mapper = vtkSmartPointer&lt;vtkPolyDataMapper&gt;::New();	
+	cout &lt;&lt; &quot;Adding polydata to mapper, polydata now has &quot; &lt;&lt; poly-&gt;GetNumberOfCells() &lt;&lt; &quot; polygons .. &quot; &lt;&lt; endl;
+	mapper-&gt;SetInput(poly); 
+	
+	mapper-&gt;ScalarVisibilityOn();
+
+	if (isScalarData) 
+	{
+		if (isCellData) 
+			mapper-&gt;SetScalarModeToUseCellData();
+		else 
+			mapper-&gt;SetScalarModeToUsePointData();
+		
+		VizBoxCore::VBC_getMinMaxScalars(poly, isCellData, min_scalar, max_scalar); 
+		mapper-&gt;SetScalarRange(0, (max_scalar)); 
+		lut-&gt;SetTableRange(0, (max_scalar)); 
+		
+		
+		// lookuptable 
+		lut-&gt;SetHueRange(0.33, 0.0);			// red - 0, yellow - 60, green- 120, cyan - 180, blue - 240, magenta - 300 (on the hue circle, pg. 42 vtk book)
+		lut-&gt;Build(); 
+
+		mapper-&gt;SetLookupTable(lut); 
+		
+		//vtkSmartPointer&lt;vtkActor&gt; polyActor = vtkSmartPointer&lt;vtkActor&gt;::New(); 
+
+		
+		
+		scalarBar-&gt;SetLookupTable(lut);
+		scalarBar-&gt;SetTitle(&quot;intensity&quot;);
+		scalarBar-&gt;SetWidth(0.08); 
+		scalarBar-&gt;SetHeight(1.0); 
+		scalarBar-&gt;SetDisplayPosition(3,8); 
+		 
+		
+		renderer-&gt;AddActor2D(scalarBar);			// displays the scalar bar 
+	}
+	polyActor-&gt;SetMapper(mapper); 
+	renderer-&gt;AddActor(polyActor);
+	renderWin-&gt;AddRenderer(renderer);
+	renderWin-&gt;Render();
+}
+
+void QuickFlatener::DisplayMapping()
+{
+	for (int i=0;i&lt;_3d_2_2d_map_size;i++)
+	{
+		if (_3d_2_2d_mapping[i]&nbsp;!= -1)
+			cout &lt;&lt; i &lt;&lt; &quot;:&quot; &lt;&lt; _3d_2_2d_mapping[i] &lt;&lt; &quot;\t&quot;; 
+	}
+}
+
+void QuickFlatener::showAnnotation(vtkRenderWindowInteractor* flrwi, const char* text, int pos_x, int pos_y, int fontSize, vtkTextActor* textActor, bool removePreviousText)
+{
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer;
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWin;
+	renderWin = flrwi-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; rendererCollection = renderWin-&gt;GetRenderers();
+	renderer = rendererCollection-&gt;GetFirstRenderer();
+
+	
+	textActor-&gt;GetTextProperty()-&gt;SetFontSize ( fontSize );
+	textActor-&gt;SetPosition2 ( pos_x, pos_y );
+
+	if (removePreviousText)	
+		renderer-&gt;RemoveActor2D(textActor);
+
+	renderer-&gt;AddActor2D ( textActor );
+	textActor-&gt;SetInput ( text );
+	textActor-&gt;GetTextProperty()-&gt;SetColor ( 1.0,1.0,1.0 );
+	renderWin-&gt;Render();
+
+	
+}
+
+void QuickFlatener::ReadPolyData(char* polyDataFileName, vtkPolyData* poly) 
+{
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New(); 
+	reader-&gt;SetFileName(polyDataFileName); 
+	reader-&gt;Update(); 
+	poly-&gt;DeepCopy(reader-&gt;GetOutput()); 
+}
+
+void QuickFlatener::AddPickedPoint_2_2DMap(vtkActor* picked_point)
+{
+	_2d_pickedPoints.push_back(picked_point);
+}
+
+
+void QuickFlatener::AddPickedPoint_2_3DMap(vtkActor* picked_point)
+{
+	_3d_pickedPoints.push_back(picked_point);
+}
+
+int QuickFlatener::Get3DTo2D(vtkIdType pointID_in_3D)
+{
+	if (pointID_in_3D &lt; 1+_max3DPointID)
+		return _3d_2_2d_mapping[pointID_in_3D]; 
+	else
+		return -1; 
+}
+
+int QuickFlatener::Get2DTo3D(vtkIdType pointID_in_2D)
+{
+	if (pointID_in_2D &lt; 1+_max2DPointID)
+		return _2d_2_3d_mapping[pointID_in_2D]; 
+	else
+		return -1; 
+}
+
+void QuickFlatener::ReadUVMappingFile(char* uvMapFileName, char* uvPointIDmaxFileName) 
+{
+
+	// find maximum id by reading file 
+	int max2DPointID=-1, max3DPointID=-1; 
+	int line_num=0, index3D, index2D;
+	ifstream in1, in2; 
+	string l, test_l1, test_l2; 
+	char* lineChar, *ch; 
+	
+
+	in1.open(uvMapFileName); 
+	in2.open(uvPointIDmaxFileName); 
+
+	if (in2.is_open())
+	{
+		getline(in2, l); 
+		max3DPointID = atoi(l.c_str()); 
+		l = &quot;&quot;; 
+		getline(in2, l); 
+		max2DPointID = atoi(l.c_str()); 
+		cout &lt;&lt; &quot;\nMaximum 2D point ID = &quot; &lt;&lt; max2DPointID &lt;&lt; &quot;\nMaximum 3d point ID = &quot; &lt;&lt; max3DPointID &lt;&lt; endl;
+
+		// and store global copies
+		_max2DPointID = max2DPointID; 
+		_max3DPointID = max3DPointID;
+	}
+	
+	// init arrays 
+	if (max3DPointID&nbsp;!= -1) 
+	{
+		_3d_2_2d_map_size = max3DPointID+1;
+		_2d_2_3d_map_size = max2DPointID+1;
+		
+		_3d_2_2d_mapping = new int[max3DPointID+1]; 
+		_2d_2_3d_mapping = new int[max2DPointID+1]; 
+		
+
+		for (int i=0;i&lt;max3DPointID+1;i++) 
+			_3d_2_2d_mapping[i] = -1;			// initialize
+
+		for (int i=0;i&lt;max2DPointID+1;i++) 
+			_2d_2_3d_mapping[i] = -1;			// initialize
+		
+		if (in1.is_open())
+		{
+			while (getline(in1, l)) {
+				lineChar = new char[l.size()+1]; 
+				strcpy(lineChar, l.c_str()); 
+
+				ch = strtok(lineChar, &quot;\t&quot;); 
+				//cout &lt;&lt; l &lt;&lt; endl;
+				test_l1 = ch; 
+				//index3D = atoi(ch); 
+				ch = strtok(NULL, &quot;\t&quot;); 
+				test_l2 = ch; 
+				//index2D = atoi(ch); 
+			//	cout &lt;&lt; test_l1 &lt;&lt; &quot;:&quot; &lt;&lt; test_l2 &lt;&lt; endl;
+				if (sscanf(test_l1.c_str(), &quot;%d%&quot;, &amp;index2D) == 1 &amp;&amp; sscanf(test_l2.c_str(), &quot;%d%&quot;, &amp;index3D) == 1) 
+				{
+					//cout &lt;&lt; index3D &lt;&lt; &quot;:&quot; &lt;&lt; index2D &lt;&lt; endl;
+					if (index3D &lt;  max3DPointID+1) {
+						_3d_2_2d_mapping[index3D] = index2D; 
+					}
+
+					if (index2D &lt; max2DPointID + 1) { 
+						_2d_2_3d_mapping[index2D] = index3D; 
+					}
+				}
+
+				delete lineChar; 
+				line_num++; 
+
+			}
+		}
+	}
+	else 
+	{
+		cerr &lt;&lt; &quot;Could not read the size of point id array from file &quot; &lt;&lt; uvPointIDmaxFileName &lt;&lt; endl;
+		return;
+	}
+
+	in1.close(); 
+	in2.close();
+
+}
+
+void QuickFlatener::CutPVsIn2DMap(vtkPolyData* map_2D, vtkRenderWindowInteractor* iren) 
+{
+	double axis_x, axis_y, h,k, phi; 
+	vector&lt;irtkPoint*&gt; ellipse_points; 
+	vtkSmartPointer&lt;vtkPolyData&gt; map_output = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	if (map_output-&gt;GetNumberOfPoints() == 0) 
+		map_output-&gt;DeepCopy(map_2D); 
+
+	for (int i=0;i&lt;_pv_ellipse_fitters.size();i++)
+	{
+		_pv_ellipse_fitters[i]-&gt;MarkPointsInsideEllipseWithinPolyData_2D(map_output, -1, 1); 
+		_pv_ellipse_fitters[i]-&gt;GetEllipse(axis_x, axis_y, h, k, phi); 
+		_pv_ellipse_fitters[i]-&gt;GetPointsForEllipseWithTheta(phi, ellipse_points); 
+		VizBoxCore::DrawEllipse(ellipse_points, iren); 
+		ellipse_points.clear();
+	}
+
+
+	vtkSmartPointer&lt;vtkClipPolyData&gt; clipper = vtkSmartPointer&lt;vtkClipPolyData&gt;::New(); 
+	clipper-&gt;SetInput(map_output); 
+	clipper-&gt;SetValue(0); 
+	clipper-&gt;InsideOutOn();	
+	clipper-&gt;GenerateClippedOutputOn(); 
+	clipper-&gt;GenerateClipScalarsOff();
+	clipper-&gt;Update(); 
+
+	_mesh_2d_pv_clipped = vtkPolyData::New(); 
+	_mesh_2d_pv_clipped-&gt;DeepCopy(clipper-&gt;GetClippedOutput()); 
+	VizBoxCore::VBC_TransferPointDataToTargetPoly(map_2D, _mesh_2d_pv_clipped); 
+
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWin = iren-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; rendererCollection = renderWin-&gt;GetRenderers();
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	renderer = rendererCollection-&gt;GetFirstRenderer();
+	renderer-&gt;RemoveAllViewProps(); 
+	vtkSmartPointer&lt;vtkActor&gt; actor =vtkSmartPointer&lt;vtkActor&gt;::New(); 
+
+	DisplayPoly(iren, _mesh_2d_pv_clipped, false, actor, true); 
+	
+	VizBoxCore::VBC_WritePolyToFile(_mesh_2d_pv_clipped); 
+}
+
+// OrthogonalSlices class code 
+OrthogonalSlices::OrthogonalSlices()
+{
+	sliceZColors = vtkImageMapToColors::New();
+	sliceXColors = vtkImageMapToColors::New();
+	sliceYColors = vtkImageMapToColors::New();
+
+	xSlice = vtkImageActor::New();
+	ySlice = vtkImageActor::New();
+	zSlice = vtkImageActor::New();
+
+	bwLut = vtkLookupTable::New(); 
+
+	max_intensity_in_mri = -1; 
+
+	mri_img_vtk = vtkStructuredPoints::New();
+}
+
+void OrthogonalSlices::SetMRIImg(irtkRealImage* mri)
+{
+	irtkRealPixel* mri_img_p; 
+	mri_img = mri; 
+	mri_img_p = mri_img-&gt;GetPointerToVoxels(); 
+	for (int i=0;i&lt;mri_img-&gt;GetNumberOfVoxels();i++)
+	{
+		if (*mri_img_p &gt; max_intensity_in_mri) max_intensity_in_mri = *mri_img_p; 
+		mri_img_p++; 
+	}
+
+	bwLut-&gt;SetRange(0, max_intensity_in_mri); // image intensity range
+	bwLut-&gt;SetValueRange(0.0, 1.0); // from black to white
+	bwLut-&gt;SetSaturationRange(0.0, 0.0); // no color saturation
+	bwLut-&gt;SetRampToLinear();
+	bwLut-&gt;Build();
+
+	mri_img-&gt;ImageToVTK(mri_img_vtk);
+
+	maxX = mri_img-&gt;GetX(); 
+	maxY = mri_img-&gt;GetY(); 
+	maxZ = mri_img-&gt;GetZ(); 
+
+	currXPos = 0; 
+	currYPos = 0; 
+	currZPos = 0; 
+
+	SliceActors = new vtkImageActor*[3];
+}
+
+void OrthogonalSlices::BuildSlices() 
+{
+	// Z planes
+	sliceZColors-&gt;SetInput(mri_img_vtk);
+	sliceZColors-&gt;SetLookupTable(bwLut);
+	zSlice-&gt;SetInput(sliceZColors-&gt;GetOutput());
+	zSlice-&gt;SetDisplayExtent(0, maxX-1, 0, maxY-1, currZPos, currZPos);
+
+	// X Plane
+	sliceXColors-&gt;SetInput(mri_img_vtk);
+	sliceXColors-&gt;SetLookupTable(bwLut);
+	xSlice-&gt;SetInput(sliceXColors-&gt;GetOutput());
+	xSlice-&gt;SetDisplayExtent(currXPos, currXPos, 0, maxY-1, 0, maxZ-1);
+
+	// Y Plane
+	sliceYColors-&gt;SetInput(mri_img_vtk);
+	sliceYColors-&gt;SetLookupTable(bwLut);
+	ySlice-&gt;SetInput(sliceYColors-&gt;GetOutput());
+	ySlice-&gt;SetDisplayExtent(0, maxX-1, currYPos, currYPos, 0, maxZ-1);
+
+
+	SliceActors[0] = zSlice;
+	SliceActors[1] = ySlice;
+	SliceActors[2] = xSlice;
+
+}
+
+void OrthogonalSlices::InitDisplaySlices(vtkRenderWindowInteractor* iren) 
+{
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWin = iren-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; rendererCollection = renderWin-&gt;GetRenderers();
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	renderer = rendererCollection-&gt;GetFirstRenderer();
+
+	renderer-&gt;AddActor(xSlice);
+	renderer-&gt;AddActor(ySlice);
+	renderer-&gt;AddActor(zSlice);
+
+	renderWin-&gt;Render();
+}
+
+void OrthogonalSlices::ChangeXYZSliceAndDisplay(vtkRenderWindowInteractor* iren, int which_xyz, int position) 
+{
+
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWin = iren-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; rendererCollection = renderWin-&gt;GetRenderers();
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	renderer = rendererCollection-&gt;GetFirstRenderer();
+cout &lt;&lt; position &lt;&lt; endl;
+	switch (which_xyz)
+	{
+		case '1': 
+			SliceActors[2]-&gt;SetDisplayExtent(position,position,0,maxY-1,0,maxZ-1);
+			break; 
+		case '2': 
+			SliceActors[1]-&gt;SetDisplayExtent(0,maxX-1,position, position, 0,maxZ-1);
+			break; 
+		case '3': 
+			SliceActors[0]-&gt;SetDisplayExtent(0,maxX-1,0,maxY-1,position,position);
+			break;
+	}
+
+	renderWin-&gt;Render();
+}
+
+
+
+void CreateSphere(vtkRenderer* renderer, double radius, double* position3D)
+{
+	vtkSmartPointer&lt;vtkSphereSource&gt; sphere = vtkSmartPointer&lt;vtkSphereSource&gt;::New(); 
+	sphere-&gt;SetThetaResolution(8);
+	sphere-&gt;SetPhiResolution(8);
+	sphere-&gt;SetRadius(radius);
+
+	vtkSmartPointer&lt;vtkPolyDataMapper&gt; sphereMapper =vtkSmartPointer&lt;vtkPolyDataMapper&gt;::New(); 
+	sphereMapper-&gt;ScalarVisibilityOff();
+	sphereMapper-&gt;SetInput(sphere-&gt;GetOutput());
+
+	vtkSmartPointer&lt;vtkActor&gt; actor = vtkSmartPointer&lt;vtkActor&gt;::New();
+	actor-&gt;SetMapper(sphereMapper); 
+	actor-&gt;GetProperty()-&gt;SetColor(1,0,1); 
+	actor-&gt;SetPosition(position3D); 
+	renderer-&gt;AddActor(actor);
+	
+}
+
+void keyPressedFunction_window(vtkObject* obj, unsigned long,void *cb, void*)
+{
+	float screenX, screenY; 
+	vtkIdType cellID, pointID=-1, pointID_mapped=-1; 
+	double *pick_position = new double[3]; 
+	double *mapped_position = new double[3]; 
+	double *world_pick_position = new double[3]; 
+
+	CallBackDataContainer* cb_data = (CallBackDataContainer*)cb; 
+	vtkSmartPointer&lt;vtkCellPicker&gt; point_picker = vtkSmartPointer&lt;vtkCellPicker&gt;::New(); 
+	point_picker = (vtkCellPicker*)cb_data-&gt;picker; 
+	vtkRenderWindowInteractor* iren = vtkRenderWindowInteractor::SafeDownCast(obj);
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWin = iren-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; rendererCollection = renderWin-&gt;GetRenderers();
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	renderer = rendererCollection-&gt;GetFirstRenderer();
+	
+	// other renderer
+	vtkRenderWindowInteractor* other_iren = cb_data-&gt;otherRenWinInt; 
+	vtkSmartPointer&lt;vtkRenderWindow&gt; OtherRenderWin = other_iren-&gt;GetRenderWindow();
+	vtkSmartPointer&lt;vtkRendererCollection&gt; OtherRendererCollection = OtherRenderWin-&gt;GetRenderers();
+	vtkSmartPointer&lt;vtkRenderer&gt; other_renderer = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	other_renderer = OtherRendererCollection-&gt;GetFirstRenderer();
+
+	// other temp intializations 
+	vtkSmartPointer&lt;vtkActor&gt; tempActor = vtkSmartPointer&lt;vtkActor&gt;::New();
+	vtkSmartPointer&lt;vtkPolyData&gt; temp_poly = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+
+	vector&lt;irtkPoint*&gt; new_point_list; 
+	//cout &lt;&lt; &quot;Key pressed  = &quot; &lt;&lt; iren-&gt;GetKeyCode() &lt;&lt; endl; 
+
+				
+			
+			screenX = iren-&gt;GetEventPosition()[0];
+			screenY = iren-&gt;GetEventPosition()[1];
+			
+			point_picker-&gt;Pick(screenX,screenY,0.0, renderer);
+			
+			
+			// 2d point was picked 
+			cellID = point_picker-&gt;GetCellId();
+			world_pick_position = point_picker-&gt;GetPickPosition(); 
+
+			if (cb_data-&gt;windowNum == 1) 
+				pointID = VizBoxCore::GetFirstCellVertex(cb_data-&gt;Mesh_2d, cellID, pick_position);		// the point picked is really the first cell vertex
+			else if (cb_data-&gt;windowNum == 2) {
+				pointID = VizBoxCore::GetFirstCellVertex(cb_data-&gt;Mesh_3d, cellID, pick_position);
+			}
+			else if (cb_data-&gt;windowNum == 3) {
+				pointID = VizBoxCore::GetFirstCellVertex(cb_data-&gt;Mesh_atriumTemplate, cellID, pick_position); 
+			}
+
+			cout &lt;&lt; &quot;point id picked = &quot; &lt;&lt; cellID &lt;&lt; &quot;, on window = &quot; &lt;&lt; cb_data-&gt;windowNum &lt;&lt; endl;
+			if (cellID&nbsp;!= -1)
+			{
+				if (cb_data-&gt;windowNum == 1) {
+					if (pointID &lt; cb_data-&gt;qf-&gt;_2d_2_3d_map_size)
+						pointID_mapped = cb_data-&gt;qf-&gt;_2d_2_3d_mapping[pointID];
+				}
+				else if (cb_data-&gt;windowNum == 2) {
+					if (pointID &lt; cb_data-&gt;qf-&gt;_3d_2_2d_map_size)
+						pointID_mapped = cb_data-&gt;qf-&gt;_3d_2_2d_mapping[pointID];
+				}
+				else if (cb_data-&gt;windowNum == 3) // user is picking source landmark 
+				{
+					// insert as source landmark 
+					cb_data-&gt;qf-&gt;InsertIntoTargetLandMrk(pick_position); 
+					pointID_mapped = -1; 
+					CreateSphere(renderer, 0.5, pick_position); 
+					cout &lt;&lt; &quot;Target landmark # &quot; &lt;&lt; cb_data-&gt;qf-&gt;targetPointList_lm-&gt;GetNumberOfPoints() &lt;&lt; endl; 
+
+				}
+
+				
+				if (pointID_mapped&nbsp;!= -1)
+				{  
+					cout &lt;&lt; &quot;Corresponding point found on 2D map with id = &quot; &lt;&lt; pointID_mapped &lt;&lt; endl;
+					if (cb_data-&gt;windowNum == 1)				// user clicked on 2d map 
+					{
+						//cout &lt;&lt; &quot;3d map has = &quot; &lt;&lt; cb_data-&gt;Mesh_2D-&gt;GetNumberOfPoints() &lt;&lt; endl; 
+						cb_data-&gt;Mesh_3d-&gt;GetPoint(pointID_mapped, mapped_position);		// look for point on 3d map 
+
+						// record as target landmark 
+						cb_data-&gt;qf-&gt;InsertIntoSourceLandMrk(pick_position);
+						cout &lt;&lt; &quot;Source landmark # &quot; &lt;&lt; cb_data-&gt;qf-&gt;sourcePointList_lm-&gt;GetNumberOfPoints() &lt;&lt; endl; 
+
+						// also keep a record of the PV points picked on the 2d map 
+						cb_data-&gt;qf-&gt;_pv_picked_points_on_2dMap[cb_data-&gt;qf-&gt;curr_vein].push_back(new irtkPoint(pick_position[0], pick_position[1], 0));		// no z as all points are co-planar 
+
+					}
+					if (cb_data-&gt;windowNum == 2) {
+						//cout &lt;&lt; &quot;3d map has = &quot; &lt;&lt; cb_data-&gt;qf-&gt;_2d_map-&gt;GetNumberOfPoints() &lt;&lt; endl;
+						cb_data-&gt;Mesh_2d-&gt;GetPoint(pointID_mapped, mapped_position); 
+
+						// record as target landmark but the mapped point on 2d map 
+						cb_data-&gt;qf-&gt;InsertIntoSourceLandMrk(mapped_position); 
+						cout &lt;&lt; &quot;Source landmark # &quot; &lt;&lt; cb_data-&gt;qf-&gt;sourcePointList_lm-&gt;GetNumberOfPoints() &lt;&lt; endl; 
+
+						// also keep a record of the PV points picked on the 2d map 
+						cb_data-&gt;qf-&gt;_pv_picked_points_on_2dMap[cb_data-&gt;qf-&gt;curr_vein].push_back(new irtkPoint(mapped_position[0], mapped_position[1], 0)); 
+					}
+					     
+					// draw point 
+					if (cb_data-&gt;windowNum == 1) { 
+						CreateSphere(renderer, 0.01, world_pick_position); 
+						CreateSphere(other_renderer, 1.0, mapped_position); 
+					}
+					else {
+						CreateSphere(renderer, 1.0, pick_position);
+						CreateSphere(other_renderer, 0.01, mapped_position); 
+					}
+					
+				}
+				OtherRenderWin-&gt;Render(); 
+				renderWin-&gt;Render();
+			}
+			
+		
+}
+
+
+	
+
+void NaviGODriver::StartDriver() 
+{
+
+	qf = new QuickFlatener(); 
+	cb_data1 = new CallBackDataContainer(); 
+	cb_data2 = new CallBackDataContainer(); 
+	cb_data3 = new CallBackDataContainer(); 
+	orthoSlices = new OrthogonalSlices();
+	Filename_2d_mesh = &quot;clayton_withcut1_flattened_vtk.vtk&quot;;
+	Filename_3d_mesh = &quot;clayton_sdev_withcut1.vtk&quot;; 
+	Filename_la_template = &quot;atrium_template_v2.vtk&quot;;
+	Filename_uv_mapping = &quot;uv_xyz_mapping.txt&quot;; 
+	Filename_uv_pointID_max = &quot;uv_xyz_pointID_max.txt&quot;; 
+	Filename_le_scan = &quot;&quot;; 
+	Filename_scar_seg = &quot;&quot;;
+	
+	
+	
+
+	if (strlen(Filename_le_scan) &gt; 0) 
+	{
+		cout &lt;&lt; &quot;Reading le scan .. &quot; &lt;&lt; endl;
+		_le.Read(Filename_le_scan);
+		orthoSlices-&gt;SetMRIImg(&amp;_le); 
+		orthoSlices-&gt;BuildSlices();
+		if (strlen(Filename_scar_seg) &gt; 0) 
+		{
+			_scar_seg.Read(Filename_scar_seg);
+		}
+		
+	}
+
+	qf-&gt;ReadUVMappingFile(Filename_uv_mapping, Filename_uv_pointID_max); 
+	//qf-&gt;DisplayMapping();
+
+	_2D_mesh = vtkPolyData::New(); 
+	_3D_mesh = vtkPolyData::New(); 
+	_la_template = vtkPolyData::New();
+
+	qf-&gt;ReadPolyData(Filename_2d_mesh, _2D_mesh); 
+	qf-&gt;ReadPolyData(Filename_3d_mesh, _3D_mesh); 
+	qf-&gt;ReadPolyData(Filename_la_template, _la_template); 
+
+	/**
+	* NOTE: 
+	* Renderer1 is for 2D mesh 
+	* Renderer2 is for 3D mesh 
+	*/
+	vtkSmartPointer&lt;vtkActor&gt; _actor_2D = vtkSmartPointer&lt;vtkActor&gt;::New(); 
+	vtkSmartPointer&lt;vtkActor&gt; _actor_3D = vtkSmartPointer&lt;vtkActor&gt;::New(); 
+	vtkSmartPointer&lt;vtkActor&gt; _actor_LATemplate = vtkSmartPointer&lt;vtkActor&gt;::New(); 
+
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer1 = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWindow1 = vtkSmartPointer&lt;vtkRenderWindow&gt;::New();
+	renderWindow1-&gt;AddRenderer(renderer1);
+	renderWindowInteractor1 = vtkSmartPointer&lt;vtkRenderWindowInteractor&gt;::New();
+	renderWindowInteractor1-&gt;SetRenderWindow(renderWindow1);
+	vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt; interactorStyle1 = vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt;::New();
+	renderWindowInteractor1-&gt;SetInteractorStyle(interactorStyle1);
+
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer2 = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWindow2 = vtkSmartPointer&lt;vtkRenderWindow&gt;::New();
+	renderWindow2-&gt;AddRenderer(renderer2);
+	renderWindowInteractor2 = vtkSmartPointer&lt;vtkRenderWindowInteractor&gt;::New();
+	vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt; interactorStyle2 = vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt;::New();
+	renderWindowInteractor2-&gt;SetRenderWindow(renderWindow2);
+	renderWindowInteractor2-&gt;SetInteractorStyle(interactorStyle2);
+
+	vtkSmartPointer&lt;vtkRenderer&gt; renderer3 = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+	vtkSmartPointer&lt;vtkRenderWindow&gt; renderWindow3 = vtkSmartPointer&lt;vtkRenderWindow&gt;::New();
+	renderWindow3-&gt;AddRenderer(renderer3);
+	renderWindowInteractor3 = vtkSmartPointer&lt;vtkRenderWindowInteractor&gt;::New();
+	vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt; interactorStyle3 = vtkSmartPointer&lt;vtkInteractorStyleTrackballCamera&gt;::New();
+	renderWindowInteractor3-&gt;SetRenderWindow(renderWindow3);
+	renderWindowInteractor3-&gt;SetInteractorStyle(interactorStyle3);
+
+	// point pickers
+	vtkCellPicker *point_picker1 = vtkCellPicker::New();
+	point_picker1-&gt;SetTolerance(0.0005); 
+	renderWindowInteractor1-&gt;SetPicker(point_picker1);			
+	
+	vtkCellPicker *point_picker2 = vtkCellPicker::New();
+	point_picker2-&gt;SetTolerance(0.0005); 
+	renderWindowInteractor2-&gt;SetPicker(point_picker2);	
+
+	vtkCellPicker *point_picker3 = vtkCellPicker::New();
+	point_picker3-&gt;SetTolerance(0.0005); 
+	renderWindowInteractor3-&gt;SetPicker(point_picker3);	
+
+	// callbacks
+	vtkCallbackCommand *callback1 = vtkCallbackCommand::New();
+	callback1-&gt;SetCallback(keyPressedFunction_window);
+    renderWindowInteractor1-&gt;AddObserver(vtkCommand::MiddleButtonPressEvent, callback1);
+
+	vtkCallbackCommand *callback2 = vtkCallbackCommand::New();
+	callback2-&gt;SetCallback(keyPressedFunction_window);
+    renderWindowInteractor2-&gt;AddObserver(vtkCommand::MiddleButtonPressEvent, callback2);
+
+	vtkCallbackCommand *callback3 = vtkCallbackCommand::New();
+	callback3-&gt;SetCallback(keyPressedFunction_window);
+    renderWindowInteractor3-&gt;AddObserver(vtkCommand::MiddleButtonPressEvent, callback3);
+
+	cb_data1-&gt;picker = point_picker1; 
+	cb_data1-&gt;qf = qf; 
+	cb_data1-&gt;windowNum = 1; 
+	cb_data1-&gt;Mesh_2d = _2D_mesh; 
+	cb_data1-&gt;Mesh_3d = _3D_mesh;
+	cb_data1-&gt;Mesh_atriumTemplate = _la_template;
+	cb_data1-&gt;otherRenWinInt = renderWindowInteractor2;			// other window interactor
+
+	cb_data2-&gt;picker = point_picker2;
+	cb_data2-&gt;qf = qf; 
+	cb_data2-&gt;windowNum = 2; 
+	cb_data2-&gt;Mesh_2d = _2D_mesh; 
+	cb_data2-&gt;Mesh_3d = _3D_mesh;
+	cb_data2-&gt;Mesh_atriumTemplate = _la_template;
+	cb_data2-&gt;otherRenWinInt = renderWindowInteractor1;	
+
+	cb_data3-&gt;picker = point_picker3; 
+	cb_data3-&gt;qf = qf; 
+	cb_data3-&gt;windowNum = 3;
+	cb_data3-&gt;Mesh_2d = _2D_mesh; 
+	cb_data3-&gt;Mesh_3d = _3D_mesh;
+	cb_data3-&gt;Mesh_atriumTemplate = _la_template;
+	cb_data3-&gt;otherRenWinInt = renderWindowInteractor3;
+
+	callback1-&gt;SetClientData((void*)cb_data1); 
+	callback2-&gt;SetClientData((void*)cb_data2); 
+	callback3-&gt;SetClientData((void*)cb_data3); 
+
+	renderer1-&gt;SetBackground(0,0,0); // Background color green
+	renderer2-&gt;SetBackground(0,0,0); // Background color green
+	renderer2-&gt;SetBackground(0,0,0); // Background color green
+
+
+	qf-&gt;DisplayPoly(renderWindowInteractor1, _2D_mesh, false, _actor_2D, true);
+	qf-&gt;DisplayPoly(renderWindowInteractor2, _3D_mesh, false, _actor_3D, true);
+	qf-&gt;DisplayPoly(renderWindowInteractor3, _la_template, false, _actor_LATemplate, false);
+
+	orthoSlices-&gt;InitDisplaySlices(renderWindowInteractor2); 
+	
+	vtkSmartPointer&lt;vtkTextActor&gt; textActor = vtkSmartPointer&lt;vtkTextActor&gt;::New();
+	qf-&gt;showAnnotation(renderWindowInteractor1, &quot;someText&quot;, 100, 100, 10, textActor, false); 
+
+	renderWindow1-&gt;Render();
+	renderWindowInteractor1-&gt;Start();
+
+	renderWindow2-&gt;Render();
+	renderWindowInteractor2-&gt;Start();
+
+	renderWindow3-&gt;Render();
+	renderWindowInteractor3-&gt;Start();
+
+}
+
+bool MyApp::OnInit()
+{
+
+	NaviGOMainFrameHelper* btnapp = new NaviGOMainFrameHelper(NULL);
+	btnapp-&gt;Show(true);
+
+	return true;
+}
+
+/*
+void NaviGOMainFrameHelper::SliderX_cb( wxCommandEvent&amp; event ) 
+{
+	int position = m_slider_X-&gt;GetValue(); 
+	cout &lt;&lt; position &lt;&lt; endl;
+	pD-&gt;orthoSlices-&gt;ChangeXYZSliceAndDisplay(pD-&gt;renderWindowInteractor2, 1, position); 
+}
+
+void NaviGOMainFrameHelper::SliderY_cb( wxCommandEvent&amp; event ) 
+{
+	int position = m_slider_Y-&gt;GetValue(); 
+	pD-&gt;orthoSlices-&gt;ChangeXYZSliceAndDisplay(pD-&gt;renderWindowInteractor2, 2, position); 
+}
+
+void NaviGOMainFrameHelper::SliderZ_cb( wxCommandEvent&amp; event ) 
+{
+	int position = m_slider_Z-&gt;GetValue(); 
+	pD-&gt;orthoSlices-&gt;ChangeXYZSliceAndDisplay(pD-&gt;renderWindowInteractor2, 3, position); 
+}*/
+
+int main(int argc, char **argv)
+{
+	NaviGODriver* pD; 
+	pD = new NaviGODriver(); 
+	pD-&gt;StartDriver();
+	/*return WinMain(::GetModuleHandle(NULL), NULL,&nbsp;::GetCommandLine(), SW_SHOWNORMAL);*/
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:217-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312131032 -->
+<div class="printfooter">
+Retrieved from "<a href="index83e3.html?title=Surface_parameterization_driver_2_source">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Surface_parameterization_driver_2_source</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index83e3.html?title=Surface_parameterization_driver_2_source" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexbfd1.html?title=Talk:Surface_parameterization_driver_2_source&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexcce3.html?title=Surface_parameterization_driver_2_source&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index02a1.html?title=Surface_parameterization_driver_2_source&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index96b6.html?title=Special:UserLogin&amp;returnto=Surface_parameterization_driver_2_source" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index3bf4.html?title=Special:WhatLinksHere/Surface_parameterization_driver_2_source" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index332e.html?title=Special:RecentChangesLinked/Surface_parameterization_driver_2_source" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexeb79.html?title=Surface_parameterization_driver_2_source&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index73dd.html?title=Surface_parameterization_driver_2_source&amp;oldid=1349" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 31 March 2012, at 10:11.</li>
+					<li id="viewcount">This page has been accessed 137 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.304 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Surface_parameterization_driver_2_source&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:55:58 GMT -->
+</html>

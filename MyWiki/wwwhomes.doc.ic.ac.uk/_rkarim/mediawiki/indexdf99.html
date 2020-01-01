@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Andromeda_api_add_page&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:54:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Andromeda api add page" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Andromeda api add page - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Andromeda_api_add_page";
+		var wgTitle = "Andromeda api add page";
+		var wgAction = "view";
+		var wgArticleId = "465";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2881;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Andromeda_api_add_page skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Andromeda api add page</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Adding_a_new_page" id="Adding_a_new_page"></a><h2> <span class="mw-headline"> Adding a new page </span></h2>
+<p>Assuming we are adding a new content_type page, say <b>calendar</b> 
+</p><p><br />
+</p>
+<a name="Calendar.php" id="Calendar.php"></a><h1> <span class="mw-headline"> Calendar.php </span></h1>
+<ul><li> The left menu, add a new <i>list</i> element and add the <i>active</i> class
+</li></ul>
+<pre>
+ &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;....../calendar.php&quot;&gt;Calendar&lt;/a&gt;&lt;/li&gt;
+</pre>
+<ul><li> Add <i>div</i> of class <i>form-group</i> elements inside <i>NewEntryForm</i>. <b>Repeat</b> for each new entry form field entry 
+</li></ul>
+<pre>
+&lt;div class=&quot;form-group&quot;&gt;
+ &lt;!-- Title input--&gt;
+ &lt;label class=&quot;col-md-1 control-label&quot; for=&quot;title&quot;&gt;&lt;span class=&quot;pull-left&quot;&gt;Message&lt;/span&gt;&lt;/label&gt;
+ &lt;div class=&quot;col-md-11&quot;&gt;
+ &lt;input id=&quot;inputMessage&quot; name=&quot;inputMessage&quot; type=&quot;text&quot; placeholder=&quot;Enter message&quot; class=&quot;form-control&quot;&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<ul><li> Do the above for <i>EditEntryForm</i> form 
+</li><li> Change the data table HTML <i>id</i> name: 
+</li></ul>
+<pre>
+&lt;table id=&quot;announcements_entries&quot; class=&quot;table table-striped table-bordered&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+</pre>
+<p>And accordingly, change the JQUERY <i>onclick' event in </i>document.read()<i>: </i>
+</p>
+<pre>
+ $('#announcements_entries tbody').on( 'click', 'tr', function () {
+</pre>
+<ul><li> <b>IMPORTANT</b>: Change content_type_ids everywhere to calendar, so for example: 
+</li></ul>
+<pre>
+// php 
+$table_data_as_jscript_obj_content_final = Datatable::GetContentFromServer($space_id, 'calendar'); 
+
+// javacript
+var content_type_id = 'calendar'; 
+</pre>
+<a name="Calendar.js" id="Calendar.js"></a><h1> <span class="mw-headline"> Calendar.js </span></h1>
+<ul><li> Copy paste all functions from other content_type js 
+</li></ul>
+<a name="Function_AJAX_new_entry" id="Function_AJAX_new_entry"></a><h2> <span class="mw-headline"> Function AJAX_new_entry </span></h2>
+<ul><li> If there are any rich text html fields, these have to be formatted here, such as this line: 
+</li></ul>
+<pre>
+var inputDescription = $('textarea[name=&quot;inputDescription&quot;]').html($('#inputDescription').code());
+</pre>
+<p>Add one line per html field 
+</p>
+<a name="Function_AJAX_edit_entry" id="Function_AJAX_edit_entry"></a><h2> <span class="mw-headline"> Function AJAX_edit_entry </span></h2>
+<ul><li> Add or change line for any html rich text field: 
+</li></ul>
+<pre>
+ var inputEditDescription = $('textarea[name=&quot;inputEditDescription&quot;]').html($('#inputEditDescription').code());
+</pre>
+<ul><li> Change handler in <i>ajax</i> call: 
+</li></ul>
+<pre>
+ request = $.ajax({
+          url: &quot;/someurl/announcement_handler.php&quot;,
+          dataType: &quot;json&quot;,
+          type: &quot;post&quot;,
+          data: serializedData
+      });
+</pre>
+<a name="Function_initTable" id="Function_initTable"></a><h2> <span class="mw-headline"> Function initTable </span></h2>
+<ul><li> Change the column names to match that of what is received from <b>Datatable.php</b>. Column names must match what is in contentful 
+</li></ul>
+<pre>
+{ data: null, defaultContent: '', orderable: false, &quot;visible&quot;: false },
+        {data: 'message'}, 
+        {data: 'description'}, 
+        {data: 'description_html', &quot;visible&quot;: false},
+        {data: 'originator'}, 
+</pre>
+<a name="Function_ResetFormFields" id="Function_ResetFormFields"></a><h2> <span class="mw-headline"> Function ResetFormFields </span></h2>
+<ul><li> Change all field resets accordingly 
+</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<a name="Calendar_handler.php" id="Calendar_handler.php"></a><h1> <span class="mw-headline"> Calendar_handler.php </span></h1>
+<ul><li> Copy-paste from existing code <i>xxx_handler.php</i> 
+</li><li> Change function names <i>NewCalendar</i> and <i>EditCalendar</i>. 
+</li><li> Change <i>content_type_ids</i> to <i>calendar</i> in both functions 
+</li></ul>
+<a name="Function_NewCalendar.28.29" id="Function_NewCalendar.28.29"></a><h2> <span class="mw-headline"> Function NewCalendar() </span></h2>
+<ul><li> Change the post field index names, for example: 
+</li></ul>
+<pre>
+$title = $post['inputTitle'];
+$date = $post['inputDate'];
+</pre>
+<a name="Function_EditCalendar.28.29" id="Function_EditCalendar.28.29"></a><h2> <span class="mw-headline"> Function EditCalendar() </span></h2>
+<ul><li> The changes are the same as the changes to <i>NewCalendar()</i>
+</li></ul>
+<p><br />
+</p>
+<a name="Datatable.php" id="Datatable.php"></a><h1> <span class="mw-headline"> Datatable.php </span></h1>
+<p><b>Functionality</b>: This php file is responsible for fetching table row-data from contentful and converting to JSON to serve the AJAX request of calendar.php 
+</p>
+<a name="Function_GetContentFromServer" id="Function_GetContentFromServer"></a><h2> <span class="mw-headline"> Function GetContentFromServer </span></h2>
+<ul><li> If there is an html field in the content_type, adding two <i>if</i> statements below: 
+<ul><li> Add an <i>if</i> statement to shorten html, note in this example below <b>information</b> field-name is from what contentful calls it. See its content-model.  
+</li></ul>
+</li></ul>
+<pre>
+if ($content_type == &quot;directory&quot;  &amp;&amp; strtolower($field_name) == 'information')     // in directory entries 
+          {
+            $field_value = Toolbox::shortenTextAndStripTags($field_value, 50);      // strip html tags and shorten 
+            $field_value = clean($field_value);
+          }
+</pre>
+<ul><li> 
+<ul><li> Add a second <i>if</i> statement for adding the raw html field to feed 
+</li></ul>
+</li></ul>
+<pre>
+if ($content_type == &quot;calendar&quot; &amp;&amp; strtolower($field_name) == 'information')
+          {
+            $field_name = $field_name.&quot;_html&quot;; 
+            //ServerLogs::LogDebugMessage(&quot;html = &quot;.$entry-&gt;field_values[$i]); 
+            
+            $org_field_value = $entry-&gt;field_values[$i];
+            $org_field_value = trim(preg_replace('/\s+/', ' ', $org_field_value));
+            $org_field_value = str_replace('&quot;', '\&quot;', $org_field_value);
+            $jscript_obj_content  .= &quot;\&quot;{$field_name}\&quot;:\&quot;{$org_field_value}\&quot;,&quot;;
+          }
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 49/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:465-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312134009 -->
+<div class="printfooter">
+Retrieved from "<a href="index3a46.html?title=Andromeda_api_add_page">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Andromeda_api_add_page</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index3a46.html?title=Andromeda_api_add_page" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index460b.html?title=Talk:Andromeda_api_add_page&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexb108.html?title=Andromeda_api_add_page&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index3097.html?title=Andromeda_api_add_page&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexd1d2.html?title=Special:UserLogin&amp;returnto=Andromeda_api_add_page" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index007c-2.html?title=Special:WhatLinksHere/Andromeda_api_add_page" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index58ba.html?title=Special:RecentChangesLinked/Andromeda_api_add_page" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index2cc0.html?title=Andromeda_api_add_page&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index76b6.html?title=Andromeda_api_add_page&amp;oldid=2881" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 25 September 2014, at 14:36.</li>
+					<li id="viewcount">This page has been accessed 525 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.506 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Andromeda_api_add_page&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:54:27 GMT -->
+</html>

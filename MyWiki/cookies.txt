@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+wwwhomes.doc.ic.ac.uk	TRUE	/	FALSE	1999999999	rkarim_session	a1160831f71dd169ee95af103c93909f
+friendsofbooks.com	TRUE	/	FALSE	1999999999	sid	70250bae-25f1-11e8-acef-f7f62e03025d
+.harpercollins.com	TRUE	/	FALSE	1999999999	__cfduid	d019b0ff69cc45cc942d0b5c7a824fdda1520857954
+www.goodreadingmagazine.com.au	TRUE	/	FALSE	1999999999	frontend	5mddre9oshpdf6kqca7ck3pli4
+

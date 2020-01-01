@@ -1,0 +1,8 @@
+/* CSS placed here will be applied to all skins */
+
+
+/* This is my own addition to remove the title from the main page */
+body.page-Main_Page h1.firstHeading { display:none; }
+
+
+/* This one is for removing the logo from top  left */

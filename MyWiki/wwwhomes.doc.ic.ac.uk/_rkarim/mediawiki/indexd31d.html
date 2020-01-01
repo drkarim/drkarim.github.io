@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Ra_tool_v1&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:48:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Ra tool v1" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Ra tool v1 - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Ra_tool_v1";
+		var wgTitle = "Ra tool v1";
+		var wgAction = "view";
+		var wgArticleId = "563";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3391;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Ra_tool_v1 skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Ra tool v1</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Version_1.0" id="Version_1.0"></a><h2> <span class="mw-headline"> Version 1.0 </span></h2>
+<p>This version projects a set of points to a shell which is in vtk format. 
+</p><p>It then evaluates and outputs the scalar values around the projected point and writes it to a csv file. 
+</p><p>There is a <a href="indexb536-2.html?title=Ra_tool_v2" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Ra_tool_v2" rel="nofollow">Version 2.0</a> of the same tool that also outputs two extra pieces of information: 1) Whether point is inside or outside, 2) the distance between projected and original point. 
+</p>
+<pre>
+ra_tool.exe &lt;ablation_points.vtk&gt; &lt;scar3d_shell_point_scalars.vtk&gt; &lt;distance_to_look_around_point&gt; &lt;output.csv&gt; 
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+#include &quot;vtkSmartPointer.h&quot;
+#include &lt;vtkRenderWindow.h&gt;
+#include &lt;vtkRenderer.h&gt;
+#include &lt;vtkRendererCollection.h&gt;
+#include &lt;vtkPolyDataMapper.h&gt;
+#include &lt;vtkProperty.h&gt;
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+#include &lt;vtkLookupTable.h&gt;
+#include &lt;vtkDelaunay2D.h&gt;
+#include &lt;vtkCellLocator.h&gt;
+#include &lt;vtkCellArray.h&gt;
+#include &quot;vtkGenericCell.h&quot;
+#include &quot;vtkFloatArray.h&quot;
+#include &quot;vtkDoubleArray.h&quot;
+#include &quot;vtkFieldData.h&quot;
+#include &quot;vtkXYPlotActor.h&quot;
+#include &lt;vtkScalarBarActor.h&gt;
+#include &lt;vtkCellData.h&gt;
+#include &lt;vtkContourFilter.h&gt;
+#include &lt;vtkBandedPolyDataContourFilter.h&gt;
+#include &lt;vtkLabeledDataMapper.h&gt;
+#include &lt;vtkVectorText.h&gt;
+#include &lt;vtkFollower.h&gt;
+#include &lt;vtkPointLocator.h&gt;
+#include &lt;vtkStripper.h&gt;
+#include &lt;vtkMath.h&gt;
+#include &lt;vtkTextProperty.h&gt;
+#include &lt;vtkClipPolyData.h&gt;
+#include &lt;vtkBoxWidget.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkPlaneSource.h&gt;
+#include &lt;vtkSphereSource.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkPointLocator.h&gt;
+#include &quot;vtkPointData.h&quot;
+#include &quot;vtkPolyDataWriter.h&quot;
+
+#include &lt;vtkDijkstraGraphGeodesicPath.h&gt;
+
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+
+
+#include &lt;ctime&gt;
+#include &lt;math.h&gt;
+
+#define _IS_EXTREME_DEBUG 0 
+
+using namespace std;
+
+
+double getEuclideanDistanceIn3D(double* p1, double* p2) 
+{
+	double s;
+	s = ((p1[0] - p2[0])*(p1[0] - p2[0])) + ((p1[1] - p2[1])*(p1[1] - p2[1])) + ((p1[2] - p2[2])*(p1[2] - p2[2])); 
+	return sqrt(s);
+}
+
+double ShortestDistanceFromDijkstra(vtkIdList* list, vtkPolyData* surf) 
+{
+	vtkIdType prev_id, curr_id; 
+	double len=0; 
+	double xyz1[3], xyz2[3]; 
+	for(vtkIdType e = 0; e &lt; list-&gt;GetNumberOfIds(); e++) 
+	{
+		curr_id = list-&gt;GetId(e);
+
+		if (e&gt;0) {
+			surf-&gt;GetPoint(curr_id, xyz1);
+			surf-&gt;GetPoint(prev_id, xyz2);
+
+			len += getEuclideanDistanceIn3D(xyz1, xyz2); 
+		}
+		//_shortestPathVertices.push_back(list-&gt;GetId(e)); 
+		prev_id = list-&gt;GetId(e); 
+		
+	}
+
+	return len; 
+}
+
+bool IsDistanceBetweenTheseVerticesLessThan(vtkDijkstraGraphGeodesicPath* dijkstra, vtkPolyData* surf, double dist_t)
+{
+	double len = -1; 
+	len = ShortestDistanceFromDijkstra(dijkstra-&gt;GetIdList(), surf); 
+	if (len &lt; dist_t &amp;&amp; len &gt; -1) {
+		return true; 
+	}
+	else 
+	{
+		//cout &lt;&lt; &quot;Some distances between points are coming awkward&quot;; 
+		return false; 
+	}
+}
+
+void CollectScarData(double** scar_container, int i, int j, double scar_data)
+{
+	scar_container[i][j] = scar_data; 
+}
+
+
+
+int main(int argc, char *argv[])
+{
+	vtkPolyData* _surf1, *_surf2; 
+	char *filename1, *filename2, *output_f; 
+	double error=0; 
+	double dist_t=5; 			// default distance to look around a point 
+	int user_args; 
+	vtkIdType closestPointOnSurface2;
+	
+	vector&lt;double&gt; errors;
+
+	double xyz1[3], xyz2[3];
+	vtkIdType pid[1]; 
+	
+	double total_N=0;
+	bool isPointExists;
+	
+	// for the dice 
+	double NEG_INFINITY = -1, MAX_SCAR_VALUES = 1000, num_values = 0; 
+	
+	double total_errors=0, mean=-1, variance=-1;
+
+	double** scar_container; 
+	int scar_container_num_values; 
+	int scar_container_num_points; 
+
+	// for storing closest point IDs
+	vector&lt;int&gt; closestPoints;
+	
+	vtkSmartPointer&lt;vtkIdList&gt; pointIdList;
+	
+	_surf1 = vtkPolyData::New(); 
+	_surf2 = vtkPolyData::New(); 
+	
+	if (argc &lt; 3) { 
+		cerr &lt;&lt; 
+			&quot;Usage: \nra_tool.exe \n&lt;ablation points vtk&gt; \n&lt;RA scar3D&gt; \n&lt;exploring distance&gt;\n&lt;output CSV text file&gt;\n\n&quot;  
+			&quot;For further instructions see: http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Ablation_points_to_surface&quot;
+			&lt;&lt; endl; exit(1); 
+	}
+	else
+	{
+		user_args = argc; 
+	}
+
+	filename1 = argv[1];
+	argv++;
+	argc--;
+	filename2 = argv[1];
+	argv++;
+	argc--;
+	dist_t = atof(argv[1]); 
+	argv++; 
+	argc--; 
+	output_f = argv[1]; 
+	argv++; 
+	argc--; 
+
+
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader1 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	reader1-&gt;SetFileName(filename1); 
+	reader1-&gt;Update();
+	_surf1 = reader1-&gt;GetOutput();
+	
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader2 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	reader2-&gt;SetFileName(filename2); 
+	reader2-&gt;Update();
+	_surf2 = reader2-&gt;GetOutput();
+
+	vtkSmartPointer&lt;vtkPolyData&gt; closest_points_poly = vtkSmartPointer&lt;vtkPolyData&gt;::New();  
+	vtkSmartPointer&lt;vtkPoints&gt; closest_point_set = vtkSmartPointer&lt;vtkPoints&gt;::New();
+	vtkSmartPointer&lt;vtkCellArray&gt; closest_point_set_vertices = vtkSmartPointer&lt;vtkCellArray&gt;::New();
+
+	// build the cell locators, this will help us find the cells more quickly 
+	vtkSmartPointer&lt;vtkPointLocator &gt; point_locator1 = vtkSmartPointer&lt;vtkPointLocator &gt;::New();
+	//vtkSmartPointer&lt;vtkIdList&gt; cell_points1 = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+	point_locator1-&gt;SetDataSet(_surf1); 
+	point_locator1-&gt;AutomaticOn(); 
+	point_locator1-&gt;BuildLocator();
+
+	vtkSmartPointer&lt;vtkPointLocator &gt; point_locator2 = vtkSmartPointer&lt;vtkPointLocator &gt;::New();
+	//vtkSmartPointer&lt;vtkIdList&gt; cell_points2 = vtkSmartPointer&lt;vtkIdList&gt;::New(); 
+	point_locator2-&gt;SetDataSet(_surf2); 
+	point_locator2-&gt;AutomaticOn(); 
+	point_locator2-&gt;BuildLocator();
+
+	// get scar data 
+	vtkSmartPointer&lt;vtkFloatArray&gt; scar_data = vtkSmartPointer&lt;vtkFloatArray&gt;::New(); 
+	scar_data = vtkFloatArray::SafeDownCast(_surf2-&gt;GetPointData()-&gt;GetScalars()); 
+
+
+	// Dijkstra 
+	vtkDijkstraGraphGeodesicPath* dijkstra;
+	dijkstra = vtkDijkstraGraphGeodesicPath::New();
+	dijkstra-&gt;SetInput(_surf2);
+
+	// Begin initialize scar container 
+	//MAX_SCAR_VALUES = _surf2-&gt;GetNumberOfPoints(); 
+	scar_container_num_points = _surf1-&gt;GetNumberOfPoints(); 
+	scar_container_num_values = MAX_SCAR_VALUES; 
+	scar_container = new double*[scar_container_num_points]; 
+
+	for (int i=0;i&lt;scar_container_num_points;i++)
+	{
+		scar_container[i] = new double[scar_container_num_values]; 
+	}
+
+	for (int i=0;i&lt;scar_container_num_points;i++)
+	{
+		for (int j=0;j&lt;scar_container_num_values;j++)
+		{
+			scar_container[i][j] = NEG_INFINITY; 
+		}
+	}
+	// End initialize scar container 
+
+	
+	for (vtkIdType i=0;i&lt;_surf1-&gt;GetNumberOfPoints();i++)			// running through ablation points list 
+	{
+		num_values = 0; 
+
+		_surf1-&gt;GetPoint(i, xyz1);
+		closestPointOnSurface2 = point_locator2-&gt;FindClosestPoint(xyz1);
+		_surf2-&gt;GetPoint(closestPointOnSurface2, xyz2);
+
+		pid[0] = closest_point_set-&gt;InsertNextPoint(xyz2);			// Saving the points for vtk output 
+		// Vertices are important 
+		// From http://www.cmake.org/Wiki/VTK/Examples/Cxx/Picking/AreaPicking
+		closest_point_set_vertices-&gt;InsertNextCell(1, pid);
+
+		closestPoints.push_back(closestPointOnSurface2); 
+		cout &lt;&lt; &quot;Processing ablation point = &quot; &lt;&lt; i &lt;&lt; &quot;, closest point found with index &quot; &lt;&lt; closestPointOnSurface2 &lt;&lt; endl;
+
+		//out &lt;&lt; xyz1[0]	&lt;&lt; &quot;,&quot; &lt;&lt; xyz1[1] &lt;&lt; &quot;,&quot; &lt;&lt; xyz1[2] &lt;&lt; &quot;\t&quot; &lt;&lt; 
+
+		for (vtkIdType j=0;j&lt;_surf2-&gt;GetNumberOfPoints();j++)			
+		{
+			if (closestPointOnSurface2 &gt; 0) {
+
+				//dijkstra-&gt;SetStartVertex(closestPointOnSurface2);
+				//dijkstra-&gt;SetEndVertex(j);
+				//dijkstra-&gt;Update(); 
+				
+				_surf2-&gt;GetPoint(j, xyz1); 
+				_surf2-&gt;GetPoint(closestPointOnSurface2, xyz2);
+				
+				double dist = getEuclideanDistanceIn3D(xyz1, xyz2); 
+
+				if ( dist &lt; dist_t) 
+				//if (IsDistanceBetweenTheseVerticesLessThan(dijkstra, _surf2, dist_t)) 
+				{
+					if (num_values &lt; scar_container_num_values)
+					{
+						//cout &lt;&lt; &quot;j = &quot; &lt;&lt; j &lt;&lt; &quot;, &quot; &lt;&lt; dist &lt;&lt; &quot;\t&quot;;
+						CollectScarData(scar_container, i, num_values, scar_data-&gt;GetTuple1(j)); 
+						num_values++; 
+					}
+					else {
+						//cout &lt;&lt; &quot;This condition is invalid, check logic&quot; &lt;&lt; endl; 
+					}
+				}
+
+				
+			}
+
+		}
+		  	
+	}
+
+	// ready to write to file 
+	// file io 	
+	ofstream out;		
+	out.open(output_f, std::ios_base::app); 
+
+	for (vtkIdType i=0;i&lt;_surf1-&gt;GetNumberOfPoints();i++)			
+	{
+		_surf1-&gt;GetPoint(i, xyz1); 							// writing the original ablation points list 
+		out &lt;&lt; xyz1[0] &lt;&lt; &quot;,&quot; &lt;&lt; xyz1[1] &lt;&lt; &quot;,&quot; &lt;&lt; xyz1[2] &lt;&lt; &quot;,,&quot;; 
+	}
+
+	out &lt;&lt; &quot;\n&quot;; 
+
+	for (vtkIdType i=0;i&lt;_surf1-&gt;GetNumberOfPoints();i++)		
+	{
+		_surf2-&gt;GetPoint(closestPoints[i], xyz1); 			// writing the closest point on surface 
+		out &lt;&lt; xyz1[0] &lt;&lt; &quot;,&quot; &lt;&lt; xyz1[1] &lt;&lt; &quot;,&quot; &lt;&lt; xyz1[2] &lt;&lt; &quot;,,&quot;; 
+	} 
+
+	out &lt;&lt; &quot;\n&quot;; 
+
+	for (int j=0;j&lt;scar_container_num_values;j++) {			// writing the scar values 
+		for (vtkIdType i=0;i&lt;_surf1-&gt;GetNumberOfPoints();i++)
+		{
+			if (scar_container[i][j]&nbsp;!= NEG_INFINITY) {
+				out &lt;&lt; scar_container[i][j] &lt;&lt; &quot;,,,,&quot;;
+			}
+			else 
+				out &lt;&lt; &quot; &quot; &lt;&lt; &quot;,,,,&quot;;
+		}
+		out &lt;&lt; &quot;\n&quot;; 
+	}
+	out.close();
+
+
+	/*********************************************
+	*				DEBUG SECTION 		
+	*********************************************/
+	closest_points_poly-&gt;SetPoints(closest_point_set); 
+	closest_points_poly-&gt;SetVerts(closest_point_set_vertices); 
+	vtkPolyDataWriter * writer = vtkPolyDataWriter::New();
+	writer-&gt;SetFileTypeToBinary();
+	writer-&gt;SetFileName(&quot;closest_points_debug.vtk&quot;);
+	writer-&gt;SetInput(closest_points_poly);
+	writer-&gt;Update();
+
+	ofstream out2;
+	out2.open(&quot;scar_values_debug.csv&quot;, std::ios_base::app); 
+	for (vtkIdType i=0;i&lt;_surf1-&gt;GetNumberOfPoints();i++) { 
+		for (vtkIdType j=0;j&lt;scar_container_num_values;j++) { 
+			out2 &lt;&lt; scar_container[i][j] &lt;&lt; &quot;,&quot;;
+		}
+		out2 &lt;&lt; endl; 
+	}
+	out2.close();
+	//getMeanVariance(errors, mean, variance, total_errors); 
+	//cout &lt;&lt; &quot;Error, mean = &quot; &lt;&lt; mean &lt;&lt; &quot;\nSD = &quot; &lt;&lt; sqrt(variance) &lt;&lt; &quot;\nVariance = &quot; &lt;&lt; variance &lt;&lt; &quot;\nTotal errors = &quot; &lt;&lt; total_errors; 
+
+
+
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:563-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312132035 -->
+<div class="printfooter">
+Retrieved from "<a href="index3d93.html?title=Ra_tool_v1">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Ra_tool_v1</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index3d93.html?title=Ra_tool_v1" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index47e1.html?title=Talk:Ra_tool_v1&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index89dd-2.html?title=Ra_tool_v1&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexbeaa.html?title=Ra_tool_v1&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index4bb6.html?title=Special:UserLogin&amp;returnto=Ra_tool_v1" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexc787.html?title=Special:WhatLinksHere/Ra_tool_v1" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index45d8-2.html?title=Special:RecentChangesLinked/Ra_tool_v1" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index2696.html?title=Ra_tool_v1&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexabda.html?title=Ra_tool_v1&amp;oldid=3391" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 1 December 2015, at 16:57.</li>
+					<li id="viewcount">This page has been accessed 82 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.475 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Ra_tool_v1&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:48:32 GMT -->
+</html>

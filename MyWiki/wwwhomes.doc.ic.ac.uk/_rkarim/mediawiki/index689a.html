@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Pixels_along_a_slice&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:19:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Pixels along a slice" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Pixels along a slice - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Pixels_along_a_slice";
+		var wgTitle = "Pixels along a slice";
+		var wgAction = "view";
+		var wgArticleId = "276";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1611;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Pixels_along_a_slice skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Pixels along a slice</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><i><a href="indexad90.html?title=Code_Wiki" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Code_Wiki" rel="nofollow">Back to main page</a></i>
+</p>
+<a name="Usage" id="Usage"></a><h2> <span class="mw-headline"> Usage </span></h2>
+<p>Software is called <b>slicepixel.exe</b> 
+</p>
+<pre>
+-i&nbsp;: input binary file 
+-o&nbsp;: output file to write the number of slices to 
+
+Optional:
+-x, -y, -z&nbsp;: The x,y,z th slice 
+-fp&nbsp;: Specify a file with local regions such where each line in file are 6 cols. of numbers, for example for zth slice: x0 y0 z xMax yMax z 
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+#include &lt;irtkImage.h&gt;
+#include &lt;vector&gt;
+
+using namespace std; 
+
+
+void ReadRegionParamFile(char* fn, vector&lt;int*&gt;&amp; params)
+{
+	ifstream* istream; 
+	istream = new ifstream();
+	istream-&gt;open(fn); 
+	string line_in_file; 
+	char* line;
+	char* tok; 
+	int k=0, line_num=0;
+	int* bounds_xyz;
+
+	if (istream-&gt;is_open())
+	{
+		while (!istream-&gt;eof())
+		{
+			getline(*istream, line_in_file);  
+			line = new char[line_in_file.size()]; 
+			if (line_in_file.size() &gt; 3) {
+				strcpy(line, line_in_file.c_str()); 
+
+				tok = strtok(line, &quot;\t&quot;); 
+				k = 0;
+				bounds_xyz = new int[6];			
+				while (tok&nbsp;!= NULL)
+				{
+					bounds_xyz[k++] = atoi(tok); 
+					tok = strtok(NULL, &quot;\t&quot;);	
+				}
+				line_num++;
+				params.push_back(bounds_xyz);
+			}
+		}
+	}
+	istream-&gt;close(); 
+}
+
+// re-orders the region params ensuring that x1&lt;x2 and y1&lt;y2 and z1&lt;z2
+void FixRegionParams(vector&lt;int*&gt;&amp; params)
+{
+	double temp; 
+	for (int i=0;i&lt;params.size();i++)
+	{
+		// ensures that x1&lt;x2 and y1&lt;y2 and z1&lt;z2
+		for (int t=0;t&lt;3;t++)
+		{
+			if (params[i][t+3] &lt; params[i][t]) {
+				temp = params[i][t];
+				params[i][t] = params[i][t+3]; 
+				params[i][t+3]=temp;
+			}
+			else if (params[i][t+3] == params[i][t])
+			{
+				params[i][t+3]++;			// if x1=x2 then must be input as x1, x2+1
+			}
+		}
+
+		
+	}
+}
+
+int countPixels(irtkGreyImage* img1, int in_x, int in_y, int in_z)
+{
+	int maxX, maxY, maxZ;
+	maxX = img1-&gt;GetX(); 
+	maxY = img1-&gt;GetY(); 
+	maxZ = img1-&gt;GetZ(); 
+	int n=0;
+
+	irtkGreyImage img_crop; 
+	
+
+	if (in_x &gt; 0 || in_y &gt; 0 || in_z &gt; 0) 
+	{
+		if (in_x &gt; 0)
+		{
+			img_crop = img1-&gt;GetRegion(in_x, 0,0, in_x+1, maxY, maxZ); 
+		}
+		else if (in_y &gt; 0)
+		{
+			img_crop = img1-&gt;GetRegion(0, in_y,0, maxX, in_y+1, maxZ); 
+		}
+		else if (in_z &gt; 0)
+		{
+			img_crop = img1-&gt;GetRegion(0, 0,in_z, maxX, maxY, in_z+1);
+		}
+	}
+
+	irtkGreyPixel* imgcp_px; 
+	imgcp_px  = img_crop.GetPointerToVoxels();
+	for (int i=0;i&lt;img_crop.GetNumberOfVoxels();i++)
+	{
+		if (*imgcp_px &gt; 0)
+			n++;
+		imgcp_px++;
+	}
+	return n;
+}
+
+int main(int argc, char **argv)
+{
+		ofstream fileIO; 
+		int _f_image1=1, _f_image2=1;
+		vector&lt;int*&gt; pms;
+
+		// variables for sensitivity and specificty 
+		
+       char *filename1, *filename2, *output=NULL, *filename3, *filename4;
+     
+	   bool isWriteToFile = false;
+	   int _fixX=-1, _fixY=-1, _fixZ=-1, _x1=-1, _y1=-1, _z1=-1,_x2=-1, _y2=-1, _z2=-1; 
+	   int tot_voxels=-1;
+
+	   // required and optional arguments
+		bool rArg1 = false, rArg2 = false, rArg3 = false, rArg4=false, rArg5=false; 
+	   if (argc &gt;= 1)
+		{
+			for (int i = 1; i &lt; argc; i++) {
+				if (i + 1&nbsp;!= argc) {
+					if (string(argv[i]) == &quot;-i&quot;) {			// test image
+						filename1 = argv[i+1];			
+						rArg1 = true;
+					} else if (string(argv[i]) == &quot;-x&quot;) {
+						_fixX = atoi(argv[i+1]); 
+					} else if (string(argv[i]) == &quot;-y&quot;) {
+						_fixY = atoi(argv[i+1]); 
+					} else if (string(argv[i]) == &quot;-z&quot;) {
+						_fixZ = atoi(argv[i+1]); 
+					} else if (string(argv[i]) == &quot;-o&quot;) {
+						output = argv[i+1];  
+						isWriteToFile = true;
+					} else if (string(argv[i]) == &quot;-fp&quot;) { 
+						filename3 = argv[i+1];
+						rArg4 = true; 
+					} 
+				}
+			}
+	   }
+	
+	   if (argc &lt; 2) { 
+		   cerr &lt;&lt; &quot;\nReports total pixels along a slice\n\nUsage: Count pixels in Slice &lt;switches&gt;:&quot;
+			   &quot;\n\t\t-i: Binary or grey image\n&quot;
+			   &quot;\n\t\t-o: Write number of pixels in each slice to file&quot; 
+			   &quot;\n\n\t\tDefining local regions:\n\t\t=======================\n\t\t&quot;
+			   &quot;1) Pixels along a slice (x,y or z), switches:\n\t\t\t -x &lt;slice_number&gt;\n\t\t\t -y &lt;slice_number&gt;\n\t\t\t -z &lt;slice number&gt; &quot;
+			   &quot;\n\t\t2)-fp: Define local regions within a file as: x0 y0 z0 maxX maxY z0+1, for zth slice&quot;
+			   &quot;\n\n&quot;;
+	
+		exit(1); 
+	   }
+      
+
+       // read imaged
+       irtkGreyImage input1;
+       irtkGreyImage input2;
+	   irtkGreyImage input3;
+	   irtkGreyImage input4;
+	   irtkGreyImage input5; 
+	   irtkGreyImage input6;
+
+
+       input1.Read(filename1);
+     
+	   if (isWriteToFile)
+	   {
+		   fileIO.open(output);
+	   }
+	   
+	   // if fixing x,y or z
+	   if (!rArg4) {		// if parameters are declared through command-line and not through file 
+
+		   if (_fixX &gt; 0 || _fixY &gt; 0 || _fixZ &gt; 0) 
+		   {
+			  tot_voxels = countPixels(&amp;input1, _fixX, _fixY, _fixZ);
+		   }
+		  
+
+	   } else {	
+			// parameters declared through file
+			ReadRegionParamFile(filename3, pms);
+			FixRegionParams(pms);
+			for (int i=0;i&lt;pms.size();i++)
+			{
+				if (abs(pms[i][0]-pms[i][3]) == 1)
+					tot_voxels = countPixels(&amp;input1, pms[i][0], _fixY, _fixZ);
+				else if (abs(pms[i][1]-pms[i][4]) == 1)
+					tot_voxels = countPixels(&amp;input1,_fixX, pms[i][1], _fixZ);
+				else if (abs(pms[i][2]-pms[i][5]) == 1)
+					tot_voxels = countPixels(&amp;input1, _fixX, _fixY, pms[i][2]);
+					
+				if (isWriteToFile)
+				{
+					fileIO &lt;&lt; tot_voxels &lt;&lt; endl;
+				}
+				else
+				{
+					cout &lt;&lt; tot_voxels &lt;&lt; endl;
+				}
+				
+			}
+
+			if (isWriteToFile)
+				fileIO.close();
+	   }
+
+
+   
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:276-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124449 -->
+<div class="printfooter">
+Retrieved from "<a href="index6408.html?title=Pixels_along_a_slice">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Pixels_along_a_slice</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index6408.html?title=Pixels_along_a_slice" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index7b7a.html?title=Talk:Pixels_along_a_slice&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index7d56.html?title=Pixels_along_a_slice&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index12fd.html?title=Pixels_along_a_slice&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index2787.html?title=Special:UserLogin&amp;returnto=Pixels_along_a_slice" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index93a8.html?title=Special:WhatLinksHere/Pixels_along_a_slice" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index2eaf.html?title=Special:RecentChangesLinked/Pixels_along_a_slice" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexf48b.html?title=Pixels_along_a_slice&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index2df3.html?title=Pixels_along_a_slice&amp;oldid=1611" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 24 August 2012, at 09:17.</li>
+					<li id="viewcount">This page has been accessed 267 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.453 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Pixels_along_a_slice&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:19:11 GMT -->
+</html>

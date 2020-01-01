@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Transform_surface_with_matrix&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Transform surface with matrix" />
+		<link rel="shortcut icon" href="https://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Transform surface with matrix - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "https://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Transform_surface_with_matrix";
+		var wgTitle = "Transform surface with matrix";
+		var wgAction = "view";
+		var wgArticleId = "617";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3719;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Transform_surface_with_matrix skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Transform surface with matrix</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<p>This software written in C++ with VTK 7.0 API and accomplishes a very specific task of applying a 4x4 transformation to a VTK 2D surface. This is followed with an Interative Closest Point (ICP) fusion with a target surface. The point data scalars are transferred from the source to the target. 
+</p><p>The code shows how a matrix can be read or written to file, inverted and then applied on a surface. 
+</p>
+<a name="Usage" id="Usage"></a><h2> <span class="mw-headline"> Usage  </span></h2>
+<pre>
+app.exe source_vtk taret_vtk target_2_source_matrix_txt  source_in_target_vtk target_with_source_scalars_vtk
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<p>The code is also hosted on <a href="https://github.com/drkarim/Invert-transform-then-ICP" class="external text" title="https://github.com/drkarim/Invert-transform-then-ICP" rel="nofollow">GitHub</a> 
+</p>
+<pre>
+// STL
+#include &lt;iostream&gt;
+
+// VTK
+#include &lt;vtkXMLPolyDataWriter.h&gt;
+#include &lt;vtkPolyData.h&gt;
+#include &lt;vtkSmartPointer.h&gt;
+#include &lt;vtkMatrix4x4.h&gt;
+#include &lt;vtkTransformPolyDataFilter.h&gt;
+#include &lt;vtkTransform.h&gt;
+#include &lt;vtkLandmarkTransform.h&gt;
+#include &lt;vtkIterativeClosestPointTransform.h&gt;
+#include &lt;vtkPolyDataWriter.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkPointLocator.h&gt;
+#include &lt;vtkFloatArray.h&gt;
+#include &lt;vtkGenericCell.h&gt;
+#include &lt;vtkPointData.h&gt;
+
+
+
+void ReadMatrix4x4(const char* fn, vtkMatrix4x4* matrix)
+{
+	ifstream in(fn); 
+	int m = 4, n = 4; 
+	int element = 0; 
+
+	for (int i = 0; i &lt; m; i++)
+	{
+		for (int j = 0; j &lt; n; j++)
+		{
+			in &gt;&gt; element; 
+			matrix-&gt;SetElement(i, j, element);
+		}
+		
+	}
+	
+	in.close();
+}
+
+void TransferPointDataToTargetPoly(vtkPolyData* source, vtkPolyData* target)
+{
+
+	double xyz_target[3];
+	vtkGenericCell *temp_cell;
+	temp_cell = vtkGenericCell::New();
+	vtkIdType closestPointID = -1;
+
+	vtkFloatArray* source_scalars = vtkFloatArray::New();
+	vtkFloatArray* target_scalars = vtkFloatArray::New();
+
+	// vtkPointLocator is a spatial search object to quickly locate points in 3D 
+	// Quick search is possible by dividing a specified region of space into a regular array of rectangular buckets
+	vtkSmartPointer&lt;vtkPointLocator&gt; point_locator = vtkSmartPointer&lt;vtkPointLocator&gt;::New();
+	point_locator-&gt;SetDataSet(source);
+	point_locator-&gt;AutomaticOn();
+	point_locator-&gt;BuildLocator();
+
+	source_scalars = vtkFloatArray::SafeDownCast(source-&gt;GetPointData()-&gt;GetScalars());
+
+	for (int i = 0; i&lt;target-&gt;GetNumberOfPoints(); i++)
+	{
+		target-&gt;GetPoint(i, xyz_target);
+		closestPointID = -1;
+
+		closestPointID = point_locator-&gt;FindClosestPoint(xyz_target);
+		if (closestPointID &gt; -1)
+		{
+			target_scalars-&gt;InsertNextTuple1(source_scalars-&gt;GetTuple1(closestPointID));	// data from nearest neighbour 
+		}
+
+	}
+
+	target-&gt;GetPointData()-&gt;SetScalars(target_scalars);
+
+}
+
+void ICPRegistration(vtkPolyData* source, vtkPolyData* target, vtkPolyData* result)
+{
+	vtkSmartPointer&lt;vtkIterativeClosestPointTransform&gt; icp = vtkSmartPointer&lt;vtkIterativeClosestPointTransform&gt;::New();
+	icp-&gt;SetSource(source);
+	icp-&gt;SetTarget(target);
+	icp-&gt;GetLandmarkTransform()-&gt;SetModeToAffine();
+	icp-&gt;SetMaximumNumberOfIterations(1000);
+	//icp-&gt;StartByMatchingCentroidsOn();
+	icp-&gt;Modified();
+	icp-&gt;Update();
+	vtkSmartPointer&lt;vtkMatrix4x4&gt; m = icp-&gt;GetMatrix();
+	std::cout &lt;&lt; &quot;The resulting matrix after ICP is: &quot; &lt;&lt; *m &lt;&lt; std::endl;
+
+	vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt; icpFilter = vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt;::New();
+	icpFilter-&gt;SetInputData(result);
+	icpFilter-&gt;SetTransform(icp);
+	icpFilter-&gt;Update();
+
+}
+
+
+int main(int argc, char *argv[])
+{
+	if (argc&nbsp;!= 6)
+	{
+		std::cerr &lt;&lt; &quot;Required parameters: \n\tsource_vtk \n\ttarget_vtk \n\ttarget_2_source_matrix \n\tsource_in_target_vtk_output \n\ttarget_with_source_scalars_vtk&quot; &lt;&lt; std::endl;
+		return EXIT_FAILURE;
+	}
+
+	double element;
+	std::string fn1 = argv[1];
+	std::string fn2 = argv[2];
+	std::string fn3 = argv[3];    
+	std::string fn4 = argv[4];
+	std::string fn5 = argv[5];
+
+	
+	
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader1 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	reader1-&gt;SetFileName(fn1.c_str());
+	reader1-&gt;Update();
+	
+	vtkSmartPointer&lt;vtkPolyDataReader&gt; reader2 = vtkSmartPointer&lt;vtkPolyDataReader&gt;::New();
+	reader2-&gt;SetFileName(fn2.c_str());
+	reader2-&gt;Update();
+
+
+	vtkSmartPointer&lt;vtkPolyData&gt; source_poly = vtkSmartPointer&lt;vtkPolyData&gt;::New(); 
+	source_poly = reader1-&gt;GetOutput();
+
+	vtkSmartPointer&lt;vtkPolyData&gt; target_poly = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+	target_poly = reader2-&gt;GetOutput();
+
+	
+	vtkSmartPointer&lt;vtkMatrix4x4&gt; matrix = vtkSmartPointer&lt;vtkMatrix4x4&gt;::New();
+	ReadMatrix4x4(fn3.c_str(), matrix); 
+	matrix-&gt;Invert(); 
+	
+	/*ofstream f(fn2.c_str()); 
+
+	for (int i = 0; i &lt; 4; i++)
+	{
+		for (int j = 0; j &lt; 4; j++)
+		{
+			element = matrix-&gt;GetElement(i, j); 
+			f &lt;&lt; element &lt;&lt; &quot;\n&quot;;
+		}	
+	}*/
+
+	
+	vtkSmartPointer&lt;vtkTransform&gt; invert_transform = vtkSmartPointer&lt;vtkTransform&gt;::New();
+	invert_transform-&gt;SetMatrix(matrix); 
+
+	
+	vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt; lmtFilter = vtkSmartPointer&lt;vtkTransformPolyDataFilter&gt;::New();
+	lmtFilter-&gt;SetInputData(source_poly);
+	lmtFilter-&gt;SetTransform(invert_transform);
+	lmtFilter-&gt;Update();
+
+	// The source in target after landmark reg. matrix inversion 
+	vtkSmartPointer&lt;vtkPolyData&gt; source_in_target_lm_reg = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+
+	// The source in target after landmark inv + icp 
+	vtkSmartPointer&lt;vtkPolyData&gt; source_in_target_lm_icp_reg = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+
+	ICPRegistration(source_in_target_lm_reg, target_poly, source_in_target_lm_icp_reg);
+
+	TransferPointDataToTargetPoly(source_in_target_lm_icp_reg, target_poly);
+
+	
+	vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New();
+	writer-&gt;SetInputData(source_in_target_lm_icp_reg);
+	writer-&gt;SetFileName(fn4.c_str());
+	writer-&gt;Update();
+
+	vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer2 = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New();
+	writer2-&gt;SetInputData(target_poly);
+	writer2-&gt;SetFileName(fn5.c_str());
+	writer2-&gt;Update();
+
+
+	return EXIT_SUCCESS;
+}
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:617-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312125031 -->
+<div class="printfooter">
+Retrieved from "<a href="index2047.html?title=Transform_surface_with_matrix">https://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Transform_surface_with_matrix</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index2047.html?title=Transform_surface_with_matrix" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index5b73.html?title=Talk:Transform_surface_with_matrix&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexdd6a.html?title=Transform_surface_with_matrix&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index29e1.html?title=Transform_surface_with_matrix&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexa1c3.html?title=Special:UserLogin&amp;returnto=Transform_surface_with_matrix" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="https://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index3406.html?title=Special:WhatLinksHere/Transform_surface_with_matrix" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index15ab.html?title=Special:RecentChangesLinked/Transform_surface_with_matrix" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index5790.html?title=Transform_surface_with_matrix&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index314f.html?title=Transform_surface_with_matrix&amp;oldid=3719" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 17 January 2017, at 12:47.</li>
+					<li id="viewcount">This page has been accessed 172 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.472 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Transform_surface_with_matrix&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:04 GMT -->
+</html>

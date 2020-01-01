@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=GuiBox_Source&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="GuiBox Source" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>GuiBox Source - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "GuiBox_Source";
+		var wgTitle = "GuiBox Source";
+		var wgAction = "view";
+		var wgArticleId = "232";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1374;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-GuiBox_Source skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">GuiBox Source</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<pre>
+///////////////////////////////////////////////////////////////////////////
+// C++ code generated with wxFormBuilder (version Sep  8 2010)
+// http://www.wxformbuilder.org/
+//
+// PLEASE DO &quot;NOT&quot; EDIT THIS FILE!
+///////////////////////////////////////////////////////////////////////////
+
+#include &quot;guiCore.h&quot;
+
+///////////////////////////////////////////////////////////////////////////
+
+XylusMainFrame::XylusMainFrame( wxWindow* parent, wxWindowID id, const wxString&amp; title, const wxPoint&amp; pos, const wxSize&amp; size, long style )&nbsp;: wxFrame( parent, id, title, pos, size, style )
+{
+	this-&gt;SetSizeHints( wxDefaultSize, wxDefaultSize );
+	
+	m_menubar = new wxMenuBar( 0 );
+	file = new wxMenu();
+	wxMenuItem* m_FileMenuItem2;
+	m_FileMenuItem2 = new wxMenuItem( file, wxID_ANY, wxString( wxT(&quot;Exit&quot;) ) , wxEmptyString, wxITEM_NORMAL );
+	file-&gt;Append( m_FileMenuItem2 );
+	
+	m_menubar-&gt;Append( file, wxT(&quot;File&quot;) ); 
+	
+	about = new wxMenu();
+	wxMenuItem* m_AboutMenuItem1;
+	m_AboutMenuItem1 = new wxMenuItem( about, wxID_ANY, wxString( wxT(&quot;About 3D++&quot;) ) , wxEmptyString, wxITEM_NORMAL );
+	about-&gt;Append( m_AboutMenuItem1 );
+	
+	m_menubar-&gt;Append( about, wxT(&quot;About&quot;) ); 
+	
+	this-&gt;SetMenuBar( m_menubar );
+	
+	wxBoxSizer* bSizer29;
+	bSizer29 = new wxBoxSizer( wxVERTICAL );
+	
+	m_processParamMainPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxTAB_TRAVERSAL );
+	wxStaticBoxSizer* sbSizer13;
+	sbSizer13 = new wxStaticBoxSizer( new wxStaticBox( m_processParamMainPanel, wxID_ANY, wxT(&quot;Process parameters&quot;) ), wxVERTICAL );
+	
+	wxBoxSizer* bSizer40;
+	bSizer40 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText9 = new wxStaticText( m_processParamMainPanel, wxID_ANY, wxT(&quot;Wait after U/D  (secs)&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText9-&gt;Wrap( -1 );
+	bSizer40-&gt;Add( m_staticText9, 0, wxALL, 5 );
+	
+	
+	bSizer40-&gt;Add( 0, 0, 1, wxEXPAND, 5 );
+	
+	m_textCtrl_WaitUD = new wxTextCtrl( m_processParamMainPanel, wxID_ANY, wxT(&quot;7&quot;), wxDefaultPosition, wxSize( 50,-1 ), 0 );
+	bSizer40-&gt;Add( m_textCtrl_WaitUD, 0, wxALL, 5 );
+	
+	sbSizer13-&gt;Add( bSizer40, 1, wxEXPAND, 5 );
+	
+	wxBoxSizer* bSizer41;
+	bSizer41 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText10 = new wxStaticText( m_processParamMainPanel, wxID_ANY, wxT(&quot;Wait between slices (secs)&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText10-&gt;Wrap( -1 );
+	bSizer41-&gt;Add( m_staticText10, 0, wxALL, 5 );
+	
+	
+	bSizer41-&gt;Add( 0, 0, 1, wxEXPAND, 5 );
+	
+	m_textCtrl_WaitSlice = new wxTextCtrl( m_processParamMainPanel, wxID_ANY, wxT(&quot;15&quot;), wxDefaultPosition, wxSize( 50,-1 ), 0 );
+	bSizer41-&gt;Add( m_textCtrl_WaitSlice, 0, wxALL, 5 );
+	
+	sbSizer13-&gt;Add( bSizer41, 1, wxEXPAND, 5 );
+	
+	wxBoxSizer* bSizer42;
+	bSizer42 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText11 = new wxStaticText( m_processParamMainPanel, wxID_ANY, wxT(&quot;Number of init slices&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText11-&gt;Wrap( -1 );
+	bSizer42-&gt;Add( m_staticText11, 0, wxALL, 5 );
+	
+	
+	bSizer42-&gt;Add( 0, 0, 1, wxEXPAND, 5 );
+	
+	m_textCtrl_numSlices = new wxTextCtrl( m_processParamMainPanel, wxID_ANY, wxT(&quot;2&quot;), wxDefaultPosition, wxSize( 50,-1 ), 0 );
+	bSizer42-&gt;Add( m_textCtrl_numSlices, 0, wxALL, 5 );
+	
+	sbSizer13-&gt;Add( bSizer42, 1, wxEXPAND, 5 );
+	
+	wxBoxSizer* bSizer55;
+	bSizer55 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText18 = new wxStaticText( m_processParamMainPanel, wxID_ANY, wxT(&quot;Image intensity &quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText18-&gt;Wrap( -1 );
+	bSizer55-&gt;Add( m_staticText18, 0, wxALL, 5 );
+	
+	m_slider2 = new wxSlider( m_processParamMainPanel, wxID_ANY, 142, 0, 256, wxDefaultPosition, wxSize( 120,-1 ), wxSL_HORIZONTAL );
+	m_slider2-&gt;SetToolTip( wxT(&quot;The value of greyscale goes from 0 to 256&quot;) );
+	
+	bSizer55-&gt;Add( m_slider2, 0, wxALL, 5 );
+	
+	m_textCtrl_imgIntens = new wxTextCtrl( m_processParamMainPanel, wxID_ANY, wxT(&quot;142&quot;), wxDefaultPosition, wxSize( 50,-1 ), 0 );
+	bSizer55-&gt;Add( m_textCtrl_imgIntens, 0, wxALL, 5 );
+	
+	sbSizer13-&gt;Add( bSizer55, 1, wxEXPAND, 0 );
+	
+	m_processParamMainPanel-&gt;SetSizer( sbSizer13 );
+	m_processParamMainPanel-&gt;Layout();
+	sbSizer13-&gt;Fit( m_processParamMainPanel );
+	bSizer29-&gt;Add( m_processParamMainPanel, 0, wxEXPAND | wxALL, 0 );
+	
+	m_panel41 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	wxStaticBoxSizer* sbSizer11;
+	sbSizer11 = new wxStaticBoxSizer( new wxStaticBox( m_panel41, wxID_ANY, wxT(&quot;Slice file parameters&quot;) ), wxVERTICAL );
+	
+	wxBoxSizer* bSizer45;
+	bSizer45 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText12 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;Slice filename prefix&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText12-&gt;Wrap( -1 );
+	bSizer45-&gt;Add( m_staticText12, 0, wxALL, 5 );
+	
+	
+	bSizer45-&gt;Add( 0, 0, 1, wxEXPAND, 5 );
+	
+	m_textCtrl_filenamePrefix = new wxTextCtrl( m_panel41, wxID_ANY, wxT(&quot;test&quot;), wxPoint( -1,-1 ), wxSize( 150,-1 ), 0 );
+	bSizer45-&gt;Add( m_textCtrl_filenamePrefix, 0, wxALL, 5 );
+	
+	sbSizer11-&gt;Add( bSizer45, 0, wxEXPAND, 5 );
+	
+	wxBoxSizer* bSizer47;
+	bSizer47 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText13 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;Slice image file extension&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13-&gt;Wrap( -1 );
+	bSizer47-&gt;Add( m_staticText13, 0, wxALL, 5 );
+	
+	
+	bSizer47-&gt;Add( 0, 0, 1, wxEXPAND, 5 );
+	
+	wxString m_choice_filenameExtChoices[] = { wxT(&quot;jpg&quot;), wxT(&quot;png&quot;), wxT(&quot;gif&quot;), wxT(&quot;bmp&quot;), wxT(&quot;jpeg&quot;), wxT(&quot;eps&quot;) };
+	int m_choice_filenameExtNChoices = sizeof( m_choice_filenameExtChoices ) / sizeof( wxString );
+	m_choice_filenameExt = new wxChoice( m_panel41, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_choice_filenameExtNChoices, m_choice_filenameExtChoices, 0 );
+	m_choice_filenameExt-&gt;SetSelection( 0 );
+	bSizer47-&gt;Add( m_choice_filenameExt, 0, wxALL, 5 );
+	
+	sbSizer11-&gt;Add( bSizer47, 0, wxEXPAND, 5 );
+	
+	wxBoxSizer* bSizer17;
+	bSizer17 = new wxBoxSizer( wxVERTICAL );
+	
+	wxFlexGridSizer* fgSizer2;
+	fgSizer2 = new wxFlexGridSizer( 2, 2, 0, 0 );
+	fgSizer2-&gt;SetFlexibleDirection( wxBOTH );
+	fgSizer2-&gt;SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText24 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;3D Model file&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText24-&gt;Wrap( -1 );
+	fgSizer2-&gt;Add( m_staticText24, 0, wxALL, 5 );
+	
+	m_STL_filePicker = new wxFilePickerCtrl( m_panel41, wxID_ANY, wxEmptyString, wxT(&quot;Select a file&quot;), wxT(&quot;*.stl&quot;), wxDefaultPosition, wxDefaultSize, wxFLP_DEFAULT_STYLE );
+	fgSizer2-&gt;Add( m_STL_filePicker, 0, wxALL, 5 );
+	
+	m_staticText23 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;Slice folder   &quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText23-&gt;Wrap( -1 );
+	fgSizer2-&gt;Add( m_staticText23, 0, wxALL, 5 );
+	
+	m_dirPicker_slicePath = new wxDirPickerCtrl( m_panel41, wxID_ANY, wxEmptyString, wxT(&quot;Select a folder&quot;), wxDefaultPosition, wxDefaultSize, wxDIRP_DEFAULT_STYLE );
+	fgSizer2-&gt;Add( m_dirPicker_slicePath, 0, wxALL, 5 );
+	
+	bSizer17-&gt;Add( fgSizer2, 1, wxEXPAND, 5 );
+	
+	sbSizer11-&gt;Add( bSizer17, 0, wxEXPAND, 5 );
+	
+	wxStaticBoxSizer* sbSizer8;
+	sbSizer8 = new wxStaticBoxSizer( new wxStaticBox( m_panel41, wxID_ANY, wxT(&quot;Slice resolution&quot;) ), wxVERTICAL );
+	
+	wxFlexGridSizer* fgSizer1;
+	fgSizer1 = new wxFlexGridSizer( 3, 4, 0, 0 );
+	fgSizer1-&gt;SetFlexibleDirection( wxBOTH );
+	fgSizer1-&gt;SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_staticText16 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;Height&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText16-&gt;Wrap( -1 );
+	fgSizer1-&gt;Add( m_staticText16, 0, wxALL, 5 );
+	
+	m_textCtrl_imgH = new wxTextCtrl( m_panel41, wxID_ANY, wxT(&quot;1024&quot;), wxDefaultPosition, wxSize( 40,-1 ), 0 );
+	fgSizer1-&gt;Add( m_textCtrl_imgH, 0, wxALL, 5 );
+	
+	m_staticText17 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;Width&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText17-&gt;Wrap( -1 );
+	fgSizer1-&gt;Add( m_staticText17, 0, wxALL, 5 );
+	
+	m_textCtrl_imgW = new wxTextCtrl( m_panel41, wxID_ANY, wxT(&quot;768&quot;), wxDefaultPosition, wxSize( 40,-1 ), 0 );
+	fgSizer1-&gt;Add( m_textCtrl_imgW, 0, wxALL, 5 );
+	
+	m_staticText181 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;z-Min&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText181-&gt;Wrap( -1 );
+	fgSizer1-&gt;Add( m_staticText181, 0, wxALL, 5 );
+	
+	m_textCtrl_zMin = new wxTextCtrl( m_panel41, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 40,-1 ), 0 );
+	fgSizer1-&gt;Add( m_textCtrl_zMin, 0, wxALL, 5 );
+	
+	m_staticText19 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;z-Max&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText19-&gt;Wrap( -1 );
+	fgSizer1-&gt;Add( m_staticText19, 0, wxALL, 5 );
+	
+	m_textCtrl_zMax = new wxTextCtrl( m_panel41, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 40,-1 ), 0 );
+	fgSizer1-&gt;Add( m_textCtrl_zMax, 0, wxALL, 5 );
+	
+	m_staticText20 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;Num slices&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText20-&gt;Wrap( -1 );
+	fgSizer1-&gt;Add( m_staticText20, 0, wxALL, 5 );
+	
+	m_textCtrl_totSlices = new wxTextCtrl( m_panel41, wxID_ANY, wxT(&quot;5&quot;), wxDefaultPosition, wxSize( 40,-1 ), 0 );
+	fgSizer1-&gt;Add( m_textCtrl_totSlices, 0, wxALL, 5 );
+	
+	m_staticText21 = new wxStaticText( m_panel41, wxID_ANY, wxT(&quot;xyz&quot;), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText21-&gt;Wrap( -1 );
+	fgSizer1-&gt;Add( m_staticText21, 0, wxALL, 5 );
+	
+	m_textCtrl18 = new wxTextCtrl( m_panel41, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 40,-1 ), 0 );
+	fgSizer1-&gt;Add( m_textCtrl18, 0, wxALL, 5 );
+	
+	sbSizer8-&gt;Add( fgSizer1, 1, wxEXPAND, 5 );
+	
+	sbSizer11-&gt;Add( sbSizer8, 0, wxEXPAND, 5 );
+	
+	m_panel41-&gt;SetSizer( sbSizer11 );
+	m_panel41-&gt;Layout();
+	sbSizer11-&gt;Fit( m_panel41 );
+	bSizer29-&gt;Add( m_panel41, 0, wxEXPAND | wxALL, 0 );
+	
+	m_panel42 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxTAB_TRAVERSAL );
+	wxStaticBoxSizer* sbSizer12;
+	sbSizer12 = new wxStaticBoxSizer( new wxStaticBox( m_panel42, wxID_ANY, wxT(&quot;Process controls&quot;) ), wxHORIZONTAL );
+	
+	wxBoxSizer* bSizer24;
+	bSizer24 = new wxBoxSizer( wxVERTICAL );
+	
+	wxGridSizer* gSizer7;
+	gSizer7 = new wxGridSizer( 2, 1, 0, 0 );
+	
+	wxFlexGridSizer* fgSizer3;
+	fgSizer3 = new wxFlexGridSizer( 5, 3, 0, 0 );
+	fgSizer3-&gt;SetFlexibleDirection( wxBOTH );
+	fgSizer3-&gt;SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
+	
+	m_button22 = new wxButton( m_panel42, wxID_ANY, wxT(&quot;Start Slicing&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button22, 0, wxALL, 2 );
+	
+	m_button_start = new wxButton( m_panel42, wxID_ANY, wxT(&quot;Init Print&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_start, 0, wxALL, 2 );
+	
+	m_button_stop = new wxButton( m_panel42, wxID_ANY, wxT(&quot;Start 3D print!&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_stop, 0, wxALL, 2 );
+	
+	m_button_u = new wxButton( m_panel42, wxID_ANY, wxT(&quot;u&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_u, 0, wxALL, 2 );
+	
+	m_button_U = new wxButton( m_panel42, wxID_ANY, wxT(&quot;U&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_U, 0, wxALL, 2 );
+	
+	m_button_d = new wxButton( m_panel42, wxID_ANY, wxT(&quot;d&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_d, 0, wxALL, 2 );
+	
+	m_button_D = new wxButton( m_panel42, wxID_ANY, wxT(&quot;D&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_D, 0, wxALL, 2 );
+	
+	m_button_a = new wxButton( m_panel42, wxID_ANY, wxT(&quot;a&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_a, 0, wxALL, 2 );
+	
+	m_button_A = new wxButton( m_panel42, wxID_ANY, wxT(&quot;A&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_A, 0, wxALL, 2 );
+	
+	m_button_b = new wxButton( m_panel42, wxID_ANY, wxT(&quot;j&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_b, 0, wxALL, 2 );
+	
+	m_button_B = new wxButton( m_panel42, wxID_ANY, wxT(&quot;B&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_B, 0, wxALL, 2 );
+	
+	m_button_T = new wxButton( m_panel42, wxID_ANY, wxT(&quot;T&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_T, 0, wxALL, 2 );
+	
+	m_button_t = new wxButton( m_panel42, wxID_ANY, wxT(&quot;t&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_t, 0, wxALL, 2 );
+	
+	m_button_i = new wxButton( m_panel42, wxID_ANY, wxT(&quot;i&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_i, 0, wxALL, 2 );
+	
+	m_button_X = new wxButton( m_panel42, wxID_ANY, wxT(&quot;X&quot;), wxDefaultPosition, wxSize( 80,30 ), 0 );
+	fgSizer3-&gt;Add( m_button_X, 0, wxALL, 2 );
+	
+	gSizer7-&gt;Add( fgSizer3, 0, wxALIGN_CENTER|wxEXPAND, 5 );
+	
+	bSizer24-&gt;Add( gSizer7, 0, wxALIGN_CENTER|wxEXPAND, 5 );
+	
+	wxStaticBoxSizer* sbSizer111;
+	sbSizer111 = new wxStaticBoxSizer( new wxStaticBox( m_panel42, wxID_ANY, wxT(&quot;Init slices override + loop&quot;) ), wxVERTICAL );
+	
+	wxGridSizer* gSizer11;
+	gSizer11 = new wxGridSizer( 1, 2, 0, 0 );
+	
+	m_textCtrl_InitSlicesOverride = new wxTextCtrl( m_panel42, wxID_ANY, wxT(&quot;W,25,x,1,T,u,A,B,t&quot;), wxDefaultPosition, wxSize( 220,-1 ), 0 );
+	gSizer11-&gt;Add( m_textCtrl_InitSlicesOverride, 0, wxALL, 5 );
+	
+	m_InitSlicesText_loop = new wxTextCtrl( m_panel42, wxID_ANY, wxT(&quot;6&quot;), wxPoint( -1,-1 ), wxSize( 20,-1 ), 0 );
+	gSizer11-&gt;Add( m_InitSlicesText_loop, 0, wxALIGN_RIGHT|wxALL, 5 );
+	
+	sbSizer111-&gt;Add( gSizer11, 1, wxEXPAND, 5 );
+	
+	bSizer24-&gt;Add( sbSizer111, 1, wxEXPAND, 5 );
+	
+	wxStaticBoxSizer* sbSizer10;
+	sbSizer10 = new wxStaticBoxSizer( new wxStaticBox( m_panel42, wxID_ANY, wxT(&quot;Model slices override&quot;) ), wxVERTICAL );
+	
+	m_textCtrl_ManualSlicesOverride = new wxTextCtrl( m_panel42, wxID_ANY, wxT(&quot;s,15,x,1,T,u,A,B,t&quot;), wxDefaultPosition, wxSize( 258,-1 ), 0 );
+	m_textCtrl_ManualSlicesOverride-&gt;SetToolTip( wxT(&quot;You can specify sequence of commands: U, u, 5, i, D, d&quot;) );
+	
+	sbSizer10-&gt;Add( m_textCtrl_ManualSlicesOverride, 0, wxALL, 5 );
+	
+	bSizer24-&gt;Add( sbSizer10, 1, wxEXPAND, 5 );
+	
+	sbSizer12-&gt;Add( bSizer24, 1, wxEXPAND, 5 );
+	
+	m_panel42-&gt;SetSizer( sbSizer12 );
+	m_panel42-&gt;Layout();
+	sbSizer12-&gt;Fit( m_panel42 );
+	bSizer29-&gt;Add( m_panel42, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxEXPAND, 0 );
+	
+	this-&gt;SetSizer( bSizer29 );
+	this-&gt;Layout();
+	
+	this-&gt;Centre( wxBOTH );
+	
+	// Connect Events
+	this-&gt;Connect( m_FileMenuItem2-&gt;GetId(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( XylusMainFrame::onQuitMenuSelection_cb ) );
+	m_textCtrl_WaitUD-&gt;Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::waitAfterUDOnTextChange_cb ), NULL, this );
+	m_textCtrl_WaitSlice-&gt;Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::waitBetweenSlicesOnTextChange_cb ), NULL, this );
+	m_textCtrl_numSlices-&gt;Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::numberOfInitSlicesOnTextChange_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_TOP, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_BOTTOM, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_LINEUP, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_LINEDOWN, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_PAGEUP, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_PAGEDOWN, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_THUMBTRACK, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Connect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_textCtrl_filenamePrefix-&gt;Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::sliceFilenamePrefixOnTextChange_cb ), NULL, this );
+	m_choice_filenameExt-&gt;Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( XylusMainFrame::sliceImageExtensionOnSelectionChange_cb ), NULL, this );
+	m_STL_filePicker-&gt;Connect( wxEVT_COMMAND_FILEPICKER_CHANGED, wxFileDirPickerEventHandler( XylusMainFrame::STLFilePathOnChange_cb ), NULL, this );
+	m_dirPicker_slicePath-&gt;Connect( wxEVT_COMMAND_DIRPICKER_CHANGED, wxFileDirPickerEventHandler( XylusMainFrame::DirPathToSliceOnChange_cb ), NULL, this );
+	m_textCtrl_imgH-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::imgResolutionHChanged_cb ), NULL, this );
+	m_textCtrl_imgW-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::imgResolutionWChanged_cb ), NULL, this );
+	m_textCtrl_zMin-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::zMintextCtrl_ontextchange_cb ), NULL, this );
+	m_textCtrl_zMax-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::zMaxtextCtrl_ontextchange_cb ), NULL, this );
+	m_textCtrl_totSlices-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::imgResolutionTotSlicesChanged_cb ), NULL, this );
+	m_button22-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::StartlSlicingButtonOnClick_cb ), NULL, this );
+	m_button_start-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlInitPrintButtonOnClick_cb ), NULL, this );
+	m_button_stop-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlStartPrintButtonOnClick_cb ), NULL, this );
+	m_button_u-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_u_cb ), NULL, this );
+	m_button_U-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_U_cb ), NULL, this );
+	m_button_d-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_d_cb ), NULL, this );
+	m_button_D-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_D_cb ), NULL, this );
+	m_button_a-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_a_cb ), NULL, this );
+	m_button_A-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_A_cb ), NULL, this );
+	m_button_b-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_b_cb ), NULL, this );
+	m_button_B-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_B_cb ), NULL, this );
+	m_button_T-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_T_cb ), NULL, this );
+	m_button_t-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_t_cb ), NULL, this );
+	m_button_i-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_i_cb ), NULL, this );
+	m_button_X-&gt;Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_X_cb ), NULL, this );
+	m_textCtrl_InitSlicesOverride-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::InitSlicesOverrideTextChanged_cb ), NULL, this );
+	m_InitSlicesText_loop-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::InitSlicesLoopTextChanged_cb ), NULL, this );
+	m_textCtrl_ManualSlicesOverride-&gt;Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::ManualSlicesOverrideOnTextChange_cb ), NULL, this );
+}
+
+XylusMainFrame::~XylusMainFrame()
+{
+	// Disconnect Events
+	this-&gt;Disconnect( wxID_ANY, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( XylusMainFrame::onQuitMenuSelection_cb ) );
+	m_textCtrl_WaitUD-&gt;Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::waitAfterUDOnTextChange_cb ), NULL, this );
+	m_textCtrl_WaitSlice-&gt;Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::waitBetweenSlicesOnTextChange_cb ), NULL, this );
+	m_textCtrl_numSlices-&gt;Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::numberOfInitSlicesOnTextChange_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_TOP, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_BOTTOM, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_LINEUP, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_LINEDOWN, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_PAGEUP, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_PAGEDOWN, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_THUMBTRACK, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_slider2-&gt;Disconnect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( XylusMainFrame::imageIntensitySlider_cb ), NULL, this );
+	m_textCtrl_filenamePrefix-&gt;Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( XylusMainFrame::sliceFilenamePrefixOnTextChange_cb ), NULL, this );
+	m_choice_filenameExt-&gt;Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( XylusMainFrame::sliceImageExtensionOnSelectionChange_cb ), NULL, this );
+	m_STL_filePicker-&gt;Disconnect( wxEVT_COMMAND_FILEPICKER_CHANGED, wxFileDirPickerEventHandler( XylusMainFrame::STLFilePathOnChange_cb ), NULL, this );
+	m_dirPicker_slicePath-&gt;Disconnect( wxEVT_COMMAND_DIRPICKER_CHANGED, wxFileDirPickerEventHandler( XylusMainFrame::DirPathToSliceOnChange_cb ), NULL, this );
+	m_textCtrl_imgH-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::imgResolutionHChanged_cb ), NULL, this );
+	m_textCtrl_imgW-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::imgResolutionWChanged_cb ), NULL, this );
+	m_textCtrl_zMin-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::zMintextCtrl_ontextchange_cb ), NULL, this );
+	m_textCtrl_zMax-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::zMaxtextCtrl_ontextchange_cb ), NULL, this );
+	m_textCtrl_totSlices-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::imgResolutionTotSlicesChanged_cb ), NULL, this );
+	m_button22-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::StartlSlicingButtonOnClick_cb ), NULL, this );
+	m_button_start-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlInitPrintButtonOnClick_cb ), NULL, this );
+	m_button_stop-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlStartPrintButtonOnClick_cb ), NULL, this );
+	m_button_u-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_u_cb ), NULL, this );
+	m_button_U-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_U_cb ), NULL, this );
+	m_button_d-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_d_cb ), NULL, this );
+	m_button_D-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_D_cb ), NULL, this );
+	m_button_a-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_a_cb ), NULL, this );
+	m_button_A-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_A_cb ), NULL, this );
+	m_button_b-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_b_cb ), NULL, this );
+	m_button_B-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_B_cb ), NULL, this );
+	m_button_T-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_T_cb ), NULL, this );
+	m_button_t-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_t_cb ), NULL, this );
+	m_button_i-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_i_cb ), NULL, this );
+	m_button_X-&gt;Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( XylusMainFrame::processControlButtonOnClick_X_cb ), NULL, this );
+	m_textCtrl_InitSlicesOverride-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::InitSlicesOverrideTextChanged_cb ), NULL, this );
+	m_InitSlicesText_loop-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::InitSlicesLoopTextChanged_cb ), NULL, this );
+	m_textCtrl_ManualSlicesOverride-&gt;Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( XylusMainFrame::ManualSlicesOverrideOnTextChange_cb ), NULL, this );
+	
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:232-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312132515 -->
+<div class="printfooter">
+Retrieved from "<a href="index917f.html?title=GuiBox_Source">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=GuiBox_Source</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index917f.html?title=GuiBox_Source" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index540e.html?title=Talk:GuiBox_Source&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index6b44.html?title=GuiBox_Source&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="indexfa55.html?title=GuiBox_Source&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index4432.html?title=Special:UserLogin&amp;returnto=GuiBox_Source" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index645e.html?title=Special:WhatLinksHere/GuiBox_Source" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index9837.html?title=Special:RecentChangesLinked/GuiBox_Source" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="indexa16b.html?title=GuiBox_Source&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index5c36.html?title=GuiBox_Source&amp;oldid=1374" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 15 April 2012, at 19:31.</li>
+					<li id="viewcount">This page has been accessed 120 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.445 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=GuiBox_Source&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:49:59 GMT -->
+</html>

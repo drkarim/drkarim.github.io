@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Smoothing_scalars_in_VTK_surfaces by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 12:50:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="keywords" content="Smoothing scalars in VTK surfaces" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Smoothing scalars in VTK surfaces - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/shared69ad.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="skins/monobook/main69ad.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Smoothing_scalars_in_VTK_surfaces";
+		var wgTitle = "Smoothing scalars in VTK surfaces";
+		var wgAction = "view";
+		var wgArticleId = "348";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3758;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Smoothing_scalars_in_VTK_surfaces skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Smoothing scalars in VTK surfaces</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<p>The code has been taken from <a href="http://vtk.1045678.n5.nabble.com/How-to-smooth-or-filter-polydata-scalars-td1243842.html" class="external text" title="http://vtk.1045678.n5.nabble.com/How-to-smooth-or-filter-polydata-scalars-td1243842.html" rel="nofollow">this forum post on VTK forums</a>. Note this relaxes the point scalars and not the cell scalars.  
+</p><p><a href="https://github.com/drkarim/Smooth-scalars" class="external text" title="https://github.com/drkarim/Smooth-scalars" rel="nofollow">Also a version which I put on GitHub</a>
+</p>
+<pre>
+C:\PhD\software\my_binaries\smoothscalars.exe &lt;vtkinput&gt; &lt;vtkoutput&gt; &lt;iterations&gt;
+</pre>
+<p><br />
+</p>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+#define HAS_VTK 1
+#include &quot;vtkRenderer.h&quot;
+#include &quot;vtkRenderWindow.h&quot;
+#include &quot;vtkRenderWindowInteractor.h&quot;
+#include &lt;vtkPiecewiseFunction.h&gt;
+#include &lt;vtkColorTransferFunction.h&gt;
+#include &lt;vtkVolumeProperty.h&gt;
+#include &lt;vtkVolumeRayCastCompositeFunction.h&gt;
+#include &lt;vtkVolumeRayCastMIPFunction.h&gt;
+#include &lt;vtkVolumeRayCastMapper.h&gt;
+#include &lt;vtkVolume.h&gt;
+#include &lt;vtkVolumeTextureMapper2D.h&gt;
+#include &lt;vtkImageReader.h&gt;
+#include &lt;vtkImageImport.h&gt;
+#include &lt;vtkImageCast.h&gt;
+#include &lt;vtkVolumeRayCastCompositeFunction.h&gt;
+#include &lt;vtkStructuredPoints.h&gt;
+#include &lt;vtkStructuredGrid.h&gt;
+#include &lt;vtkFloatArray.h&gt;
+#include &lt;vtkPoints.h&gt;
+#include &quot;vtkPointData.h&quot;
+#include &lt;vtkPointPicker.h&gt;
+#include &lt;vtkCommand.h&gt;
+#include &lt;vtkMarchingCubes.h&gt;
+#include &lt;vtkContourFilter.h&gt;
+#include &lt;vtkPolyDataNormals.h&gt;
+#include &lt;vtkPolyDataMapper.h&gt;
+#include &lt;vtkCamera.h&gt;
+#include &lt;vtkMarchingCubes.h&gt;
+#include &lt;vtkVectorNorm.h&gt;
+#include &lt;vtkDataSetMapper.h&gt;
+#include &lt;vtkImageToPolyDataFilter.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkLookupTable.h&gt;
+#include &lt;vtkSphereSource.h&gt;
+#include &lt;vtkCallbackCommand.h&gt;
+#include &lt;vtkProperty.h&gt;
+#include &lt;vtkImagePlaneWidget.h&gt;
+#include &lt;vtkImageActor.h&gt;
+
+#include &lt;vtkImageMapToColors.h&gt;
+#include &lt;vtkInteractorStyleTrackballCamera.h&gt;
+#include &lt;vtkInteractorStyleFlight.h&gt;
+#include &lt;vtkPropPicker.h&gt;
+#include &lt;vtkBoxWidget.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkRendererCollection.h&gt;
+#include &lt;vtkWindowedSincPolyDataFilter.h&gt;
+#include &lt;vtkDiscreteMarchingCubes.h&gt;
+#include &lt;vtkImageThreshold.h&gt;
+#include &lt;vtkWindowToImageFilter.h&gt;
+#include &lt;vtkAVIWriter.h&gt;
+#include &lt;vtkSmartPointer.h&gt;
+#include &lt;vtkOBJExporter.h&gt;
+#include &lt;vtkMaskPoints.h&gt;
+#include &lt;vtkConeSource.h&gt;
+#include &lt;vtkCellData.h&gt;
+#include &lt;vtkTriangle.h&gt;
+#include &lt;vtkThreshold.h&gt;
+#include &lt;vtkDataSetSurfaceFilter.h&gt;
+#include &lt;vtkTextActor.h&gt;
+#include &lt;vtkTextProperty.h&gt;
+#include &lt;vtkCellLocator.h&gt;
+#include &lt;vtkCellArray.h&gt;
+#include &quot;vtkGenericCell.h&quot;
+#include &quot;vtkOrientationMarkerWidget.h&quot;
+#include &quot;vtkAxesActor.h&quot;
+#include &quot;vtkAnnotatedCubeActor.h&quot;
+#include &quot;vtkPropAssembly.h&quot;
+#include &quot;vtkPlaneWidget.h&quot;
+#include &quot;vtkCellPicker.h&quot;
+#include &quot;vtkLandmarkTransform.h&quot;
+#include &lt;vtkMatrix4x4.h&gt;
+#include &lt;vtkTransformPolyDataFilter.h&gt;
+#include &lt;vtkIterativeClosestPointTransform.h&gt;
+#include &lt;vtkTriangleFilter.h&gt;
+#include &lt;vtkDoubleArray.h&gt;
+#include &lt;vtkPolyDataWriter.h&gt;
+#define MAXDIST 50.0
+
+int main( int argc, char * argv[] )
+{
+  // Input file
+  char * input_file = argv[1];
+  // Output file
+  char * output_file = argv[2];
+  // Iterations
+  vtkIdType itr = atoi( argv[3] );
+
+ // int probe = atoi ( argv[4] );
+  // Reader
+  vtkPolyDataReader * reader = vtkPolyDataReader::New();
+  reader-&gt;SetFileName( input_file );
+  // Triangle Filter
+  vtkTriangleFilter * triangle = vtkTriangleFilter::New();
+  triangle-&gt;PassVertsOn();
+  triangle-&gt;PassLinesOn();
+  triangle-&gt;SetInputConnection( reader-&gt;GetOutputPort() );
+  triangle-&gt;Update();
+
+  vtkPolyData * tree        = triangle-&gt;GetOutput();
+  vtkPoints   * tree_points = tree-&gt;GetPoints();
+  vtkIdType     num_points  = tree_points-&gt;GetNumberOfPoints();
+  vtkIdList   * point_cells = vtkIdList::New();
+  vtkIdList   * cell_points = vtkIdList::New();
+  vtkIdType point_id;
+
+    vtkPolyData * tree_out = vtkPolyData::New();
+    tree_out-&gt;DeepCopy( tree );
+
+  // This will hold a temporary copy of the points.
+   vtkDoubleArray *tmp_DA = vtkDoubleArray::New();
+   tmp_DA-&gt;SetNumberOfTuples(num_points);
+   tmp_DA-&gt;SetNumberOfComponents(1);
+
+  // Iterations
+  tree-&gt;BuildLinks();
+  vtkIdType i;
+  for ( i = 0; i &lt; itr; ++i ) {
+    // Try to smooth the point scalars.
+    for ( point_id = 0; point_id &lt; num_points; ++point_id ) {
+        double point_scalar = tree_out-&gt;GetPointData()-&gt;GetScalars()-&gt;GetTuple1(point_id);
+        double *point_position = new double[3];
+        point_position = tree-&gt;GetPoint(point_id);
+
+        double average_scalar = point_scalar;
+        double den_fact = 1;
+
+        tree-&gt;GetPointCells( point_id, point_cells );
+        vtkIdType num_cells = point_cells-&gt;GetNumberOfIds();
+
+        vtkIdType cell;
+        for (cell = 0; (cell &lt; num_cells); ++cell ) {
+            vtkIdType neighbor_cell_id;
+            neighbor_cell_id = point_cells-&gt;GetId( cell );
+            tree-&gt;GetCellPoints( neighbor_cell_id, cell_points );
+            vtkIdType num_cell_points = cell_points-&gt;GetNumberOfIds();
+            // Loop over the cell points.
+            vtkIdType neighbor_point;
+            for (neighbor_point = 0;neighbor_point &lt; num_cell_points;++neighbor_point ) {
+                // Get the neighbor point id.
+                vtkIdType neighbor_point_id = cell_points-&gt;GetId(neighbor_point);
+                double *neighbor_position = new double[3];
+                neighbor_position = tree-&gt;GetPoint(neighbor_point_id);
+
+                double a = neighbor_position[0] - point_position[0];
+                double b = neighbor_position[1] - point_position[1];
+                double c = neighbor_position[2] - point_position[2];
+                double distance = sqrt(a*a + b*b + c*c);
+                double weight = (1-distance/MAXDIST) * int(distance&lt;MAXDIST);
+
+                // Get the neighbor point position.
+                double neighbor_scalar;
+                neighbor_scalar = tree_out-&gt;GetPointData()-&gt;GetScalars()-&gt;GetTuple1(neighbor_point_id);
+                // Add it to the average.
+                average_scalar += neighbor_scalar * weight;
+                den_fact += weight;
+                } // End neighbor points loop.
+            } // End of cells loop
+        average_scalar /= den_fact;
+        tmp_DA-&gt;SetTuple1(point_id, average_scalar );
+        } // End of smooth loop.
+//    tree_points-&gt;DeepCopy( tmp_points );
+    tree_out-&gt;GetPointData()-&gt;SetScalars(tmp_DA);
+    tree_out-&gt;Update();
+    } // End of itr loop
+
+  // Eventually Write down the new polydata
+  vtkPolyDataWriter * writer = vtkPolyDataWriter::New();
+  writer-&gt;SetFileName(output_file);
+  writer-&gt;SetInput(tree_out);
+  writer-&gt;Update();
+
+  return 0;
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:348-0!1!0!!en!2!edit=0 and timestamp 20180312122856 -->
+<div class="printfooter">
+Retrieved from "<a href="index9da2.html?title=Smoothing_scalars_in_VTK_surfaces">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Smoothing_scalars_in_VTK_surfaces</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index9da2.html?title=Smoothing_scalars_in_VTK_surfaces" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index4136.html?title=Talk:Smoothing_scalars_in_VTK_surfaces&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index6263.html?title=Smoothing_scalars_in_VTK_surfaces&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index7342.html?title=Smoothing_scalars_in_VTK_surfaces&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index245a.html?title=Special:UserLogin&amp;returnto=Smoothing_scalars_in_VTK_surfaces" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexc512.html?title=Special:WhatLinksHere/Smoothing_scalars_in_VTK_surfaces" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="indexbd84.html?title=Special:RecentChangesLinked/Smoothing_scalars_in_VTK_surfaces" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index2f44.html?title=Smoothing_scalars_in_VTK_surfaces&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index7942.html?title=Smoothing_scalars_in_VTK_surfaces&amp;oldid=3758" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 22 February 2017, at 15:35.</li>
+					<li id="viewcount">This page has been accessed 593 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.379 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Smoothing_scalars_in_VTK_surfaces by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 12:50:51 GMT -->
+</html>

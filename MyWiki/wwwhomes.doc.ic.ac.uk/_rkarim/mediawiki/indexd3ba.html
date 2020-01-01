@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format&oldid=1923 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:53:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="keywords" content="SLC file format" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/opensearch_desc.php" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>SLC file format - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/~rkarim/mediawiki/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "SLC_file_format";
+		var wgTitle = "SLC file format";
+		var wgAction = "view";
+		var wgArticleId = 324;
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1923;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-SLC_file_format skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">SLC file format</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub">
+				<div id="mw-revision-info">Revision as of 21:36, 13 March 2013 by <a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User:Admin&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Admin (page does not exist)">Admin</a>  <span class="mw-usertoollinks">(<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User_talk:Admin&amp;action=edit&amp;redlink=1" class="new" title="User talk:Admin (page does not exist)">Talk</a>&#32;|&#32;<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:Contributions/Admin" title="Special:Contributions/Admin">contribs</a>)</span></div>
+
+				<div id="mw-revision-nav">(diff) ← Older revision&#32;|&#32;Current revision (diff)&#32;|&#32;Newer revision → (diff)</div>
+			</div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><a href="http://paulbourke.net/dataformats/slc/" class="external text" title="http://paulbourke.net/dataformats/slc/" rel="nofollow">Copy of specifications described here</a>
+</p>
+<a name="SLC_-_SLiCe_format" id="SLC_-_SLiCe_format"></a><h1> <span class="mw-headline"> SLC - SLiCe format </span></h1>
+<p>This is a 2 1/2 dimension file describing slices (contours) through a solid model typically for rapid prototyping applications such as stereolithography. It was created by "3D systems" around 1994.
+</p><p>Introduction
+</p><p>The SLC file format is a "21/2D" contour representation of a CAD model.  It consists of successive cross-sections taken at ascending Z intervals in which solid material is represented by interior and exterior boundary polylines. SLC data can be generated from various sources, either by conversion from CAD solid or surface models or more directly from systems that produce data arranged in layers, such as CT-scanners.
+</p><p>Definition of Terms
+</p><p>Segment
+</p><p>A segment is a straight line connecting two X/Y vertices points.
+</p><p>Polyline
+</p><p>A Polyline is an ordered list of X/Y vertices points connected continuously by each successive line segment.  The polyline must be closed whereby the last point must equal the first point in the vertices list.
+</p><p>Contour Boundary
+</p><p>A boundary is a closed polyline representing interior or exterior solid material.  An exterior boundary has its polyline list in counter-clockwise order. The solid material is inside the polyline. An interior boundary has its polyline list in clockwise order and solid material is outside the polyline.
+</p><p>Contour Layer
+</p><p>A contour layer is a list of exterior and interior boundaries representing the solid material at a specified Z cross-section of the CAD model. The cross-section slice is taken parallel to the X/Y plane and has a specified layer thickness.
+</p><p>Data Formats
+</p><p>Byte 8 bits
+Character 1 Byte
+Unsigned Integer 4 Bytes
+Float 4 Bytes
+IEEE Format
+</p><p>Most significant byte of FLOAT is specified in the highest addressed byte.  The byte ordering follows the Intel PC Little Indian/Big Indian scheme.
+</p><p>Address 0 1 2
+3
+Low Word
+High Word
+LSB MSB LSB MSB
+</p><p>Most UNIX RISC Workstations are Big Indian/Little Indian, therefore they need to byte swap all Unsigned Integers and Floats before outputting to the SLC file.
+</p><p>Overview of the SLC File Structure
+</p><p>The SLC file is divided into a header section, a 3D reserved section, a sample table section, and the contour data section.
+</p><p>Header Section
+</p><p>The Header section is an ASCII character string containing global information about the part and how it was prepared.
+The header is terminated by a carriage return, line feed and control-Z character (0x0d,0x0a,0x1a) and can be a maximum of 2048 bytes including the termination characters.
+</p><p>The syntax of the header section is a keyword followed by its appropriate parameter.
+</p><p>Header Keywords
+</p><p>"-SLCVER &lt;X.X&gt;"
+</p><p>specifies the SLC file format version number.  The version number of this specification is 2.0.
+</p><p>"-UNIT &lt;INCH/MM&gt;"
+</p><p>indicates which units the SLC data is represented in.
+</p><p>"-TYPE &lt;PART/SUPPORT/WEB&gt;"
+</p><p>specifies the CAD model type.  PART and SUPPORT must be closed contours.  WEB types can be open polylines or line segments.
+</p><p>"-PACKAGE &lt;vendor specific&gt;"
+</p><p>identifies the vendor package and version number that produced the SLC file.  A maximum of 32 bytes.
+</p><p>"-EXTENTS &lt;minx,maxx miny,maxy minz,maxz&gt;"
+</p><p>describes the X, Y, and Z extents of the CAD model.
+</p><p>"-CHORDDEV &lt;value&gt;"
+</p><p>specifies the cordal deviation, if used, to generate the SLC data.
+</p><p>"-ARCRES &lt;value in degrees&gt;"
+</p><p>specifies the arc resolution, if used, to generate the SLC data.
+</p><p>"-SURFTOL &lt;value&gt;"
+</p><p>specifies the surface tolerance, if used, to generate the SLC data.
+</p><p>"-GAPTOL &lt;value&gt;"
+</p><p>specifies the gap tolerance, if used, to generate the SLC data.
+</p><p>"-MAXGAPFOUND &lt;value&gt;"
+</p><p>specifies the maximum gap size found when generating the SLC data.
+</p><p>"-EXTLWC &lt;value&gt;"
+</p><p>specifies if any line width compensation has been applied to the SLC data by the CAD vendor.
+</p><p>3D Reserved Section
+</p><p>This 256-byte section is reserved for future use.
+</p><p>Sampling Table Section
+</p><p>The sample table describes the sampling thickness (layer thickness or slice thickness) of the part.  There can be up to 256 entries in the table.  Each entry describes the Z start, the slice thickness, and what line width compensation is desired for that sampling range.
+</p><p>Sampling Table Size
+1 Byte
+Sampling Table Entry
+4 Floats
+</p><p>Minimum Z Level
+1 Float
+Layer Thickness
+1 Float
+Line Width Compensation
+1 Float
+Reserved
+1 Float
+</p><p>The first sampling table entry Z start value must be the very first Z contour layer. For example, if the cross-sections were produced with a single thickness of 0.006 inches and the first Z level of the part is 0.4 inches and a line width compensation value of 0.005 is desired, then the sampling table will look like the following:
+</p><p>Sample Table Size
+1
+Sample Table Entry
+0.4  0.006  0.005  0.0
+</p><p>If for example, the part was sliced with 2 different layer thickness the Sample Table could look like the following:
+</p><p>Sample Table Size
+2
+Sample Table Entry 1
+0.4  0.005  0.004  0.0
+Sample Table Entry 2
+2.0  0.010  0.005  0.0
+</p><p>Slice thickness must be even multiples of one other to avoid processing problems.
+</p><p>Contour Data Section
+</p><p>The contour data section is a series of successive ascending Z cross-sections or layers with the accompanying contour data.  Each Contour Layer contains the minimum Z layer value, number of boundaries followed by the list of individual boundary data. The boundary data contains the number of x,y vertices for that boundary, the number of gaps, and finally the list of floating point vertice points. 
+</p><p>The location of a gap can be determined when a vertice point repeats itself.  To illustrate, given the contour layer in section 2.4 the contour section could be as follows:
+</p><p>Z Layer
+0.4
+Number of Boundaries
+2
+Number of Vertices for the 1st
+Boundary 5
+Number of Gaps for the 1st
+Boundary 0
+Vertex List for 1st Boundary
+0.0, 0.0
+</p><p>1.0, 0.0
+</p><p>1.0, 1.0
+</p><p>0.0, 1.0
+</p><p>0.0, 0.0
+</p>
+<ul><li> Notice the direction of the vertice list is counter-clockwise indicating the solid material is inside the polylist.  Also, notice that the polylist is closed because the last vertice is equal to the first vertice.
+</li></ul>
+<p>Number of Vertices for the 2nd
+Boundary 5
+Number of Gaps for the 2nd
+Boundary 0
+Vertex List for 2nd Boundary
+0.2, 0.2
+</p><p>0.2, 0.8
+</p><p>0.8, 0.8
+</p><p>0.8, 0.2
+</p><p>0.2, 0.2
+</p>
+<ul><li> Notice the direction of the vertice list is clockwise indicating the solid material is outside the polylist. Also, notice that the polylist is closed because the last vertice is equal to the first vertice.
+</li></ul>
+<p>The Contour Layers are stacked in ascending order until the top of the part.  The last layer, or the top of the part, is indicated by the Z level and a termination unsigned integer (0xFFFFFFFF).
+</p><p>Contour Layer Section Description
+</p>
+<pre>   Contour Layer
+     Minimum Z Level
+</pre>
+<p>Float
+</p>
+<pre>     Number of Boundaries
+</pre>
+<p>Unsigned Integer
+</p>
+<pre>       Number of
+</pre>
+<p>Vertices Unsigned Integer
+</p>
+<pre>       Number of Gaps
+</pre>
+<p>Unsigned Integer
+</p>
+<pre>       Vertices List
+</pre>
+<p>(X/Y) Number of Vertices * 2 Float
+</p><p>Repeat Number of Boundaries
+1
+</p>
+<pre>   Repeat Contour Layer until Top of
+</pre>
+<p>Part
+</p>
+<pre>   Top of Part
+     Maximum Z Level
+</pre>
+<p>1 Float
+</p>
+<pre>     Termination Value
+</pre>
+<p>Unsigned Integer (0xFFFFFFFF)
+Minimum Z Level for a given Contour Layer
+</p><p>Note that a one-inch cube based at the origin 0,0,0 can be represented simply by only one contour layer and the Top of Part Layer data.
+</p><p>Suppose the cube was to be imaged in 0.010 layers. The sample table would have a single entry with its starting Z level at 0.0 and layer thickness at 0.01.  The contour layer data section could be as follows:
+</p><p>Z Layer
+0.0
+Number of Boundaries
+1
+Number of Vertices for the 1st
+Boundary 5
+Number of Gaps for the 1st
+Boundary 0
+Vertex List for 1st Boundary
+0.0, 0.0
+</p><p>1.0, 0.0
+</p><p>1.0, 1.0
+</p><p>0.0, 1.0
+</p><p>0.0, 0.0
+Z Layer
+1.0
+Termination Value
+0xFFFFFFFF
+</p><p>Notice that only one contour was necessary to describe the entire part.  The initial contour will be imaged until the next minimum contour layer or the top of the part at the specified layer thickness described in the sampling table.  This part could have had 100 identical contour layers, but that would have been redundant.  This is why the contour Z value is referred to as the minimum Z value.   It gets repeated until the next contour or top of the part.
+</p><p>To help identify such a file here's an example of a slided box
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 2/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:324-0!1!0!!en!2!edit=0 and timestamp 20180312130354 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Talk:SLC_file_format&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:UserLogin&amp;returnto=SLC_file_format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/images/myWikiLogo.gif);" href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:WhatLinksHere/SLC_file_format" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:RecentChangesLinked/SLC_file_format" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format&amp;oldid=1923&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format&amp;oldid=1923" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="privacy"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.429 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=SLC_file_format&oldid=1923 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:53:16 GMT -->
+</html>

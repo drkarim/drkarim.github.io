@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=FWHM_on_atrium&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:47:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="FWHM on atrium" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>FWHM on atrium - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "FWHM_on_atrium";
+		var wgTitle = "FWHM on atrium";
+		var wgAction = "view";
+		var wgArticleId = "321";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2752;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-FWHM_on_atrium skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">FWHM on atrium</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><i><a href="index7271.html?title=Ventricle_infarct_using_graph_cuts" class="external text" title="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Ventricle_infarct_using_graph_cuts" rel="nofollow">Back to ventricle infarct segmentation</a></i>
+</p>
+<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<p>Amado et al. (JACC 2004 44(12)) implements the FWHM and reports validation on histology. To implement it <a href="http://content.onlinejacc.org/article.aspx?articleid=1136159" class="external text" title="http://content.onlinejacc.org/article.aspx?articleid=1136159" rel="nofollow">correctly as described in their paper</a>. 
+</p><p>The correct implementation of FWHM must include: 
+</p>
+<ul><li> Generation of seeds in regions of scar (or manually selected seeds) 
+</li><li> Calculation of scar extent, i.e. Upper threshold = 0.5 * Maximum signal intensity in ideally myocardium 
+</li><li> Region growing from each selected seed
+</li></ul>
+<p>Requires as input: 
+</p>
+<pre>
+* -i1 switch: Provide the LE-MRI scan  
+* -i2 switch: Provide the seed image image 
+* Optional (-t): FWHM percentage (Defaults to 50% of maximum intensity in image) 
+* -o switch: Output binary segmentation of FWHM 
+</pre>
+<p><b> How it works </b>: 
+The way the program works, the LE-MRI scan is blurred with sigma =1.0. This is necessary for region-growing to obtain a smooth image. Seeds are then extracted from the <i>seed image</i>. Open De-MRI scan in ITK-Snap, draw within regions that are scar. Only selecting a few pixels is sufficient. Seeds extracted from each selected region. The pixel with maximum intensity is chosen as seed. From this seed point, regions are grown with threshold set at 50*max_i, where max_i is the maximum intensity in the blurred DE-MRI image. 
+</p>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+
+#include &quot;rk_test2.h&quot;
+#include &lt;irtkGaussianBlurring.h&gt;
+
+// some global vars
+int* pixelsVisited;
+int* thresholded_index;
+vector&lt;double&gt; i_ctr; 
+
+int getIndex(int x, int y, int z, irtkRealImage* i) { return (z*i-&gt;GetX()*i-&gt;GetY())+x+(i-&gt;GetX()*y); }
+int getZOrd(int index, irtkRealImage* i) { return index/(i-&gt;GetX()*i-&gt;GetY()); }
+int getYOrd(int index, int z, irtkRealImage* i) { return (index-z*i-&gt;GetX()*i-&gt;GetY())/(i-&gt;GetX()); }
+int getXOrd(int index, int z, int y, irtkRealImage* i) { return (index-z*(i-&gt;GetX())*(i-&gt;GetY()))-(y*(i-&gt;GetX())); }
+
+// (a,b,c) - neighbor
+// (x,y,z) - current voxel (or seed)
+
+
+bool regionGrowingCriteria(int a, int b, int c, int x, int y, int z, double T1, double lowT, double highT, irtkRealImage* image)
+{
+	if (T1 &gt;= 0)
+		return ((abs(image-&gt;Get(a,b,c) - image-&gt;Get(x,y,z))) &lt; T1);
+	else 
+		return (image-&gt;Get(a,b,c) &gt;= lowT &amp;&amp; image-&gt;Get(a,b,c) &lt; highT);
+}
+
+void initPixelVisited(irtkRealImage* image)
+{
+	int maxX=0, maxY=0, maxZ=0, minX=0, minY=0, minZ=0;
+	maxX = image-&gt;GetX();
+	maxY = image-&gt;GetY();
+	maxZ = image-&gt;GetZ();
+
+	for (int i=0;i&lt;((maxX)*(maxY)*(maxZ));i++) { 
+		pixelsVisited[i] = 0;
+	}
+}
+
+void regionGrow(int seedX, int seedY, int seedZ, double T1, double lowT, double highT, irtkRealImage* image)
+{
+	// region growing using a non-recursive approach
+	// http://www.csd.uwo.ca/courses/CS037a/Assignment3/RegionGrow.gif
+	int index=0; 
+	int x=0, y=0, z=0, maxX=0, maxY=0, maxZ=0, minX=0, minY=0, minZ=0;
+	bool boxIsOn = false;
+	stack&lt;int&gt; point_stack; 
+	index = getIndex(seedX, seedY, seedZ, image);
+	point_stack.push(index);
+	pixelsVisited[index] = 1; 
+	maxX = image-&gt;GetX();
+	maxY = image-&gt;GetY();
+	maxZ = image-&gt;GetZ();
+
+	while (!point_stack.empty())
+	{
+		index = point_stack.top();
+		point_stack.pop();
+		z = getZOrd(index, image);
+		y = getYOrd(index, z, image);
+		x = getXOrd(index, z, y, image); 
+
+		// get neighbors of point popped
+		if (x-1 &gt; minX)
+		{			
+			index = getIndex(x-1, y, z, image); 
+			if ( regionGrowingCriteria(x-1,y,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+				
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (x+1 &lt; maxX)
+		{
+			index = getIndex(x+1, y, z, image); 
+			if (regionGrowingCriteria(x+1,y,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (y-1 &gt; minY)
+		{
+			
+			index = getIndex(x, y-1, z, image); 
+			if ( regionGrowingCriteria(x,y-1,z,x,y,z,T1,lowT,highT, image) &amp;&amp;  pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (y+1 &lt; maxY)
+		{
+			index = getIndex(x, y+1, z, image); 
+			if (regionGrowingCriteria(x,y+1,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (z-1 &gt; minZ)
+		{
+			index = getIndex(x, y, z-1, image); 
+			if (regionGrowingCriteria(x,y,z-1,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (z+1 &lt; maxZ)
+		{
+			index = getIndex(x, y, z+1, image); 
+			if (regionGrowingCriteria(x,y,z+1,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		} 
+		// copied till here
+	}	
+	
+}
+
+
+void setVisitedPixelsOn(int* pixelVisitedArray, irtkRealImage* img)
+{
+	int x,y,z ,maxX, maxY, maxZ; 
+	maxX = img-&gt;GetX(); 
+	maxY = img-&gt;GetY();
+	maxZ = img-&gt;GetZ(); 
+
+	for (int i=0;i&lt;((maxX)*(maxY)*(maxZ));i++)
+	{
+		// get x,y and z coordinates of volume
+		z = getZOrd(i, img);
+		y = getYOrd(i, z, img);
+		x = getXOrd(i, z, y, img);
+		
+		// different scalar for detected regions
+		if (pixelVisitedArray[i] == 2) {
+			
+            img-&gt;Put(x,y,z,1);
+		}
+		else {
+			img-&gt;Put(x,y,z,0);
+		}
+	}
+	//write_image.Write(&quot;segmented_brain.gipl&quot;);
+}
+
+static void bubble_sort_helper(double* vals, int* indexes, int arrayLength){
+	int i, j, flag = 1;    // set flag to 1 to begin initial pass
+	double temp;             // holding variable
+	
+
+     for(i = 1; (i &lt;= arrayLength) &amp;&amp; flag; i++)
+     {
+         flag = 0;
+         for (j=0; j &lt; (arrayLength -1); j++)
+         {
+              if (vals[j+1] &gt; vals[j])      // ascending order simply changes to &lt;
+              { 
+                    temp = vals[j];             // swap elements
+                    vals[j] = vals[j+1];
+                    vals[j+1] = temp;
+					
+					// now the indexes of the array 
+					temp = indexes[j]; 
+					indexes[j] = indexes[j+1]; 
+					indexes[j+1] = temp; 
+                    flag = 1;               // indicates that a swap occurred.
+               }
+          }
+     }
+     return;   //arrays are passed to functions by address; nothing is returned
+}
+
+static void GetSeeds(irtkRealImage* aw_img, irtkRealImage* cnxComp_img, vector&lt;irtkPoint*&gt;&amp; seeds)
+{
+	int N; 
+	irtkRealPixel* min, *max; 
+	min = new irtkRealPixel(); 
+	max = new irtkRealPixel();
+	cnxComp_img-&gt;GetMinMax(min, max); 
+	vector&lt;vector&lt; double&gt;&gt; component_pixels;
+	vector&lt;vector&lt;irtkPoint*&gt;&gt; pixel;
+	N = *max;
+	
+	double* mean_stdev;
+
+	for (int i=0;i&lt;=N;i++)
+	{
+		vector&lt;double&gt; vec; 
+		component_pixels.push_back(vec); 
+		mean_stdev = new double[2];		// stores mean and std. dev. 
+
+
+		// inserting the vector that will contain the xyz of each point 
+		vector&lt;irtkPoint*&gt; vec2; 
+		pixel.push_back(vec2);
+	}
+
+	double awp, cnxp;
+	
+	for (int i=0;i&lt;aw_img-&gt;GetX();i++) {
+		for (int j=0;j&lt;aw_img-&gt;GetY();j++) {
+			for (int k=0;k&lt;aw_img-&gt;GetZ();k++)
+			{
+				cnxp = cnxComp_img-&gt;Get(i,j,k);
+				awp = aw_img-&gt;Get(i,j,k);
+				if (cnxp &gt; 0 &amp;&amp; cnxp &lt;= N)
+				{
+					component_pixels[cnxp].push_back(awp);		// insert each pixel into the appropriate &quot;bin&quot; 
+					pixel[cnxp].push_back(new irtkPoint(i,j,k));				
+				}
+			}
+		}
+	}
+
+	// search for the pixel within each connected region with maxixmum intensity 
+	// these will be candidate for seeds
+	int max_idx=-1;
+	double max_val=-1;
+	int j;
+
+	for (int i=0;i&lt;component_pixels.size();i++)
+	{
+		max_idx = -1; 
+		max_val=-1;
+		
+		for (j=0;j&lt;component_pixels[i].size();j++)
+		{
+			if (max_val &lt; component_pixels[i][j]) { 
+				max_idx = j;
+				max_val = component_pixels[i][j];
+			}
+		}
+	//	cout &lt;&lt; &quot;max val  = &quot; &lt;&lt; max_val &lt;&lt; endl;
+	//	cout &lt;&lt; &quot;max idx = &quot; &lt;&lt; max_idx &lt;&lt; endl;
+		if (max_idx &gt;= 0)
+		{
+			//cout &lt;&lt; &quot;Size of this container = &quot; &lt;&lt; pixel[i].size() &lt;&lt; endl;
+
+			if (thresholded_index[i] == 1)			// thresholded_index - the top N connected components ONLY, +1 since this is how it is stored in thresholded_index
+			{
+				seeds.push_back(pixel[i][max_idx]);
+				//cout &lt;&lt; &quot;Seed inserted for, component = &quot; &lt;&lt; i &lt;&lt; endl;
+			}
+			else {
+				seeds.push_back(new irtkPoint(-1,-1,-1));
+				//cout &lt;&lt; &quot;Could not insert seed for, component = &quot; &lt;&lt; i &lt;&lt; &quot; since thresholded_index[i+1] = &quot; &lt;&lt; thresholded_index[i] &lt;&lt; endl;
+			}
+		}
+		else
+		{
+			seeds.push_back(new irtkPoint(-1,-1,-1));
+		}
+	}
+
+	// get the max intensity pixel of each component 
+	
+
+}
+
+static int GetTopNConnectedComponents(irtkRealImage* in_img, irtkRealImage* out_img, double t) 
+{
+	double N, N_t; 
+	double* bins;
+	double* bins_copy;
+	int *bins_index;
+	irtkRealPixel* min, *max; 
+	min = new irtkRealPixel(); 
+	max = new irtkRealPixel();
+	in_img-&gt;GetMinMax(min, max); 
+	cout &lt;&lt; &quot;Running top connected component filter ... min = &quot; &lt;&lt; *min &lt;&lt; &quot;, max = &quot; &lt;&lt; *max &lt;&lt; endl;
+	N = *max; 
+	bins = new double[N+1]; 
+	bins_index = new int[N+1]; 
+	bins_copy = new double[N+1]; 
+	thresholded_index = new int[N+1];
+	
+	for (int i=0;i&lt;N+1;i++)
+	{
+		bins[i] = 0;		// resetting the connected component indexes , this array will store the size of the connected components 
+		bins_copy[i] = 0; 
+		bins_index[i] = i; 
+		thresholded_index[i] = 0;			// this array will specify which connected components have passed the user specified threshold 
+	}
+
+	irtkRealPixel* p; 
+	p = in_img-&gt;GetPointerToVoxels(); 
+	for (int i=0;i&lt;in_img-&gt;GetNumberOfVoxels();i++) 
+	{
+		if (*p &gt; 0 &amp;&amp; *p &lt;= *max) {
+			bins[round(*p)]++;			// had to call round to force integer type 
+			bins_copy[round(*p)]++; 
+		}
+		p++;
+	}
+
+	// now bubble sort 
+	bubble_sort_helper(bins_copy, bins_index, N+1);	// bins index contains the re-arranged array indices after sorting 
+
+	N_t = round((t/100.0)*(1+N));		// but the user only wants the top t percent 
+cout &lt;&lt; &quot;Only &quot; &lt;&lt; N_t &lt;&lt; &quot; connected components will thus be selected &quot; &lt;&lt; endl;
+
+	for (int i=0;i&lt;N_t;i++)
+	{
+		cout &lt;&lt; &quot;top N = &quot; &lt;&lt; bins_index[i] &lt;&lt; endl;
+		thresholded_index[bins_index[i]] = 1;			// specifying after sorting, which connected components have passed and indexing them 
+	}
+
+	
+	return N;
+
+}
+
+static int GetMax(irtkRealImage* img)
+{
+	int max = -1; 
+	irtkRealPixel* p; 
+	p = img-&gt;GetPointerToVoxels(); 
+
+	for (int i=0;i&lt;img-&gt;GetNumberOfVoxels();i++)
+	{
+		if (max &lt; *p)
+			max = *p;
+		p++; 
+	}
+	return max; 
+}
+
+int main(int argc, char **argv)
+{
+	int option;
+	bool foundArgs=false, foundArgs1=false, foundArgs2=false, foundArgs3=false, foundArgs4=false, foundArgs5=false, foundArgs6  = false; 
+	irtkRealImage img1, img2, img3, img4;
+	char* input_f1=&quot;&quot;, *output_f=&quot;&quot;, *input_f2=&quot;&quot;, *observer_abb=&quot;&quot;, *working_dir=&quot;&quot;, *prefix=&quot;&quot;, *ext=&quot;&quot;;
+	int t1, t2, t3, max_components; 
+	double fwhm_t=-1, user_t=-1, low_t, user_tp=10, fwhm_pt = 50;
+	int max;
+	
+	vector&lt;irtkPoint*&gt; seeds;
+
+	if (argc &gt;= 1)
+	{
+		for (int i = 1; i &lt; argc; i++) {
+			if (i + 1&nbsp;!= argc) {
+				if (string(argv[i]) == &quot;-i1&quot;) {				// LE scan
+					input_f1 = argv[i+1]; 
+					foundArgs1 = true;	
+				} else if (string(argv[i]) == &quot;-i2&quot;) {		// connected component output of manual segmentation to extract seeds from 
+					input_f2 = argv[i+1]; 
+					foundArgs2 = true; 
+				} else if (string(argv[i]) == &quot;-o&quot;) {		// segmentation 
+					output_f = argv[i+1];
+					foundArgs3 = true;  
+				} else if (string(argv[i]) == &quot;-t&quot;) {		// segmentation 
+					fwhm_pt = atof(argv[i+1]);
+					foundArgs4 = true;  
+				}
+			}
+		}
+	}
+	
+	if (foundArgs1 &amp;&amp; foundArgs2 &amp;&amp; foundArgs3) 
+		foundArgs = true; 
+	if (foundArgs == false)
+	{
+		cout &lt;&lt; &quot;\n\nUsage: FWHM on atria \n\n\tArguments:&quot;
+			&quot;\n\n\t-i1: LE scan \n&quot;
+			&quot;\n\n\t-i2: connected component output of manual segmentation to extract seeds from &quot; 
+			&quot;\n\n\t-o: Output of FWHM binary segmentation&quot; 
+			&lt;&lt; endl; 
+		exit(0); 
+	}
+
+	stringstream ss,ss1; 
+	ss &lt;&lt; input_f1; 
+	
+	string file_ext = ss.str().substr(ss.str().find_last_of(&quot;.&quot;) + 1); 
+	ss1 &lt;&lt; &quot;_connectedComponents&quot; &lt;&lt;&quot;.&quot; &lt;&lt; file_ext; 
+	img1.Read(input_f1); 
+	img2.Read(input_f2); 
+	img3 = img1; 
+	img4 = img1;
+
+	// first I need to blur to obtain smooth image for region growing 
+	irtkGaussianBlurring&lt;irtkRealPixel&gt; gaussianBlurring(1.0);
+	gaussianBlurring.SetInput(&amp;img1); 
+	gaussianBlurring.SetOutput(&amp;img3); 
+	cout &lt;&lt; &quot;Blurring image to obtain smooth before region-growing .. &quot; &lt;&lt; endl; 
+	gaussianBlurring.Run(); 
+	cout &lt;&lt; &quot;Blurring complete&quot; &lt;&lt; endl;
+
+	pixelsVisited = new int[(img1.GetX())*(img1.GetY())*(img1.GetZ())];
+	initPixelVisited(&amp;img1);
+
+	max_components = GetTopNConnectedComponents(&amp;img2, &amp;img4, 80);
+	cout &lt;&lt; &quot;Total connected components in image = &quot; &lt;&lt; max_components &lt;&lt; endl;
+//	ComputeRegionGrowThreshold(&amp;img1, fwhm_t);
+
+	//fwhm_t = GetMaxMean(&amp;img1, &amp;img2, 50);			// this is the peak of scar
+
+	// lets keep it simple and just get the maximum as maximum intensity in image
+	fwhm_t = GetMax(&amp;img3); 
+	low_t = (fwhm_pt/100)*fwhm_t;
+	cout &lt;&lt; &quot;FWHM cut-off is set at = &quot; &lt;&lt; fwhm_pt/100 &lt;&lt; endl;
+	cout &lt;&lt; &quot;FWHM threshold is set at &quot; &lt;&lt; low_t &lt;&lt; &quot;\n\n&quot;;
+	GetSeeds(&amp;img1, &amp;img2, seeds);
+	cout &lt;&lt; &quot;Found a total of &quot; &lt;&lt; seeds.size() -1 &lt;&lt; &quot; seeds&quot; &lt;&lt; endl;
+	
+	// for each connected component, do region growing 
+	for (int idx=0;idx&lt;=max_components;idx++)
+	{
+		cout &lt;&lt; &quot;Component to go = &quot; &lt;&lt;  max_components - idx &lt;&lt; endl; 
+		if (thresholded_index[idx] == 1)		// this cnx component was chosen as top N 
+		{	
+			
+				if (seeds[idx]-&gt;_x &gt;= 0) {
+					//cout &lt;&lt; &quot;Region growing from (xyz) = (&quot; &lt;&lt; seeds[idx]-&gt;_x &lt;&lt; &quot;,&quot; &lt;&lt; seeds[idx]-&gt;_y &lt;&lt; &quot;,&quot; &lt;&lt; seeds[idx]-&gt;_z &lt;&lt; &quot;), t = &quot; &lt;&lt; low_t &lt;&lt; endl;
+					regionGrow(seeds[idx]-&gt;_x, seeds[idx]-&gt;_y, seeds[idx]-&gt;_z, -1, low_t, 1e9, &amp;img3);
+			
+					//cout &lt;&lt; &quot;Seeds to go = &quot; &lt;&lt; seeds.size()-i&lt;&lt; endl;
+				}
+				else { 
+					//cout &lt;&lt; &quot;Couldnt region-grow: couldnt find seed for this region (-1,-1,-1)&quot; &lt;&lt;endl;
+				}
+			
+			//}
+			
+		}
+		else {
+			//cout &lt;&lt; &quot;Coudnt region-grow: seed not in list of selected seeds&quot; &lt;&lt; endl;
+		}
+		
+	}
+
+	setVisitedPixelsOn( pixelsVisited, &amp;img4);
+	img4.Write(output_f);
+}
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:321-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124511 -->
+<div class="printfooter">
+Retrieved from "<a href="index8ea8.html?title=FWHM_on_atrium">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=FWHM_on_atrium</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index8ea8.html?title=FWHM_on_atrium" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index5706.html?title=Talk:FWHM_on_atrium&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexebc5-2.html?title=FWHM_on_atrium&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index039b.html?title=FWHM_on_atrium&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="indexe639.html?title=Special:UserLogin&amp;returnto=FWHM_on_atrium" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="indexc954.html?title=Special:WhatLinksHere/FWHM_on_atrium" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index472f.html?title=Special:RecentChangesLinked/FWHM_on_atrium" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index3155.html?title=FWHM_on_atrium&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexc147.html?title=FWHM_on_atrium&amp;oldid=2752" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 11 June 2014, at 13:09.</li>
+					<li id="viewcount">This page has been accessed 1,307 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.351 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=FWHM_on_atrium&printable=yes&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:47:53 GMT -->
+</html>

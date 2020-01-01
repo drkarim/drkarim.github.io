@@ -1,0 +1,1800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Otsu3D&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:52:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Otsu3D" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Otsu3D - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Otsu3D";
+		var wgTitle = "Otsu3D";
+		var wgAction = "view";
+		var wgArticleId = "475";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 2948;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Otsu3D skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Otsu3D</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<a name="Usage" id="Usage"></a><h2> <span class="mw-headline"> Usage </span></h2>
+<pre>
+Otsu3d.exe &lt;mra or cta 3d image&gt; 
+</pre>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+#define HAS_VTK 1   
+#define _REGION_GROW_MODE 1			// always set it to 1. Setting it to 0 will perform simple thresholding 
+
+// include files
+#include &quot;vtkRenderer.h&quot;
+#include &quot;vtkRenderWindow.h&quot;
+#include &quot;vtkRenderWindowInteractor.h&quot;
+#include &lt;vtkPiecewiseFunction.h&gt; 
+#include &lt;vtkColorTransferFunction.h&gt; 
+#include &lt;vtkVolumeProperty.h&gt; 
+#include &lt;vtkVolumeRayCastCompositeFunction.h&gt; 
+#include &lt;vtkVolumeRayCastMIPFunction.h&gt;
+#include &lt;vtkVolumeRayCastMapper.h&gt;
+#include &lt;vtkVolume.h&gt;
+#include &lt;vtkVolumeTextureMapper2D.h&gt;
+#include &lt;vtkImageReader.h&gt;
+#include &lt;vtkImageImport.h&gt;
+#include &lt;vtkImageCast.h&gt;
+#include &lt;vtkVolumeRayCastCompositeFunction.h&gt;
+#include &lt;vtkStructuredPoints.h&gt;
+#include &lt;vtkStructuredGrid.h&gt;
+#include &lt;vtkFloatArray.h&gt;
+#include &lt;vtkPoints.h&gt;
+#include &quot;vtkPointData.h&quot;
+#include &lt;vtkPointPicker.h&gt;
+#include &lt;vtkWorldPointPicker.h&gt;
+#include &lt;vtkCommand.h&gt;
+#include &lt;vtkMarchingCubes.h&gt;
+#include &lt;vtkContourFilter.h&gt;
+#include &lt;vtkPolyDataNormals.h&gt;
+#include &lt;vtkPolyDataMapper.h&gt;
+#include &lt;vtkCamera.h&gt;
+#include &lt;vtkMarchingCubes.h&gt;
+#include &lt;vtkVectorNorm.h&gt;
+#include &lt;vtkDataSetMapper.h&gt;
+#include &lt;vtkImageToPolyDataFilter.h&gt;
+#include &lt;vtkPolyDataReader.h&gt;
+#include &lt;vtkLookupTable.h&gt;
+#include &lt;vtkSphereSource.h&gt;
+#include &lt;vtkCallbackCommand.h&gt;
+#include &lt;vtkProperty.h&gt;
+#include &lt;vtkImagePlaneWidget.h&gt;
+#include &lt;vtkImageActor.h&gt;
+#include &lt;vtkImageMapToColors.h&gt;
+#include &lt;vtkInteractorStyleTrackballCamera.h&gt;
+#include &lt;vtkPropPicker.h&gt;
+#include &lt;vtkBoxWidget.h&gt;
+#include &lt;vtkPlanes.h&gt;
+#include &lt;vtkRendererCollection.h&gt;
+#include &lt;fstream&gt;
+
+#include &lt;vtkPolyDataWriter.h&gt;
+#include &lt;vtkSTLWriter.h&gt;
+#include &lt;vtkSmartPointer.h&gt;
+// irtk
+#include &lt;irtkImage.h&gt;
+
+
+// fltk
+#include &lt;FL/Fl.H&gt;
+#include &lt;FL/Fl_Window.H&gt;
+#include &lt;FL/Fl_Button.H&gt;
+#include &lt;FL/Fl_Slider.H&gt;
+#include &lt;FL/Fl_Output.H&gt;
+#include &lt;FL/Fl_Menu_Item.H&gt;
+#include &lt;FL/Fl_Menu_Bar.H&gt;
+#include &lt;FL/Fl_File_Chooser.H&gt;
+
+
+// STLs
+#include &lt;stack&gt;
+
+// vtkFLWindow
+#include &lt;vtkFlRenderWindowInteractor.h&gt;
+
+using std::string; 
+class Otsu {
+
+	int* intensityFreq; 
+	double* withinClassVarianceArray; 
+	int totalPixels; 
+	int maxIntensity; 
+	double mean_class_a, mean_class_b, var_class_a, var_class_b, total_prob_a, total_prob_b, meanIntensity; 
+	irtkGreyImage* image_3d; 
+
+public:
+	Otsu(irtkGreyImage* i); 
+	double getWithinClassVariance(int threshold);
+	int getThreshold(); 
+	int getMaxIntensity(); 
+	void Otsu::printVarArray()&nbsp;;
+
+
+
+};
+
+
+Otsu::Otsu(irtkGreyImage* i)
+{
+	int intensity, sum=0;
+	image_3d = i; 
+	maxIntensity = 0; 
+	mean_class_a=0;
+	mean_class_b=0;
+	var_class_a=0; 
+	var_class_b=0; 
+	total_prob_a=0; 
+	total_prob_b=0; 
+	meanIntensity = 0;
+
+	totalPixels = (image_3d-&gt;GetX()) * (image_3d-&gt;GetY()) * (image_3d-&gt;GetZ());
+
+	// get maximum intensity 
+	for (int i=0;i&lt;image_3d-&gt;GetX();i++) 
+	{
+		for (int j=0;j&lt;image_3d-&gt;GetY(); j++) 
+		{
+			for (int k=0;k&lt;image_3d-&gt;GetZ(); k++) 
+			{
+				if (maxIntensity &lt; image_3d-&gt;Get(i,j,k)) 
+				{
+					maxIntensity = image_3d-&gt;Get(i,j,k); 
+				}
+
+			}
+		}
+	}
+
+	intensityFreq = new int[maxIntensity+1]; 
+	withinClassVarianceArray = new double[maxIntensity+1];
+
+	for (int i=0;i&lt;maxIntensity+1;i++) 
+	{
+		intensityFreq[i] = 0;
+	}
+
+	// populate intensity frequencies
+	for (int i=0;i&lt;image_3d-&gt;GetX();i++) 
+	{
+		for (int j=0;j&lt;image_3d-&gt;GetY(); j++) 
+		{
+			for (int k=0;k&lt;image_3d-&gt;GetZ(); k++) 
+			{
+				intensity = image_3d-&gt;Get(i,j,k); 
+				if (intensity &gt;= 0) 
+					intensityFreq[intensity]++;
+			}
+		}
+	}
+
+	// computing mean intensity 
+	for (int i=0;i&lt;=maxIntensity;i++) 
+	{
+		sum+=(intensityFreq[i]*(i+1));
+	}
+	meanIntensity = ((double)sum)/(double)totalPixels;
+	cout &lt;&lt; &quot;mean intensity in the image = &quot; &lt;&lt; meanIntensity &lt;&lt; endl;
+	
+	/*
+	for (int i=0;i&lt;maxIntensity+1;i++) 
+	{
+		cout &lt;&lt; &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; intensityFreq[i] &lt;&lt; endl;
+	}*/
+	
+}
+
+double Otsu::getWithinClassVariance(int threshold)
+{
+	double withinClassVariance; 
+	double total_prob_a = 0, total_prob_b = 0, mean_class_a = 0, mean_class_b = 0; 
+	// compute total_prob_a and total_prob_b 
+	for (int i=0;i&lt;=threshold;i++) 
+	{
+		total_prob_a += ((double)intensityFreq[i]/(double)totalPixels); 
+		
+	}
+
+	for (int i=threshold+1;i&lt;=maxIntensity;i++) 
+	{
+		total_prob_b += ((double)intensityFreq[i]/(double)totalPixels); 
+	}
+
+	
+	// compute class means
+	for (int i=0;i&lt;=threshold;i++) 
+	{
+		mean_class_a +=((i+1)*(((double)intensityFreq[i]/(double)totalPixels)/total_prob_a));
+	}
+
+	for (int i=threshold+1;i&lt;=maxIntensity;i++) 
+	{
+		mean_class_b += ((i+1)*(((double)intensityFreq[i]/(double)totalPixels)/total_prob_b));
+	}
+	
+	// compute class variances 
+/*	for (int i=0;i&lt;=threshold;i++) 
+	{
+		var_class_a += (((i - mean_class_a)*(i - mean_class_a))*(((double)intensityFreq[i]/(double)totalPixels)/total_prob_a)); 
+	}
+
+	for (int i=threshold+1;i&lt;=maxIntensity;i++) 
+	{
+		var_class_b += (((i - mean_class_b)*(i - mean_class_b))*(((double)intensityFreq[i]/(double)totalPixels)/total_prob_b)); 
+	}
+	
+	withinClassVariance = (total_prob_a*var_class_a) + (total_prob_b*var_class_b);
+*/
+	withinClassVariance = (total_prob_a*pow((mean_class_a - meanIntensity),2.0))+(total_prob_b*pow((mean_class_b - meanIntensity),2.0));
+
+	return withinClassVariance;
+	
+}
+
+int Otsu::getThreshold()
+{
+	double var;
+	double minVar = 0;
+	double optimumThreshold = 0;
+
+	for (int i=0;i&lt;=maxIntensity;i++) 
+	{
+		var = getWithinClassVariance(i);
+		withinClassVarianceArray[i] = var; 
+	}
+	
+	minVar = withinClassVarianceArray[0];
+	optimumThreshold = 0;
+	for (int i=1;i&lt;=maxIntensity;i++) 
+	{
+		if (minVar &lt; withinClassVarianceArray[i])
+		{
+			minVar = withinClassVarianceArray[i];
+			optimumThreshold = i;
+		}
+	}
+	
+	//printVarArray();
+	cout &lt;&lt; &quot;The optimal threshold value as reported using the otsu method = &quot; &lt;&lt; optimumThreshold &lt;&lt; endl;
+	
+	return optimumThreshold; 
+	
+}
+
+void Otsu::printVarArray() 
+{
+	for (int i=0;i&lt;=maxIntensity;i++) 
+	{
+		cout &lt;&lt; withinClassVarianceArray[i] &lt;&lt; &quot;, &quot;; 
+	}
+}
+
+
+// 3D (x,y,z) array to 1D (index) array transformations 
+int getIndex(int x, int y, int z, irtkGreyImage* i) { return (z*i-&gt;GetX()*i-&gt;GetY())+x+(i-&gt;GetX()*y); }
+int getZOrd(int index, irtkGreyImage* i) { return index/(i-&gt;GetX()*i-&gt;GetY()); }
+int getYOrd(int index, int z, irtkGreyImage* i) { return (index-z*i-&gt;GetX()*i-&gt;GetY())/(i-&gt;GetX()); }
+int getXOrd(int index, int z, int y, irtkGreyImage* i) { return (index-z*(i-&gt;GetX())*(i-&gt;GetY()))-(y*(i-&gt;GetX())); }
+
+void getMinMaxScalarValue(irtkGreyImage* image, double&amp; min, double&amp; max)
+{
+	max = 0; min = 1E9; double value; 
+	for (int m=0; m&lt;image-&gt;GetX(); m++)
+	{
+		for (int j=0; j&lt;image-&gt;GetY(); j++)
+		{
+			for (int k=0;k&lt;image-&gt;GetZ(); k++)
+			{
+				value = image-&gt;Get(m,j,k); 
+				if (value &lt; min)
+					min = value; 
+				else if (value &gt; max)
+					max = value; 
+			}
+		}
+	}				
+}
+
+// some global vars
+char buffer[10];		// for Fl_Output displays
+vtkPointPicker *picker;
+vtkPropPicker *picker2; 
+vtkActor *sphereActor; 
+vtkActor *heartActor;
+vtkActor *sphereActor2;
+vtkActor *heart;
+vtkPolyData *polyData;
+vtkRenderer *renderer1;
+vtkRenderWindow *renWin1; 
+vtkRenderer *renderer2; 
+vtkRenderWindow *renWin2; 
+vtkRenderWindow *renWin3; 
+vtkRenderer *renderer3; 
+vtkPolyDataMapper *sphereMapper;
+vtkPolyDataMapper *sphereMapper2;
+vtkStructuredPoints *struct_points_data;
+irtkGreyImage image;
+irtkGreyImage segmented_image;
+vtkFlRenderWindowInteractor *fl_vtk_window_1;
+vtkFlRenderWindowInteractor *fl_vtk_window_2;
+vtkFlRenderWindowInteractor *fl_vtk_window_3;
+vtkImageMapToColors *sliceZColors; 
+vtkImageMapToColors* sliceXColors; 
+vtkImageMapToColors* sliceYColors; 
+vtkImageActor *ySlice;
+vtkImageActor *xSlice;
+vtkImageActor *zSlice;
+vtkLookupTable *bwLut; 
+vtkImageActor **imageActorArray;
+vtkBoxWidget *boxWidget, *boxWidget2;
+vtkInteractorStyleTrackballCamera *interactorStyle1, *interactorStyle2, *interactorStyle3;
+vtkPlanes *planes, *planes2;
+vtkCamera *camera2, *camera3; 
+bool isActorSuperImposed = false;
+bool phantomCreationStart = true; 
+
+int seed_picked_x, seed_picked_y, seed_picked_z;
+double low_global_threshold=1.0, high_global_threshold=5000.0, local_threshold; 
+double min_scalar_val; 
+double max_scalar_val;
+double max_local_threshold_val = 50;
+double mcubes_threshold=100; 
+int *cumulativePixelsVisited;
+int maxX, maxY, maxZ, zPos=10, yPos=10, xPos=10, screenX, screenY, boxWidgetIsOn=0, boxWidget2IsOn=0;
+double picker2_pos[3];
+Otsu *thresholder;
+int otsu_threshold;
+
+vtkPolyData* segmentedMesh; 
+
+void init()
+{
+	picker = vtkPointPicker::New(); 
+	picker2 = vtkPropPicker::New();
+	sphereActor = vtkActor::New(); 
+	sphereActor2 = vtkActor::New();
+	heartActor = vtkActor::New(); 
+	polyData = vtkPolyData::New(); 
+	
+
+	renWin1 = vtkRenderWindow::New(); 
+	renWin2 = vtkRenderWindow::New();
+	renWin3 = vtkRenderWindow::New();
+	
+	renderer1 = vtkRenderer::New(); 
+	renderer2 = vtkRenderer::New();
+	renderer3 = vtkRenderer::New(); 
+	
+	sphereMapper = vtkPolyDataMapper::New(); 
+	sphereMapper2 = vtkPolyDataMapper::New(); 
+	
+	struct_points_data = vtkStructuredPoints::New();
+	sliceZColors = vtkImageMapToColors::New(); 
+	sliceXColors = vtkImageMapToColors::New(); 
+	sliceYColors = vtkImageMapToColors::New(); 
+	xSlice = vtkImageActor::New();
+	ySlice = vtkImageActor::New();
+	zSlice = vtkImageActor::New();
+	bwLut = vtkLookupTable::New(); 
+	bwLut-&gt;SetTableRange(0,255);	// for edt 46111
+	bwLut-&gt;SetSaturationRange(0,0);
+	bwLut-&gt;SetHueRange(0,0);
+	bwLut-&gt;SetValueRange(0,1);
+	bwLut-&gt;SetRampToLinear(); 
+	bwLut-&gt;SetNumberOfColors(256);
+	imageActorArray = new vtkImageActor*[3]; 
+	interactorStyle1 = vtkInteractorStyleTrackballCamera::New();
+	interactorStyle2 = vtkInteractorStyleTrackballCamera::New();
+	interactorStyle3 = vtkInteractorStyleTrackballCamera::New();
+	boxWidget = vtkBoxWidget::New();
+	boxWidget2 = vtkBoxWidget::New(); 
+	planes = vtkPlanes::New();
+	planes2 = vtkPlanes::New();
+	camera2 = vtkCamera::New(); 
+	camera3 = vtkCamera::New(); 
+
+	heart = vtkActor::New();
+	renderer2-&gt;SetBackground(1,1,1);
+
+	segmentedMesh = vtkPolyData::New();
+	
+}
+
+void destroy()
+{
+	picker-&gt;Delete();
+	picker2-&gt;Delete(); 
+	sphereActor-&gt;Delete(); 
+	sphereActor2-&gt;Delete();
+	heartActor-&gt;Delete(); 
+	polyData-&gt;Delete(); 
+	renderer1-&gt;Delete(); 
+	renWin1-&gt;Delete(); 
+	renWin2-&gt;Delete(); 
+	renderer2-&gt;Delete();
+	sphereMapper-&gt;Delete();
+	sphereMapper2-&gt;Delete();
+	struct_points_data-&gt;Delete();
+	bwLut-&gt;Delete(); 
+	renWin3-&gt;Delete();
+	renderer3-&gt;Delete();
+	boxWidget-&gt;Delete();
+	boxWidget2-&gt;Delete();
+	planes-&gt;Delete();
+	planes2-&gt;Delete(); 
+	heart-&gt;Delete();
+}
+
+
+void loadImage(char* filename, irtkGreyImage&amp; i) 
+{
+	i.Read(filename);
+}
+
+
+
+bool isPointInsideBox(int x, int y, int z)
+{
+	// checks if point lies inside vtkBoxWidget - global var.
+	
+	double pos[3];
+	pos[0] = x; 
+	pos[1] = y; 
+	pos[2] = z;
+	
+	image.ImageToWorld(pos[0], pos[1], pos[2]);
+	//cout &lt;&lt; &quot;11&quot;;
+	double v = planes-&gt;FunctionValue(pos);
+	
+	if (v &lt; 0)
+	{	
+		return true; 
+	}
+	else 
+	{
+		return false;
+	}
+	
+	
+}
+
+bool isPointInsideBox2(int x, int y, int z)
+{
+	// checks if point lies inside vtkBoxWidget - global var.
+	
+	double pos[3];
+	pos[0] = x; 
+	pos[1] = y; 
+	pos[2] = z;
+	
+	segmented_image.ImageToWorld(pos[0], pos[1], pos[2]);
+	//cout &lt;&lt; &quot;11&quot;;
+	double v = planes2-&gt;FunctionValue(pos);
+	
+	if (v &lt; 0)
+	{	
+		return true; 
+	}
+	else 
+	{
+		return false;
+	}
+	
+	
+}
+
+
+void myAddRenderer(vtkRenderer *addedRen, vtkRenderWindow* renWin)
+{
+	vtkRendererCollection *renderers = renWin-&gt;GetRenderers();
+	vtkRenderer *ren;
+	   
+	for (renderers-&gt;InitTraversal(); (ren = renderers-&gt;GetNextItem()); )
+	{
+		if(ren == addedRen)
+		return;
+	}
+	 
+	renWin-&gt;AddRenderer(addedRen);
+	 
+}
+// (a,b,c) - neighbor
+// (x,y,z) - current voxel (or seed)
+bool regionGrowingCriteria(int a, int b, int c, int x, int y, int z, double T1, double lowT, double highT, irtkGreyImage* image)
+{
+	if (T1 &gt;= 0)
+		return ((abs(image-&gt;Get(a,b,c) - image-&gt;Get(x,y,z))) &lt; T1);
+	else 
+		return (image-&gt;Get(a,b,c) &gt;= lowT &amp;&amp; image-&gt;Get(a,b,c) &lt; highT);
+}
+
+void plainOldThresholding(double lowT, double highT, irtkGreyImage* image, irtkGreyImage* output)
+{
+	irtkGreyPixel* i_ptr, *im_ptr; 
+	i_ptr = output-&gt;GetPointerToVoxels(); 
+	im_ptr = image-&gt;GetPointerToVoxels(); 
+
+	if (boxWidgetIsOn == 1)
+	{
+		boxWidget-&gt;GetPlanes(planes);
+	}
+
+	for (int i=0;i&lt;output-&gt;GetNumberOfVoxels();i++)
+	{
+		*i_ptr = 0;
+		i_ptr++; 
+	}
+	
+	//i_ptr = output-&gt;GetPointerToVoxels();		//reset 	
+	
+	for (int i=0;i&lt;image-&gt;GetX();i++) { for (int j=0;j&lt;image-&gt;GetY();j++) { for (int k=0;k&lt;image-&gt;GetZ();k++) 
+	{
+		if (isPointInsideBox(i,j,k)) 
+		{
+			if (image-&gt;Get(i,j,k) &gt; lowT &amp;&amp; image-&gt;Get(i,j,k) &lt; highT ) 
+			{
+				output-&gt;Put(i,j,k, image-&gt;Get(i,j,k)); 
+			}
+			else
+			{
+				output-&gt;Put(i,j,k,0); 
+			}
+		}
+		else 
+			output-&gt;Put(i,j,k,0);
+	}}}
+}
+
+int* regionGrow(int seedX, int seedY, int seedZ, 
+				double T1, double lowT, double highT, irtkGreyImage* image)
+{
+	// region growing using a non-recursive approach
+	// http://www.csd.uwo.ca/courses/CS037a/Assignment3/RegionGrow.gif
+	int* pixelsVisited = new int[(image-&gt;GetX())*(image-&gt;GetY())*(image-&gt;GetZ())];
+	int index=0; 
+	int x=0, y=0, z=0, maxX=0, maxY=0, maxZ=0, minX=0, minY=0, minZ=0;
+	bool boxIsOn = false;
+	stack&lt;int&gt; point_stack; 
+	index = getIndex(seedX, seedY, seedZ, image);
+	point_stack.push(index);
+	pixelsVisited[index] = 1; 
+	maxX = image-&gt;GetX();
+	maxY = image-&gt;GetY();
+	maxZ = image-&gt;GetZ();
+
+	// check if box widget is on, remove this part of code if box is not required
+	if (boxWidgetIsOn == 1)
+	{
+		boxWidget-&gt;GetPlanes(planes);
+		boxIsOn = true;
+	}
+	
+	
+	// initialize pixelsVistedArray
+	
+	for (int i=0;i&lt;((maxX)*(maxY)*(maxZ));i++) { 
+		pixelsVisited[i] = 0;
+	}
+
+	while (!point_stack.empty())
+	{
+		index = point_stack.top();
+		point_stack.pop();
+		z = getZOrd(index, image);
+		y = getYOrd(index, z, image);
+		x = getXOrd(index, z, y, image); 
+
+		// get neighbors of point popped
+		if (x-1 &gt; minX &amp;&amp; (!boxIsOn || isPointInsideBox(x-1,y,z)))
+		{			
+			index = getIndex(x-1, y, z, image); 
+			if ( regionGrowingCriteria(x-1,y,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (x+1 &lt; maxX &amp;&amp; (!boxIsOn || isPointInsideBox(x+1,y,z)))
+		{
+			index = getIndex(x+1, y, z, image); 
+			if (regionGrowingCriteria(x+1,y,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (y-1 &gt; minY &amp;&amp; (!boxIsOn || isPointInsideBox(x,y-1,z)))
+		{
+			
+			index = getIndex(x, y-1, z, image); 
+			if ( regionGrowingCriteria(x,y-1,z,x,y,z,T1,lowT,highT, image) &amp;&amp;  pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (y+1 &lt; maxY &amp;&amp; (!boxIsOn || isPointInsideBox(x,y+1,z) ))
+		{
+			index = getIndex(x, y+1, z, image); 
+			if (regionGrowingCriteria(x,y+1,z,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (z-1 &gt; minZ &amp;&amp; (!boxIsOn || isPointInsideBox(x,y,z-1) ))
+		{
+			index = getIndex(x, y, z-1, image); 
+			if (regionGrowingCriteria(x,y,z-1,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		}
+		if (z+1 &lt; maxZ &amp;&amp; (!boxIsOn || isPointInsideBox(x,y,z+1)))
+		{
+			index = getIndex(x, y, z+1, image); 
+			if (regionGrowingCriteria(x,y,z+1,x,y,z,T1,lowT,highT, image) &amp;&amp; pixelsVisited[index] == 0)
+			{
+				point_stack.push(index); 
+				pixelsVisited[index] = 2; 
+			}
+			else if (pixelsVisited[index] == 0)
+				pixelsVisited[index] = 1;
+		} 
+		// copied till here
+	}	
+	
+
+	return pixelsVisited;
+}
+
+void setVisitedPixelsOn(int* pixelVisitedArray, irtkGreyImage* image, irtkGreyImage&amp; write_image)
+{
+	int x,y,z ,maxX, maxY, maxZ; 
+	maxX = image-&gt;GetX(); 
+	maxY = image-&gt;GetY();
+	maxZ = image-&gt;GetZ(); 
+
+	for (int i=0;i&lt;((maxX)*(maxY)*(maxZ));i++)
+	{
+		// get x,y and z coordinates of volume
+		z = getZOrd(i, image);
+		y = getYOrd(i, z, image);
+		x = getXOrd(i, z, y, image);
+		
+		// different scalar for detected regions
+		if (pixelVisitedArray[i] == 1 || pixelVisitedArray[i] == 0) 
+			write_image.Put(x,y,z,0);
+		else
+            write_image.Put(x,y,z,image-&gt;Get(x,y,z));
+	}
+	//write_image.Write(&quot;segmented_brain.gipl&quot;);
+}
+
+int* addVisitedPixelArrays(int* pixelVisitedArray1, int* pixelVisitedArray2, irtkGreyImage* image)
+{
+	int x,y,z ,maxX, maxY, maxZ; 
+	maxX = image-&gt;GetX(); 
+	maxY = image-&gt;GetY();
+	maxZ = image-&gt;GetZ(); 
+	int* result = new int[(image-&gt;GetX())*(image-&gt;GetY())*(image-&gt;GetZ())];
+	
+	for (int r=0;r&lt;((maxX)*(maxY)*(maxZ));r++)
+	{
+		if (pixelVisitedArray1[r] == 2 || pixelVisitedArray2[r] == 2) 
+			result[r] = 2;
+		else
+			result[r] = 0;
+	}
+	return result;
+}
+
+
+void PickCells(vtkObject *caller, unsigned long eventId, void* ClientData, void*
+data)
+{
+	vtkFlRenderWindowInteractor *i = (vtkFlRenderWindowInteractor*)(caller); 
+	int x, y, z, pid; 
+	double *abc = picker-&gt;GetPickPosition();
+	pid = picker-&gt;GetPointId();
+
+	sphereActor-&gt;SetPosition(abc);
+	polyData-&gt;GetPoint(picker-&gt;GetPointId(), abc);
+	image.WorldToImage(abc[0],abc[1],abc[2]);
+	seed_picked_x = abc[0]; seed_picked_y = abc[1]; seed_picked_z = abc[2];
+	cout &lt;&lt; &quot;Picked point &quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;( &quot; &lt;&lt; abc[0] &lt;&lt; &quot;, &quot; &lt;&lt; abc[1] &lt;&lt; &quot;, &quot; &lt;&lt; abc[2] &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+}
+
+vtkPolyData* marchingCubes(vtkStructuredPoints *p, int low, int high)
+{
+	vtkMarchingCubes *mcubes = vtkMarchingCubes::New();
+	mcubes-&gt;SetInput(p);
+	mcubes-&gt;SetValue(low, high);
+	return mcubes-&gt;GetOutput();
+}
+
+
+
+void tester_func(vtkFlRenderWindowInteractor *flrwi, vtkStructuredPoints* p) 
+{
+	// mcubes_threshold is a global value
+	polyData = marchingCubes(p, 0, mcubes_threshold);
+	vtkPolyDataMapper *mapper = vtkPolyDataMapper::New();
+	mapper-&gt;SetInput(polyData);
+
+	mapper-&gt;ScalarVisibilityOn();
+	mapper-&gt;SetScalarRange(0,1200);
+	heartActor = vtkActor::New(); 
+	heartActor-&gt;SetMapper(mapper);
+	heartActor-&gt;GetProperty()-&gt;SetColor(1,0,0);
+	
+	// create marker for pick 
+	vtkSphereSource *sphere = vtkSphereSource::New();
+	sphere-&gt;SetThetaResolution(8); 
+	sphere-&gt;SetPhiResolution(8);
+	sphere-&gt;SetRadius(1);
+	sphereMapper = vtkPolyDataMapper::New();
+	sphereMapper-&gt;ScalarVisibilityOff();
+	sphereMapper-&gt;SetInput(sphere-&gt;GetOutput());
+	sphereActor = vtkActor::New();
+	sphereActor-&gt;SetMapper(sphereMapper);
+	vtkProperty *property = sphereActor-&gt;GetProperty();
+	property-&gt;SetColor(1,1,0); 
+	sphereActor-&gt;PickableOff();
+	renderer1-&gt;AddActor(sphereActor);
+	renderer1-&gt;SetBackground(1,1,1);
+	
+	renderer1-&gt;AddActor(heartActor);  
+	
+	// camera
+	double *xyz;
+	xyz = polyData-&gt;GetCenter();
+	vtkCamera *camera = renderer1-&gt;GetActiveCamera(); 
+	camera-&gt;SetFocalPoint(*xyz, *(xyz+1), *(xyz+2));
+	camera-&gt;SetPosition(1,1,60);
+
+	// point picker 
+	picker = vtkPointPicker::New();
+	picker-&gt;SetTolerance(0.01);
+	flrwi-&gt;SetPicker(picker); 
+	vtkCallbackCommand *cbc_pickcells = vtkCallbackCommand::New();
+	cbc_pickcells-&gt;SetCallback(PickCells);
+	picker-&gt;AddObserver(vtkCommand::EndPickEvent, cbc_pickcells);
+	
+	renWin1-&gt;AddRenderer(renderer1);
+    flrwi-&gt;SetRenderWindow(renWin1);	// add to FLTK
+	flrwi-&gt;Initialize();
+	
+}
+
+void show_segmented_image2(irtkGreyImage image)
+{
+	vtkStructuredPoints  *vtkImage = vtkStructuredPoints::New();	
+	vtkImageCast *vtkImageCast = vtkImageCast::New();
+	image.ImageToVTK(vtkImage);
+	vtkImageCast-&gt;SetInput(vtkImage);
+	vtkImageCast-&gt;SetOutputScalarTypeToUnsignedShort();
+	vtkMarchingCubes *surface = vtkMarchingCubes::New(); 
+	surface-&gt;SetInputConnection(vtkImageCast-&gt;GetOutputPort());
+	surface-&gt;SetValue(0,30);
+	cout &lt;&lt; &quot;polygons created&quot; &lt;&lt; endl;
+	vtkPolyDataMapper *surfaceMapper = vtkPolyDataMapper::New();
+	surfaceMapper-&gt;SetInput(surface-&gt;GetOutput());
+	cout &lt;&lt; &quot;mappers created&quot; &lt;&lt; endl;
+	surfaceMapper-&gt;ScalarVisibilityOff();
+	vtkActor *heart = vtkActor::New();
+	heart-&gt;SetMapper(surfaceMapper);
+	cout &lt;&lt; &quot;actor added to mapper&quot; &lt;&lt; endl;
+	vtkRenderer *renderer3 = vtkRenderer::New();
+	heart-&gt;GetProperty()-&gt;SetColor(1,0,0);
+	renderer3-&gt;AddActor(heart);
+	vtkRenderWindow *renWin3 = vtkRenderWindow::New(); 
+	renWin3-&gt;AddRenderer(renderer3); 
+	renWin3-&gt;Render(); 
+
+}
+
+
+void show_segmented_image(vtkFlRenderWindowInteractor *&amp;flrwi, irtkGreyImage image)
+{
+	// convert irtk image to a structured point set os unsigned scalars
+	vtkStructuredPoints  *vtkImage = vtkStructuredPoints::New();	
+	vtkImageCast *vtkImageCast = vtkImageCast::New();
+	image.ImageToVTK(vtkImage);
+	vtkImageCast-&gt;SetInput(vtkImage);
+	vtkImageCast-&gt;SetOutputScalarTypeToUnsignedShort();
+	cout &lt;&lt; &quot;segmented image casted to unsigned short&quot; &lt;&lt; endl;
+		
+	cout &lt;&lt; &quot;Rendering windows created&quot; &lt;&lt; endl;
+
+	// surface rendering
+	vtkMarchingCubes *surface = vtkMarchingCubes::New(); 
+	surface-&gt;SetInputConnection(vtkImageCast-&gt;GetOutputPort());
+	cout &lt;&lt; mcubes_threshold &lt;&lt; endl;
+	surface-&gt;SetValue(0,mcubes_threshold);
+	cout &lt;&lt; &quot;polygons created&quot; &lt;&lt; endl;
+	//vtkPolyDataNormals *surfaceNormals = vtkPolyDataNormals::New();
+	//surfaceNormals-&gt;SetInputConnection(surface-&gt;GetOutputPort());
+	//surfaceNormals-&gt;SetFeatureAngle(60.0);
+	cout &lt;&lt; &quot;normals created&quot; &lt;&lt; endl;
+	vtkPolyDataMapper *surfaceMapper = vtkPolyDataMapper::New();
+	
+	surface-&gt;Update();
+	segmentedMesh-&gt;DeepCopy(surface-&gt;GetOutput());
+	cout &lt;&lt; &quot;polygons = &quot; &lt;&lt; segmentedMesh-&gt;GetNumberOfCells() &lt;&lt; endl;
+	surfaceMapper-&gt;SetInput(segmentedMesh);
+	
+	cout &lt;&lt; &quot;mappers created&quot; &lt;&lt; endl;
+	surfaceMapper-&gt;ScalarVisibilityOff();
+				
+	heart-&gt;SetMapper(surfaceMapper);
+	cout &lt;&lt; &quot;actor added to mapper&quot; &lt;&lt; endl;
+
+	if (flrwi-&gt;GetInitialized() == 1) 
+	{	
+		renderer2-&gt;Delete(); 
+		renderer2 = vtkRenderer::New();
+
+		//flrwi-&gt;ReInitialize();		// dont need this line
+		//renderer2-&gt;RemoveAllViewProps();
+		renderer2-&gt;SetBackground(1,1,1);
+		heart-&gt;GetProperty()-&gt;SetColor(1,0,0);
+		renderer2-&gt;AddActor(heart); 
+		renWin2-&gt;RemoveRenderer(renderer2);
+		//renWin2-&gt;AddRenderer(renderer2); 
+		myAddRenderer(renderer2, renWin2);
+		renWin2-&gt;Render(); 
+		//flrwi-&gt;SetRenderWindow(renWin2);
+	}
+	else
+	{
+		
+		cout &lt;&lt; &quot;actor added to renderer&quot; &lt;&lt; endl;
+		renderer2-&gt;AddActor(heart);
+		renWin2-&gt;AddRenderer(renderer2);
+		flrwi-&gt;SetRenderWindow(renWin2);	
+		flrwi-&gt;Initialize();
+	}
+
+	
+	surface-&gt;Delete(); 
+	vtkImage-&gt;Delete(); 
+	vtkImageCast-&gt;Delete(); 
+	surfaceMapper-&gt;Delete();
+	
+}
+
+
+void low_global_selector_cb(Fl_Widget* widget, void* p) 
+{	
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+//cout &lt;&lt; max_scalar_val; 
+	float v = max_scalar_val*slider-&gt;value(); 
+	Fl_Output* textDisplay = (Fl_Output*)(p);	// display slider value
+	int vInt = (int)v;
+	itoa(vInt, buffer, 10); 
+	textDisplay-&gt;value(buffer);
+	low_global_threshold = v;
+	
+	
+}
+
+void high_global_selector_cb(Fl_Widget* widget, void* p) 
+{	
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = max_scalar_val*slider-&gt;value(); 
+	Fl_Output* textDisplay = (Fl_Output*)(p);	// display slider value
+	int vInt = (int)v;
+	itoa(vInt, buffer, 10); 
+	textDisplay-&gt;value(buffer);
+	high_global_threshold = v;
+	
+	
+}
+
+void local_selector_cb(Fl_Widget* widget, void* p) 
+{	
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = max_local_threshold_val*slider-&gt;value(); 
+	Fl_Output* textDisplay = (Fl_Output*)(p); 
+	int vInt = (int)v;
+	itoa(vInt, buffer, 10); 
+	textDisplay-&gt;value(buffer);
+	local_threshold = v;
+	
+}
+
+void segment_cb(Fl_Widget*, void*) 
+{
+	// region grow 
+	cout &lt;&lt; &quot;Region growing started. Please wait ... &quot; &lt;&lt; endl;
+	int *pixelsVisited; 
+	if (_REGION_GROW_MODE == 1)
+	{
+		if (local_threshold &gt; 1) 
+			pixelsVisited = regionGrow(seed_picked_x, seed_picked_y, seed_picked_z ,local_threshold,0,0,&amp;image);
+		else
+			pixelsVisited = regionGrow(seed_picked_x, seed_picked_y, seed_picked_z ,-1,low_global_threshold,high_global_threshold,&amp;image);
+			cumulativePixelsVisited = pixelsVisited;	// for unioning segmentation results
+			setVisitedPixelsOn(pixelsVisited, &amp;image, segmented_image);
+	}
+	else 
+	{
+		plainOldThresholding(low_global_threshold, high_global_threshold, &amp;image, &amp;segmented_image); 
+	}
+
+	
+	cout &lt;&lt; &quot;Finished region growing!&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;Rendering ... &quot; &lt;&lt; endl;
+	show_segmented_image(fl_vtk_window_2, segmented_image);		
+	
+}
+
+void redraw_segment_cb(Fl_Widget*, void*) 
+{
+	show_segmented_image(fl_vtk_window_2, segmented_image);		
+}
+
+void union_segment_cb(Fl_Widget*, void*)
+{
+	cout &lt;&lt; &quot;Region growing started. Please wait ... &quot; &lt;&lt; endl;
+	int *pixelsVisited, *new_result; 
+	if (local_threshold &gt; 1) 
+		pixelsVisited = regionGrow(seed_picked_x, seed_picked_y, seed_picked_z ,local_threshold,0,0,&amp;image);
+	else
+		pixelsVisited = regionGrow(seed_picked_x, seed_picked_y, seed_picked_z ,-1,low_global_threshold,high_global_threshold,&amp;image);
+	cout &lt;&lt; &quot;region growing finished .. performing union .. please wait&quot; &lt;&lt; endl; 
+	new_result = addVisitedPixelArrays(pixelsVisited, cumulativePixelsVisited, &amp;image); 
+	cumulativePixelsVisited = new_result; 
+	setVisitedPixelsOn(new_result, &amp;image, segmented_image);
+	cout &lt;&lt; &quot;segmented image produced&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;Rendering ... &quot; &lt;&lt; endl;
+	show_segmented_image(fl_vtk_window_2, segmented_image);	
+}
+
+void mcubes_selector_cb(Fl_Widget* widget, void* p) 
+{	
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = max_scalar_val*slider-&gt;value(); 
+	Fl_Output* textDisplay = (Fl_Output*)(p); 
+	int vInt = (int)v;
+	itoa(vInt, buffer, 10); 
+	textDisplay-&gt;value(buffer);
+	mcubes_threshold = v;
+	
+	
+}
+
+
+void mcubes_cb(Fl_Widget*, void*)
+{
+	tester_func(fl_vtk_window_1, struct_points_data);		
+}
+
+void quit_cb(Fl_Widget*, void*)
+{
+	destroy();
+	 exit(0);
+}
+
+void xSlice_selector_cb(Fl_Widget* widget, void*)
+{
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = (maxX-1)*slider-&gt;value(); 
+		
+	vtkImageActor *xSl = imageActorArray[2]; 
+	xPos = v;
+	xSl-&gt;SetDisplayExtent(xPos,xPos,0,maxY-1,0,maxZ-1);
+	fl_vtk_window_3-&gt;Render();
+}
+
+void zSlice_selector_cb(Fl_Widget* widget, void*)
+{
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = (maxZ-1)*slider-&gt;value(); 
+		
+	vtkImageActor *zSl = imageActorArray[0]; 
+	zPos = v;
+	zSl-&gt;SetDisplayExtent(0,maxX-1,0,maxY-1,zPos,zPos);
+	fl_vtk_window_3-&gt;Render();
+}
+
+void ySlice_selector_cb(Fl_Widget* widget, void*)
+{
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = (maxY-1)*slider-&gt;value(); 
+		
+	vtkImageActor *ySl = imageActorArray[1]; 
+	yPos = v;
+	ySl-&gt;SetDisplayExtent(0,maxX-1,yPos, yPos, 0,maxZ-1);
+	fl_vtk_window_3-&gt;Render();
+}
+
+void lookUpTable_selector_cb(Fl_Widget* widget, void*)
+{
+	Fl_Slider* slider = (Fl_Slider*)(widget); 
+	float v = 4000*slider-&gt;value();
+	bwLut-&gt;SetTableRange(0,v);
+	fl_vtk_window_3-&gt;Render();
+}
+
+void startCreatePhantom_cb(Fl_Widget* widget, void*)
+{	
+	int xMax = segmented_image.GetX();
+	int yMax = segmented_image.GetY(); 
+	int zMax = segmented_image.GetZ(); 
+
+	cout &lt;&lt; &quot;Use the box widget to draw your phantom .. hit 'p' after each step&quot; &lt;&lt; endl;
+	if (boxWidgetIsOn == 1)
+	{
+		boxWidget-&gt;Off();
+		boxWidgetIsOn = 0;
+	}
+	else
+	{
+		boxWidget-&gt;On();
+		boxWidgetIsOn = 1;
+	}
+	
+	for (int i=0;i&lt;xMax;i++)
+	{
+		for (int j=0;j&lt;yMax;j++)
+		{
+			for (int k=0;k&lt;zMax;k++)
+			{
+				segmented_image.Put(i,j,k,0);	
+			}
+		}
+	}
+
+	
+	
+	
+}
+
+void finishCreatePhantom_cb(Fl_Widget* widget, void*)
+{
+	char *newfile;
+	newfile = fl_file_chooser(&quot;Save Phantom Image&quot;, &quot;*.*&quot;, &quot;myPhantom.hdr&quot;);
+	if (newfile&nbsp;!= NULL) 
+		segmented_image.Write(newfile);
+}
+
+void recreatePhantom_cb(Fl_Widget* widget, void* v)
+{
+	startCreatePhantom_cb(widget, v); 
+}
+
+
+void createPhantom()
+{
+	int xMax = segmented_image.GetX();
+	int yMax = segmented_image.GetY(); 
+	int zMax = segmented_image.GetZ(); 
+
+	if (boxWidgetIsOn == 1)
+	{
+		boxWidget-&gt;GetPlanes(planes);
+	}	
+	
+
+	for (int i=0;i&lt;xMax;i++)
+	{
+		for (int j=0;j&lt;yMax;j++)
+		{
+			for (int k=0;k&lt;zMax;k++)
+			{
+				if (isPointInsideBox(i,j,k))
+				{
+					segmented_image.Put(i,j,k,100);
+				}		
+			}
+		}
+	}
+	
+	show_segmented_image(fl_vtk_window_2, segmented_image);	
+	
+	if (!isActorSuperImposed)
+	{
+		renderer3-&gt;RemoveActor(sphereActor2);
+		renderer3-&gt;AddActor(sphereActor2);
+		renderer3-&gt;AddActor(heart);
+		renderer3-&gt;Render();
+			
+		isActorSuperImposed = true;
+	}
+	else
+	{
+		renderer3-&gt;RemoveActor(heart);
+		renderer3-&gt;Render();
+		isActorSuperImposed = false;
+	}
+}
+
+void delete_cb(Fl_Widget* widget, void*)
+{
+	int xMax = segmented_image.GetX();
+	int yMax = segmented_image.GetY(); 
+	int zMax = segmented_image.GetZ(); 
+
+	if (boxWidget2IsOn == 1)
+	{
+		boxWidget2-&gt;GetPlanes(planes2);
+	}	
+	
+	
+	// iterate through segmented volume
+	for (int i=0;i&lt;xMax;i++)
+	{
+		for (int j=0;j&lt;yMax;j++)
+		{
+			for (int k=0;k&lt;zMax;k++)
+			{
+				if (isPointInsideBox2(i,j,k))
+				{
+					segmented_image.Put(i,j,k,0);
+				}
+			}
+		}
+	}
+
+	show_segmented_image(fl_vtk_window_2, segmented_image);	
+
+}
+
+void saveas_segmented_vtk_cb(void) 
+{
+	char* newfile; 
+	string fileNameBase;
+	string::size_type pos;
+	string fileNameExt;
+
+	newfile = fl_file_chooser(&quot;save segmented image as mesh&quot;,&quot;*.vtk&quot;, &quot;mesh.vtk&quot;); 
+	if (newfile&nbsp;!= NULL) 
+	{
+
+		fileNameBase = newfile;
+		pos = fileNameBase.find_last_of( '.' );
+		if (pos&nbsp;!= -1)
+		{
+			// obtaining actual extension and file name base
+			fileNameExt.assign( fileNameBase, pos, 4 );
+			fileNameBase.erase( pos, pos+3 );
+			cout &lt;&lt; &quot;Filename = &quot; &lt;&lt; fileNameBase &lt;&lt; endl; 
+			cout &lt;&lt; &quot;file extension = &quot; &lt;&lt; fileNameExt &lt;&lt; endl;
+		}
+
+		if (fileNameExt == &quot;.vtk&quot;) { 
+			cout &lt;&lt; &quot;Outputting vtk file .. &quot; &lt;&lt; endl;
+			 vtkSmartPointer&lt;vtkPolyDataWriter&gt; writer = vtkSmartPointer&lt;vtkPolyDataWriter&gt;::New(); 
+			writer-&gt;SetInput(segmentedMesh); 
+			writer-&gt;SetFileName(newfile); 
+			writer-&gt;Update();
+		}
+		else if (fileNameExt == &quot;.stl&quot;) 
+		{
+			cout &lt;&lt; &quot;Outputting stl file .. &quot; &lt;&lt; endl;
+			vtkSmartPointer&lt;vtkSTLWriter&gt; stlWriter = vtkSmartPointer&lt;vtkSTLWriter&gt;::New();
+			stlWriter-&gt;SetInput(segmentedMesh); 
+			stlWriter-&gt;SetFileName(newfile); 
+			stlWriter-&gt;Update();
+		}
+	}
+
+}
+
+void saveas_segmented_cb(void) {
+  char *newfile;
+  int minX=1E9, minY=1E9, minZ=1E9, maxX=-1, maxY=-1, maxZ=-1; 
+  int minX_trunc, minY_trunc, minZ_trunc, maxX_trunc, maxY_trunc, maxZ_trunc;
+  irtkRealImage out; 
+  ofstream foutput;	
+
+  // To truncate the image to save hard-drive space
+ newfile = fl_file_chooser(&quot;mySegmentedImage&quot;, &quot;*.gipl&quot;, &quot;xmySegmentedImage.gipl&quot;);
+  if (newfile&nbsp;!= NULL) 
+  {
+		cout &lt;&lt; &quot;Wait while we truncate the image ...&quot;;
+		for (int i=0;i&lt;segmented_image.GetX();i++)
+		{
+			for (int j=0;j&lt;segmented_image.GetY();j++)
+			{
+				for (int k=0;k&lt;segmented_image.GetZ();k++)
+				{
+					if (segmented_image.Get(i,j,k) &gt; 0)
+					{
+						//segmented_image.Put(i,j,k, 1); 
+						if (i&gt;maxX) { maxX = i;}
+						if (j&gt;maxY) { maxY = j;}
+						if (k&gt;maxZ) { maxZ = k;}
+						if (i&lt;minX) { minX = i;}
+						if (j&lt;minY) { minY = j;}
+						if (k&lt;minZ) { minZ = k;}
+					}
+				}
+			}
+		}
+		
+		// get the truncated ROI
+		minX_trunc = max(0, minX-10); 
+		minY_trunc = max(0, minY-10); 
+		minZ_trunc = max(0, minZ-10); 
+		maxX_trunc = min(segmented_image.GetX(), maxX+10); 
+		maxY_trunc = min(segmented_image.GetY(), maxY+10); 
+		maxZ_trunc = min(segmented_image.GetZ(), maxZ+10);
+
+		// now extract the ROI - this is truncating the image to save hard-disk space, 
+		// not extracting ROI using region-growing - that is different 
+		 
+		cout &lt;&lt; &quot;Truncating completed .. now saving ... &quot;;
+		//segmented_image.Write(newfile);		
+		// if you want to truncate, open the following comments up 
+		//out = segmented_image.GetRegion(minX_trunc, minY_trunc, minZ_trunc, maxX_trunc, maxY_trunc, maxZ_trunc);
+		
+		segmented_image.Write(newfile);	// if you dont want to truncate 
+		//cout &lt;&lt; &quot;NOT TRUNCATING .. &quot; &lt;&lt; endl;
+		cout &lt;&lt; &quot;TRUNCATING .. &quot; &lt;&lt; endl;
+		//out.Write(newfile);					// if you want to truncate 
+		
+		cout &lt;&lt; &quot;Image saved&nbsp;!&quot; &lt;&lt; endl;
+		cout &lt;&lt; &quot;region mri.hdr mri_cropped.hdr -Rx1 &quot; &lt;&lt; minX_trunc &lt;&lt; &quot; -Ry1 &quot; &lt;&lt; minY_trunc &lt;&lt; &quot; -Rz1 &quot; &lt;&lt; minZ_trunc &lt;&lt; &quot; -Rx2 &quot; &lt;&lt; maxX_trunc &lt;&lt; &quot; -Ry2 &quot; &lt;&lt; maxY_trunc &lt;&lt; &quot; -Rz2 &quot; &lt;&lt; maxZ_trunc &lt;&lt; endl;
+		foutput.open(&quot;region_trunc_params.txt&quot;); 
+		foutput &lt;&lt; &quot;region mri.hdr mri_cropped.hdr -Rx1 &quot; &lt;&lt; minX_trunc &lt;&lt; &quot; -Ry1 &quot; &lt;&lt; minY_trunc &lt;&lt; &quot; -Rz1 &quot; &lt;&lt; minZ_trunc &lt;&lt; &quot; -Rx2 &quot; &lt;&lt; maxX_trunc &lt;&lt; &quot; -Ry2 &quot; &lt;&lt; maxY_trunc &lt;&lt; &quot; -Rz2 &quot; &lt;&lt; maxZ_trunc &lt;&lt; endl;
+		foutput.close();
+
+  }
+	
+}
+void open_vtk_cb(Fl_Widget*, void*) {
+  char *newfile = fl_file_chooser(&quot;Open File?&quot;, &quot;*.gipl&quot;, &quot;&quot;);
+	if (newfile&nbsp;!= NULL) 
+	{
+		loadImage(newfile, segmented_image);
+		show_segmented_image(fl_vtk_window_2, segmented_image);	
+	}
+}
+void adjust_camera_cb(Fl_Widget*, void*)
+{
+	double position[3]; 
+	double viewAngle; 
+	double viewUp[3]; 
+	camera2 = renderer2-&gt;GetActiveCamera(); 
+	camera3 = renderer3-&gt;GetActiveCamera(); 
+	camera3-&gt;GetPosition(position); 
+	viewAngle = camera3-&gt;GetViewAngle(); 
+	camera3-&gt;GetViewUp(viewUp); 
+	camera2-&gt;SetPosition(position); 
+	camera2-&gt;SetViewUp(viewUp); 
+	camera2-&gt;SetViewAngle(viewAngle);
+	
+}
+
+void superimpose_cb(Fl_Widget*, void*)
+{
+	if (!isActorSuperImposed)
+	{
+		renderer3-&gt;RemoveActor(sphereActor2);
+		renderer3-&gt;AddActor(sphereActor2);
+		renderer3-&gt;AddActor(heart);
+		renderer3-&gt;Render();
+			
+		isActorSuperImposed = true;
+	}
+	else
+	{
+		renderer3-&gt;RemoveActor(heart);
+		renderer3-&gt;Render();
+		isActorSuperImposed = false;
+	}
+	
+
+}
+
+
+
+static void keyPressedFunction(vtkObject* obj, unsigned long,void *sr, void *){
+
+       vtkRenderWindowInteractor* iren = vtkRenderWindowInteractor::SafeDownCast(obj);
+       vtkImageActor **imageActorArray = (vtkImageActor **)(sr);
+	   vtkImageActor *zSl = imageActorArray[0]; 
+		vtkImageActor *xSl = imageActorArray[1]; 
+		vtkImageActor *ySl = imageActorArray[2]; 
+		
+		
+	
+		switch (iren-&gt;GetKeyCode())
+		{
+		
+		case 't':
+			// point picking on slices
+			screenX = fl_vtk_window_3-&gt;GetEventPosition()[0]; 
+			screenY = fl_vtk_window_3-&gt;GetEventPosition()[1]; 
+			picker2-&gt;Pick(screenX,screenY,0.0, renderer3); 
+			picker2-&gt;GetPickPosition(picker2_pos);
+			sphereActor2-&gt;SetPosition(picker2_pos);
+			image.WorldToImage(picker2_pos[0], picker2_pos[1], picker2_pos[2]);
+			cout &lt;&lt; &quot;Picked point &quot; &lt;&lt; endl;
+			cout &lt;&lt; &quot;( &quot; &lt;&lt; picker2_pos[0] &lt;&lt; &quot;, &quot; &lt;&lt; picker2_pos[1] &lt;&lt; &quot;, &quot; &lt;&lt; picker2_pos[2] &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+			cout &lt;&lt; &quot;Scalar value: &quot; &lt;&lt; image.Get(picker2_pos[0], picker2_pos[1], picker2_pos[2]); 
+			seed_picked_x = picker2_pos[0]; 
+			seed_picked_y = picker2_pos[1]; 
+			seed_picked_z = picker2_pos[2];
+			fl_vtk_window_3-&gt;Render();
+			
+			break;
+
+		case 'b': 	
+			// toggle enable/disable box widget
+			if (boxWidgetIsOn == 1)
+			{
+				boxWidget-&gt;Off();
+				boxWidgetIsOn = 0;
+			}
+			else
+			{
+				boxWidget-&gt;On();
+				boxWidgetIsOn = 1;
+			}
+			break;
+		case 'p': 
+			createPhantom();	
+			break; 
+		default: 
+			cout &lt;&lt; &quot;Keys: t - pick point, b - toggle box widget&quot; &lt;&lt; endl;
+			break;
+
+		}
+}
+
+// for fl_Vtk_window_2 - mainly for bringing out the box widget
+static void keyPressedFunction2(vtkObject* obj, unsigned long,void *sr, void *)
+{
+	vtkRenderWindowInteractor* iren = vtkRenderWindowInteractor::SafeDownCast(obj);
+	switch (iren-&gt;GetKeyCode())
+	{
+		case 'b':
+			if (boxWidget2IsOn == 1)
+			{
+				boxWidget2-&gt;Off(); 
+				boxWidget2IsOn = 0;
+			}
+			else
+			{
+				boxWidget2-&gt;On(); 
+				boxWidget2IsOn = 1;
+			}
+		break; 
+
+		default: 
+			cout &lt;&lt; &quot;Keys: t - pick point, b - toggle box widget&quot; &lt;&lt; endl;
+		break;
+
+	}
+
+
+}
+
+void create_window_with_rwi(vtkFlRenderWindowInteractor *&amp;flrwi_1,
+							vtkFlRenderWindowInteractor *&amp;flrwi_2,
+							vtkFlRenderWindowInteractor *&amp;flrwi_3,
+							Fl_Window *&amp;flw, char* title, double default_low_thresh_value, double max_intensity)
+{
+	flw = new Fl_Window(1100,900,title);
+
+	//flrwi_1 = new vtkFlRenderWindowInteractor(420,5,330,230, NULL); 
+	flrwi_2 = new vtkFlRenderWindowInteractor(5,515,900,380,NULL); 
+	flrwi_3 = new vtkFlRenderWindowInteractor(5,30,900,470, NULL); 
+
+//	flrwi_1-&gt;SetInteractorStyle(interactorStyle1);
+	flrwi_2-&gt;SetInteractorStyle(interactorStyle2);
+	flrwi_3-&gt;SetInteractorStyle(interactorStyle3);
+	
+	// menu bar
+	Fl_Menu_Item menuitems[] = {
+  { &quot;&amp;File&quot;,              0, 0, 0, FL_SUBMENU },
+    { &quot;&amp;Open VTK File...&quot;,    FL_CTRL + 'o', (Fl_Callback *)open_vtk_cb },
+    { &quot;Save Segmented &amp;As...&quot;, FL_CTRL + FL_SHIFT + 's', (Fl_Callback *)saveas_segmented_cb, 0, FL_MENU_DIVIDER },
+	{ &quot;Save Segmented As &amp;VTK...&quot;, FL_CTRL + FL_SHIFT + 's', (Fl_Callback *)saveas_segmented_vtk_cb, 0, FL_MENU_DIVIDER },
+    { &quot;E&amp;xit&quot;, FL_CTRL + 'q', (Fl_Callback *)quit_cb, 0 },
+    { 0 },
+
+  { &quot;&amp;Phantom&quot;,              0, 0, 0, FL_SUBMENU },
+    { &quot;&amp;Start Drawing Phantom Using Box...&quot;,    FL_CTRL + '1', (Fl_Callback *)startCreatePhantom_cb },
+    { &quot;&amp;Finish Drawing Phantom...&quot;, FL_CTRL + FL_SHIFT + '2', (Fl_Callback *)finishCreatePhantom_cb, 0, FL_MENU_DIVIDER },
+    { &quot;&amp;Re-draw Phantom from Scratch&quot;, FL_CTRL + '3', (Fl_Callback *)recreatePhantom_cb, 0 },
+    { 0 },
+
+  
+  { 0 }
+	};
+	Fl_Menu_Bar *m = new Fl_Menu_Bar(0, 0, 1100, 30);
+	m-&gt;copy(menuitems);
+
+	// buttons
+	int button_x=925, button_y=650, button_h=20, button_w=140, button_sep=30;
+	Fl_Button* segment_button = new Fl_Button(button_x, button_y, button_w, button_h, &quot;&amp;Segment&quot;);
+	Fl_Button* union_segment_button = new Fl_Button(button_x, button_y+(+button_sep), button_w, button_h, &quot;&amp;Union segment&quot;); 
+	Fl_Button* mcubes_button = new Fl_Button(button_x, button_y+(button_sep*2), button_w, button_h, &quot;&amp;Regenerate mesh&quot;);
+	Fl_Button* redraw_segment_region_button = new Fl_Button(button_x, button_y+(button_sep*3), button_w, button_h, &quot;R&amp;e-render&quot;);
+	Fl_Button* delete_button = new Fl_Button(button_x, button_y+(button_sep*4), button_w, button_h, &quot;&amp;Delete region&quot;);
+	Fl_Button* adjust_camera_button = new Fl_Button(button_x, button_y+(button_sep*5), button_w, button_h, &quot;&amp;Adjust &amp;Camera&quot;);
+	Fl_Button* super_impose_actor_button = new Fl_Button(button_x, button_y+(button_sep*6), button_w, button_h, &quot;Show/Hide &amp;actor&quot;);
+	
+	
+	// sliders
+	int slider_x=925, slider_y=35, slider_h=240, slider_w=30, slider_sep=30;
+	Fl_Slider* xSlice_selector = new Fl_Slider(slider_x, slider_y+0, slider_w, slider_h+20, &quot;X&quot;); 
+	Fl_Slider* ySlice_selector = new Fl_Slider(slider_x+(slider_sep*1), slider_y, slider_w, slider_h+20, &quot;Y&quot;);
+	Fl_Slider* zSlice_selector = new Fl_Slider(slider_x+(slider_sep*2), slider_y, slider_w, slider_h+20, &quot;Z&quot;);
+	Fl_Slider* lookUpTable_selector = new Fl_Slider(slider_x+(slider_sep*3), slider_y, slider_w, slider_h+20, &quot;B&quot;); 
+	
+	Fl_Slider* low_global_selector = new Fl_Slider(slider_x, slider_y+300, slider_w, slider_h, &quot;LW&quot;); 
+	Fl_Slider* high_global_selector = new Fl_Slider(slider_x+slider_sep, slider_y+300, slider_w, slider_h, &quot;HG&quot;); 
+	Fl_Slider* local_selector = new Fl_Slider(slider_x+(slider_sep*2), slider_y+300, slider_w, slider_h, &quot;LC&quot;); 
+	Fl_Slider* mcubes_selector = new Fl_Slider(slider_x+(slider_sep*3), slider_y+300, slider_w, slider_h, &quot;MCB&quot;); 
+	
+		
+	// text boxes
+	int textbox_x=925, textbox_y=600, textbox_w=30, textbox_h=20, textbox_sep = slider_sep;
+	Fl_Output* low_textDisplay = new Fl_Output(textbox_x, textbox_y, textbox_w, textbox_h); 
+	Fl_Output* high_textDisplay = new Fl_Output(textbox_x+(textbox_sep), textbox_y, textbox_w, textbox_h); 
+	Fl_Output* local_textDisplay = new Fl_Output(textbox_x+(textbox_sep*2), textbox_y, textbox_w, textbox_h); 
+	Fl_Output* mcube_textDisplay = new Fl_Output(textbox_x+(textbox_sep*3), textbox_y, textbox_w, textbox_h);
+	
+	
+	
+    low_global_selector-&gt;type(FL_VERTICAL);
+	high_global_selector-&gt;type(FL_VERTICAL);
+	local_selector-&gt;type(FL_VERTICAL);
+	mcubes_selector-&gt;type(FL_VERTICAL);
+	zSlice_selector-&gt;type(FL_VERTICAL);
+	ySlice_selector-&gt;type(FL_VERTICAL);
+	xSlice_selector-&gt;type(FL_VERTICAL);
+	lookUpTable_selector-&gt;type(FL_VERTICAL);
+
+	boxWidget-&gt;SetInteractor(flrwi_3);
+	boxWidget2-&gt;SetInteractor(flrwi_2);
+
+	// buttons
+	segment_button-&gt;callback(segment_cb, NULL);
+	mcubes_button-&gt;callback(mcubes_cb, NULL);
+	delete_button-&gt;callback(delete_cb, NULL);
+	adjust_camera_button-&gt;callback(adjust_camera_cb, NULL);
+	redraw_segment_region_button-&gt;callback(redraw_segment_cb, NULL);
+	union_segment_button-&gt;callback(union_segment_cb, NULL);
+	super_impose_actor_button-&gt;callback(superimpose_cb, NULL);
+
+	// sliders
+	low_global_selector-&gt;callback(low_global_selector_cb, low_textDisplay);
+	high_global_selector-&gt;callback(high_global_selector_cb, high_textDisplay);
+	local_selector-&gt;callback(local_selector_cb, local_textDisplay);
+	mcubes_selector-&gt;callback(mcubes_selector_cb, mcube_textDisplay);
+
+
+	// setting a default value for the slider (otsu determined threshold) - December 2009
+	low_global_selector-&gt;value(default_low_thresh_value/max_intensity); 
+	high_global_selector-&gt;value(1); 
+	
+	zSlice_selector-&gt;callback(zSlice_selector_cb, NULL);
+	xSlice_selector-&gt;callback(xSlice_selector_cb, NULL);
+	ySlice_selector-&gt;callback(ySlice_selector_cb, NULL);
+	lookUpTable_selector-&gt;callback(lookUpTable_selector_cb, NULL);
+	
+	// some more callbacks 
+	vtkCallbackCommand *callback = vtkCallbackCommand::New();
+    callback-&gt;SetCallback(keyPressedFunction2);
+    flrwi_2-&gt;AddObserver(vtkCommand::KeyPressEvent, callback); 
+
+	flw-&gt;end();
+	//flw-&gt;resizable(flrwi_1);
+	flw-&gt;resizable(flrwi_2);
+	flw-&gt;resizable(flrwi_3);
+	
+}
+
+
+void showOrthoPlanes()
+{
+	// Z planes
+	sliceZColors-&gt;SetInput(struct_points_data); 
+	sliceZColors-&gt;SetLookupTable(bwLut);
+	zSlice-&gt;SetInput(sliceZColors-&gt;GetOutput()); 
+	zSlice-&gt;SetDisplayExtent(0, maxX-1, 0, maxY-1, zPos, zPos); 
+
+	// X Plane
+	sliceXColors-&gt;SetInput(struct_points_data); 
+	sliceXColors-&gt;SetLookupTable(bwLut);
+	xSlice-&gt;SetInput(sliceXColors-&gt;GetOutput()); 
+	xSlice-&gt;SetDisplayExtent(xPos, xPos, 0, maxY-1, 0, maxZ-1); 
+	
+	// Y Plane
+	sliceYColors-&gt;SetInput(struct_points_data); 
+	sliceYColors-&gt;SetLookupTable(bwLut);
+	ySlice-&gt;SetInput(sliceYColors-&gt;GetOutput()); 
+	ySlice-&gt;SetDisplayExtent(0, maxX-1, yPos, yPos, 0, maxZ-1); 
+
+	renderer3-&gt;AddActor(xSlice);			
+	renderer3-&gt;AddActor(ySlice);			
+	renderer3-&gt;AddActor(zSlice);	
+	
+	imageActorArray[0] = zSlice; 
+	imageActorArray[1] = ySlice; 
+	imageActorArray[2] = xSlice; 
+
+	// add point picker for the slices 
+	vtkSphereSource *sphere = vtkSphereSource::New();
+	sphere-&gt;SetThetaResolution(8); 
+	sphere-&gt;SetPhiResolution(8);
+	sphere-&gt;SetRadius(5);
+	sphereMapper2 = vtkPolyDataMapper::New();
+	sphereMapper2-&gt;ScalarVisibilityOff();
+	sphereMapper2-&gt;SetInput(sphere-&gt;GetOutput());
+	vtkProperty *property = sphereActor2-&gt;GetProperty();
+	property-&gt;SetColor(0,1,1); 
+	sphereActor2-&gt;SetMapper(sphereMapper2);
+	sphereActor2-&gt;PickableOff();
+	renderer3-&gt;AddActor(sphereActor2);
+	picker2-&gt;InitializePickList();		
+	picker2-&gt;AddPickList(xSlice); 
+	picker2-&gt;AddPickList(ySlice); 
+	picker2-&gt;AddPickList(zSlice); 
+	
+	fl_vtk_window_3-&gt;SetPicker(picker2);
+
+	vtkCallbackCommand *callback = vtkCallbackCommand::New();
+    callback-&gt;SetCallback(keyPressedFunction);
+    callback-&gt;SetClientData((void *) imageActorArray);
+
+	fl_vtk_window_3-&gt;AddObserver(vtkCommand::KeyPressEvent, callback); 
+	renderer3-&gt;SetBackground(1.0,1.0,1.0);
+	renWin3-&gt;AddRenderer(renderer3); 
+	fl_vtk_window_3-&gt;SetRenderWindow(renWin3);
+	fl_vtk_window_3-&gt;Initialize();
+	
+}
+
+void setUpBoxWidget()
+{
+	boxWidget-&gt;SetProp3D(zSlice);	// appears on z slice, but can be moved using interactor other slices
+	boxWidget-&gt;PlaceWidget();
+
+
+}
+int main (int argc, char* argv[])
+{
+	
+	//char* irtk_image_filename = argv[1]; 
+	char* vtk_image_filename = argv[2];
+	int* pixelsVisited;
+
+	//irtk_image_filename = &quot;./pre_seg.hdr&quot;; 
+	Fl_Window *main_window = NULL;
+
+	// command-line args
+	//filename = argv[1]; 
+	
+	init();
+	loadImage(irtk_image_filename, image);	
+	
+	// the otsu optimal threshold computation 
+	thresholder = new Otsu(&amp;image); 
+	low_global_threshold = thresholder-&gt;getThreshold(); 
+
+	cout &lt;&lt; &quot;The low threshold slider in the GUI will now be set to this value&quot; &lt;&lt; endl;
+	segmented_image = image;		
+	image.ImageToVTK(struct_points_data);		// struct points data
+	maxX = image.GetX(); maxY = image.GetY(); maxZ = image.GetZ(); 
+	//get min max scalar values
+	getMinMaxScalarValue(&amp;image, min_scalar_val, max_scalar_val);
+	//max_scalar_val = 4095;
+	
+
+	//vtkPolyData *p = vtkPolyData::New();
+	//loadVTKImage(filename, p); 
+	
+	create_window_with_rwi(fl_vtk_window_1, fl_vtk_window_2, fl_vtk_window_3, main_window, &quot;Otsu kit&nbsp;:: Rashed karim&nbsp;:: KCL 2014&quot;,low_global_threshold, max_scalar_val);
+	
+	showOrthoPlanes();
+
+	setUpBoxWidget();
+	main_window-&gt;callback(quit_cb, fl_vtk_window_1);
+
+	// region grow 
+	pixelsVisited = regionGrow(20,20,20,0,0,0,&amp;image);
+	setVisitedPixelsOn(pixelsVisited, &amp;image, segmented_image);
+
+	cumulativePixelsVisited = pixelsVisited; 
+	
+	//cout &lt;&lt; &quot;region growing finished!&quot; &lt;&lt; endl;
+	//tester_func(fl_vtk_window_1, struct_points_data);			
+	cout &lt;&lt; &quot;rendering segmented imgae .. &quot;&lt;&lt; endl;
+	show_segmented_image(fl_vtk_window_2, segmented_image);		
+	
+	main_window-&gt;show();
+	//fl_vtk_window_1-&gt;show();
+	fl_vtk_window_2-&gt;show();
+	fl_vtk_window_3-&gt;show();
+	//create_atrium_pipeline(fl_vtk_window_1, image);
+
+	//show_segmented_image(fl_vtk_window_2, segmented_image);		
+	//create_atrium_pipeline_2(fl_vtk_window_1, filename);
+	//create_atrium_pipeline(fl_vtk_window_2, segmented_image);
+
+	int fl_ret = Fl::run();
+	//delete main_window; 
+	destroy();
+	cout &lt;&lt; &quot;memory cleared!&quot; &lt;&lt; endl; 
+	
+	
+	return fl_ret;
+	
+	
+}
+
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 10/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:475-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312133427 -->
+<div class="printfooter">
+Retrieved from "<a href="index37d3.html?title=Otsu3D">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Otsu3D</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index37d3.html?title=Otsu3D" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index8324.html?title=Talk:Otsu3D&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index6e9d.html?title=Otsu3D&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index7bce.html?title=Otsu3D&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index041d.html?title=Special:UserLogin&amp;returnto=Otsu3D" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index3b21.html?title=Special:WhatLinksHere/Otsu3D" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="indexae8e.html?title=Special:RecentChangesLinked/Otsu3D" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index806c.html?title=Otsu3D&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index0ceb.html?title=Otsu3D&amp;oldid=2948" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 29 January 2015, at 12:09.</li>
+					<li id="viewcount">This page has been accessed 152 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.539 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Otsu3D&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:52:22 GMT -->
+</html>

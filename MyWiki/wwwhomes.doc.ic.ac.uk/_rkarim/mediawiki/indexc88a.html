@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Binary_thresholding&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:22:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Binary thresholding" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Binary thresholding - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Binary_thresholding";
+		var wgTitle = "Binary thresholding";
+		var wgAction = "view";
+		var wgArticleId = "300";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1759;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Binary_thresholding skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Binary thresholding</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Usage" id="Usage"></a><h2> <span class="mw-headline"> Usage </span></h2>
+<pre>
+&lt;application name&gt; &lt;inputfile&gt; &lt;outputfile&gt; &lt;threshold&gt; 
+</pre>
+<p>Everything below threshold is assigned a value of 0 and above is 1. 
+</p>
+<a name="Code" id="Code"></a><h2> <span class="mw-headline"> Code </span></h2>
+<pre>
+/*=========================================================================
+  Program:   Insight Segmentation &amp; Registration Toolkit
+  Module:    $RCSfile: BinaryThresholdImageFilter.cxx,v $
+  Language:  C++
+  Date:      $Date: 2006-05-21 13:05:15 $
+  Version:   $Revision: 1.35 $
+
+  Copyright (c) Insight Software Consortium. All rights reserved.
+  See ITKCopyright.txt or http://www.itk.org/HTML/Copyright.htm for details.
+
+     This software is distributed WITHOUT ANY WARRANTY; without even 
+     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+     PURPOSE.  See the above copyright notices for more information.
+
+=========================================================================*/
+#if defined(_MSC_VER)
+#pragma warning ( disable&nbsp;: 4786 )
+#endif
+
+#ifdef __BORLANDC__
+#define ITK_LEAN_AND_MEAN
+#endif
+
+
+// Software Guide&nbsp;: BeginCommandLineArgs
+// INPUTS:  {BrainProtonDensitySlice.png}
+// OUTPUTS: {BinaryThresholdImageFilterOutput.png}
+// 150 180 0 255
+// Software Guide&nbsp;: EndCommandLineArgs
+
+// Software Guide&nbsp;: BeginLatex
+//
+// \itkpiccaption[BinaryThresholdImageFilter transfer function]{Transfer function
+// of the BinaryThresholdImageFilter.
+// \label{fig:BinaryThresholdTransferFunction}}
+// \parpic(8cm,5cm)[r]{\includegraphics[width=7cm]{BinaryThresholdTransferFunction.eps}}
+//
+// This example illustrates the use of the binary threshold image filter.
+// This filter is used to transform an image into a binary image by changing
+// the pixel values according to the rule illustrated in
+// Figure~\ref{fig:BinaryThresholdTransferFunction}. The user defines two
+// thresholds---Upper and Lower---and two intensity values---Inside and
+// Outside. For each pixel in the input image, the value of the pixel is
+// compared with the lower and upper thresholds. If the pixel value is inside
+// the range defined by $[Lower,Upper]$ the output pixel is assigned the
+// InsideValue. Otherwise the output pixels are assigned to the OutsideValue.
+// Thresholding is commonly applied as the last operation of a segmentation
+// pipeline.
+//
+// \index{itk::Binary\-Threshold\-Image\-Filter!Instantiation}
+// \index{itk::Binary\-Threshold\-Image\-Filter!Header}
+//
+// The first step required to use the \doxygen{BinaryThresholdImageFilter} is
+// to include its header file. 
+//
+// Software Guide&nbsp;: EndLatex 
+
+// Software Guide&nbsp;: BeginCodeSnippet
+#include &quot;itkBinaryThresholdImageFilter.h&quot;
+// Software Guide&nbsp;: EndCodeSnippet
+
+#include &quot;itkImage.h&quot;
+#include &quot;itkImageFileReader.h&quot;
+#include &quot;itkImageFileWriter.h&quot;
+
+int main( int argc, char * argv[] )
+{
+  if( argc &lt; 4)
+    {
+    std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0];
+    std::cerr &lt;&lt; &quot; inputImageFile outputImageFile &quot;;  
+    std::cerr &lt;&lt; &quot; threshold &quot;;  
+    return EXIT_FAILURE;
+    }
+  
+  //  Software Guide&nbsp;: BeginLatex
+  //
+  //  The next step is to decide which pixel types to use for the input and output
+  //  images.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  typedef  double  InputPixelType;
+  typedef  unsigned char  OutputPixelType;
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //
+  //  The input and output image types are now defined using their respective
+  //  pixel types and dimensions.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  typedef itk::Image&lt; InputPixelType,  3 &gt;   InputImageType;
+  typedef itk::Image&lt; OutputPixelType, 3 &gt;   OutputImageType;
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //
+  //  The filter type can be instantiated using the input and output image
+  //  types defined above.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  typedef itk::BinaryThresholdImageFilter&lt;
+               InputImageType, OutputImageType &gt;  FilterType;
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //
+  //  An \doxygen{ImageFileReader} class is also instantiated in order to read
+  //  image data from a file. (See Section \ref{sec:IO} on page 
+  //  \pageref{sec:IO} for more information about reading
+  //  and writing data.) 
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  typedef itk::ImageFileReader&lt; InputImageType &gt;  ReaderType;
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //  
+  // An \doxygen{ImageFileWriter} is instantiated in order to write the output
+  // image to a file.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  typedef itk::ImageFileWriter&lt; OutputImageType &gt;  WriterType;
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //
+  //  Both the filter and the reader are created by invoking their \code{New()}
+  //  methods and assigning the result to \doxygen{SmartPointer}s.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  ReaderType::Pointer reader = ReaderType::New();
+  FilterType::Pointer filter = FilterType::New();
+  // Software Guide&nbsp;: EndCodeSnippet
+
+  WriterType::Pointer writer = WriterType::New();
+  writer-&gt;SetInput( filter-&gt;GetOutput() );
+  reader-&gt;SetFileName( argv[1] );
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //  
+  //  The image obtained with the reader is passed as input to the
+  //  BinaryThresholdImageFilter.
+  //
+  //  \index{itk::Binary\-Threshold\-Image\-Filter!SetInput()}
+  //  \index{itk::FileImageReader!GetOutput()}
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  filter-&gt;SetInput( reader-&gt;GetOutput() );
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //  
+  //  The method \code{SetOutsideValue()} defines the intensity value to be
+  //  assigned to those pixels whose intensities are outside the range defined
+  //  by the lower and upper thresholds. The method \code{SetInsideValue()}
+  //  defines the intensity value to be assigned to pixels with intensities
+  //  falling inside the threshold range.
+  //  
+  //  \index{itk::Binary\-Threshold\-Image\-Filter!SetOutsideValue()}
+  //  \index{itk::Binary\-Threshold\-Image\-Filter!SetInsideValue()}
+  //  \index{SetOutsideValue()!itk::Binary\-Threshold\-Image\-Filter}
+  //  \index{SetInsideValue()!itk::Binary\-Threshold\-Image\-Filter}
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  const OutputPixelType outsideValue = 1;
+  const OutputPixelType insideValue  = 0;
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  filter-&gt;SetOutsideValue( outsideValue );
+  filter-&gt;SetInsideValue(  insideValue  );
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //  
+  //  The methods \code{SetLowerThreshold()} and \code{SetUpperThreshold()}
+  //  define the range of the input image intensities that will be transformed
+  //  into the \code{InsideValue}. Note that the lower and upper thresholds are
+  //  values of the type of the input image pixels, while the inside and
+  //  outside values are of the type of the output image pixels.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  const InputPixelType upperThreshold = atof( argv[3] );
+  const InputPixelType lowerThreshold = -100;
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  
+  filter-&gt;SetLowerThreshold( lowerThreshold );
+  filter-&gt;SetUpperThreshold( upperThreshold );
+  // Software Guide&nbsp;: EndCodeSnippet
+
+
+  //  Software Guide&nbsp;: BeginLatex
+  //  
+  //  The execution of the filter is triggered by invoking the \code{Update()}
+  //  method.   If the filter's output has been passed as input to subsequent
+  //  filters, the \code{Update()} call on any posterior filters in the
+  //  pipeline will indirectly trigger the update of this filter.
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  // Software Guide&nbsp;: BeginCodeSnippet
+  filter-&gt;Update();
+  // Software Guide&nbsp;: EndCodeSnippet
+
+  //  Software Guide&nbsp;: BeginLatex
+  //  
+  // \begin{figure}
+  // \center
+  // \includegraphics[width=0.44\textwidth]{BrainProtonDensitySlice.eps}
+  // \includegraphics[width=0.44\textwidth]{BinaryThresholdImageFilterOutput.eps}
+  // \itkcaption[BinaryThresholdImageFilter output]{Effect of the BinaryThresholdImageFilter on a slice from a MRI
+  // proton density image  of the brain.}
+  // \label{fig:BinaryThresholdImageFilterInputOutput}
+  // \end{figure}
+  //
+  //  Figure \ref{fig:BinaryThresholdImageFilterInputOutput} illustrates the
+  //  effect of this filter on a MRI proton density image of the brain. This
+  //  figure shows the limitations of this filter for performing segmentation
+  //  by itself. These limitations are particularly noticeable in noisy images
+  //  and in images lacking spatial uniformity as is the case with MRI due to
+  //  field bias.
+  //
+  //  \relatedClasses
+  //  \begin{itemize}
+  //  \item \doxygen{ThresholdImageFilter}
+  //  \end{itemize}
+  //
+  //  Software Guide&nbsp;: EndLatex 
+
+  writer-&gt;SetFileName( argv[2] );
+  writer-&gt;Update();
+
+  return EXIT_SUCCESS;
+}
+
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:300-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312124847 -->
+<div class="printfooter">
+Retrieved from "<a href="index9af6.html?title=Binary_thresholding">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Binary_thresholding</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index9af6.html?title=Binary_thresholding" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="index8ab4.html?title=Talk:Binary_thresholding&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="index31bd.html?title=Binary_thresholding&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index445d.html?title=Binary_thresholding&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index1902.html?title=Special:UserLogin&amp;returnto=Binary_thresholding" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index76ca.html?title=Special:WhatLinksHere/Binary_thresholding" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index0a59.html?title=Special:RecentChangesLinked/Binary_thresholding" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index6267.html?title=Binary_thresholding&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="index3fc1.html?title=Binary_thresholding&amp;oldid=1759" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 20 November 2012, at 16:01.</li>
+					<li id="viewcount">This page has been accessed 206 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.469 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Binary_thresholding&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:22:21 GMT -->
+</html>

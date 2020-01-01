@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Elastic_search&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:30:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="robots" content="noindex,follow" />
+		<meta name="keywords" content="Elastic search" />
+		<link rel="shortcut icon" href="http://wwwhomes.doc.ic.ac.uk/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.html" title="Rashed Karim Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="Rashed Karim Wiki RSS Feed" href="index2ffe.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="Rashed Karim Wiki Atom Feed" href="index890f.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Elastic search - Rashed Karim Wiki</title>
+		<link rel="stylesheet" href="skins/common/commonPrint69ad.css?207" type="text/css" />
+		<link rel="stylesheet" href="index31a6.css?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index663f.css?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="index6e6d.css?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="indexd70f.css?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/~rkarim/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/~rkarim/mediawiki/skins";
+		var wgArticlePath = "indexafc5.html?title=$1";
+		var wgScriptPath = "/~rkarim/mediawiki";
+		var wgScript = "indexb3c9.html";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wwwhomes.doc.ic.ac.uk/";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Elastic_search";
+		var wgTitle = "Elastic search";
+		var wgAction = "view";
+		var wgArticleId = "578";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3785;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="skins/common/wikibits69ad.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="skins/common/ajax69ad.js?207"></script>
+		<script type="text/javascript" src="index6e36.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Elastic_search skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Elastic search</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Rashed Karim Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<a name="Creating_an_index" id="Creating_an_index"></a><h2> <span class="mw-headline"> Creating an index </span></h2>
+<p>There are currently two indexes: <b>tutor_cv</b> and <b>tutor_cv_new_reg</b> 
+</p><p>Create a new index and its mapping, this uses the English analyzer below. The example below is for tutor_cv. A separate index should be created for tutor_cv_new_reg
+</p><p>The index should be created locally using Google Chrome's SENSE. See below for details 
+</p>
+<pre>
+PUT /tutor_cv
+{
+    &quot;mappings&quot;&nbsp;: {
+      &quot;wordpdf&quot;&nbsp;: {
+        &quot;properties&quot;&nbsp;: {
+          &quot;content&quot;&nbsp;: {
+            &quot;type&quot;&nbsp;: &quot;attachment&quot;,
+            &quot;fields&quot;&nbsp;: {
+              &quot;content&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;,
+                &quot;store&quot;&nbsp;: true,
+                &quot;term_vector&quot;&nbsp;: &quot;with_positions_offsets&quot;,
+                &quot;analyzer&quot;:&quot;english&quot;
+              },
+              &quot;author&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;
+              },
+              &quot;title&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;
+              },
+              &quot;name&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;
+              },
+              &quot;date&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;date&quot;,
+                &quot;format&quot;&nbsp;: &quot;strict_date_optional_time||epoch_millis&quot;
+              },
+              &quot;keywords&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;
+              },
+              &quot;content_type&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;
+              },
+              &quot;content_length&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;integer&quot;
+              },
+              &quot;language&quot;&nbsp;: {
+                &quot;type&quot;&nbsp;: &quot;string&quot;
+              }
+            }
+          },
+          &quot;url&quot;&nbsp;: {
+            &quot;type&quot;&nbsp;: &quot;string&quot;
+          }
+        }
+      }
+    }
+}
+
+</pre>
+<p>For <b>Tutor_notes</b> this is how the index can be created:
+</p>
+<pre>
+PUT tutor_notes 
+{
+  &quot;mappings&quot;: {
+    &quot;tutor_note_type&quot;&nbsp;: {
+    &quot;properties&quot;&nbsp;: {
+      &quot;tutor_note&quot;&nbsp;: {
+        &quot;properties&quot;&nbsp;: {
+          &quot;note&quot;&nbsp;: {
+            &quot;type&quot;&nbsp;: &quot;string&quot;, 
+            &quot;analyzer&quot;:&quot;english&quot;
+          }, 
+          &quot;id&quot;&nbsp;: {
+              &quot;type&quot;&nbsp;: &quot;integer&quot;
+          }
+        }
+      }
+    }
+  }
+  }
+}
+</pre>
+<a name="Checking_the_mapping" id="Checking_the_mapping"></a><h2> <span class="mw-headline"> Checking the mapping </span></h2>
+<p>For mapper attachments: 
+</p>
+<pre>
+GET /tutor_cv/wordpdf/_mapping
+</pre>
+<a name="Get_stats" id="Get_stats"></a><h2> <span class="mw-headline"> Get stats </span></h2>
+<p>On <b>Tutor CV</b> 
+</p>
+<pre>
+GET /tutor_cv/_stats
+</pre>
+<p><br />
+On <b>Tutor notes</b>
+</p>
+<pre>
+GET /tutor_notes/_stats
+</pre>
+<p><br />
+</p>
+<a name="Deleting_an_index" id="Deleting_an_index"></a><h2> <span class="mw-headline"> Deleting an index </span></h2>
+<p>This command will delete an index 
+</p>
+<pre>
+DELETE /tutor_cv_new_reg
+</pre>
+<a name="Searching_an_index" id="Searching_an_index"></a><h2> <span class="mw-headline"> Searching an index </span></h2>
+<p>Quick dirty search:
+</p>
+<pre>
+POST /index_name/type_name/_search?q=content:test
+</pre>
+<p>Simple search:
+</p>
+<pre>
+POST /dst/wordpdf/_search
+{
+    &quot;query&quot;: {
+        
+        &quot;match&quot;: {
+           &quot;content.content&quot;: &quot;physics&quot;
+        }
+    }
+}
+</pre>
+<p>Using conjunctive queries: 
+Note the highlight entry will highlight the search terms 
+</p>
+<pre>
+POST /tutor_cv/wordpdf/_search
+{
+   &quot;fields&quot;: [
+       &quot;url&quot;
+       ],
+   &quot;query&quot;: {
+      &quot;query_string&quot;: {
+         &quot;default_field&quot;: &quot;content.content&quot;,
+         &quot;query&quot;: &quot;english AND math*&quot;
+      }
+   },
+   &quot;highlight&quot;: {
+      &quot;fields&quot;: {
+         &quot;content.content&quot;: {}
+      }
+   }
+}
+</pre>
+<a name="Using_SENSE" id="Using_SENSE"></a><h2> <span class="mw-headline"> Using SENSE </span></h2>
+<p>Google Chrome's SENSE toolbox can be used to issue CURL commands to the cluster. 
+</p>
+<a name="Rebuilding_the_index" id="Rebuilding_the_index"></a><h2> <span class="mw-headline"> Rebuilding the index </span></h2>
+<p><b>Tutor CVs</b> 
+</p><p>The index can be built on the local machine. 
+</p><p>For testing search,  as the Elastic-PHP library needs HTTPS certification for establishing a connection with the cluster, otherwise you get a Node not alive error in the PHP logs. 
+</p><p>Use the script under /elastic/build_index.php 
+</p>
+<ul><li> <b>Step1:</b> Delete the existing indices by logging to Seachly dashboard. Create new indices with PUT commands above. It may be possible to simply build by over-writing on the indices and Elastic may be capable of recognising and ignoring duplicates. 
+</li></ul>
+<ul><li> <b>Step2:</b> Download the /tutor_cv to your local machine under a folder such as /tutor_cv2 (Prevent clash) 
+</li></ul>
+<ul><li> <b>Step3:</b> Increase the max limit of files that can be open, do this on the SSH session. Only valid for an SSH session window  
+</li></ul>
+<pre>
+ulimit -S -n 2048
+</pre>
+<ul><li> <b>Step4</b>: Configure the the script under /elastic/build_index.php and run it from command-line: 
+</li></ul>
+<pre>
+php build_index.php 
+</pre> 
+<ul><li> <b>Step5</b>: To check that the index was built properly, the report is written to a text file: <b>index_report_at_1455104911.txt</b>. Also check the Index stats using Google Chrome's SENSE: 
+</li></ul>
+<pre>
+GET /tutor_cv/_stats
+</pre>
+<p><b>Tutor Notes</b>
+</p><p>THIS MUST BE RUN ON SERVER. 
+</p><p>It is straightforward to re-build tutor note index, just invoke on server, as running it on local machine fetches notes only from local database: 
+</p>
+<pre>
+http://dst/elastic/build_index_for_notes.php
+</pre>
+<p>And check on the index_report.txt in /elastic folder to keep track of which notes were inserted
+</p><p><br />
+</p>
+<a name="Code_changes_with_Searchly" id="Code_changes_with_Searchly"></a><h2> <span class="mw-headline"> Code changes with Searchly </span></h2>
+<ul><li> To make the switch from Box to Searchly, a change was needed in the ElasticIndex.php file where the port number for HTTPS had to be specified (443): 
+</li></ul>
+<pre>
+$hosts= ['https://site:our-access-key@bifur-eu-west-1.searchly.com:443'];
+</pre>
+<ul><li> Also, the php version had switched automatically with SGround back to 5.3. For the code to run, the PHP version must be 5.4. There are many new PHP array notations used throughout my code and the Elastic API. So not at all compatible with PHP 5.3.
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 51/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key rkarim:pcache:idhash:578-0!1!0!!en!2!edit=0!printable=1 and timestamp 20180312125721 -->
+<div class="printfooter">
+Retrieved from "<a href="index5e3d.html?title=Elastic_search">http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Elastic_search</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="index5e3d.html?title=Elastic_search" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="indexcbc3.html?title=Talk:Elastic_search&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="indexb796.html?title=Elastic_search&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="index03cc.html?title=Elastic_search&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-anonuserpage"><a href="indexd3f8.html?title=User:159.92.151.128" title="The user page for the ip you&#039;re editing as [.]" accesskey="." class="new">159.92.151.128</a></li>
+				<li id="pt-anontalk"><a href="index7a1b.html?title=User_talk:159.92.151.128" title="Discussion about edits from this IP address [n]" accesskey="n" class="new">Talk for this IP</a></li>
+				<li id="pt-anonlogin"><a href="index794a.html?title=Special:UserLogin&amp;returnto=Elastic_search" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(images/myWikiLogo.gif);" href="indexb3c9.html?title=Research_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="indexb3c9.html?title=Research_Wiki">Main Page</a></li>
+				<li id="n-Home"><a href="http://www.doc.ic.ac.uk/~rkarim/">Home</a></li>
+				<li id="n-currentevents"><a href="index8cfe.html?title=Rashed_Karim_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="indexa414.html?title=Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="index3455.html?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="index3cd6.html?title=Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search Rashed Karim Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="index5f8d.html?title=Special:WhatLinksHere/Elastic_search" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="index0226.html?title=Special:RecentChangesLinked/Elastic_search" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="indexc7ac.html?title=Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="index9041.html?title=Elastic_search&amp;printable=yes&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="indexaf2b.html?title=Elastic_search&amp;oldid=3785" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 7 March 2017, at 11:55.</li>
+					<li id="viewcount">This page has been accessed 1,452 times.</li>
+					<li id="privacy"><a href="index2a71.html?title=Rashed_Karim_Wiki:Privacy_policy" title="Rashed Karim Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="index1436.html?title=Rashed_Karim_Wiki:About" title="Rashed Karim Wiki:About">About Rashed Karim Wiki</a></li>
+					<li id="disclaimer"><a href="index2f3a.html?title=Rashed_Karim_Wiki:General_disclaimer" title="Rashed Karim Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.520 secs. --></body>
+<!-- Mirrored from wwwhomes.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Elastic_search&printable=yes by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Mar 2018 13:30:30 GMT -->
+</html>
